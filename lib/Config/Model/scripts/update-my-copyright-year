@@ -1,0 +1,11 @@
+doc: update my copyright year
+doc: only copyright of last year is updated
+
+app: dpkg-copyright
+
+var: my @l = localtime; $var{year} =  $l[5]+1900; $var{oldyear} = $var{year} - 1
+
+# $oldyear and $year can be overridden by command arguments
+load: Files:~ Copyright=~"s/$oldyear,?\s+$DEBFULLNAME/$year, $DEBFULLNAME/g"
+
+commit: updated copyright year of $DEBFULLNAME
