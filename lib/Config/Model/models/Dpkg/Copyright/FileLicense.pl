@@ -12,7 +12,9 @@ return [
     'element' => [
       'full_license',
       {
-        'description' => 'if left blank here, the file must include a stand-alone License section matching each license short name listed on the first line (see the Standalone License Section section). Otherwise, this field should either include the full text of the license(s) or include a pointer to the license file under /usr/share/common-licenses. This field should include all text needed in order to fulfill both Debian Policy requirement for including a copy of the software distribution license, and any license requirements to include warranty disclaimers or other notices with the binary package.
+          'description' => 'if left blank here, the file must include a stand-alone License section matching each license short name listed on the first line (see the Standalone License Section section).
+Otherwise, this field should either include the full text of the license(s) or include a pointer to the license file under /usr/share/common-licenses.
+This field should include all text needed in order to fulfill both Debian Policy requirement for including a copy of the software distribution license, and any license requirements to include warranty disclaimers or other notices with the binary package.
 ',
         'type' => 'leaf',
         'value_type' => 'string',
@@ -130,7 +132,7 @@ $_ = \'Expat\';
           'and/or' => {
             'msg' => 'licensecheck found an ambiguous license statement. Please:
 - check the source code to find the actual license association
-- override this value using "override-license" parameter in "debian/fill-copyright-blank.yml" file.
+- override this value using "override-license" parameter in "debian/fill.copyright.blanks.yml" file.
 See "Filling the blanks" section in Dpkg::Copyright::Scanner(3pm) man page for details '
           }
         },

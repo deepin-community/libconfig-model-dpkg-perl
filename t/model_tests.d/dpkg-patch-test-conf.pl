@@ -47,7 +47,6 @@ my @tests = (
     {
         name => 'by-git',
         backend_arg => $conf_file_name,
-        dump_warnings => [ qr/Empty/ ],
         check => {
             Synopsis => "Some patch", # set by apply_fix
             Description => qr/enhance/,

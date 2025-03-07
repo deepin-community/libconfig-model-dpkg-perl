@@ -1,0 +1,19 @@
+Source: raku-uri
+Maintainer: Debian Rakudo Maintainers <pkg-rakudo-devel@lists.alioth.debian.org>
+Uploaders: Dominique Dumont <dod@debian.org>
+Section: interpreters
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               dh-sequence-raku
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/perl6-team/modules/raku-uri
+Vcs-Git: https://salsa.debian.org/perl6-team/modules/raku-uri.git
+Homepage: https://github.com/raku-community-modules/uri.git
+Rules-Requires-Root: no
+
+Package: raku-uri
+Architecture: all
+Depends: ${misc:Depends},
+         ${raku:Depends}
+Description: URI implementation using Raku grammars to implement RFC 3986 BNF
+ Please fill description manually

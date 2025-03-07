@@ -86,7 +86,8 @@ my @tests = (
             'package-scripts:t0 prerm' => qr/dummy prerm/,
             'package-scripts:t0/amd64 postrm' => qr/dummy postrm script for amd64/,
             'package-scripts:./amd64 preinst' => qr/dummy preinst script for amd64/,
-            'examples:t0 content:0' => 'examples/'
+            'examples:t0 content:0' => 'examples/',
+            'install:t0.docs content:0' => 'README.*',
         },
         log4perl_load_warnings => [[
             User =>  map {(warn => $_)} qr/source Standards-Version/, qr/compat/, (qr/debhelper/) x 2 , qr/Dual dependency/
@@ -180,7 +181,7 @@ my @tests = (
             'copyright Files:pan/general/sorted-vector.h License short_name' => 'public-domain',
             # entry "uulib/fptools.c\n uulib/fptools.h"is packed by update
             qq'copyright Files:"*" Copyright' => '1994-2001, Frank Pilhofer.',
-            'copyright Files:pan/gui/xface.c Copyright' => qr/^James/,
+            'copyright Files:pan/gui/xface.c Copyright' => qr/James/,
         },
         wr_check => {
             "copyright License:GPL-2 text" => {value => undef, mode => 'custom'},
@@ -378,7 +379,17 @@ my @tests = (
                 [User => warn => qr/dummy-tag/],
             ],
         },
-    }
+    },
+
+    {
+        name => 'raku-uri',
+        update => { in => path('t/scanner/examples/raku-uri.in') , quiet => 1 },
+        check => {
+            # README was wrong and is updated accordin to fill.copyright.blanks.yml
+            'copyright Files:"README.md" License short_name' => 'Artistic-2.0',
+            'copyright Files:"README.md" License full_license' => undef,
+        }
+    },
 );
 
 my $cache_file = path('t/model_tests.d/dependency-cache.txt');

@@ -58,8 +58,7 @@ Copyright: 2007, Calin Culianu <calin@ajvar.org>
 License: LGPL-2+
 
 Files: pan/general/map-vector.h
-Copyright: 2001, Andrei Alexandrescu
- 2001
+Copyright: 2001, Andrei Alexandrescu / 2001
 License: NTP
 
 Files: pan/general/sorted-vector.h
@@ -92,7 +91,8 @@ Copyright: 1989, 1991, Free Software Foundation, Inc.n
 License: UNKNOWN
 
 Files: pan/gui/xface.c
-Copyright: messages are not removed, and no monies are exchanged. / James Ashton - Sydney University - June 1990.
+Copyright: messages are not removed, and no monies are exchanged.
+ James Ashton - Sydney University - June 1990.
 License: UNKNOWN
 
 Files: pan/icons/*

@@ -26,7 +26,7 @@ return [
           'allow_override' => '1',
           'formula' => 'require Software::LicenseMoreUtils ;
 my $lic = &index( - ) ;
-my $h = { short_name => $lic, holder => \'X. Ample\' } ;
+my $h = { short_name => $lic } ;
 my $text;
 
 if (defined $lic and $lic) {

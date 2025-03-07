@@ -12,7 +12,6 @@ use Test::Exception;
 use Software::LicenseMoreUtils;
 use Test::LongString;
 
-$::_use_log4perl_to_warn = 1;
 
 my ($model, $trace, $opts) = init_test('rdhint','rdtrace');
 
@@ -42,7 +41,6 @@ foreach my $name (qw/GPL-3+ GPL-2+ Artistic-2.0 BSD-3-clause Expat/, $gpl3_ex) {
 
 my $art_2_text = Software::LicenseMoreUtils->new_from_short_name({
     short_name =>'Artistic-2',
-    holder => 'X. Ample'
 })->summary_or_text;
 chomp($art_2_text);
 $art_2_text =~ s/\t/    /g;

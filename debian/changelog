@@ -1,3 +1,128 @@
+libconfig-model-dpkg-perl (2.165) unstable; urgency=medium
+
+  * doc: fix fix.scanned.copyright file name (Closes: 1021772)
+  * Dpkg::Copyright: fix example to access File:* entry.
+    Thanks to Andreas Metzler for the bug report (Closes: 1021773)
+  * C::M::D::Dependency: fix test about @args size (Closes: 1023068)
+  * Scanner: fix code to find main license id
+
+ -- Dominique Dumont <dod@debian.org>  Sat, 21 Jan 2023 19:25:38 +0100
+
+libconfig-model-dpkg-perl (2.164) unstable; urgency=medium
+
+  * add support for package.docs files
+
+ -- Dominique Dumont <dod@debian.org>  Thu, 08 Sep 2022 15:43:47 +0200
+
+libconfig-model-dpkg-perl (2.163) unstable; urgency=medium
+
+  * fix autopkgtest: set Source value when needed.
+    Thanks to gregoa for the bug report (Closes: #1016670)
+  * fix (Dpkg::Dependency): add missing build profiles.
+    Thanks to Andreas for the bug report (Closes: #1016635)
+  * fix (Dpkg::Dependency): improve wrong build profile message
+
+ -- Dominique Dumont <dod@debian.org>  Sat, 06 Aug 2022 18:46:22 +0200
+
+libconfig-model-dpkg-perl (2.162) unstable; urgency=medium
+
+  * fix Lintian override broken by Config::Model 2.151
+  * Dpkg::Control model: allow <pkg.thing.whatever> in Build-Profiles.
+    Thanks to Victor Westerhuis for the bug report (Closes: 1015987)
+  * fix Source parameters (Closes: 1015913)
+    Thanks to Damyan Ivanov for the bug report
+  * fix (model): anchor Standards-Version match regexp with ^ and $
+  * Update doc in Dpkg::Control model
+  * Scanner: copy license info in README info when it's missing
+  * control: depends on libconfig-model-perl 2.151
+
+ -- Dominique Dumont <dod@debian.org>  Wed, 27 Jul 2022 18:17:24 +0200
+
+libconfig-model-dpkg-perl (2.161) unstable; urgency=medium
+
+  * Scanner: scan only the first 300 lines of each file
+    for copyright information (another solution for #1000179)
+  * update lintian-override help text
+  * fix "Please fill license" text written in debian/copyright
+  * Fix test error related to ISC license text (triggered by
+    libsoftware-license-perl 0.104002)
+  * control: declare compliance with policy 4.6.1
+
+ -- Dominique Dumont <dod@debian.org>  Wed, 29 Jun 2022 18:28:46 +0200
+
+libconfig-model-dpkg-perl (2.160) unstable; urgency=medium
+
+  * Scanner:
+    * fix missing white space in multi-line Copyright
+    * use licensecheck --lines 0 option (Closes: #1000179)
+    * avoid multiple file entries with same copyright
+  * Copyright merge part:
+    * fix order of merged copyright entries
+    * Remove license text when license is known
+  * doc: (hopefully) improve "examples" element description
+  * control: add dep in libdata-compare-perl
+
+ -- Dominique Dumont <dod@debian.org>  Fri, 17 Jun 2022 18:49:47 +0200
+
+libconfig-model-dpkg-perl (2.159) unstable; urgency=medium
+
+  * LicenseSpec model: drop dummy copyright holder
+    Thanks to Thorsten Alteholz for the heads up.
+  * copyright scanner: extract author from README.rakudoc
+  * control: depends on libsoftware-licensemoreutils-perl >= 1.009
+
+ -- Dominique Dumont <dod@debian.org>  Sat, 04 Jun 2022 19:07:27 +0200
+
+libconfig-model-dpkg-perl (2.158) unstable; urgency=medium
+
+  * fix fill.copyright.blanks.yml file name.
+    Thanks to Ross Vandegrift for the report (Closes: 1009023)
+  * Scanner: convert spdx license short names in Debian style
+  * Scanner: remove identical or'ed license short names
+
+ -- Dominique Dumont <dod@debian.org>  Sun, 08 May 2022 17:18:59 +0200
+
+libconfig-model-dpkg-perl (2.157) unstable; urgency=medium
+
+  * fix update-my-copyright-year script: do not duplicate current year.
+    Thanks to gregoa for the bug report (Closes: #1004206)
+  * fix update-my-copyright-year: avoid spurious change notification
+  * copyright: update my copyright year with cme in dogfooding mode
+  * control: update cme build dep version
+
+ -- Dominique Dumont <dod@debian.org>  Sun, 06 Feb 2022 15:52:08 +0100
+
+libconfig-model-dpkg-perl (2.156) unstable; urgency=medium
+
+  * fix "cme run update-my-copyright-year" script
+
+ -- Dominique Dumont <dod@debian.org>  Fri, 21 Jan 2022 18:19:59 +0100
+
+libconfig-model-dpkg-perl (2.155) unstable; urgency=medium
+
+  * Team upload.
+  * Fix autopkgtest failure.
+    Update new test t/cme-scripts.t to look for the cme scripts in different
+    places during build (i.e. within the source tree) and during autopkgtests
+    (i.e. against the installed package).
+    Thanks to ci.debian.net.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 17 Jan 2022 21:27:05 +0100
+
+libconfig-model-dpkg-perl (2.154) unstable; urgency=medium
+
+  [ Anthony Fok ]
+  * source options: Fix typo in compression choice: 'gzip2' → 'bzip2'
+
+  [ Dominique Dumont ]
+  * update-my-copyright-year script: no longer limited to last year
+  * fix bump-dependency-version script: preserve <!nocheck>
+  * warn or fix about too old package relationship
+  * control: add BDI on cme and libapp-cmd-perl
+  * control: build dep on libconfig-model-perl 2.149
+
+ -- Dominique Dumont <dod@debian.org>  Sat, 15 Jan 2022 17:38:55 +0100
+
 libconfig-model-dpkg-perl (2.153) unstable; urgency=medium
 
   [ gregor herrmann ]

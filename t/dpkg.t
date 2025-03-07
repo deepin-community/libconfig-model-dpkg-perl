@@ -13,7 +13,6 @@ use Test::Log::Log4perl;
 use warnings;
 use strict;
 
-$::_use_log4perl_to_warn = 1;
 Test::Log::Log4perl->ignore_priority("info");
 
 my ($model, $trace) = init_test();
@@ -34,7 +33,7 @@ $dpkg->initial_load_stop;
 my $opt = 'config\..*|configure|.*Makefile.in|aclocal.m4|\.pc' ;
 
 # load mandatory values otherwise the exits on error during next test
-$root->load("control source Maintainer=foo\@bar.com");
+$root->load("control source Source=dummy Maintainer=foo\@bar.com");
 
 my @test = (
     [ "clean=foo,bar,baz",           'clean',         "foo\nbar\nbaz\n" ],
@@ -43,6 +42,7 @@ my @test = (
         qq!source options extend-diff-ignore="$opt"!, 'source/options',
         qq!extend-diff-ignore="$opt"\n!
     ],
+    [ 'install:"dummy.docs" content:0="README.*"', 'dummy.docs', "README.*\n" ],
 );
 
 my %files ;
