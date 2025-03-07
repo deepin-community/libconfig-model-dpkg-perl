@@ -11,7 +11,6 @@ use 5.10.0;
 use warnings;
 use strict;
 
-$::_use_log4perl_to_warn = 1;
 
 my ($model, $trace) = init_test();
 

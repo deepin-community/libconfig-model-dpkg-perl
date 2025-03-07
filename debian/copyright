@@ -5,11 +5,11 @@ Comment: Native package. This package is a spin-off from
  parts of Config::Model
 
 Files: *
-Copyright: 2005-2019, Dominique Dumont <dod@debian.org>
+Copyright: 2005-2022, Dominique Dumont <dod@debian.org>
 License: LGPL-2.1+
 
 Files: lib/Dpkg/Copyright/Scanner.pm
-Copyright: 2014-2019, Dominique Dumont <dod@debian.org>
+Copyright: 2014-2022, Dominique Dumont <dod@debian.org>
  2005-2012, Jonas Smedegaard <dr@jones.dk>
 License: LGPL-2.1+
 Comment: Jonas has allowed me to relicense some GPL code copied from licensecheck2deb.

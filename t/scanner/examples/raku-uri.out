@@ -1,0 +1,14 @@
+Files: *
+Copyright: 2017, Ronald Schmidt.
+ 2015, Raku Community Authors
+License: Artistic-2.0
+
+Files: README.md
+Copyright: 2017, Ronald Schmidt.
+ 2015, Raku Community Authors
+License: UNKNOWN
+
+Files: lib/*
+Copyright: 2017, Ronald Schmidt.
+License: UNKNOWN
+

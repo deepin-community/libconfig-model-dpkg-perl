@@ -122,9 +122,13 @@ details',
           'config_class_name' => 'Dpkg::Install',
           'type' => 'node'
         },
-        'description' => 'List the files to install into each package and the directory they should be installed to.
+        'description' => '=pod
 
-Here the mapping between the install files and the install key:
+List the files to install into each package and the directory they
+should be installed to.
+
+Here\'s the mapping between the debian install files and the install
+key:
 
 '.'=over 4
 
@@ -140,6 +144,10 @@ Here the mapping between the install files and the install key:
 
 "package/arch" -> C<debian/package.install.arch>
 
+'.'=item *
+
+"package.docs" -> C<debian/package.docs>
+
 '.'=back
 
 ',
@@ -152,11 +160,15 @@ Here the mapping between the install files and the install key:
           'config_class_name' => 'Dpkg::Install',
           'type' => 'node'
         },
-        'description' => 'List of the examples files to install into
+        'description' => 'List of examples files (or directories) to install into
 C</usr/share/doc/package/examples>
 
-Use the package name as the key of the hash
-',
+First, use the package name as the key of the hash.
+
+This hash has a C<content> element, which is a list of values. Each value
+contains a line of C<< debian/<package>.examples >>.
+
+The syntax of these line is explained in L<dh_installexamples(1)>.',
         'index_type' => 'string',
         'type' => 'hash'
       },
@@ -192,11 +204,15 @@ Please keep in mind that dh_install will not expand wildcards in this file.
         },
         'description' => 'Contains the lintian overrides parameters from all lintian overrides files contained in C<debian/*lintian-overrides>.
 
-plain C<lintian-overrides> is contained in "." element.
+plain C<lintian-overrides> file is contained in "." element.
 
 Other files are contained in basename element.
 
 For instance, C<debian/foo.lintian-overrides> is contained in C<foo> element.
+
+Likewise, override for source package is contained in C<source> element.
+
+For more detail, see L<lintian doc|https://lintian.debian.org/manual/index.html#overrides>
 
 Unknown L<lintian tags| https://lintian.debian.org/tags.html> trigger a warning.
 

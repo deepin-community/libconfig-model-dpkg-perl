@@ -20,6 +20,12 @@ use Path::Tiny;
 my $logger = get_logger("Backend.Dpkg.DebHelperFile");
 my $user_logger = get_logger('User');
 
+my $misc_install_regexp = qr/\.(docs)$/;
+
+sub get_misc_install_regexp () {
+    return $misc_install_regexp;
+}
+
 sub get_file_name {
     my ($self, %args) = @_;
 
@@ -28,6 +34,7 @@ sub get_file_name {
 
     my $key = $obj->parent->index_value;
     return $key eq '.'  ? $dh_file_type
+        :  $key =~ $misc_install_regexp ? $key
         :  $key =~ m!^\./! ? $key =~ s!\./!$dh_file_type.!r
         :  $key =~ m!/! ? $key =~ s!/!.$dh_file_type.!r
         :                 "$key.$dh_file_type";

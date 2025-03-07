@@ -286,7 +286,7 @@ in ‘/usr/share/common-licenses/GPL-1’.",
         name => 'moarvm-from-scratch',
         update => { in => path('t/scanner/examples/moarvm.in'), quiet => 1 },
         check => {
-            'License:ISC text' => qr/Please fill/,
+            'License:ISC text' => qr/The ISC License/,
             'License:BSD-2-clause text' => qr/Please fill/,
             'License:"Artistic-2.0" text' => [
                 qr/The Artistic License 2.0/,

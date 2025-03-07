@@ -63,6 +63,45 @@ my @tests = (
         [ undef, 3, 3 ],
         [ ['2005-2017, GNUstep Application Project', 'LPGL-2+' ] ]
     ],
+    [
+        'weird bug with sdl2',
+        q!
+---
+-
+  - no-info-found
+  - UNKNOWN
+-
+  - |-
+    2009, Steven G. Johnson <stevenj@alum.mit.edu>
+    2009, Matteo Frigo
+  - GPL-3+
+-
+  - |-
+    2008, Steven G. Johnson <stevenj@alum.mit.edu>
+    2008, Matteo Frigo
+  - GPL-3+
+-
+  - 1996-2001, 2003-2011, Free Software
+  - GPL-2+
+-
+  - 2004, 2005, 2007-2009, Free Software Foundation
+  - UNKNOWN
+-
+  - 2004, 2005, 2007, 2008, Free Software Foundation, Inc.
+  - UNKNOWN
+-
+  - 2004, Free Software Foundation, Inc.
+  - UNKNOWN
+-
+  - 2004, 2005, 2007, 2009, Free Software Foundation, Inc.
+  - UNKNOWN
+!,
+        [undef,8,8,undef,undef,9,9,9],
+        [
+            ["2008, 2009, Steven G. Johnson <stevenj\@alum.mit.edu>\n2008, 2009, Matteo Frigo",'GPL-3+'],
+            ['2004, 2005, 2007-2009, Free Software Foundation, Inc.','UNKNOWN']
+        ]
+    ]
 );
 
 foreach my $t (@tests) {

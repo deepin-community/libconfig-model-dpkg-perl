@@ -344,8 +344,16 @@ supported by the library',
       },
       'Build-Profiles',
       {
-        'description' => 'A list of lists of (optionally negated) profile names, forming a conjunctive normal form expression in the same syntax as in the Build-Depends field',
-        'match' => '<!?[a-z0-9]+(?:\\s+!?[a-z0-9]+)*>(?:\\s+<!?[a-z0-9]+(?:\\s+!?[a-z0-9]+)*>)*',
+        'description' => 'Build-Profiles specifies the condition for which that binary package does or does not build. 
+
+This is expressed as a list of lists of (optionally negated) profile names, forming a conjunctive normal form expression in the same syntax as in the Build-Depends field.
+
+For instance:
+
+    Build-Profiles: <!cross> <!nocheck>
+
+See L<https://wiki.debian.org/BuildProfileSpec#The_Build-Profiles_field> for more details.',
+        'match' => '^<!?[a-z0-9.-]+(?:\\s+!?[a-z0-9.-]+)*>(?:\\s+<!?[a-z0-9.-]+(?:\\s+!?[a-z0-9.-]+)*>)*$',
         'type' => 'leaf',
         'value_type' => 'uniline'
       }

@@ -64,8 +64,8 @@ my @tests = (
             'source Priority' => 'optional',
             'binary:libdist-zilla-plugins-cjm-perl X-Comment' => qr/Debian #810023/,
 
-            'binary:libdist-zilla-plugins-cjm-perl Depends:0',
-            '${misc:Depends}',
+            'binary:libdist-zilla-plugins-cjm-perl Depends:0' => '${misc:Depends}',
+            'binary:libdist-zilla-plugins-cjm-perl Conflicts:0' => undef, # removed by apply-fix
             'source Vcs-Browser' ,'https://salsa.debian.org/perl-team/modules/packages/libdist-zilla-plugins-cjm-perl',
             'source Vcs-Git', 'https://salsa.debian.org/perl-team/modules/packages/libdist-zilla-plugins-cjm-perl.git',
         },
@@ -74,12 +74,19 @@ my @tests = (
             qr/dependency/,
             (qr/unnecessary/) x 3, qr/Dual dependency/, (qr/dependency/) x 2,
             qr/unnecessary/,
+            qr/applied on too old package/, # warning about Conflicts field
         ) ] ],
         apply_fix => 1,
         file_contents_like => {
             'debian/control' => [
                 # check that write order is tweaked for Standards-Version
                 qr!Standards-Version: [\d.]+\nVcs-Browser!
+            ]
+        },
+        file_contents_unlike => {
+            'debian/control' => [
+                # check that libuv0.10-dev conflicts was removed
+                qr!libuv0.10-dev!
             ]
         },
     },

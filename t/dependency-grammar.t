@@ -172,7 +172,14 @@ sub test_good {
                 name => 'mothur',
                 arch_restriction => ['!s390x'],
             }
-        ]
+        ],
+        [
+            'thing <nocil>',,
+            {
+                name => 'thing',
+                profile => [[ 'nocil'] ]
+            }
+        ],
     ) ;
 
     foreach my $td ( @tests ) {
@@ -208,7 +215,8 @@ sub test_errors {
         [
             'foo <stage3 cross> <stage1>'
             => q!Unknown build profile name 'stage3': 'Expected one of !
-             . q!cross pkg stage1 stage2 nobiarch nocheck nodoc nogolang nojava noperl nopython noudeb'!
+            . q!cross pkg stage1 stage2 nobiarch nocheck nocil nodoc nogolang noinsttest nojava !
+            . q!noperl nopython noruby nolua noguile noocaml nowasm nowindows noudeb'!
         ],
 
     ) ;

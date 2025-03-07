@@ -12,7 +12,6 @@ use Test::Exception;
 # use Test::LongString;
 use Test::Log::Log4perl;
 
-$::_use_log4perl_to_warn = 1;
 
 use lib "../lib";
 

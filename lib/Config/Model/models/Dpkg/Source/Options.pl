@@ -19,7 +19,9 @@ return [
     'element' => [
       'diff-ignore',
       {
-        'description' => 'perl regular expression to match files you want filtered out of the list of files for the diff.This is very helpful in cutting out extraneous files that get included in the diff, e.g. if you maintain your source in a revision control system and want to use a checkout to build a source package without including the additional files and directories that it will usually contain (e.g. CVS, .cvsignore, .svn/). The default regexp is already very exhaustive, but if you need to replace it, please note that by default it can match any part of a path, so if you want to match the begin of a filename or only full filenames, you will need to provide the necessary anchors (e.g. \'(^|/)\', \'($|/)\') yourself.',
+          'description' => 'perl regular expression to match files you want filtered out of the list of files for the diff.This is very helpful in cutting out extraneous files that get included in the diff,
+e.g. if you maintain your source in a revision control system and want to use a checkout to build a source package without including the additional files and directories that it will usually contain (e.g. CVS, .cvsignore, .svn/).
+The default regexp is already very exhaustive, but if you need to replace it, please note that by default it can match any part of a path, so if you want to match the begin of a filename or only full filenames, you will need to provide the necessary anchors (e.g. \'(^|/)\', \'($|/)\') yourself.',
         'summary' => 'perl regexp to filter out files for the diff',
         'type' => 'leaf',
         'value_type' => 'uniline'
@@ -35,14 +37,14 @@ return [
       {
         'choice' => [
           'gzip',
-          'gzip2',
+          'bzip2',
           'lzma',
           'xz'
         ],
-        'description' => 'gzip is the default compression. xz is only supported since dpkg-dev 1.15.5.',
-        'summary' => 'Specify  the compression to use for created files (tarballs and diffs).',
+        'description' => 'The default is xz for formats 2.0 and newer, and gzip for format 1.0. xz is only supported since dpkg-dev 1.15.5.',
+        'summary' => 'Specify the compression to use for created tarballs and diff files.',
         'type' => 'leaf',
-        'upstream_default' => 'gzip',
+        'upstream_default' => 'xz',
         'value_type' => 'enum'
       },
       'compression-level',

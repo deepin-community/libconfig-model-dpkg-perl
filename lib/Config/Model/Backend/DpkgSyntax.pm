@@ -13,6 +13,7 @@ use feature qw/postderef signatures/;
 no warnings qw/experimental::postderef experimental::signatures/;
 
 my $logger = get_logger("Backend.Dpkg.Syntax") ;
+my $user_logger = get_logger('User');
 
 sub parse_dpkg_file {
     my $self = shift ;
@@ -63,9 +64,7 @@ sub parse_dpkg_lines {
                     parsed_line => $line_nb,
                     message => "Comments are not allowed. (use -force option to drop comments)",
                 ) if $check eq 'yes' ;
-                my $msg = "File $file_path: Dropped comment line $line_nb";
-                $logger->error($msg) if $check eq 'skip';
-                $logger->warn($msg) if $check eq 'no';
+                $user_logger->warn("File $file_path: Dropped comment line $line_nb");
             }
         }
         elsif ( $l =~ m{^([\w\-]+)\s*:(?!//)} ) {  # keyword: but not http://

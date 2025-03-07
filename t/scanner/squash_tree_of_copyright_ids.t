@@ -194,8 +194,9 @@ pan:
 
 my $new_copyright_data = Load($copyrights_yml);
 push $new_copyright_data->@*, [
-    "2014, 2015, Masanori Mitsugi <mitsugi\@linux.vnet.ibm.com>\n"
-        . "2015, Daniel Adler <dadler\@uni-goettingen.de>",
+    "2015, Daniel Adler <dadler\@uni-goettingen.de>\n"
+    ."2014, 2015, Masanori Mitsugi <mitsugi\@linux.vnet.ibm.com>"
+    ,
     'ISC'
 ];
 

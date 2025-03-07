@@ -128,8 +128,8 @@ Copyright: 2014, 2015, Blaine Bublitz, Eric Schoffstall and other contributors
 License: Expat
 
 Files: make-iterator/*
-Copyright: 2012, 2013, moutjs team and contributors (http:moutjs.com)
-2014-2018, Jon Schlinkert.
+Copyright: 2014-2018, Jon Schlinkert.
+ 2012, 2013, moutjs team and contributors (http:moutjs.com)
 License: Expat
 
 Files: make-iterator/README.md
