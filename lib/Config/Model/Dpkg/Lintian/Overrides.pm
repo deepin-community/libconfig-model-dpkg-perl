@@ -63,9 +63,9 @@ around _check_value => sub ( $orig, $self, %args ) {
 
     $logger->info("around _check_value called for ".$self->location, "apply_fix: ", $apply_fix );
 
-    my ($ok, $value, $error, $warn) = $self->$orig( %args );
+    my ($value, $error, $warn) = $self->$orig( %args );
 
-    return ($ok, $value, $error, $warn) unless $value;
+    return ($value, $error, $warn) unless $value;
 
     my @lines = split /\n/, $value;
     foreach my $line (@lines) {
@@ -100,7 +100,7 @@ around _check_value => sub ( $orig, $self, %args ) {
     }
 
     my $new_overrides = $self->{data} = join("\n",@lines)."\n";
-    return ($ok, $new_overrides, $error, $warn);
+    return ($new_overrides, $error, $warn);
 };
 
 1;

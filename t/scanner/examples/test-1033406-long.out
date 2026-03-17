@@ -1,0 +1,32 @@
+Files: META6.json
+Copyright: no-info-found
+License: Artistic-2.0
+
+Files: README.md
+Copyright: 2017, Ronald Schmidt.
+ 2015, Raku Community Authors
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: debian/fill.copyright.blanks.yml
+Copyright: no-info-found
+License: Artistic-2.0
+
+Files: lib/URI.rakumod
+Copyright: 2017, Ronald Schmidt.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: texmf-dist/doc/generic/pst-barcode/images/rm4scc-1.eps
+Copyright: 2015, Barcode Writer in Pure PostScript - Version
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: texmf-dist/doc/latex/filedate/README
+Copyright: 2012, Uwe Lueck
+License: LPPL-1.3c
+
+Files: texmf-dist/tex/latex/bewerbung/bewerbung-cv-classic.sty
+Copyright: 2022, Version 1.3 André Hilbig, mail@andrehilbig.de
+License: UNKNOWN
+ Please fill license text from header of files

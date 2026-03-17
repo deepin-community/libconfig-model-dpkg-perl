@@ -1,0 +1,59 @@
+Source: node-axios
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Pirate Praveen <praveen@debian.org>
+Section: javascript
+Testsuite: autopkgtest-pkg-nodejs
+Priority: optional
+Build-Depends: debhelper-compat (= 13)
+ , dh-sequence-nodejs
+ , mocha <!nocheck>
+ , node-body-parser <!nocheck>
+ , node-builtins
+ , node-error-ex
+ , node-express <!nocheck>
+ , node-duplexer
+ , node-figures
+ , node-follow-redirects (>= 1.15.0) <!nocheck>
+ , node-form-data (>= 4)
+ , node-formidable <!nocheck>
+ , node-get-stream <!nocheck>
+ , node-gzip-size
+ , node-json-parse-better-errors
+ , node-pretty-bytes
+ , node-proxy-from-env <!nocheck>
+ , node-read-pkg
+ , node-rollup-plugin-alias
+ , node-rollup-plugin-babel
+ , node-rollup-plugin-commonjs
+ , node-rollup-plugin-json
+ , node-rollup-plugin-node-resolve
+ , node-rollup-plugin-terser
+ , node-validate-npm-package-license
+ , rollup
+Standards-Version: 4.7.0
+Vcs-Browser: https://salsa.debian.org/js-team/node-axios
+Vcs-Git: https://salsa.debian.org/js-team/node-axios.git
+Homepage: https://github.com/mzabriskie/axios
+Rules-Requires-Root: no
+
+Package: node-axios
+Architecture: all
+Depends: ${misc:Depends}
+ , node-follow-redirects (>= 1.15.0)
+ , node-form-data (>= 4)
+ , node-proxy-from-env
+Provides: libjs-axios
+Suggests: javascript-common
+ , libjs-bootstrap4
+Description: Promise based HTTP client for the browser and node.js
+ Features:
+  - Make XMLHttpRequests from the browser
+  - Make http requests from node.js
+  - Supports the Promise API
+  - Intercept request and response
+  - Transform request and response data
+  - Cancel requests
+  - Automatic transforms for JSON data
+  - Client side support for protecting against XSRF
+ .
+ Node.js is an event-based server-side JavaScript engine.

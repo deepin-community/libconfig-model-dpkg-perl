@@ -13,7 +13,6 @@ use 5.10.0;
 use warnings;
 use strict;
 
-$::_use_log4perl_to_warn = 1;
 
 my ($model, $trace) = init_test();
 
@@ -22,8 +21,7 @@ my $wr_dir = setup_test_dir();
 $wr_dir->child("debian")->mkpath() ;
 
 my $art_2_text = Software::LicenseMoreUtils->new_from_short_name({
-    short_name =>'Artistic-2',
-    holder => 'X. Ample'
+    short_name =>'Artistic-2'
 })->summary_or_text;
 $art_2_text =~ s/\t/    /g;
 $art_2_text =~ s!\n +\n!\n\n!g;
@@ -114,7 +112,14 @@ subtest 'Read and check debian/copyright' => sub {
         "Expat and/or Dummy",
         "check that 'and/or' statement"
     );
+
+    is(
+        $unit->grab_value(q!Files:"3rdparty/libatomic_ops/*" License full_license!,),
+        "Please fill license UNKNOWN from header of 3rdparty/libatomic_ops/*",
+        "check unknown license filler"
+    );
 };
+
 
 memory_cycle_ok($model, "memory cycles");
 

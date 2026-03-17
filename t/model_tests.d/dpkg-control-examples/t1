@@ -7,6 +7,7 @@ Build-Depends: debhelper ( >= 7  ), libfltk1.1-dev, libjpeg62-dev,
  libpng12-dev, libxft-dev,
  libxext-dev,  zlib1g-dev
 Standards-Version: 3.8.1
+Description: oops, no long description
 Vcs-Browser: http://svn.debian.org/wsvn/debian-med/trunk/packages/seaview/trunk/?rev=0&sc=0
 Vcs-Svn: svn://svn.debian.org/svn/debian-med/trunk/packages/seaview/trunk/
 Homepage: http://pbil.univ-lyon1.fr/software/seaview.html

@@ -1,0 +1,27 @@
+Source: libconfig-model-systemd-perl
+Standards-Version: 4.6.0
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders:
+ Dominique Dumont <dod@debian.org>,
+Section: perl
+Testsuite: autopkgtest-pkg-perl
+Priority: optional
+Build-Depends:
+ debhelper-compat (= 13),
+Build-Depends-Indep:
+ libconfig-model-perl (>= 3.456) <!nocheck>,
+ libconfig-model-tester-perl (>= 4.007) <!nocheck>,
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libconfig-model-systemd-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libconfig-model-systemd-perl.git
+Homepage: https://metacpan.org/release/Config-Model-Systemd
+Rules-Requires-Root: no
+
+Package: libconfig-model-systemd-perl
+Architecture: all
+Depends:
+ ${misc:Depends},
+ ${perl:Depends},
+ libconfig-model-perl (>= 3.456),
+Description: editor and validator for systemd configuration files
+ Config::Model::Systemd provides a configuration editor for the
+ [yada yada...]

@@ -120,22 +120,16 @@ sub fill_package_cache ($self, $c) {
             }
         }
     }
-    my @pkgs = keys %packages;
+    my @pkgs = sort keys %packages;
     Config::Model::Dpkg::Dependency::cache_info_from_madison ($self->node->instance,@pkgs);
     return;
 }
 
-sub read_sections {
-    my $self = shift ;
-    my $node = shift;
-    my $section_line = shift ;
-    my $section = shift;
-    my $check = shift || 'yes';
-
+sub read_sections ($self, $node, $section_line, $section, $check = 'yes') {
     my %sections ;
     for (my $i=0; $i < @$section ; $i += 2 ) {
         my $key = $section->[$i];
-        my $lc_key = lc($key); # key are not key sensitive
+        my $lc_key = lc($key); # key are not caps sensitive
         $sections{$lc_key} = [ $key , $section->[$i+1] ]; 
     }
 
@@ -146,23 +140,14 @@ sub read_sections {
     }
     
     # leftover sections should be either accepted or rejected
-    foreach my $lc_key (keys %sections) {
+    foreach my $lc_key (sort keys %sections) {
         my $ref = delete $sections{$lc_key} ;
         $self->store_section_element_in_tree ($node,$check, @$ref);
     }
     return;
 }
 
-#
-# New subroutine "store_section_element_in_tree" extracted - Mon Jul  4 13:35:50 2011.
-#
-sub store_section_element_in_tree {
-    my $self  = shift;
-    my $node  = shift;
-    my $check = shift;
-    my $key   = shift;
-    my $v_ref = shift;
-
+sub store_section_element_in_tree ($self, $node, $check, $key, $v_ref) {
     $logger->info( "reading key '$key' from control file (for node "
           . $node->location
           . ")" );
@@ -227,33 +212,12 @@ sub write ($self, %args) { ## no critic (ProhibitBuiltinHomonyms)
     return 1;
 }
 
-sub _re_order ($list, $move_after) {
-    my $i = 0;
-    while ( $i < $move_after->@* ) {
-        my $k = $move_after->[$i++];
-        my $v = $move_after->[$i++];
-        my ($ik, $iv);
-        my $j = 0;
-        map { $ik = $j if $_ eq $k; $iv = $j if $_ eq $v; $j++ } @$list;
-        next unless defined $ik and defined $iv;
-        splice @$list, $ik, 1; # remove $k from list
-        splice @$list, $iv, 0, $k; # add back $k after $v
-    }
-    return;
-}
-
-my @move_after = (
-    'Standards-Version' => 'Built-Using',
-);
-
 sub package_spec ( $self, $node ) {
     # can't use a static list as element can be created by user (with
     # the accept condition)
     my @list = $node->get_element_name;
-    _re_order(\@list, \@move_after);
     return $self->node_to_section($node, \@list)
 }
-
 
 1;
 

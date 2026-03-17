@@ -1,0 +1,745 @@
+COPYING	GPL-2	1989, 1991 Free Software Foundation, Inc.,
+Makefile.in	UNKNOWN	1994-2021 Free Software Foundation, Inc.
+aclocal.m4	FSFULLR	1996-2021 Free Software Foundation, Inc.
+autogen.sh	UNKNOWN	2006-2010 Karel Zak <kzak@redhat.com>
+configure	FSFUL	1992-1996, 1998-2017, 2020-2023 Free Software Foundation,
+meson.build	GPL-2	*No copyright*
+config/ar-lib	GPL-2+ with Autoconf-data exception	2010-2021 Free Software Foundation, Inc.
+config/compile	GPL-2+ with Autoconf-data exception	1999-2021 Free Software Foundation, Inc.
+config/config.guess	GPL-3+ with Autoconf-data exception	1992-2024 Free Software Foundation, Inc.
+config/config.rpath	FSFULLR	1996-2013 Free Software Foundation, Inc.
+config/config.sub	GPL-3+ with Autoconf-data exception	1992-2024 Free Software Foundation, Inc.
+config/depcomp	GPL-2+ with Autoconf-data exception	1999-2021 Free Software Foundation, Inc.
+config/install-sh	X11	1994 X Consortium
+config/ltmain.sh	(Expat and/or GPL-2+) with Libtool exception	1996-2019, 2021-2022 Free Software Foundation, Inc.
+config/missing	GPL-2+ with Autoconf-data exception	1996-2021 Free Software Foundation, Inc.
+config/py-compile	GPL-2+ with Autoconf-data exception	2000-2021 Free Software Foundation, Inc.
+config/ylwrap	GPL-2+ with Autoconf-data exception	1996-2021 Free Software Foundation, Inc.
+disk-utils/addpart.8.adoc	GPL	2007 Red Hat, Inc. / 2007 Karel Zak <kzak@redhat.com>
+disk-utils/addpart.c	GPL-2+	2012-2023 Karel Zak <kzak@redhat.com>
+disk-utils/blockdev.8.adoc	GPL	2007 Karel Zak <kzak@redhat.com> / 1998 Andries E. Brouwer (aeb@cwi.nl)
+disk-utils/blockdev.c	GPL-2+	2007-2023 Karel Zak <kzak@redhat.com>
+disk-utils/cfdisk.8.adoc	UNKNOWN	2014 Karel Zak <kzak@redhat.com> / 1994 Kevin E. Martin (martin@cs.unc.edu)
+disk-utils/cfdisk.c	GPL-2+	2014-2023 Karel Zak <kzak@redhat.com> / 1994 Kevin E. Martin (martin@cs.unc.edu)
+disk-utils/cramfs.h	GPL-2+	2008 Roy Peled, the.roy.peled -at- gmail / 2004-2006 Juliane Holzt, kju -at- fqdn.org
+disk-utils/cramfs_common.c	GPL-2+	2008 Roy Peled, the.roy.peled -at- gmail.com / 2004-2006 Juliane Holzt, kju -at- fqdn.org
+disk-utils/delpart.8.adoc	GPL	2007 Red Hat, Inc. / 2007 Karel Zak <kzak@redhat.com>
+disk-utils/delpart.c	GPL-2+	2012-2023 Karel Zak <kzak@redhat.com>
+disk-utils/fdformat.8.adoc	GPL	1992-1993 Rickard E. Faith (faith@cs.unc.edu)
+disk-utils/fdformat.c	GPL-2+	1992 Werner Almesberger
+disk-utils/fdisk-list.c	GPL-2+	2014 Karel Zak <kzak@redhat.com>
+disk-utils/fdisk-list.h	GPL-2+	2014-2023 Karel Zak <kzak@redhat.com>
+disk-utils/fdisk-menu.c	GPL-2+	2014 Karel Zak <kzak@redhat.com>
+disk-utils/fdisk.8.adoc	GPL	2013 Karel Zak <kzak@redhat.com> / 2012 Davidlohr Bueso <dave@gnu.org> / 1998 Andries E. Brouwer (aeb@cwi.nl) / 1992-1993 Rickard E. Faith (faith@cs.unc.edu)
+disk-utils/fdisk.c	GPL-1+	2012 Davidlohr Bueso <dave@gnu.org> / 2007-2013 Karel Zak <kzak@redhat.com> / 1992 A. V. Le Blanc (LeBlanc@mcc.ac.uk)
+disk-utils/fdisk.h	GPL-2+	2014-2023 Karel Zak <kzak@redhat.com>
+disk-utils/fsck.8.adoc	GPL	1993-1995 Theodore Ts'o.
+disk-utils/fsck.c	GPL-2+	2009-2014 Karel Zak <kzak@redhat.com> / 1993-2005 Theodore Ts'o.
+disk-utils/fsck.cramfs.c	GPL-2+	2000-2002 Transmeta Corporation
+disk-utils/fsck.minix.8.adoc	UNKNOWN	1992-1994 Rickard E. Faith (faith@cs.unc.edu)
+disk-utils/fsck.minix.c	GPL-2+	1991-1992 Linus Torvalds. This file may be redistributed
+disk-utils/isosize.c	GPL-2+	2023 Karel Zak <kzak@redhat.com> / 2000 Andries Brouwer
+disk-utils/minix_programs.h	GPL-2+	2011 Sami Kerola <kerolasa@iki.fi>
+disk-utils/mkfs.bfs.8.adoc	UNKNOWN	1999 Andries E. Brouwer (aeb@cwi.nl)
+disk-utils/mkfs.bfs.c	GPL-2+	1999 Andries E. Brouwe
+disk-utils/mkfs.c	GPL-2+	Ron Sommeling, <sommel@sci.kun.nl> / Fred N. van Kempen, <waltje@uWalt.NL.Mugnet.ORG> / David Engel, <david@ods.com>
+disk-utils/mkfs.cramfs.c	GPL-2+	1999-2002 Transmeta Corporation
+disk-utils/mkfs.minix.8.adoc	GPL	2013 Karel Zak <kzak@redhat.com> / 2012 Davidlohr Bueso <dave@gnu.org> / 1998 Andries E. Brouwer (aeb@cwi.nl) / 1992-1993 Rickard E. Faith (faith@cs.unc.edu)
+disk-utils/mkfs.minix.c	GPL-2+	1991 Linus Torvalds. This file may be redistributed as per
+disk-utils/mkswap.8.adoc	GPL	1998 Andries E. Brouwer (aeb@cwi.nl)
+disk-utils/mkswap.c	GPL-2+	2007-2014 Karel Zak <kzak@redhat.com> / 1999 Jakub Jelinek <jj@ultra.linux.cz> / 1991 Linus Torvalds
+disk-utils/partx.8.adoc	GPL	2010 Davidlohr Bueso <dave@gnu.org> / 2007 Red Hat, Inc. / 2007 Karel Zak <kzak@redhat.com>
+disk-utils/partx.c	GPL-2+	2010 Davidlohr Bueso <dave@gnu.org>
+disk-utils/raw.c	GPL-2	Red Hat Software, 1999, 2000
+disk-utils/resizepart.8.adoc	GPL	2012 Vivek Goyal <vgoyal@redhat.com> / 2012 Red Hat, Inc.
+disk-utils/resizepart.c	GPL-2+	2012 Karel Zak <kzak@redhat.com>
+disk-utils/sfdisk.8.adoc	UNKNOWN	2014 Karel Zak <kzak@redhat.com>
+disk-utils/sfdisk.c	GPL-1+	2014 Karel Zak <kzak@redhat.com> / 1995 Andries E. Brouwer (aeb@cwi.nl)
+disk-utils/swaplabel.8.adoc	GPL	2010 Jason Borden <jborden@bluehost.com>
+disk-utils/swaplabel.c	GPL-2+	2010 Karel Zak <kzak@redhat.com> / 2010 Jason Borden <jborden@bluehost.com>
+include/all-io.h	public-domain	*No copyright*
+include/audit-arch.h	LGPL-2.1	2023 Thomas Weißschuh <thomas@t-8ch.de>
+include/bitops.h	public-domain	*No copyright*
+include/blkdev.h	public-domain	*No copyright*
+include/buffer.h	public-domain	*No copyright*
+include/c.h	public-domain	*No copyright*
+include/c_strtod.h	LGPL-2.1	*No copyright*
+include/caputils.h	GPL-2+	*No copyright*
+include/cctype.h	LGPL-2.1+	2000-2003, 2006, 2008-2023 Free Software Foundation, Inc.
+include/closestream.h	public-domain	*No copyright*
+include/color-names.h	public-domain	2012-2015 Karel Zak <kzak@redhat.com>
+include/colors.h	LGPL-2.1	2012-2014 Karel Zak <kzak@redhat.com> / 2012 Ondrej Oprala <ooprala@redhat.com>
+include/column-list-table.h	GPL-2+	2023 Red Hat, Inc.
+include/coverage.h	public-domain	*No copyright*
+include/cpuset.h	LGPL-2.1+	*No copyright*
+include/crc32.h	public-domain	*No copyright*
+include/crc32c.h	public-domain	*No copyright*
+include/crc64.h	Expat	*No copyright*
+include/debug.h	LGPL-2.1	2014 Ondrej Oprala <ooprala@redhat.com> / 2014 Karel Zak <kzak@redhat.com>
+include/debugobj.h	LGPL-2.1	2014 Ondrej Oprala <ooprala@redhat.com> / 2014 Karel Zak <kzak@redhat.com>
+include/encode.h	LGPL-2.1	*No copyright*
+include/env.h	public-domain	*No copyright*
+include/fileeq.h	public-domain	*No copyright*
+include/fileutils.h	public-domain	*No copyright*
+include/fuzz.h	public-domain	*No copyright*
+include/idcache.h	public-domain	*No copyright*
+include/ismounted.h	GPL-2	*No copyright*
+include/iso9660.h	public-domain	*No copyright*
+include/jsonwrt.h	public-domain	*No copyright*
+include/linux_version.h	public-domain	*No copyright*
+include/list.h	LGPL	2008 Karel Zak <kzak@redhat.com> / 1999-2008 Theodore Ts'o
+include/logindefs.h	UNKNOWN	2003-2005 Thorsten Kukuk
+include/loopdev.h	public-domain	*No copyright*
+include/mangle.h	public-domain	*No copyright*
+include/match.h	LGPL	2011 Karel Zak <kzak@redhat.com>
+include/mbsalign.h	LGPL-2.1+	2010-2013 Karel Zak <kzak@redhat.com> / 2009-2010 Free Software Foundation, Inc.
+include/mbsedit.h	LGPL-2.1	*No copyright*
+include/md5.h	public-domain	*No copyright*
+include/minix.h	public-domain	*No copyright*
+include/monotonic.h	public-domain	*No copyright*
+include/mount-api-utils.h	public-domain	*No copyright*
+include/namespace.h	public-domain	*No copyright*
+include/nls.h	public-domain	*No copyright*
+include/optutils.h	public-domain	*No copyright*
+include/pager.h	GPL-2	*No copyright*
+include/partx.h	public-domain	*No copyright*
+include/path.h	public-domain	*No copyright*
+include/pathnames.h	public-domain	*No copyright*
+include/pidfd-utils.h	public-domain	*No copyright*
+include/plymouth-ctrl.h	GPL-2+	2016 Werner Fink <werner@suse.de> / 2016 SUSE Linux GmbH
+include/procfs.h	public-domain	2021 Karel Zak <kzak@redhat.com>
+include/pt-bsd.h	public-domain	*No copyright*
+include/pt-gpt-partnames.h	public-domain	*No copyright*
+include/pt-mbr-partnames.h	public-domain	*No copyright*
+include/pt-mbr.h	public-domain	*No copyright*
+include/pt-sgi.h	public-domain	*No copyright*
+include/pt-sun.h	public-domain	*No copyright*
+include/pty-session.h	public-domain	*No copyright*
+include/pwdutils.h	public-domain	*No copyright*
+include/randutils.h	BSD-3-clause	*No copyright*
+include/rpmatch.h	public-domain	*No copyright*
+include/selinux-utils.h	public-domain	*No copyright*
+include/sha1.h	public-domain	*No copyright*
+include/sha256.h	public-domain	*No copyright*
+include/shells.h	GPL-2	*No copyright*
+include/signames.h	public-domain	*No copyright*
+include/statfs_magic.h	public-domain	*No copyright*
+include/strutils.h	public-domain	*No copyright*
+include/strv.h	LGPL-2.1	*No copyright*
+include/swapheader.h	public-domain	*No copyright*
+include/sysfs.h	public-domain	2011 Karel Zak <kzak@redhat.com>
+include/timer.h	public-domain	*No copyright*
+include/timeutils.h	LGPL-2.1+	2014 Karel Zak <kzak@redhat.com> / 2010 Lennart Poettering
+include/ttyutils.h	public-domain	*No copyright*
+include/widechar.h	public-domain	*No copyright*
+include/xalloc.h	LGPL-2.1	2010-2022 Karel Zak <kzak@redhat.com> / 2010 Davidlohr Bueso <dave@gnu.org>
+include/xxhash.h	BSD-2-clause	2012-2020 Yann Collet
+lib/blkdev.c	public-domain	*No copyright*
+lib/buffer.c	public-domain	*No copyright*
+lib/c_strtod.c	LGPL	2021 Karel Zak <kzak@redhat.com>
+lib/canonicalize.c	LGPL	2009-2013 Karel Zak <kzak@redhat.com>
+lib/caputils.c	GPL-2+	*No copyright*
+lib/color-names.c	public-domain	2012-2015 Karel Zak <kzak@redhat.com>
+lib/colors.c	LGPL-2.1	2012-2014 Karel Zak <kzak@redhat.com> / 2012 Ondrej Oprala <ooprala@redhat.com>
+lib/cpuset.c	LGPL-2.1	2010 Karel Zak <kzak@redhat.com>
+lib/crc32.c	UNKNOWN	1986 Gary S. Brown. You may use this program, or
+lib/crc32c.c	UNKNOWN	1986 Gary S. Brown. You may use this program, or
+lib/crc64.c	Expat	2016 Lammert Bies
+lib/encode.c	LGPL	2020 Pali Rohár <pali.rohar@gmail.com> / 2009 Karel Zak <kzak@redhat.com> / 2008 Kay Sievers <kay.sievers@vrfy.org>
+lib/env.c	public-domain	*No copyright*
+lib/exec_shell.c	GPL-2+	*No copyright*
+lib/fileeq.c	public-domain	*No copyright*
+lib/fileutils.c	public-domain	2012-2024 Karel Zak <kzak@redhat.com> / 2012 Sami Kerola <kerolasa@iki.fi>
+lib/idcache.c	public-domain	*No copyright*
+lib/ismounted.c	UNKNOWN	1995-2000, 2008 Theodore Ts'o.
+lib/jsonwrt.c	public-domain	*No copyright*
+lib/langinfo.c	public-domain	2010 Karel Zak <kzak@redhat.com>
+lib/linux_version.c	public-domain	*No copyright*
+lib/logindefs.c	UNKNOWN	2003-2005 Thorsten Kukuk
+lib/loopdev.c	public-domain	*No copyright*
+lib/mangle.c	public-domain	2010 Karel Zak <kzak@redhat.com>
+lib/match.c	LGPL	2011 Karel Zak <kzak@redhat.com>
+lib/mbsalign.c	LGPL-2.1+	2009-2010 Free Software Foundation, Inc.
+lib/mbsedit.c	LGPL-2.1	2017 Karel Zak <kzak@redhat.com>
+lib/md5.c	public-domain	*No copyright*
+lib/monotonic.c	public-domain	*No copyright*
+lib/pager.c	GPL-2	*No copyright*
+lib/path.c	public-domain	2018 Karel Zak <kzak@redhat.com>
+lib/plymouth-ctrl.c	GPL-2+	2016 Werner Fink <werner@suse.de> / 2016 SUSE Linux GmbH
+lib/procfs.c	public-domain	2021 Karel Zak <kzak@redhat.com>
+lib/pty-session.c	public-domain	*No copyright*
+lib/pwdutils.c	public-domain	*No copyright*
+lib/randutils.c	BSD-3-clause	*No copyright*
+lib/selinux-utils.c	public-domain	*No copyright*
+lib/sha1.c	public-domain	*No copyright*
+lib/sha256.c	public-domain	*No copyright*
+lib/shells.c	GPL-2	*No copyright*
+lib/signames.c	public-domain	*No copyright*
+lib/strutils.c	public-domain	2010 Karel Zak <kzak@redhat.com> / 2010 Davidlohr Bueso <dave@gnu.org>
+lib/strv.c	LGPL-2.1+	2015-2022 Karel Zak <kzak@redhat.com> / 2010 Lennart Poettering
+lib/swapprober.c	public-domain	*No copyright*
+lib/sysfs.c	public-domain	2011 Karel Zak <kzak@redhat.com>
+lib/terminal-colors.d.5.adoc	GPL	2014 Red Hat, Inc. / 2014 Ondrej Oprala <ooprala@redhat.com> / 2014 Karel Zak <kzak@redhat.com>
+lib/timer.c	public-domain	*No copyright*
+lib/timeutils.c	LGPL-2.1+	2014 Karel Zak <kzak@redhat.com> / 2010 Lennart Poettering
+lib/ttyutils.c	public-domain	*No copyright*
+lib/xxhash.c	BSD-2-clause	2012-2020 Yann Collet
+libblkid/COPYING	LGPL-2.1+	*No copyright*
+libblkid/libblkid.3	LGPL-2	*No copyright*
+libblkid/libblkid.3.adoc	LGPL-2	2001 Andreas Dilger (adilger@turbolinux.com)
+libfdisk/COPYING	LGPL-2.1+	*No copyright*
+liblastlog2/COPYING	BSD-2-clause	2023 Thorsten Kukuk
+liblastlog2/lastlog2.pc.in	BSD-2-clause	*No copyright*
+libmount/COPYING	LGPL-2.1+	*No copyright*
+libmount/mount.pc.in	LGPL-2.1+	2008-2018 Karel Zak <kzak@redhat.com>
+libsmartcols/COPYING	LGPL-2.1+	*No copyright*
+libsmartcols/scols-filter.5.adoc	GPL	2023 Karel Zak <kzak@redhat.com>
+libuuid/COPYING	BSD-3-clause	*No copyright*
+login-utils/auth.c	UNKNOWN	2012 Cody Maloney <cmaloney@theoreticalchaos.com>
+login-utils/auth.h	UNKNOWN	2012 Cody Maloney <cmaloney@theoreticalchaos.com>
+login-utils/chfn.1.adoc	GPL	1994 salvatore valente <svalente@athena.mit.edu>
+login-utils/chfn.c	UNKNOWN	2012 Cody Maloney <cmaloney@theoreticalchaos.com> / 1994 salvatore valente <svalente@athena.mit.edu>
+login-utils/chsh.1.adoc	GPL	1994 salvatore valente <svalente@athena.mit.edu>
+login-utils/chsh.c	UNKNOWN	2012 Cody Maloney <cmaloney@theoreticalchaos.com> / 1994 salvatore valente <svalente@athena.mit.edu>
+login-utils/last.1.adoc	GPL-2+	1998-2004 Miquel van Smoorenburg.
+login-utils/last.c	GPL-2+	2013 Ondrej Oprala <ooprala@redhat.com> / 1991-2004 Miquel van Smoorenburg.
+login-utils/libuser.c	UNKNOWN	2012 Cody Maloney <cmaloney@theoreticalchaos.com>
+login-utils/libuser.h	UNKNOWN	2012 Cody Maloney <cmaloney@theoreticalchaos.com>
+login-utils/login.1.adoc	GPL	1993 Rickard E. Faith (faith@cs.unc.edu)
+login-utils/login.c	UNKNOWN	2011 Karel Zak <kzak@redhat.com>
+login-utils/lslogins.1.adoc	GPL	2014 Ondrej Oprala (ondrej.oprala@gmail.com)
+login-utils/lslogins.c	GPL-2+	2014 Ondrej Oprala <ooprala@redhat.com> / 2014 Karel Zak <kzak@redhat.com>
+login-utils/newgrp.1.adoc	public-domain	*No copyright*
+login-utils/nologin.c	UNKNOWN	2013 Karel Zak <kzak@redhat.com>
+login-utils/setpwnam.c	LGPL-2+	1994 Salvatore Valente <svalente@mit.edu>
+login-utils/setpwnam.h	LGPL-2+	1994 Salvatore Valente <svalente@mit.edu> / 1994 Martin Schulze <joey@infodrom.north.de>
+login-utils/su-common.c	GPL-2+	2016-2017 Karel Zak <kzak@redhat.com> / 2012 SUSE Linux Products GmbH, Nuernberg / 1992-2006 Free Software Foundation, Inc.
+login-utils/sulogin-consoles.c	GPL-2+	2012 Werner Fink <werner@suse.de> / 2012 Karel Zak <kzak@redhat.com> / 2011 SuSE LINUX Products GmbH
+login-utils/sulogin-consoles.h	GPL-2+	2012 Werner Fink <werner@suse.de> / 2011 SuSE LINUX Products GmbH
+login-utils/sulogin.8.adoc	GPL-2+	2012 Karel Zak <kzak@redhat.com> / 1998-2006 Miquel van Smoorenburg.
+login-utils/sulogin.c	GPL-2+	2012 Werner Fink <werner@suse.de> / 2012 Karel Zak <kzak@redhat.com> / 1998-2003 Miquel van Smoorenburg.
+login-utils/utmpdump.1.adoc	GPL-2+	2010 Michael Krapp
+login-utils/utmpdump.c	GPL-2+	2012 Karel Zak <kzak@redhat.com> / 1998 Danek Duvall <duvall@alumni.princeton.edu> / 1991-2000 Miquel van Smoorenburg <miquels@cistron.nl>
+login-utils/vipw.8.adoc	BSD-4-Clause-UC	1983, 1991 The Regents of the University of California.
+login-utils/vipw.c	BSD-4-Clause-UC	1987 Regents of the University of California.
+m4/ax_check_vscript.m4	FSFAP	2014 Kevin Cernekee <cernekee@gmail.com>
+m4/ax_compare_version.m4	FSFAP	2008 Tim Toolan <toolan@ele.uri.edu>
+m4/compiler.m4	FSFULLR	2008-2011 Free Software Foundation, Inc.
+m4/gettext.m4	FSFULLR and/or GPL and/or LGPL	1995-2013 Free Software Foundation, Inc.
+m4/iconv.m4	FSFULLR	2000-2002, 2007-2013 Free Software Foundation, Inc.
+m4/intlmacosx.m4	FSFULLR and/or GPL and/or LGPL	2004-2013 Free Software Foundation, Inc.
+m4/lib-ld.m4	FSFULLR	1996-2003, 2009-2013 Free Software Foundation, Inc.
+m4/lib-link.m4	FSFULLR	2001-2013 Free Software Foundation, Inc.
+m4/lib-prefix.m4	FSFULLR	2001-2005, 2008-2013 Free Software Foundation, Inc.
+m4/libtool.m4	(FSFULLR and/or GPL-2) with Libtool exception	1996-2001, 2003-2019, 2021-2022 Free Software
+m4/ltoptions.m4	FSFULLR	2004-2005, 2007-2009, 2011-2019, 2021-2022 Free
+m4/ltsugar.m4	FSFULLR	2004-2005, 2007-2008, 2011-2019, 2021-2022 Free Software
+m4/ltversion.m4	FSFULLR	2004, 2011-2019, 2021-2022 Free Software Foundation,
+m4/lt~obsolete.m4	FSFULLR	2004-2005, 2007, 2009, 2011-2019, 2021-2022 Free
+m4/nls.m4	FSFULLR and/or GPL and/or LGPL	1995-2003, 2005-2006, 2008-2013 Free Software Foundation,
+m4/pkg.m4	GPL-2+ with Autoconf-data exception	2012-2015 Dan Nicholson <dbn.lists@gmail.com> / 2004 Scott James Remnant <scott@netsplit.com>.
+m4/po.m4	FSFULLR and/or GPL and/or LGPL	1995-2013 Free Software Foundation, Inc.
+m4/progtest.m4	FSFULLR and/or GPL and/or LGPL	1996-2003, 2005, 2008-2013 Free Software Foundation, Inc.
+m4/year2038.m4	GPL-3+	1992-1996, 1998-2017, 2020-2023 Free Software
+misc-utils/blkid.8.adoc	GPL	2000 Andreas Dilger (adilger@turbolinux.com)
+misc-utils/blkid.c	LGPL	2001 Andreas Dilger
+misc-utils/cal.1.adoc	BSD-4-Clause-UC	1989-1990, 1993 The Regents of the University of California.
+misc-utils/cal.c	BSD-4-Clause-UC	1989, 1993-1994 The Regents of the University of California.
+misc-utils/enosys.c	GPL-2+	2023 Thomas Weißschuh <thomas@t-8ch.de>
+misc-utils/exch.c	GPL-2+	2023 Red Hat, Inc.
+misc-utils/fadvise.c	GPL-2+	2022 Red Hat, Inc.
+misc-utils/fincore.1.adoc	GPL	2017 Red Hat, Inc.
+misc-utils/fincore.c	GPL-2+	2017 Red Hat, Inc.
+misc-utils/findfs.8.adoc	GPL	1993-1995 Theodore Ts'o.
+misc-utils/findfs.c	UNKNOWN	2009 Karel Zak <kzak@redhat.com>
+misc-utils/findmnt.c	GPL-2+	2010-2015 Red Hat, Inc.
+misc-utils/getopt.c	GPL-2+	1997-2014 Frodo Looijaard <frodo@frodo.looijaard.name>
+misc-utils/hardlink.1.adoc	Expat	2021 Karel Zak <kzak@redhat.com> / 2008-2012 Julian Andres Klode. See hardlink.c for license.
+misc-utils/hardlink.c	Expat	2021 Karel Zak <kzak@redhat.com> / 2008-2014 Julian Andres Klode <jak@jak-linux.org>
+misc-utils/kill.1.adoc	GPL	1994 Salvatore Valente (svalente@mit.edu) / 1992 Rickard E. Faith (faith@cs.unc.edu)
+misc-utils/kill.c	BSD-4-Clause-UC	1988, 1993-1994 The Regents of the University of California.
+misc-utils/lastlog2.8.adoc	GPL	2023 Thorsten Kukuk (kukuk@suse.de)
+misc-utils/lastlog2.c	BSD-2-clause	2023 Thorsten Kukuk <kukuk@suse.com>
+misc-utils/logger.1.adoc	BSD-4-Clause-UC	1983, 1990, 1993 The Regents of the University of California.
+misc-utils/logger.c	BSD-4-Clause-UC	1983, 1993 The Regents of the University of California.
+misc-utils/look.1.adoc	BSD-4-Clause-UC	1990, 1993 The Regents of the University of California.
+misc-utils/look.c	BSD-4-Clause-UC	1991, 1993 The Regents of the University of California.
+misc-utils/lsblk-devtree.c	UNKNOWN	2018 Karel Zak <kzak@redhat.com>
+misc-utils/lsblk.c	GPL-2+	2010-2018 Red Hat, Inc.
+misc-utils/lsblk.h	UNKNOWN	2010-2018 Red Hat, Inc.
+misc-utils/lsclocks.c	GPL-2+	2023 Thomas Weißschuh <thomas@t-8ch.de>
+misc-utils/lsfd-bdev.c	GPL-2+	2021 Red Hat, Inc.
+misc-utils/lsfd-cdev.c	GPL-2+	2021 Red Hat, Inc.
+misc-utils/lsfd-decode-file-flags.c	GPL-2+	2022 Red Hat, Inc.
+misc-utils/lsfd-fifo.c	GPL-2+	2021 Red Hat, Inc.
+misc-utils/lsfd-file.c	GPL-2+	2021 Red Hat, Inc.
+misc-utils/lsfd-pidfd.c	GPL-2+	2024 Xi Ruoyao <xry111@xry111.site>
+misc-utils/lsfd-pidfd.h	GPL-2+	2024 Xi Ruoyao <xry111@xry111.site>
+misc-utils/lsfd-sock-xinfo.c	GPL-2+	2022 Red Hat, Inc.
+misc-utils/lsfd-sock.c	GPL-2+	2021 Red Hat, Inc.
+misc-utils/lsfd-sock.h	GPL-2+	2022 Red Hat, Inc.
+misc-utils/lsfd-unkn.c	GPL-2+	2021 Red Hat, Inc.
+misc-utils/lsfd.1.adoc	GPL	2021 Red Hat, Inc.
+misc-utils/lsfd.c	GPL-2+	2021 Red Hat, Inc.
+misc-utils/lsfd.h	GPL-2+	2021 Red Hat, Inc.
+misc-utils/lslocks.8.adoc	GPL	2012 Davidlohr Bueso <dave@gnu.org> / 1994 Salvatore Valente (svalente@mit.edu) / 1992 Rickard E. Faith (faith@cs.unc.edu)
+misc-utils/lslocks.c	GPL-2+	2012 Davidlohr Bueso <dave@gnu.org>
+misc-utils/mcookie.c	public-domain	*No copyright*
+misc-utils/namei.c	GPL-2+	2008 Karel Zak <kzak@redhat.com>
+misc-utils/pipesz.c	GPL	2022 Nathan Sharp
+misc-utils/rename.1.adoc	public-domain	*No copyright*
+misc-utils/test_uuidd.c	UNKNOWN	2015 Karel Zak <kzak@redhat.com> / 2006 Hewlett-Packard Development Company, L.P.
+misc-utils/uuidd.8.adoc	GPL	2007 Theodore Ts'o.
+misc-utils/uuidd.c	UNKNOWN	2007 Theodore Ts'o
+misc-utils/uuidgen.1.adoc	GPL	1999 Andreas Dilger (adilger@enel.ucalgary.ca)
+misc-utils/uuidgen.c	UNKNOWN	1999 Andreas Dilger and Theodore Ts'o
+misc-utils/uuidparse.1.adoc	UNKNOWN	2017 Sami Kerola
+misc-utils/uuidparse.c	BSD-3-clause	2017 Sami Kerola / 1998-1999 Theodore Ts'o.
+misc-utils/waitpid.c	GPL-2+	2022 Thomas Weißschuh <thomas@t-8ch.de>
+misc-utils/whereis.1.adoc	BSD-4-Clause-UC	1980, 1990 The Regents of the University of California.
+misc-utils/whereis.c	BSD-4-Clause-UC	1980 The Regents of the University of California.
+misc-utils/wipefs.8.adoc	GPL	2009 Karel Zak.
+misc-utils/wipefs.c	GPL-2+	2009 Red Hat, Inc.
+pam_lastlog2/COPYING	BSD-2-clause	2023 Thorsten Kukuk
+schedutils/chrt.1.adoc	GPL-2	2015 Karel Zak <kzak@redhat.com> / 2004 Robert Love
+schedutils/chrt.c	GPL-2	2004 Robert Love
+schedutils/ionice.c	GPL-2	2005 Jens Axboe <jens@axboe.dk>
+schedutils/sched_attr.h	GPL-2	2020-2021 Qais Yousef / 2020-2021 Arm Ltd / 2004 Robert Love
+schedutils/taskset.1	UNKNOWN	2004 Robert M. Love. This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+schedutils/taskset.1.adoc	GPL-2	2004 Robert Love
+schedutils/taskset.c	GPL-2	2010 Karel Zak <kzak@redhat.com> / 2004 Robert Love
+schedutils/uclampset.1.adoc	GPL-2	2020-2021 Qais Yousef <qyousef@layalina.io> / 2020-2021 Arm Ltd
+schedutils/uclampset.c	GPL-2	2020-2021 Qais Yousef / 2020-2021 Arm Ltd
+sys-utils/blkdiscard.c	GPL-2+	2012 Red Hat, Inc.
+sys-utils/blkpr.c	GPL-2+	2021-2022 zhenwei pi <pizhenwei@bytedance.com>
+sys-utils/blkzone.c	GPL-2+	2017 Karel Zak <kzak@redhat.com> / 2015-2016 Seagate Technology PLC
+sys-utils/chcpu.8	UNKNOWN	IBM Corp. 2011
+sys-utils/chcpu.8.adoc	UNKNOWN	IBM Corp. 2011
+sys-utils/chcpu.c	GPL-2+	IBM Corp. 2011
+sys-utils/chmem.c	GPL-2+	IBM Corp. 2016
+sys-utils/choom.c	GPL-2+	2018 Karel Zak <kzak@redhat.com>
+sys-utils/ctrlaltdel.8.adoc	GPL	1992-1993 Rickard E. Faith (faith@cs.unc.edu)
+sys-utils/ctrlaltdel.c	GPL-2+	1992-1993 Rickard E. Faith <faith@cs.unc.edu> / 1992 Peter Orbaek <poe@daimi.aau.dk>
+sys-utils/dmesg.1.adoc	GPL	1993 Rickard E. Faith (faith@cs.unc.edu)
+sys-utils/dmesg.c	GPL-2+	2011-2023 Karel Zak <kzak@redhat.com> / 1993 Theodore Ts'o <tytso@athena.mit.edu>
+sys-utils/eject.1.adoc	GPL-2+	2012 Karel Zak <kzak@redhat.com>. / 1994-2005 Jeff Tranter (tranter@pobox.com)
+sys-utils/eject.c	GPL-2+	Michal Luscon <mluscon@redhat.com> / 2012 Karel Zak <kzak@redhat.com> / 1994-2005 Jeff Tranter (tranter@pobox.com)
+sys-utils/fallocate.c	GPL	2008-2009 Red Hat, Inc. / 2003-2005 Silicon Graphics, Inc.
+sys-utils/flock.1	UNKNOWN	2003-2006 H. Peter Anvin. This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+sys-utils/flock.1.adoc	Expat	2003-2006 H. Peter Anvin -
+sys-utils/flock.c	Expat	2003-2005 H. Peter Anvin -
+sys-utils/fsfreeze.c	GPL-1+	2010 Hajime Taira <htaira@redhat.com>
+sys-utils/fstab.5.adoc	BSD-4-Clause-UC	1980, 1989, 1991 The Regents of the University of California.
+sys-utils/fstrim.c	GPL-2+	2010 Red Hat, Inc.
+sys-utils/hwclock-cmos.c	GPL-2+	*No copyright*
+sys-utils/hwclock-parse-date.c	GPL-3+ with Bison-2.2 exception	1984, 1989-1990, 2000-2015, 2018-2021 Free Software Foundation,
+sys-utils/hwclock-parse-date.y	GPL-3+	1999-2000, 2002-2017 Free Software Foundation, Inc.
+sys-utils/hwclock-rtc.c	GPL-2+	*No copyright*
+sys-utils/hwclock.c	GPL-2+	2007-2023 Karel Zak <kzak@redhat.com> / 1992 Charles Hedrick, hedrick@cs.rutgers.edu
+sys-utils/hwclock.h	GPL-2+	*No copyright*
+sys-utils/ipcmk.1.adoc	GPL	2008 Hayden A. James (hayden.james@gmail.com)
+sys-utils/ipcmk.c	GPL-2+	2008 Karel Zak <kzak@redhat.com> / 2008 Hayden A. James (hayden.james@gmail.com)
+sys-utils/ipcrm.1.adoc	GPL	2002 Andre C. Mazzone (linuxdev@karagee.com)
+sys-utils/ipcrm.c	GPL-2+	1993 rishna balasubramanian
+sys-utils/ipcs.1.adoc	GPL	1993 Rickard E. Faith (faith@cs.unc.edu)
+sys-utils/ipcs.c	GPL-2+	2006-2023 Karel Zak <kzak@redhat.com> / 1995 ike Jagdis <jaggy@purplet.demon.co.uk>
+sys-utils/ipcutils.c	GPL-2+	2012-2023 Karel Zak <kzak@redhat.com> / 2012 Sami Kerola <kerolasa@iki.fi>
+sys-utils/ipcutils.h	GPL-2+	2012-2023 Karel Zak <kzak@redhat.com> / 2012 Sami Kerola <kerolasa@iki.fi>
+sys-utils/irq-common.c	LGPL-2.1+	2020 Karel Zak <kzak@redhat.com> / 2019 zhenwei pi <pizhenwei@bytedance.com>
+sys-utils/irq-common.h	LGPL-2.1+	2012-2023 Karel Zak <kzak@redhat.com> / 2012 Sami Kerola <kerolasa@iki.fi>
+sys-utils/irqtop.c	LGPL-2.1+	2020 Karel Zak <kzak@redhat.com> / 2019 zhenwei pi <pizhenwei@bytedance.com>
+sys-utils/ldattach.8.adoc	GPL-2+	2008 Tilman Schmidt (tilman@imap.cc)
+sys-utils/ldattach.c	GPL-2+	*No copyright*
+sys-utils/losetup.c	GPL-2+	2011-2023 Karel Zak <kzak@redhat.com>
+sys-utils/lscpu-arm.c	GPL-2+	2018 Riku Voipio <riku.voipio@iki.fi>
+sys-utils/lscpu-cpu.c	GPL-2+	2020 Karel Zak <kzak@redhat.com>
+sys-utils/lscpu-cputype.c	GPL-2+	2020 Karel Zak <kzak@redhat.com>
+sys-utils/lscpu-dmi.c	GPL-2	2020 FUJITSU LIMITED.
+sys-utils/lscpu-topology.c	GPL-2+	2008-2023 Karel Zak <kzak@redhat.com> / 2008 Cai Qian <qcai@redhat.com>
+sys-utils/lscpu-virt.c	GPL-2+	2008-2023 Karel Zak <kzak@redhat.com> / 2008 Cai Qian <qcai@redhat.com>
+sys-utils/lscpu.c	GPL-2+	2008-2023 Karel Zak <kzak@redhat.com> / 2008 Cai Qian <qcai@redhat.com>
+sys-utils/lscpu.h	GPL-2+	2013-2023 Karel Zak <kzak@redhat.com> / 2013 Ondrej Oprala <ooprala@redhat.com>
+sys-utils/lsipc.c	GPL-2+	2015 Ondrej Oprala <ooprala@redhat.com> / 2015 Karel Zak <ooprala@redhat.com>
+sys-utils/lsirq.c	LGPL-2.1+	2020 Karel Zak <kzak@redhat.com> / 2019 zhenwei pi <pizhenwei@bytedance.com>
+sys-utils/lsmem.c	GPL-2+	IBM Corp. 2016 / 2016 Karel Zak <kzak@redhat.com>
+sys-utils/lsns.8.adoc	GPL	2015 Karel Zak <kzak@redhat.com>
+sys-utils/lsns.c	GPL-2+	2015 Karel Zak <kzak@redhat.com>
+sys-utils/mount.8.adoc	GPL-2+	2006-2012 Karel Zak <kzak@redhat.com> / 1996-2004 Andries Brouwer / 1980, 1989, 1991 The Regents of the University of California
+sys-utils/mount.c	GPL-2+	2011 Red Hat, Inc.
+sys-utils/mountpoint.c	GPL-2+	2011 Red Hat, Inc.
+sys-utils/nsenter.c	GPL-2	2012-2023 Eric Biederman <ebiederm@xmission.com>
+sys-utils/pivot_root.c	GPL-2+	2000 Werner Almesberger
+sys-utils/prlimit.1.adoc	GPL	2011 Davidlohr Bueso <dave@gnu.org>
+sys-utils/prlimit.c	GPL-2+	2011 Davidlohr Bueso <dave@gnu.org>
+sys-utils/readprofile.c	GPL-2+	1994, 1996 Alessandro Rubini (rubini@ipvvis.unipv.it)
+sys-utils/renice.1.adoc	BSD-4-Clause-UC	1983, 1991, 1993 The Regents of the University of California.
+sys-utils/renice.c	BSD-4-Clause-UC	1983, 1989, 1993 The Regents of the University of California.
+sys-utils/rfkill.c	ISC	2017 Sami Kerola <kerolasa@iki.fi> / 2017 Karel Zak <kzak@redhat.com> / 2009 Tim Gardner <tim.gardner@canonical.com> / 2009 Marcel Holtmann <marcel@holtmann.org> / 2009 Johannes Berg <johannes@sipsolutions.net>
+sys-utils/rtcwake.c	GPL-2+	2007-2023 Karel Zak <kzak@redhat.com> / 2007 Bernhard Walle <bwalle@suse.de>
+sys-utils/setarch.c	GPL-2+	2003-2007 Red Hat, Inc.
+sys-utils/setpgid.1.adoc	public-domain	*No copyright*
+sys-utils/setpgid.c	public-domain	*No copyright*
+sys-utils/setpriv-landlock.c	GPL-2+	2023 Thomas Weißschuh <thomas@t-8ch.de>
+sys-utils/setpriv-landlock.h	GPL-2+	2023 Thomas Weißschuh <thomas@t-8ch.de>
+sys-utils/setpriv.c	GPL-2+	2012 Andy Lutomirski <luto@amacapital.net>
+sys-utils/setsid.c	public-domain	*No copyright*
+sys-utils/swapoff.c	GPL-2+	2012-2023 Karel Zak <kzak@redhat.com>
+sys-utils/swapon-common.c	GPL-2+	2012-2023 Karel Zak <kzak@redhat.com>
+sys-utils/swapon-common.h	GPL-2+	2012-2023 Karel Zak <kzak@redhat.com>
+sys-utils/swapon.c	GPL-2+	2012-2023 Karel Zak <kzak@redhat.com>
+sys-utils/switch_root.c	GPL-2+	2002-2009 Red Hat, Inc.
+sys-utils/tunelp.c	GPL-2+	1992-1997 Michael K. Johnson, johnsonm@redhat.com
+sys-utils/umount.8.adoc	GPL-2+	1996 Andries Brouwer / 1980, 1989, 1991 The Regents of the University of California
+sys-utils/umount.c	GPL-2+	2011 Red Hat, Inc.
+sys-utils/unshare.c	GPL-2+	2009 Mikhail Gusarov <dottedmag@dottedmag.net>
+sys-utils/wdctl.c	GPL-2+	2012 Lennart Poettering / 2012 Karel Zak <kzak@redhat.com>
+sys-utils/zramctl.c	GPL	2014 Timofey Titovets <Nefelim4ag@gmail.com> / 2014 Karel Zak <kzak@redhat.com>
+term-utils/mesg.1.adoc	BSD-4-Clause-UC	1987, 1990, 1993 The Regents of the University of California.
+term-utils/mesg.c	BSD-4-Clause-UC	UNIX System Laboratories, Inc. / 1987, 1993 The Regents of the University of California.
+term-utils/script.1.adoc	BSD-4-Clause-UC	1980, 1990 Regents of the University of California.
+term-utils/script.c	BSD-4-Clause-UC	2013-2019 Karel Zak <kzak@redhat.com> / 1980 Regents of the University of California.
+term-utils/scriptlive.1	GPL-2+	2019 Karel Zak
+term-utils/scriptlive.1.adoc	GPL-2+	{copyright} 2019 Karel Zak
+term-utils/scriptlive.c	GPL-2+	2019 Karel Zak <kzak@redhat.com>
+term-utils/scriptreplay.1	GPL-2+	2008-2019 Karel Zak / 2008 James Youngman
+term-utils/scriptreplay.1.adoc	GPL-2+	{copyright} 2008-2019 Karel Zak / {copyright} 2008 James Youngman
+term-utils/scriptreplay.c	GPL-2+	2008-2019 Karel Zak <kzak@redhat.com> / 2008 James Youngman <jay@gnu.org>
+term-utils/setterm.1.adoc	GPL	2000 Colin Watson (cjw44@cam.ac.uk) / 1992 Rickard E. Faith (faith@cs.unc.edu) / 1990 Gordon Irlam (gordoni@cs.ua.oz.au)
+term-utils/setterm.c	UNKNOWN	that / 1990 Gordon Irlam (gordoni@cs.ua.oz.au). Conditions of use,
+term-utils/ttymsg.c	BSD-4-Clause-UC	1989, 1993 The Regents of the University of California.
+term-utils/wall.1.adoc	BSD-4-Clause-UC	1989-1990 The Regents of the University of California.
+term-utils/wall.c	BSD-4-Clause-UC	1988, 1990, 1993 The Regents of the University of California.
+term-utils/write.1.adoc	BSD-4-Clause-UC	1989, 1993 The Regents of the University of California.
+term-utils/write.c	BSD-4-Clause-UC	1989, 1993 The Regents of the University of California.
+tests/functions.sh	GPL-2+	2007 Karel Zak <kzak@redhat.com>
+tests/run.sh	GPL-2+	2007 Karel Zak <kzak@redhat.com>
+text-utils/col.1.adoc	BSD-4-Clause-UC	1990 The Regents of the University of California.
+text-utils/col.c	BSD-4-Clause-UC	1990 The Regents of the University of California.
+text-utils/colcrt.1.adoc	BSD-4-Clause-UC	1980, 1990, 1993 The Regents of the University of California.
+text-utils/colcrt.c	BSD-4-Clause-UC	2016 Sami Kerola <kerolasa@iki.fi> / 2016 Karel Zak <kzak@redhat.com> / 1980, 1993 The Regents of the University of California.
+text-utils/colrm.1.adoc	BSD-4-Clause-UC	1980, 1990 The Regents of the University of California.
+text-utils/colrm.c	BSD-4-Clause-UC	1980 Regents of the University of California.
+text-utils/column.1.adoc	BSD-4-Clause-UC	1989-1990, 1993 The Regents of the University of California.
+text-utils/column.c	BSD-4-Clause-UC	2017 Karel Zak <kzak@redhat.com> / 1989, 1993-1994 The Regents of the University of California.
+text-utils/hexdump-conv.c	BSD-4-Clause-UC	1989 The Regents of the University of California.
+text-utils/hexdump-display.c	BSD-4-Clause-UC	1989 The Regents of the University of California.
+text-utils/hexdump-parse.c	BSD-4-Clause-UC	1989 The Regents of the University of California.
+text-utils/hexdump.1.adoc	BSD-4-Clause-UC	1989-1990, 1993 The Regents of the University of California.
+text-utils/hexdump.c	BSD-4-Clause-UC	1989 The Regents of the University of California.
+text-utils/hexdump.h	BSD-4-Clause-UC	1989 The Regents of the University of California.
+text-utils/line.1.adoc	public-domain	*No copyright*
+text-utils/line.c	public-domain	*No copyright*
+text-utils/more.1.adoc	BSD-4-Clause-UC	1988, 1990 The Regents of the University of California. / 1988 Mark Nudleman
+text-utils/more.c	UNKNOWN	1980 The Regents of the University of California.
+text-utils/pg.1.adoc	UNKNOWN	2001 Gunnar Ritter
+text-utils/pg.c	UNKNOWN	2000-2001 Gunnar Ritter.
+text-utils/rev.1.adoc	BSD-4-Clause-UC	1985, 1992 The Regents of the University of California.
+text-utils/rev.c	BSD-4-Clause-UC	1987, 1992 The Regents of the University of California.
+text-utils/ul.1.adoc	BSD-4-Clause-UC	1980, 1991, 1993 The Regents of the University of California.
+text-utils/ul.c	BSD-4-Clause-UC	1980, 1993 The Regents of the University of California.
+tools/asciidoctor-includetracker.rb	UNKNOWN	2023 Thomas Weißschuh <thomas@t-8ch.de>
+tools/asciidoctor-unicodeconverter.rb	UNKNOWN	2023 Thomas Weißschuh <thomas@t-8ch.de>
+tools/checkadoc-missing.sh	UNKNOWN	2021 Karel Zak <kzak@redhat.com>
+tools/checkcompletion.sh	UNKNOWN	2016 Karel Zak <kzak@redhat.com>
+tools/checkconfig.sh	UNKNOWN	2008 Karel Zak <kzak@redhat.com> / 2007 Matthias Koenig <mkoenig@suse.de>
+tools/checkincludes.pl	UNKNOWN	abandoned, 2000, Niels Kristian Bech Jensen <nkbj@image.dk>.
+tools/config-gen	UNKNOWN	2011 Karel Zak <kzak@redhat.com>
+tools/config-gen-functions.sh	UNKNOWN	2011 Karel Zak <kzak@redhat.com>
+tools/git-tp-sync	GPL-2+	2007-2016 Karel Zak <kzak@redhat.com>
+tools/git-tp-sync-man	GPL-2+	2007-2016 Karel Zak <kzak@redhat.com>
+tools/git-version-gen	GPL-3+	2011-2021 Karel Zak <kzak@redhat.com> / 2007-2011 Free Software Foundation, Inc.
+tools/ko-release-gen	UNKNOWN	2012 Karel Zak <kzak@redhat.com>
+tools/ko-release-push	UNKNOWN	2012 Karel Zak <kzak@redhat.com>
+libblkid/docs/Makefile.in	UNKNOWN	1994-2021 Free Software Foundation, Inc.
+libblkid/samples/mkfs.c	LGPL	2009 Karel Zak <kzak@redhat.com>
+libblkid/samples/partitions.c	LGPL	2009 Karel Zak <kzak@redhat.com>
+libblkid/samples/superblocks.c	LGPL	2009 Karel Zak <kzak@redhat.com>
+libblkid/samples/topology.c	LGPL	2009 Karel Zak <kzak@redhat.com>
+libblkid/src/blkid.h.in	LGPL-2.1+	2008 Karel Zak <kzak@redhat.com> / 2003 Theodore Ts'o / 2001 Andreas Dilger
+libblkid/src/blkidP.h	LGPL	2003 Theodore Ts'o / 2001 Andreas Dilger
+libblkid/src/cache.c	LGPL	2003 Theodore Ts'o / 2001 Andreas Dilger
+libblkid/src/config.c	LGPL	2009 Karel Zak <kzak@redhat.com>
+libblkid/src/dev.c	LGPL	2003 Theodore Ts'o / 2001 Andreas Dilger
+libblkid/src/devname.c	LGPL	Andries Brouwer / 2001 Andreas Dilger / 1999-2003 Theodore Ts'o
+libblkid/src/devno.c	LGPL	2001 Andreas Dilger / 2000-2001, 2003 Theodore Ts'o
+libblkid/src/encode.c	LGPL	2009 Karel Zak <kzak@redhat.com> / 2008 Kay Sievers <kay.sievers@vrfy.org>
+libblkid/src/evaluate.c	LGPL	2009 Karel Zak <kzak@redhat.com>
+libblkid/src/getsize.c	LGPL	2010 Karel Zak <kzak@redhat.com> / 1995 Theodore Ts'o.
+libblkid/src/init.c	LGPL	2008-2013 Karel Zak <kzak@redhat.com>
+libblkid/src/libblkid.sym	UNKNOWN	2009-2014 Karel Zak <kzak@redhat.com>
+libblkid/src/probe.c	LGPL	2008-2009 Karel Zak <kzak@redhat.com>
+libblkid/src/read.c	LGPL	2001, 2003 Theodore Y. Ts'o / 2001 Andreas Dilger
+libblkid/src/resolve.c	LGPL	2001, 2003 Theodore Ts'o. / 2001 Andreas Dilger
+libblkid/src/save.c	LGPL	2003 Theodore Ts'o / 2001 Andreas Dilger
+libblkid/src/tag.c	LGPL	2003 Theodore Ts'o / 2001 Andreas Dilger
+libblkid/src/verify.c	LGPL	2008 Karel Zak <kzak@redhat.com>
+libblkid/src/version.c	LGPL	2004 Theodore Ts'o.
+libfdisk/docs/Makefile.in	UNKNOWN	1994-2021 Free Software Foundation, Inc.
+libfdisk/samples/mkpart-fullspec.c	LGPL	2017 Karel Zak <kzak@redhat.com>
+libfdisk/samples/mkpart.c	LGPL	2017 Karel Zak <kzak@redhat.com>
+libfdisk/src/bsd.c	UNKNOWN	2007-2013 Karel Zak <kzak@redhat.com>
+libfdisk/src/dos.c	UNKNOWN	2007-2013 Karel Zak <kzak@redhat.com>
+libfdisk/src/fdiskP.h	LGPL	2012 Karel Zak <kzak@redhat.com>
+libfdisk/src/gpt.c	UNKNOWN	2012 Davidlohr Bueso <dave@gnu.org> / 2007 Karel Zak <kzak@redhat.com>
+libfdisk/src/iter.c	LGPL	2009 Karel Zak <kzak@redhat.com>
+libfdisk/src/libfdisk.h.in	LGPL-2.1+	2012-2014 Karel Zak <kzak@redhat.com>
+libfdisk/src/libfdisk.sym	UNKNOWN	2014-2015 Karel Zak <kzak@redhat.com>
+libfdisk/src/sgi.c	UNKNOWN	2012 Davidlohr Bueso <dave@gnu.org>
+libfdisk/src/sun.c	UNKNOWN	2013 Karel Zak <kzak@redhat.com>
+libfdisk/src/test.c	LGPL	2008-2009 Karel Zak <kzak@redhat.com>
+libfdisk/src/version.c	UNKNOWN	2015 Karel Zak <kzak@redhat.com>
+liblastlog2/src/lastlog2.c	BSD-2-clause	2023 Thorsten Kukuk <kukuk@suse.com>
+liblastlog2/src/lastlog2.h	BSD-2-clause	2023 Thorsten Kukuk <kukuk@suse.com>
+liblastlog2/src/lastlog2P.h	BSD-2-clause	2024 Thorsten Kukuk <kukuk@suse.com>
+libmount/docs/Makefile.in	UNKNOWN	1994-2021 Free Software Foundation, Inc.
+libmount/python/context.c	LGPL-3+	2013 Red Hat, Inc.
+libmount/python/fs.c	LGPL-3+	2013 Red Hat, Inc.
+libmount/python/pylibmount.c	LGPL-3+	2013 Red Hat, Inc.
+libmount/python/tab.c	LGPL-3+	2013 Red Hat, Inc.
+libmount/samples/overwrite.c	LGPL	2023 Karel Zak <kzak@redhat.com>
+libmount/src/btrfs.c	LGPL-2.1+	2016 Stanislav Brabec <sbrabec@suse.cz> / 2016 David Sterba <dsterba@suse.cz>
+libmount/src/cache.c	LGPL-2.1+	2009-2018 Karel Zak <kzak@redhat.com>
+libmount/src/context.c	LGPL-2.1+	2010-2018 Karel Zak <kzak@redhat.com>
+libmount/src/context_mount.c	LGPL-2.1+	2010-2018 Karel Zak <kzak@redhat.com>
+libmount/src/context_umount.c	LGPL-2.1+	2010-2018 Karel Zak <kzak@redhat.com>
+libmount/src/fs.c	LGPL-2.1+	2008-2018 Karel Zak <kzak@redhat.com>
+libmount/src/hook_idmap.c	LGPL-2.1+	2022 Karel Zak <kzak@redhat.com> / 2022 Christian Brauner (Microsoft) <brauner@kernel.org>
+libmount/src/hook_loopdev.c	LGPL-2.1+	2011-2022 Karel Zak <kzak@redhat.com>
+libmount/src/hook_mkdir.c	LGPL-2.1+	2022 Karel Zak <kzak@redhat.com>
+libmount/src/hook_mount.c	LGPL-2.1+	2022 Karel Zak <kzak@redhat.com>
+libmount/src/hook_mount_legacy.c	LGPL-2.1+	2022 Karel Zak <kzak@redhat.com>
+libmount/src/hook_owner.c	LGPL-2.1+	2022 Karel Zak <kzak@redhat.com>
+libmount/src/hook_selinux.c	LGPL-2.1+	2023 Karel Zak <kzak@redhat.com>
+libmount/src/hook_subdir.c	LGPL-2.1+	2022 Karel Zak <kzak@redhat.com>
+libmount/src/hook_veritydev.c	LGPL-2.1+	2022 Karel Zak <kzak@redhat.com> / 2019 Microsoft Corporation
+libmount/src/hooks.c	LGPL-2.1+	2022 Karel Zak <kzak@redhat.com>
+libmount/src/init.c	LGPL-2.1+	2008-2018 Karel Zak <kzak@redhat.com>
+libmount/src/iter.c	LGPL-2.1+	2009-2018 Karel Zak <kzak@redhat.com>
+libmount/src/libmount.h.in	LGPL-2.1+	2008-2018 Karel Zak <kzak@redhat.com>
+libmount/src/libmount.sym	LGPL-2.1+	2011-2018 Karel Zak <kzak@redhat.com>
+libmount/src/lock.c	LGPL-2.1+	2009-2018 Karel Zak <kzak@redhat.com>
+libmount/src/monitor.c	LGPL-2.1+	2014-2018 Karel Zak <kzak@redhat.com>
+libmount/src/mountP.h	LGPL-2.1+	2008-2018 Karel Zak <kzak@redhat.com>
+libmount/src/optlist.c	LGPL-2.1+	2022 Karel Zak <kzak@redhat.com>
+libmount/src/optmap.c	LGPL-2.1+	2010-2018 Karel Zak <kzak@redhat.com>
+libmount/src/optstr.c	LGPL-2.1+	2009-2018 Karel Zak <kzak@redhat.com>
+libmount/src/tab.c	LGPL-2.1+	2008-2018 Karel Zak <kzak@redhat.com>
+libmount/src/tab_diff.c	LGPL-2.1+	2011-2018 Karel Zak <kzak@redhat.com>
+libmount/src/tab_parse.c	LGPL-2.1+	2009-2018 Karel Zak <kzak@redhat.com>
+libmount/src/tab_update.c	LGPL-2.1+	2011-2018 Karel Zak <kzak@redhat.com>
+libmount/src/test.c	LGPL-2.1+	2010-2018 Karel Zak <kzak@redhat.com>
+libmount/src/utils.c	LGPL-2.1+	2008-2018 Karel Zak <kzak@redhat.com>
+libmount/src/version.c	LGPL-2.1+	2008-2018 Karel Zak <kzak@redhat.com>
+libsmartcols/docs/Makefile.in	UNKNOWN	1994-2021 Free Software Foundation, Inc.
+libsmartcols/samples/colors.c	LGPL	2010-2014 Karel Zak <kzak@redhat.com>
+libsmartcols/samples/continuous-json.c	LGPL-2.1	2023 Thomas Weißschuh <thomas@t-8ch.de> / 2016 Karel Zak <kzak@redhat.com>
+libsmartcols/samples/continuous.c	LGPL	2016 Karel Zak <kzak@redhat.com>
+libsmartcols/samples/fromfile.c	LGPL	2016 Karel Zak <kzak@redhat.com>
+libsmartcols/samples/grouping-overlay.c	LGPL	2018 Karel Zak <kzak@redhat.com>
+libsmartcols/samples/grouping-simple.c	LGPL	2010-2014 Karel Zak <kzak@redhat.com>
+libsmartcols/samples/maxout.c	LGPL	2016 Karel Zak <kzak@redhat.com>
+libsmartcols/samples/title.c	LGPL	2010-2014 Karel Zak <kzak@redhat.com>
+libsmartcols/samples/tree.c	LGPL	2010-2014 Karel Zak <kzak@redhat.com>
+libsmartcols/samples/wrap.c	LGPL	2010-2014 Karel Zak <kzak@redhat.com>
+libsmartcols/src/cell.c	LGPL	2014 Ondrej Oprala <ooprala@redhat.com> / 2014 Karel Zak <kzak@redhat.com>
+libsmartcols/src/column.c	LGPL	2014 Ondrej Oprala <ooprala@redhat.com> / 2014 Karel Zak <kzak@redhat.com>
+libsmartcols/src/filter-parser.c	GPL-3+ with Bison-2.2 exception	1984, 1989-1990, 2000-2015, 2018-2021 Free Software Foundation,
+libsmartcols/src/filter-parser.h	GPL-3+ with Bison-2.2 exception	1984, 1989-1990, 2000-2015, 2018-2021 Free Software Foundation,
+libsmartcols/src/filter.c	LGPL	2023 Karel Zak <kzak@redhat.com>
+libsmartcols/src/grouping.c	UNKNOWN	2018 Karel Zak <kzak@redhat.com>
+libsmartcols/src/init.c	LGPL	2014 Karel Zak <kzak@redhat.com>
+libsmartcols/src/iter.c	LGPL	2014 Ondrej Oprala <ooprala@redhat.com> / 2009-2014 Karel Zak <kzak@redhat.com>
+libsmartcols/src/libsmartcols.h.in	LGPL	2014 Ondrej Oprala <ooprala@redhat.com> / 2014 Karel Zak <kzak@redhat.com>
+libsmartcols/src/libsmartcols.sym	UNKNOWN	2014-2016 Karel Zak <kzak@redhat.com>
+libsmartcols/src/line.c	LGPL	2014 Ondrej Oprala <ooprala@redhat.com> / 2014 Karel Zak <kzak@redhat.com>
+libsmartcols/src/print.c	LGPL	2016 Igor Gnatenko <i.gnatenko.brain@gmail.com> / 2010-2014 Karel Zak <kzak@redhat.com>
+libsmartcols/src/smartcolsP.h	LGPL	2014 Ondrej Oprala <ooprala@redhat.com> / 2014 Karel Zak <kzak@redhat.com>
+libsmartcols/src/symbols.c	LGPL	2016 Igor Gnatenko <i.gnatenko.brain@gmail.com> / 2014 Ondrej Oprala <ooprala@redhat.com>
+libsmartcols/src/table.c	LGPL	2016 Igor Gnatenko <i.gnatenko.brain@gmail.com> / 2014 Ondrej Oprala <ooprala@redhat.com> / 2010-2014 Karel Zak <kzak@redhat.com>
+libsmartcols/src/version.c	UNKNOWN	2014 Karel Zak <kzak@redhat.com>
+tests/helpers/test_byteswap.c	GPL-2	2008 Karel Zak <kzak@redhat.com> / 2000 Theodore Ts'o.
+tests/helpers/test_mbsencode.c	GPL-2	2018 Vaclav Dolezal <vdolezal@redhat.com>
+tests/helpers/test_md5.c	GPL-2	2008 Karel Zak <kzak@redhat.com>
+tests/helpers/test_mkfds.c	GPL	*No copyright*
+tests/helpers/test_mkfds.h	GPL	*No copyright*
+tests/helpers/test_mkfds_ppoll.c	GPL	*No copyright*
+tests/helpers/test_pathnames.c	GPL-2+	2007 Karel Zak <kzak@redhat.com>
+tests/helpers/test_sha1.c	GPL-2	2017 Philip Prindeville <philipp@redfish-solutions.com>
+tests/helpers/test_sigreceive.c	GPL-2	*No copyright*
+tests/helpers/test_strerror.c	GPL-2	2019 Patrick Steinhardt <ps@pks.im
+tests/helpers/test_sysinfo.c	GPL-2+	2007 Karel Zak <kzak@redhat.com>
+tests/helpers/test_tiocsti.c	GPL-2	*No copyright*
+tests/helpers/test_uuid_namespace.c	GPL-2	2017 Philip Prindeville <philipp@redfish-solutions.com>
+libblkid/src/partitions/aix.c	LGPL	2009 Karel Zak <kzak@redhat.com>
+libblkid/src/partitions/atari.c	LGPL	2018 Vaclav Dolezal <vdolezal@redhat.com>
+libblkid/src/partitions/bsd.c	LGPL	2009 Karel Zak <kzak@redhat.com>
+libblkid/src/partitions/dos.c	LGPL	2009 Karel Zak <kzak@redhat.com>
+libblkid/src/partitions/gpt.c	LGPL	2009 Karel Zak <kzak@redhat.com>
+libblkid/src/partitions/mac.c	LGPL	2009 Karel Zak <kzak@redhat.com>
+libblkid/src/partitions/minix.c	LGPL	2009 Karel Zak <kzak@redhat.com>
+libblkid/src/partitions/partitions.c	LGPL	2008-2009 Karel Zak <kzak@redhat.com>
+libblkid/src/partitions/sgi.c	LGPL	2009 Karel Zak <kzak@redhat.com>
+libblkid/src/partitions/solaris_x86.c	LGPL	2009 Karel Zak <kzak@redhat.com>
+libblkid/src/partitions/sun.c	LGPL	2009 Karel Zak <kzak@redhat.com>
+libblkid/src/partitions/ultrix.c	LGPL	2010 Karel Zak <kzak@redhat.com>
+libblkid/src/partitions/unixware.c	LGPL	2009 Karel Zak <kzak@redhat.com>
+libblkid/src/superblocks/adaptec_raid.c	LGPL	2008 Karel Zak <kzak@redhat.com>
+libblkid/src/superblocks/apfs.c	LGPL	2018 Harry Mallon <hjmallon@gmail.com>
+libblkid/src/superblocks/bcache.c	LGPL	2013 Rolf Fokkens <rolf@fokkens.nl>
+libblkid/src/superblocks/befs.c	LGPL	2010 Jeroen Oortwijn <oortwijn@gmail.com>
+libblkid/src/superblocks/bfs.c	LGPL	2009 Red Hat, Inc.
+libblkid/src/superblocks/bitlocker.c	LGPL	2018 Karel Zak <kzak@redhat.com>
+libblkid/src/superblocks/bluestore.c	LGPL	2018 Kenneth Van Alstyne <kvanals@kvanals.org>
+libblkid/src/superblocks/btrfs.c	LGPL	2009 Karel Zak <kzak@redhat.com>
+libblkid/src/superblocks/cramfs.c	LGPL	2008 Karel Zak <kzak@redhat.com> / 2004 Kay Sievers <kay.sievers@vrfy.org> / 2001 Andreas Dilger / 1999-2000, 2003 Theodore Ts'o / 1999 Andries Brouwer
+libblkid/src/superblocks/cs_fvault2.c	LGPL	2022 Milan Broz <gmazyland@gmail.com>
+libblkid/src/superblocks/ddf_raid.c	LGPL	2008 Karel Zak <kzak@redhat.com>
+libblkid/src/superblocks/drbd.c	LGPL	2009 Bastian Friedrich <bastian.friedrich@collax.com>
+libblkid/src/superblocks/drbdmanage.c	LGPL	2015 Philipp Marek <philipp.marek@linbit.com>
+libblkid/src/superblocks/drbdproxy_datalog.c	LGPL	2011 Philipp Marek <philipp.marek@linbit.com>
+libblkid/src/superblocks/erofs.c	LGPL	2020 Gao Xiang
+libblkid/src/superblocks/exfat.c	LGPL	2010 Andrew Nayenko <resver@gmail.com>
+libblkid/src/superblocks/exfs.c	LGPL	2017 Hewlett Packard Enterprise Development LP / 2013 Eric Sandeen <sandeen@redhat.com> / 2008 Karel Zak <kzak@redhat.com> / 2004 Kay Sievers <kay.sievers@vrfy.org> / 2001 Andreas Dilger / 1999-2000, 2003 Theodore Ts'o / 1999 Andries Brouwer
+libblkid/src/superblocks/ext.c	LGPL	2008 Karel Zak <kzak@redhat.com> / 1999-2000, 2003 Theodore Ts'o / 1999, 2001 Andries Brouwer
+libblkid/src/superblocks/f2fs.c	LGPL	2013 Alejandro Martinez Ruiz <alex@nowcomputing.com>
+libblkid/src/superblocks/gfs.c	LGPL	2008 Karel Zak <kzak@redhat.com>
+libblkid/src/superblocks/hfs.c	LGPL	2008 Karel Zak <kzak@redhat.com> / 2004-2008 Kay Sievers <kay.sievers@vrfy.org>
+libblkid/src/superblocks/highpoint_raid.c	LGPL	2008 Karel Zak <kzak@redhat.com>
+libblkid/src/superblocks/hpfs.c	LGPL	2008 Karel Zak <kzak@redhat.com>
+libblkid/src/superblocks/iso9660.c	LGPL	2008 Karel Zak <kzak@redhat.com> / 2004 Kay Sievers <kay.sievers@vrfy.org> / 2001 Andreas Dilger / 1999-2000, 2003 Theodore Ts'o / 1999 Andries Brouwer
+libblkid/src/superblocks/isw_raid.c	LGPL	2008 Karel Zak <kzak@redhat.com>
+libblkid/src/superblocks/jfs.c	LGPL	2008 Karel Zak <kzak@redhat.com> / 2004 Kay Sievers <kay.sievers@vrfy.org> / 2001 Andreas Dilger / 1999-2000, 2003 Theodore Ts'o / 1999 Andries Brouwer
+libblkid/src/superblocks/jmicron_raid.c	LGPL	2008 Karel Zak <kzak@redhat.com>
+libblkid/src/superblocks/linux_raid.c	LGPL	2008 Karel Zak <kzak@redhat.com>
+libblkid/src/superblocks/lsi_raid.c	LGPL	2008 Karel Zak <kzak@redhat.com>
+libblkid/src/superblocks/luks.c	LGPL	2018-2024 Milan Broz <gmazyland@gmail.com> / 2008 Karel Zak <kzak@redhat.com>
+libblkid/src/superblocks/lvm.c	LGPL	2012 Milan Broz <gmazyland@gmail.com> / 2008 Karel Zak <kzak@redhat.com> / 2004 Kay Sievers <kay.sievers@vrfy.org> / 2001 Andreas Dilger / 1999-2000, 2003 Theodore Ts'o / 1999 Andries Brouwer
+libblkid/src/superblocks/minix.c	LGPL	2008-2013 Karel Zak <kzak@redhat.com> / 2004 Kay Sievers <kay.sievers@vrfy.org> / 2001 Andreas Dilger / 1999-2000, 2003 Theodore Ts'o / 1999 Andries Brouwer
+libblkid/src/superblocks/mpool.c	LGPL	2016 Micron Technology, Inc.
+libblkid/src/superblocks/netware.c	LGPL	2008 Karel Zak <kzak@redhat.com>
+libblkid/src/superblocks/nilfs.c	LGPL	2010 Jiro SEKIBA <jir@unicus.jp>
+libblkid/src/superblocks/ntfs.c	LGPL	2008 Karel Zak <kzak@redhat.com> / 2004 Kay Sievers <kay.sievers@vrfy.org>
+libblkid/src/superblocks/nvidia_raid.c	LGPL	2008 Karel Zak <kzak@redhat.com> / 2005 Kay Sievers <kay.sievers@vrfy.org>
+libblkid/src/superblocks/ocfs.c	LGPL	2008 Karel Zak <kzak@redhat.com> / 1999-2000, 2003 Theodore Ts'o / 1999, 2001 Andries Brouwer
+libblkid/src/superblocks/promise_raid.c	LGPL	2008 Karel Zak <kzak@redhat.com>
+libblkid/src/superblocks/refs.c	LGPL	2013 Karel Zak <kzak@redhat.com>
+libblkid/src/superblocks/reiserfs.c	LGPL	2008 Karel Zak <kzak@redhat.com> / 1999-2000, 2003 Theodore Ts'o / 1999, 2001 Andries Brouwer
+libblkid/src/superblocks/romfs.c	LGPL	2008 Karel Zak <kzak@redhat.com> / 1999-2000, 2003 Theodore Ts'o / 1999, 2001 Andries Brouwer
+libblkid/src/superblocks/silicon_raid.c	LGPL	2008 Karel Zak <kzak@redhat.com> / 2005 Kay Sievers <kay.sievers@vrfy.org>
+libblkid/src/superblocks/squashfs.c	LGPL	2008 Karel Zak <kzak@redhat.com>
+libblkid/src/superblocks/stratis.c	LGPL	2018 Tony Asleson <tasleson@redhat.com>
+libblkid/src/superblocks/superblocks.c	LGPL	2008-2009 Karel Zak <kzak@redhat.com>
+libblkid/src/superblocks/superblocks.h	LGPL	2008-2009 Karel Zak <kzak@redhat.com>
+libblkid/src/superblocks/swap.c	LGPL	2008 Karel Zak <kzak@redhat.com> / 2004 Kay Sievers <kay.sievers@vrfy.org> / 2001 Andreas Dilger / 1999-2000, 2003 Theodore Ts'o / 1999 Andries Brouwer
+libblkid/src/superblocks/sysv.c	LGPL	2008 Karel Zak <kzak@redhat.com>
+libblkid/src/superblocks/ubi.c	LGPL	2017 RafaÅ MiÅecki <rafal@milecki.pl>
+libblkid/src/superblocks/ubifs.c	LGPL	2009 Corentin Chary <corentincj@iksaif.net>
+libblkid/src/superblocks/udf.c	LGPL	2014-2017 Pali Rohár <pali.rohar@gmail.com> / 2008 Karel Zak <kzak@redhat.com> / 2004 Kay Sievers <kay.sievers@vrfy.org> / 2001 Andreas Dilger / 1999-2000, 2003 Theodore Ts'o / 1999 Andries Brouwer
+libblkid/src/superblocks/ufs.c	LGPL	2008 Karel Zak <kzak@redhat.com>
+libblkid/src/superblocks/vdo.c	LGPL	2017 Red Hat, Inc.
+libblkid/src/superblocks/vfat.c	LGPL	2008 Karel Zak <kzak@redhat.com> / 2004 Kay Sievers <kay.sievers@vrfy.org> / 2001 Andreas Dilger / 1999-2000, 2003 Theodore Ts'o / 1999 Andries Brouwer
+libblkid/src/superblocks/via_raid.c	LGPL	2008 Karel Zak <kzak@redhat.com>
+libblkid/src/superblocks/vmfs.c	LGPL	2009 Mike Hommey <mh@glandium.org>
+libblkid/src/superblocks/vxfs.c	LGPL	2008 Karel Zak <kzak@redhat.com>
+libblkid/src/superblocks/xfs.c	LGPL	2013 Eric Sandeen <sandeen@redhat.com> / 2008 Karel Zak <kzak@redhat.com> / 2004 Kay Sievers <kay.sievers@vrfy.org> / 2001 Andreas Dilger / 1999-2000, 2003 Theodore Ts'o / 1999 Andries Brouwer
+libblkid/src/superblocks/zfs.c	LGPL	2009-2010 Andreas Dilger <adilger@sun.com>
+libblkid/src/superblocks/zonefs.c	LGPL	2020 Western Digital Corporation or its affiliates.
+libblkid/src/topology/dm.c	LGPL	2009 Karel Zak <kzak@redhat.com>
+libblkid/src/topology/evms.c	LGPL	2009 Karel Zak <kzak@redhat.com>
+libblkid/src/topology/ioctl.c	LGPL	2009 Karel Zak <kzak@redhat.com>
+libblkid/src/topology/lvm.c	LGPL	2009 Karel Zak <kzak@redhat.com>
+libblkid/src/topology/md.c	LGPL	2009 Karel Zak <kzak@redhat.com>
+libblkid/src/topology/sysfs.c	LGPL	2009 Karel Zak <kzak@redhat.com>
+libblkid/src/topology/topology.c	LGPL	2009 Red Hat, Inc.
+liblastlog2/src/tests/tst_dlopen.c	GPL-2+	Nalin Dahyabhai <nalin@redhat.com> 2003
+liblastlog2/src/tests/tst_pam_lastlog2_output.c	BSD-2-clause	2023 Thorsten Kukuk <kukuk@suse.com>
+liblastlog2/src/tests/tst_remove_entry.c	BSD-2-clause	2023 Thorsten Kukuk <kukuk@suse.com>
+liblastlog2/src/tests/tst_rename_user.c	BSD-2-clause	2023 Thorsten Kukuk <kukuk@suse.com>
+liblastlog2/src/tests/tst_write_read_user.c	BSD-2-clause	2023 Thorsten Kukuk <kukuk@suse.com>
+liblastlog2/src/tests/tst_y2038_ll2_read_all.c	BSD-2-clause	2023 Thorsten Kukuk <kukuk@suse.com>
+liblastlog2/src/tests/tst_y2038_sqlite3_time.c	BSD-2-clause	2023 Thorsten Kukuk <kukuk@suse.com>
+tests/ts/bitops/swapbytes	GPL-2+	2007 Karel Zak <kzak@redhat.com>
+tests/ts/blkdiscard/offsets	GPL-2+	2014 Federico Simoncelli <fsimonce@redhat.com>
+tests/ts/blkid/cache	GPL-2+	2009 Karel Zak <kzak@redhat.com>
+tests/ts/blkid/dm-err	GPL-2+	2016 Karel Zak <kzak@redhat.com>
+tests/ts/blkid/low-probe	GPL-2+	2009 Karel Zak <kzak@redhat.com>
+tests/ts/blkid/lowprobe-pt	GPL-2+	2009 Karel Zak <kzak@redhat.com>
+tests/ts/blkid/md-raid0-whole	GPL-2+	2010 Karel Zak <kzak@redhat.com>
+tests/ts/blkid/md-raid1-part	GPL-2+	2010 Karel Zak <kzak@redhat.com>
+tests/ts/blkid/md-raid1-whole	GPL-2+	2010 Karel Zak <kzak@redhat.com>
+tests/ts/blkid/offset	GPL-2+	*No copyright*
+tests/ts/blkid/topology	GPL-2+	2022 Thomas Weißschuh <thomas@t-8ch.de>
+tests/ts/build-sys/config	UNKNOWN	2011 Karel Zak <kzak@redhat.com>
+tests/ts/cal/bigyear	GPL-2+	*No copyright*
+tests/ts/cal/color	GPL-2+	*No copyright*
+tests/ts/cal/colorw	GPL-2+	*No copyright*
+tests/ts/cal/column	GPL-2+	2023 Thomas Weißschuh <thomas@t-8ch.de> / 2007-2018 Karel Zak <kzak@redhat.com>
+tests/ts/cal/jan1753	GPL-2+	*No copyright*
+tests/ts/cal/month	GPL-2+	2007-2018 Karel Zak <kzak@redhat.com>
+tests/ts/cal/sep1752	GPL-2+	*No copyright*
+tests/ts/cal/vertical	GPL-2+	2007-2018 Karel Zak <kzak@redhat.com>
+tests/ts/cal/weekarg	GPL-2+	2007 Karel Zak <kzak@redhat.com>
+tests/ts/cal/weeknum	GPL-2+	2007 Karel Zak <kzak@redhat.com>
+tests/ts/cal/year	GPL-2+	2007-2018 Karel Zak <kzak@redhat.com>
+tests/ts/chfn/gecos	GPL-2+	2019 Radka Skvarilova <rskvaril@redhat.com>
+tests/ts/col/io	GPL-2+	2020 Sami Kerola <kerolasa@iki.fi>
+tests/ts/col/multibyte	GPL-2+	2007 Karel Zak <kzak@redhat.com>
+tests/ts/col/newlines	GPL-2+	2020 Sami Kerola <kerolasa@iki.fi>
+tests/ts/col/options	GPL-2+	2020 Sami Kerola <kerolasa@iki.fi>
+tests/ts/colcrt/functional	GPL-2+	*No copyright*
+tests/ts/colcrt/regressions	GPL-2+	*No copyright*
+tests/ts/colrm/rm2-2	GPL-2+	2011 Sami Kerola <kerolasa@iki.fi>
+tests/ts/column/columnate	GPL-2+	2011 Sami Kerola <kerolasa@iki.fi>
+tests/ts/column/invalid-multibyte	GPL-2+	2014 Sami Kerola <kerolasa@iki.fi>
+tests/ts/column/multi-file	GPL-2+	2011 Sami Kerola <kerolasa@iki.fi>
+tests/ts/column/table	GPL-2+	2011 Sami Kerola <kerolasa@iki.fi>
+tests/ts/cramfs/doubles	GPL-2+	2011 Karel Zak <kzak@redhat.com>
+tests/ts/cramfs/fsck-bad-header	GPL-2+	2007 Karel Zak <kzak@redhat.com>
+tests/ts/cramfs/fsck-endianness	GPL-2+	2007 Karel Zak <kzak@redhat.com>
+tests/ts/cramfs/mkfs	GPL-2+	2007 Karel Zak <kzak@redhat.com>
+tests/ts/cramfs/mkfs-endianness	GPL-2+	2007 Karel Zak <kzak@redhat.com>
+tests/ts/dmesg/cid-json	GPL-2+	*No copyright*
+tests/ts/dmesg/cid-kmsg-colors	GPL-2+	*No copyright*
+tests/ts/dmesg/cid-kmsg-console-levels	GPL-2+	*No copyright*
+tests/ts/dmesg/cid-kmsg-decode	GPL-2+	*No copyright*
+tests/ts/dmesg/cid-kmsg-delta	GPL-2+	*No copyright*
+tests/ts/dmesg/cid-kmsg-facilities	GPL-2+	*No copyright*
+tests/ts/dmesg/cid-kmsg-indentation	GPL-2+	*No copyright*
+tests/ts/dmesg/cid-kmsg-json	GPL-2+	*No copyright*
+tests/ts/dmesg/cid-kmsg-limit	GPL-2+	*No copyright*
+tests/ts/dmesg/colors	GPL-2+	*No copyright*
+tests/ts/dmesg/console-levels	GPL-2+	*No copyright*
+tests/ts/dmesg/decode	GPL-2+	*No copyright*
+tests/ts/dmesg/delta	GPL-2+	*No copyright*
+tests/ts/dmesg/facilities	GPL-2+	*No copyright*
+tests/ts/dmesg/indentation	GPL-2+	*No copyright*
+tests/ts/dmesg/json	GPL-2+	*No copyright*
+tests/ts/dmesg/kmsg-file	GPL-2+	*No copyright*
+tests/ts/dmesg/limit	GPL-2+	*No copyright*
+tests/ts/dmesg/timestamp-format	GPL-2+	*No copyright*
+tests/ts/exch/exch	GPL-2+	2023 Masatake YAMATO <yamato@redhat.com>
+tests/ts/fdisk/align-512-4K	GPL-2+	*No copyright*
+tests/ts/fdisk/align-512-4K-63	GPL-2+	*No copyright*
+tests/ts/fdisk/align-512-4K-md	GPL-2+	*No copyright*
+tests/ts/fdisk/align-512-512	GPL-2+	*No copyright*
+tests/ts/fdisk/align-512-512-topology	GPL-2+	*No copyright*
+tests/ts/fdisk/bsd	GPL-2+	2013 Karel Zak <kzak@redhat.com>
+tests/ts/fdisk/gpt	GPL-2+	2013 Karel Zak <kzak@redhat.com>
+tests/ts/fdisk/gpt-resize	GPL-2+	*No copyright*
+tests/ts/fdisk/id	GPL-2+	*No copyright*
+tests/ts/fdisk/mbr-dos-mode	GPL-2+	*No copyright*
+tests/ts/fdisk/mbr-nondos-mode	GPL-2+	*No copyright*
+tests/ts/fdisk/mbr-sort	GPL-2+	*No copyright*
+tests/ts/fdisk/oddinput	GPL-2+	*No copyright*
+tests/ts/fdisk/sunlabel	GPL-2+	*No copyright*
+tests/ts/findmnt/df-options	GPL-2+	*No copyright*
+tests/ts/findmnt/filter	GPL-2+	*No copyright*
+tests/ts/findmnt/outputs	GPL-2+	*No copyright*
+tests/ts/findmnt/target	GPL-2+	*No copyright*
+tests/ts/fsck/ismounted	GPL-2+	2009 Karel Zak <kzak@redhat.com>
+tests/ts/fuzzers/test_blkid_fuzz	GPL-2+	*No copyright*
+tests/ts/fuzzers/test_fdisk_script_fuzz	GPL-2+	*No copyright*
+tests/ts/fuzzers/test_last_fuzz	GPL-2+	*No copyright*
+tests/ts/fuzzers/test_mount_fuzz	GPL-2+	*No copyright*
+tests/ts/getopt/basic	GPL-2+	*No copyright*
+tests/ts/getopt/options	GPL-2+	*No copyright*

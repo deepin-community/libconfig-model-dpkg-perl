@@ -4,10 +4,12 @@ License: WTFPL-2
 
 Files: bn_mp_n_root.c
  bn_mp_n_root_ex.c
-Copyright: *b <= a and (c+1)**b > a
+Copyright: b <= a and (c+1)**b > a
 License: UNKNOWN
+ Please fill license text from header of files
 
-Files: mtest/*
+Files: mtest/mpi.c
+ mtest/mpi.h
 Copyright: 1998, Michael J. Fromberger
 License: UNKNOWN
-
+ Please fill license text from header of files

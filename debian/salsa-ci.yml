@@ -1,0 +1,4 @@
+# see https://salsa.debian.org/salsa-ci-team/pipeline/-/blob/master/README.md
+---
+include:
+  - https://salsa.debian.org/salsa-ci-team/pipeline/raw/master/recipes/debian.yml

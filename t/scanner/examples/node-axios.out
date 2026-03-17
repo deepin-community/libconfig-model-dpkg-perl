@@ -1,0 +1,12 @@
+Files: *
+Copyright: Matt Zabriskie
+License: Expat
+
+Files: debian/tests/test_modules/dev-null/*
+Copyright: Thorsten Lorenz
+ 2013, Thorsten Lorenz.
+License: Expat
+
+Files: debian/tests/test_modules/dummy/*
+Copyright: Thorsten Lorenz
+License: Apache-2.0 or Expat

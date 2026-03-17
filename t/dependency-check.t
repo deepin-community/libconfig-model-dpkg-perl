@@ -28,6 +28,8 @@ BEGIN {
         'autotools-dev' => 'squeeze 20100122.1 wheezy 20120608.1 jessie 20140911.1 sid 20140911.1',
 
         foobar => undef, # used to test that unknown package trigger a warning, real cache should not contain undef
+        'libuv0.10-dev' => 'oldoldoldstable 0.10.28-6',
+        'apt' => 'unstable 3.1.12'
     );
     my $t = time ;
     do { $_ = "$t $_"} for grep {defined $_} values %Config::Model::Dpkg::Dependency::cache ;
@@ -49,7 +51,6 @@ use 5.10.0;
 use feature qw/postderef signatures/;
 no warnings qw/experimental::postderef experimental::signatures/;
 
-$::_use_log4perl_to_warn = 1;
 
 my ($model, $trace) = init_test();
 Test::Log::Log4perl->ignore_priority("info");
@@ -84,9 +85,10 @@ Package: libdist-zilla-plugins-cjm-perl
 Architecture: all
 Depends: ${misc:Depends}, ${perl:Depends}, libcpan-meta-perl ,
  perl (>= 5.10.1), dpkg (>= 0.01), perl-modules,  dpkg (<< ${source:Version}.1~)
+Conflicts: libuv0.10-dev
 Description: collection of CJM's plugins for Dist::Zilla
  Collection of Dist::Zilla plugins. This package features the 
- following [snip]  
+ following [snip]
 EOD
 
 # pseudo root where config files are written by config-model
@@ -111,7 +113,8 @@ my @expected_warnings =  (
     qr/source Standards-Version/,
     qr/is unknown/, qr/unnecessary/,
     qr/unnecessary/, ( qr/Dual dependency/),
-    (qr/unnecessary/) x 2
+    (qr/unnecessary/) x 2,
+    qr/applied on too old package/,
 );
 map { $wt->warn($_); } @expected_warnings;
 $unit->config_root->init ;
@@ -246,6 +249,24 @@ is($res,1,"check perl (>= 5.28.1) dependency: has older version");
 
 ($res) = $perl_dep->check_versioned_dep({ name =>'perl', dep =>['>=','5.6.0']}) ;
 is($res,0,"check perl (>= 5.6.0) dependency: no older version");
+
+subtest "check conflicts removal" => sub{
+    my $conflict = $control->grab("binary:libdist-zilla-plugins-cjm-perl Conflicts:0");
+    is($conflict->fetch,"libuv0.10-dev","check conflicts value from config tree");
+
+    my @msgs;
+    my %dep_info = ( name => 'libuv0.10-dev' );
+    # check
+    my $res = $conflict->check_or_fix_too_old_pkg(0, \%dep_info,undef, \@msgs ) ;
+    is($res,1,"check libuv0.10-dev conflict: too old");
+    like($conflict->warning_msg, qr/too old package/,"check warning message");
+
+    # and fix
+    $res = $conflict->check_or_fix_too_old_pkg(1, \%dep_info,undef, \@msgs ) ;
+    is($res,1,"fix libuv0.10-dev conflict: too old");
+    like($msgs[0], qr/too old package/,"check fix message");
+    is(scalar %dep_info, 0, "conflict relation was removed by fix");
+};
 
 my $dpkg_dep = $control->grab("source Build-Depends:2");
 is($dpkg_dep->fetch,"dpkg",'check dpkg value') ;
@@ -426,8 +447,8 @@ sub new_instance {
         root_dir        => $wr_dir->child($name),
         instance_name   => $name,
     );
-
 }
+
 subtest "test debhelper compat interaction" => sub {
     # instance to check one dependency at a time
     my $unit = new_instance("compat-test");
@@ -457,7 +478,7 @@ subtest "test debhelper compat interaction" => sub {
 subtest "test debhelper migration" => sub {
     my $unit = new_instance("debhelper-migration-test");
     my $root = $unit->config_root;
-    $root->load('control source Standards-Version=4.1.1 ');
+    $root->load('control source Source=dummy Standards-Version=4.1.1 ');
     my $bd0_path = 'control source Build-Depends:0';
 
     my $dhc_ok = "debhelper-compat (= $dh_version)";
@@ -495,7 +516,7 @@ subtest "test debhelper migration" => sub {
 subtest "test debhelper in Depends" => sub {
     my $unit = new_instance("debhelper-in-build-depend");
     my $root = $unit->config_root;
-    $root->load('control source Standards-Version=4.1.1 ');
+    $root->load('control source Source=dummy Standards-Version=4.1.1 ');
     my $dep_path = 'control binary:blah Depends:0';
 
     $root->load("$dep_path=debhelper");
@@ -509,7 +530,7 @@ subtest "test debhelper in Depends" => sub {
 subtest "test debhelper-compat" => sub {
     my $unit = new_instance("debhelper-compat-test");
     my $root = $unit->config_root;
-    $root->load('control source Standards-Version=4.1.1 ');
+    $root->load('control source Source=dummy Standards-Version=4.1.1 ');
     my $bd0_path = 'control source Build-Depends:0';
 
     my $dhc_ok = { name => "debhelper-compat", dep => [ '=', $dh_version ]};
@@ -551,36 +572,48 @@ subtest "cleanup of autotools dependency" => sub {
     $unit->initial_load_start;
     my $source_path = 'control source';
     my $source = $root->grab($source_path);
-    $source->load(
-        'Standards-Version=4.1.1 '
-            . 'Build-Depends:0="dh-autoreconf" '
-            . 'Build-Depends:1="pkg-config" '
-            . 'Build-Depends:2="autotools-dev (>= 20180224.1)" '
-            . 'Build-Depends:3="debhelper-compat (= 12)"'
-        );
+    $source->load('Source=dummy Standards-Version=4.1.1 ');
     $unit->initial_load_stop;
 
-    # needs_check is set by warp, but the actual check is not yet done
-    is($source->grab("Build-Depends:0")->has_warning,0,"no warning yet on dh-autoreconf");
+    # check default value coming from model with default_with_init
+    my $dhc = $source->grab_value("Build-Depends:0");
+    like($source->grab_value("Build-Depends:0"),qr/debhelper-compat \(= \d+\)/, "check default value");
 
     # check and fetch
     Test::Log::Log4perl->start();
+    $source->load('Build-Depends:.push("dh-autoreconf")');
+    is($source->grab_value("Build-Depends:1"),"dh-autoreconf", "check dependency value");
     $wt->warn(qr/dependency "dh-autoreconf" is not necessary with debhelper > 10/);
-    is($source->grab_value("Build-Depends:0"),"dh-autoreconf", "check dependency value");
     Test::Log::Log4perl->end("triggers a warning");
 
+    $source->load('Build-Depends:.push("pkg-config")');
+    $source->load('Build-Depends:.push("autotools-dev (>= 20180224.1)")');
+
     # the warning is here
-    is($source->grab("Build-Depends:0")->has_warning,1,"check warning of dh-autoreconf");
+    is($source->grab("Build-Depends:1")->has_warning,1,"check warning of dh-autoreconf");
 
     $root->apply_fixes;
 
-    is($source->grab_value("Build-Depends:0"),undef, "check dependency value");
-
     is_deeply(
         [$source->grab("Build-Depends")->fetch_all_values],
-        ['pkg-config',"debhelper-compat (= 13)"],
+        ["debhelper-compat (= 13)",'pkg-config'],
         "check purged dependencies"
     );
+};
+
+subtest "cleanup of apt dependency" => sub {
+    my $unit = new_instance("apt-dependency-cleanup");
+    my $root = $unit->config_root;
+    $unit->initial_load_start;
+    my $source = $root->grab('control source');
+    $source->load(
+        'Source=dummy Standards-Version=4.1.1 '
+            . 'Build-Depends:0="dh-autoreconf" '
+            . 'Build-Depends:1="apt" '
+        );
+    $unit->initial_load_stop;
+
+    is($source->grab("Build-Depends:1")->has_warning,0,"no warning on apt in Build-Deps ");
 };
 
 memory_cycle_ok($model, "memory cycles");

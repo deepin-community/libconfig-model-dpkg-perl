@@ -1,0 +1,29 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: URI
+Source: https://github.com/raku-community-modules/uri.git
+
+Files: *
+Copyright: Perl 6 community
+ 2017, Ronald Schmidt.
+ 2015, Raku Community Authors
+License: Artistic-2.0
+
+Files: README.md
+Copyright: 2017, Ronald Schmidt.
+ 2015, Raku Community Authors
+License: UNKNOWN
+ Please fill license UNKNOWN from header of README.md
+
+Files: debian/*
+Copyright: 2022, Dominique Dumont <dod@debian.org>
+License: Artistic-2.0
+
+License: Artistic-2.0
+                The Artistic License 2.0
+ .
+         Copyright (c) 2000-2006, The Perl Foundation.
+ .
+      Everyone is permitted to copy and distribute verbatim copies
+       of this license document, but changing it is not allowed.
+ .
+ [ license used for this test was clipped ]

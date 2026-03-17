@@ -13,6 +13,7 @@ use feature qw/postderef signatures/;
 no warnings qw/experimental::postderef experimental::signatures/;
 
 my $logger = get_logger("Backend.Dpkg.Syntax") ;
+my $user_logger = get_logger('User');
 
 sub parse_dpkg_file {
     my $self = shift ;
@@ -63,9 +64,7 @@ sub parse_dpkg_lines {
                     parsed_line => $line_nb,
                     message => "Comments are not allowed. (use -force option to drop comments)",
                 ) if $check eq 'yes' ;
-                my $msg = "File $file_path: Dropped comment line $line_nb";
-                $logger->error($msg) if $check eq 'skip';
-                $logger->warn($msg) if $check eq 'no';
+                $user_logger->warn("File $file_path: Dropped comment line $line_nb");
             }
         }
         elsif ( $l =~ m{^([\w\-]+)\s*:(?!//)} ) {  # keyword: but not http://
@@ -216,7 +215,7 @@ sub format_dpkg_list ($self, $name, $value_list_ref, $list_sep) {
     my $result = '';
 
     my $sep = $list_sep // ",\n" ;
-    my $pad = $sep =~ /\n$/ ? ' ' x (length ($name) + 2) : '' ;
+    my $pad = $sep =~ /\n$/ ? ' ' : '' ;
 
     my $idx = 0;
     foreach my $item ($value_list_ref->@*) {
@@ -226,17 +225,22 @@ sub format_dpkg_list ($self, $name, $value_list_ref, $list_sep) {
             $comment_elt = '';
         }
         if ($idx == 0 and $comment_elt) {
-            $result .= $self->format_label_line($name, '')."\n";
+            $result .= "$name:\n";
             $result .= $comment_elt . "\n" . $pad . $list_elt  ;
         }
         elsif ($idx == 0) {
-            $result .= $self->format_label_line($name, $list_elt) ;
+            $result .= "$name:\n $list_elt" ;
         }
         else {
             $result .= $comment_elt."\n" if $comment_elt;
             $result .= $pad.$list_elt;
         }
-        $result .= $sep unless $idx == $value_list_ref->$#*;
+        if ($idx == $value_list_ref->$#*) {
+            $result .= $sep =~ /\n$/ ? ',' : '';
+        }
+        else {
+            $result .= $sep;
+        };
         $idx++ ;
     }
     return $result;
@@ -272,7 +276,8 @@ sub format_label_line {
 sub node_to_section ($self, $node, $elt_list = [ $node->get_element_names ]) {
 
     my @section ;
-    my $description_ref ;
+    my $description ;
+    my $has_description = 0;
     foreach my $elt ( $elt_list->@* ) {
         my $type = $node->element_type($elt) ;
         my $elt_obj = $node->fetch_element($elt) ;
@@ -303,17 +308,23 @@ sub node_to_section ($self, $node, $elt_list = [ $node->get_element_names ]) {
             push @section, $elt , $v if $v ;
         }
         elsif ($elt eq 'Synopsis') {
-            my $v = $node->fetch_element_value($elt) ;
-            push @section, 'Description' , $v ; # mandatory field
-            $description_ref = \$section[$#section] ;
+            my $v = $node->fetch_element_value($elt);
+            # mandatory field in binary sections
+            $description = $v  // '';
+            $has_description = defined $v;
         }
         elsif ($elt eq 'Description') {
+            my $v = $node->fetch_element_value($elt);
             # annotation attached to Description is written as a
             # comment *after* the Description block
-            $$description_ref .= "\n".$node->fetch_element_value($elt) ; # mandatory field
+            # mandatory field in binary sections
+            $description .= "\n". ($v // '') ;
+            $has_description ||= defined $v;
+
+            push @section, 'Description' , $description if $has_description;
         }
         else {
-            my $v = $node->fetch_element_value($elt) ;
+            my $v = $node->fetch_element($elt)->fetch(mode => 'non_upstream_default') ;
             push @section, $elt , $v if $v ;
         }
     }
@@ -364,7 +375,7 @@ Parse the file with:
 
  package main ;
  use Path::Tiny;
- use YAML::XS;
+ use YAML::PP;
 
  # load control file
  my $file = path('dpkg-test');

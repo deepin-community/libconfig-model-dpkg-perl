@@ -34,6 +34,7 @@ A package may specify an architecture wildcard. Architecture wildcards are in th
       'Multi-Arch',
       {
         'choice' => [
+          'no',
           'same',
           'foreign',
           'allowed'
@@ -42,6 +43,7 @@ A package may specify an architecture wildcard. Architecture wildcards are in th
         'help' => {
           'allowed' => 'allows reverse-dependencies to indicate in their Depends field that they need a package from a foreign architecture, but has no effect otherwise.',
           'foreign' => 'the package is not co-installable with itself, but should be allowed to satisfy the dependency of a package of a different arch from itself.',
+          'no' => 'the package is not co-installable and it must not be used to satisfy the dependency of any package of another architecture than its own.',
           'same' => 'the package is co-installable with itself, but it must not be used to satisfy the dependency of any package of a different architecture from itself.'
         },
         'type' => 'leaf',
@@ -90,7 +92,72 @@ A package may specify an architecture wildcard. Architecture wildcards are in th
       },
       'Essential',
       {
+        'description' => 'The package is an essential package as defined by Debian Policy. The following
+rules apply to the package:
+
+'.'=over
+
+'.'=item *
+
+Essential packages are considered essential for the system to work.
+The packaging system (APT and dpkg) will warn and refuse to uninstall
+them without some very insistent force options.
+
+'.'=item *
+
+Other packages are not required to declare explicit dependencies on
+essential packages as a side-effect of the above except as needed to
+ensure that the given essential package is upgraded to a given minimum
+version.
+
+'.'=item *
+
+Once installed, essential packages must function at all times no
+matter where dpkg is in its installation or upgrade process. During
+bootstrapping or installation, this requirement is relaxed.
+
+'.'=back
+
+Note that if you are looking for a way to prevent accidental uninstallation, please consider using C<Protected: yes> instead.
+',
+        'summary' => 'The package is essential as defined by Debian Policy',
         'type' => 'leaf',
+        'value_type' => 'boolean'
+      },
+      'XB-Important',
+      {
+        'description' => 'This is the prototype field that led to `Protected`, which should be used instead.
+
+It makes `apt` (but not `dpkg`) require extra confirmation before removing the package.',
+        'status' => 'deprecated',
+        'summary' => 'Obsolete and incomplete variant of the Protected field',
+        'type' => 'leaf',
+        'upstream_default' => 'no',
+        'value_type' => 'boolean'
+      },
+      'Protected',
+      {
+        'description' => 'Declare this package as a system critical package. When the field is set to C<yes>, both C<apt>
+and C<dpkg> will assume that removing the package B<may> break the system. As a consequence,
+they will require extra confirmation (or "force" options) before removing the package.
+This field basically provides "uninstall" protection similar to that of C<Essential> packages
+without the other benefits and requirements that come with C<Essential> packages. In a Debian
+context, this field is generally applicable to packages like bootloaders, kernels, and other
+packages that might be necessary for booting the system.
+',
+        'help' => {
+          'no' => 'The package is a regular package.  This is the default and recommended.',
+          'yes' => 'The package is protected and attempts to uninstall it will cause strong warnings to the user that they might be breaking the system.'
+        },
+        'migrate_from' => {
+          'formula' => '$xbi',
+          'variables' => {
+            'xbi' => '- XB-Important'
+          }
+        },
+        'summary' => 'Mark as Protected (uninstall protection)',
+        'type' => 'leaf',
+        'upstream_default' => 'no',
         'value_type' => 'boolean'
       },
       'Depends',
@@ -269,6 +336,11 @@ A package including binaries from grub2 and loadlin would have this field in its
       },
       'Synopsis',
       {
+        'description' => 'In a source template control file or binary control file, the Description field contains a description of the binary package, consisting of two parts, the synopsis or the short description, and the long description.
+
+Im cme, the 2 parts have their own entry: Synopsis and Description. 
+
+This is the Synopsis, i.e. the first part.',
         'mandatory' => '1',
         'type' => 'leaf',
         'value_type' => 'uniline',
@@ -280,13 +352,18 @@ A package including binaries from grub2 and loadlin would have this field in its
       },
       'Description',
       {
+        'description' => 'In a source template control file or binary control file, the Description field contains a description of the binary package, consisting of two parts, the synopsis or the short description, and the long description.
+
+Im cme, the 2 parts have their own entry: Synopsis and Description. 
+
+This is the long description, i.e. the 2nd part.',
         'mandatory' => '1',
         'type' => 'leaf',
         'value_type' => 'string',
         'warn_if_match' => {
           'Debian GNU/Linux' => {
-            'fix' => 's!Debian GNU/Linux!Debian GNU!g;',
-            'msg' => 'deprecated in favor of Debian GNU'
+            'fix' => 's!Debian GNU/Linux!Debian!g;',
+            'msg' => 'deprecated in favor of Debian'
           },
           '[^\\n]{80,}' => {
             'fix' => 'eval { require Text::Autoformat   ; } ;
@@ -327,6 +404,7 @@ else {
         'description' => 'indicate the versions of the interpreter
 supported by the library',
         'level' => 'hidden',
+        'status' => 'deprecated',
         'type' => 'leaf',
         'value_type' => 'uniline',
         'warp' => {
@@ -342,10 +420,108 @@ supported by the library',
           ]
         }
       },
+      'X-DhRuby-Root',
+      {
+        'description' => 'Used by C<dh_ruby> to request "multi-binary" layout and where the root for the given
+package is.
+
+Please refer to L<dh_ruby|https://manpages.debian.org/dh_ruby> documentation for more details.
+',
+        'summary' => 'For multi-binary layout with the dh_ruby tool',
+        'type' => 'leaf',
+        'value_type' => 'uniline'
+      },
       'Build-Profiles',
       {
-        'description' => 'A list of lists of (optionally negated) profile names, forming a conjunctive normal form expression in the same syntax as in the Build-Depends field',
-        'match' => '<!?[a-z0-9]+(?:\\s+!?[a-z0-9]+)*>(?:\\s+<!?[a-z0-9]+(?:\\s+!?[a-z0-9]+)*>)*',
+        'description' => 'Build-Profiles specifies the condition for which that binary package does or does not build. 
+
+This is expressed as a list of lists of (optionally negated) profile names, forming a conjunctive normal form expression in the same syntax as in the Build-Depends field.
+
+For instance:
+
+    Build-Profiles: <!cross> <!nocheck>
+
+See L<https://wiki.debian.org/BuildProfileSpec#The_Build-Profiles_field> for more details.',
+        'match' => '^<!?[a-z0-9.-]+(?:\\s+!?[a-z0-9.-]+)*>(?:\\s+<!?[a-z0-9.-]+(?:\\s+!?[a-z0-9.-]+)*>)*$',
+        'type' => 'leaf',
+        'value_type' => 'uniline'
+      },
+      'XB-Installer-Menu-Item',
+      {
+        'description' => '=pod
+
+This field is only relevant for C<udeb> packages (debian-installer).
+
+The field is used to declare where in the installer menu this package\'s menu item should
+be placed (assuming it has any menu item). For packages targeting the Debian archive,
+any new package should have its menu item number aligned with the debian-installer team
+before upload.
+
+A menu item is 4-5 digits (In the range C<< 1000 <= X <= 99999 >>). In rare cases, the menu
+item can be architecture dependent. For architecture dependent menu item values, use a
+custom substvar.
+
+See L<https://d-i.debian.org/doc/internals/apa.html> for the full list of menu item ranges
+and for how to request a number.
+',
+        'level' => 'hidden',
+        'summary' => 'Package\'s order in the debian-installer menu (udeb-only)',
+        'type' => 'leaf',
+        'value_type' => 'uniline',
+        'warp' => {
+          'follow' => {
+            'pkg_type' => '- Package-Type'
+          },
+          'rules' => [
+            '$pkg_type eq "udeb"',
+            {
+              'level' => 'normal'
+            }
+          ]
+        }
+      },
+      'X-DH-Build-For-Type',
+      {
+        'choice' => [
+          'host',
+          'target'
+        ],
+        'description' => 'B<Special-purpose only>. B<This field is a special purpose field and is rarely needed.>
+B<Leave it out unless you know you need it or someone told you to use it.>
+
+This field is used when building a cross-compiling C-compiler (or similar cases).  Some packages need
+to be built for the target (DEB_B<TARGET>_ARCH) rather than the host (DEB_B<HOST>_ARCH) architecture.
+',
+        'help' => {
+          'host' => 'The package should be compiled for C<DEB_HOST_ARCH>, which is the default behavior.',
+          'target' => 'The package should be compiled for C<DEB_TARGET_ARCH>.
+
+For steps that look at the values from C<dpkg-architecture> B<and> that are specific to this
+package, the C<DEB_TARGET_> variants are used instead of the C<DEB_HOST_> variants. In C<debhelper>,
+this usually affects C<dh_makeshlibs> and C<dh_shlibdeps>. In C<debputy>, it affects the parts of the
+manifest that are run in a package specific context, such as the parts beneath the C<packages>
+root-level keyword.
+
+This value is exceedingly rare to the point where if you do not know you need it,
+then you are not looking for this value (or the field in general).
+'
+        },
+        'summary' => 'For cross-compiling cross-compilers',
+        'type' => 'leaf',
+        'upstream_default' => 'host',
+        'value_type' => 'enum'
+      },
+      'X-Time64-Compat',
+      {
+        'description' => 'Special purpose field related to the 64-bit time transition.
+
+It is used to inform packaging helpers what the original (non-transitioned) package name
+was when the auto-detection is inadequate. The non-transitioned package name is then
+conditionally provided in the C<${{t64:Provides}}> substitution variable.
+
+The field only works for architecture dependent packages.
+',
+        'summary' => '(Special purpose) Compat name for time64_t transition',
         'type' => 'leaf',
         'value_type' => 'uniline'
       }

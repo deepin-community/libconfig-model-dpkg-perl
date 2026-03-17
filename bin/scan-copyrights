@@ -5,13 +5,25 @@ use warnings ;
 use strict;
 use Path::Tiny;
 use Getopt::Long;
+use Log::Log4perl 1.11 qw(get_logger :levels);
 
 use Dpkg::Copyright::Scanner qw/print_copyright/;
 
-my %args;
-my $long;
+Log::Log4perl::init({
+    'log4perl.logger' => 'INFO, Screen',
+    #    'log4perl.logger.Dpkg::Copyright::Grant::ByFile' => "TRACE, Screen",
 
-GetOptions('long' => \$long);
+    'log4perl.appender.Screen' => 'Log::Log4perl::Appender::Screen',
+    'log4perl.appender.Screen.stderr' => '1',
+    'log4perl.appender.Screen.layout' => 'Log::Log4perl::Layout::PatternLayout',
+    'log4perl.appender.Screen.layout.ConversionPattern' => '%c %M %m (%L) %n',
+
+    'log4perl.oneMessagePerAppender' => 1,
+});
+
+my %args;
+
+GetOptions( \%args, 'long!', 'dump!');
 
 if (my $input = $ENV{COPYRIGHT_SCANNER_INPUT} || $ARGV[0]) {
     # used for test setup
@@ -22,10 +34,6 @@ if (my $input = $ENV{COPYRIGHT_SCANNER_INPUT} || $ARGV[0]) {
     else {
         $args{in} = $input_path;
     }
-}
-
-if ($long) {
-    $args{long} = 1;
 }
 
 print_copyright(%args);
@@ -51,7 +59,32 @@ information from source files. The output of licensecheck is parsed to
 generate the Files information of C<debian/copyright> files according to
 L<Debian specifications|https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/>
 
+=head1 Tweaking results
+
+Results can be tweaked either by:
+
+=over
+
+=item *
+
+Changing the list of files to scan or ignore. (By default, licensecheck will decide
+which file to scan or not.) See L<Dpkg::Copyright::Scanner/"Selecting or ignoring files to scan">
+
+=item *
+
+Specifying information for individual files or directories, such as
+copyright values, or to skip this file. See L<Dpkg::Copyright::Scanner/"Filling the blanks">.
+
+=item *
+
+Tweaking the copyright entries created by grouping and coaslescing
+information. See L<Dpkg::Copyright/"Tweak copyright entries">.
+
+=back
+
 =head1 BUGS
+
+=head2 Reliability
 
 Extracting license and copyright data from unstructured comments is not reliable.
 User must check manually the files when no copyright info is found or when the
@@ -62,6 +95,21 @@ C<debian/fill.copyright.blanks.yml> so that future runs of
 scan-copyrights will be more accurate.  Please see
 L<Dpkg::Copyright::Scanner/"Filling the blanks"> for instructions to
 write this file.
+
+=head2 Extracting information from Cargo.toml
+
+Copyright and information is extracted from C<Cargo.toml> files, but
+Cargo workspace information is ignored. The command C<cargo metadata>
+cannot be used as it produces information for packages, whereas
+C<debian/copyright> expects information for files.
+
+=head2 Corrupted package.json or toml files
+
+Some packages contain test file with invalid C<package.json> or
+C<Cargo.toml> files. C<scan-copyright> cannot deal with them and you
+must tell C<scan-copyright> to skip these files. See
+L<Dpkg::Copyright::Scanner/"Selecting or ignoring files to scan"> for
+details.
 
 =head1 Examples
 

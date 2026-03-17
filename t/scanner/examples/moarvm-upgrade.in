@@ -1,0 +1,690 @@
+.dir-locals.el	UNKNOWN	*No copyright*
+.editorconfig	UNKNOWN	*No copyright*
+.gitmodules	UNKNOWN	*No copyright*
+Artistic2.txt	Artistic-2.0	2000-2006 The Perl Foundation.
+CREDITS	UNKNOWN	*No copyright*
+Configure.pl	UNKNOWN	*No copyright*
+LICENSE	UNKNOWN	2012-2015 Jonathan Worthington and others.
+README.markdown	UNKNOWN	*No copyright*
+VERSION	UNKNOWN	*No copyright*
+azure-pipelines.yml	UNKNOWN	*No copyright*
+check.todo	UNKNOWN	*No copyright*
+lgtm.yml	UNKNOWN	*No copyright*
+3rdparty/README.md	UNKNOWN	*No copyright*
+docs/6model-parametric-extensions.markdown	UNKNOWN	*No copyright*
+docs/README.md	UNKNOWN	*No copyright*
+docs/arg-passing.markdown	UNKNOWN	*No copyright*
+docs/bootstrap.markdown	UNKNOWN	*No copyright*
+docs/bytecode.markdown	UNKNOWN	*No copyright*
+docs/collation.asciidoc	UNKNOWN	*No copyright*
+docs/contributing.org	UNKNOWN	*No copyright*
+docs/debug-server-protocol.md	UNKNOWN	*No copyright*
+docs/exceptions.markdown	UNKNOWN	*No copyright*
+docs/gc.markdown	UNKNOWN	*No copyright*
+docs/heapsnapshot.markdown	UNKNOWN	*No copyright*
+docs/interpreter.markdown	UNKNOWN	*No copyright*
+docs/japhb-todo.txt	UNKNOWN	*No copyright*
+docs/moar.pod	Artistic-2.0	2012-2014 the MoarVM contributors. See the F<CREDITS> file for
+docs/release_guide.md	UNKNOWN	*No copyright*
+docs/reveal.md	UNKNOWN	*No copyright*
+docs/strings.asciidoc	UNKNOWN	*No copyright*
+lib/README.md	UNKNOWN	*No copyright*
+src/README.md	UNKNOWN	*No copyright*
+src/bithacks.h	UNKNOWN	*No copyright*
+src/gcc_diag.h	UNKNOWN	*No copyright*
+src/main.c	UNKNOWN	*No copyright*
+src/memdebug.h	UNKNOWN	*No copyright*
+src/moar.c	UNKNOWN	*No copyright*
+src/moar.h	UNKNOWN	*No copyright*
+src/types.h	UNKNOWN	*No copyright*
+tools/Generate-Collation-Data.raku	UNKNOWN	*No copyright*
+tools/UCD-download.raku	UNKNOWN	*No copyright*
+tools/backskip_spesh_log.raku	UNKNOWN	*No copyright*
+tools/check-roots.py	UNKNOWN	*No copyright*
+tools/check-throw-without-free.py	UNKNOWN	*No copyright*
+tools/check.mk	UNKNOWN	*No copyright*
+tools/colorize_spesh.raku	UNKNOWN	*No copyright*
+tools/compare-oplist-interp-order.sh	UNKNOWN	*No copyright*
+tools/count-jit-bail-ops.raku	UNKNOWN	*No copyright*
+tools/dynvarcost	UNKNOWN	*No copyright*
+tools/expr-template-compiler.pl	UNKNOWN	*No copyright*
+tools/generate_encoding_codetables.raku	UNKNOWN	*No copyright*
+tools/graph_spesh.raku	UNKNOWN	*No copyright*
+tools/interp_backtrace_enhancer.raku	UNKNOWN	*No copyright*
+tools/jit-bisect.pl	UNKNOWN	*No copyright*
+tools/jit-comparify-asm.pl	UNKNOWN	*No copyright*
+tools/jit-dump.pl	UNKNOWN	*No copyright*
+tools/macroify_mallocs.raku	UNKNOWN	*No copyright*
+tools/make-index.sh	UNKNOWN	*No copyright*
+tools/moar-gdb.py	UNKNOWN	*No copyright*
+tools/moarvm.org_releases.pl	UNKNOWN	*No copyright*
+tools/parse_coverage_report.raku	UNKNOWN	2016
+tools/parse_jitgraph.raku	UNKNOWN	*No copyright*
+tools/release	UNKNOWN	*No copyright*
+tools/release.sh	UNKNOWN	*No copyright*
+tools/repr_size_table.c	UNKNOWN	*No copyright*
+tools/sort-expr-templates-by-oplist-order.raku	UNKNOWN	*No copyright*
+tools/spesh-bisect.pl	UNKNOWN	*No copyright*
+tools/spesh-time.raku	UNKNOWN	*No copyright*
+tools/spesh_diff.raku	UNKNOWN	*No copyright*
+tools/tiler-table-generator.pl	UNKNOWN	*No copyright*
+tools/trace_spesh_optimizer.gdb	UNKNOWN	*No copyright*
+tools/ucd2c.pl	UNKNOWN	*No copyright*
+tools/update-changelog.raku	UNKNOWN	ommit, (C)ategory, subject (o)rigin, (a)uthor, (q)uit this menu and go back";
+tools/update-gh-pages.sh	UNKNOWN	*No copyright*
+tools/update-submodules.pl	UNKNOWN	2009-2019 The Perl Foundation
+tools/update_ops.raku	UNKNOWN	*No copyright*
+3rdparty/cmp/.travis.yml	UNKNOWN	*No copyright*
+3rdparty/cmp/CODE_OF_CONDUCT.md	UNKNOWN	*No copyright*
+3rdparty/cmp/LICENSE	Expat	2014 Charles Gunyon
+3rdparty/cmp/README.md	UNKNOWN	*No copyright*
+3rdparty/cmp/TODO.md	UNKNOWN	*No copyright*
+3rdparty/cmp/cmp.c	Expat	2017 Charles Gunyon
+3rdparty/cmp/cmp.h	Expat	2017 Charles Gunyon
+3rdparty/dynasm/COPYRIGHT	Expat	2005-2014 Mike Pall.
+3rdparty/dynasm/dasm_arm.h	Expat	2005-2015 Mike Pall.
+3rdparty/dynasm/dasm_arm.lua	UNKNOWN	2005-2015 Mike Pall.
+3rdparty/dynasm/dasm_mips.h	Expat	2005-2015 Mike Pall.
+3rdparty/dynasm/dasm_mips.lua	UNKNOWN	2005-2015 Mike Pall.
+3rdparty/dynasm/dasm_ppc.h	Expat	2005-2015 Mike Pall.
+3rdparty/dynasm/dasm_ppc.lua	UNKNOWN	2005-2015 Mike Pall.
+3rdparty/dynasm/dasm_proto.h	Expat	2005-2015 Mike Pall.
+3rdparty/dynasm/dasm_x64.lua	UNKNOWN	2005-2015 Mike Pall.
+3rdparty/dynasm/dasm_x86.h	Expat	2005-2015 Mike Pall.
+3rdparty/dynasm/dasm_x86.lua	UNKNOWN	2005-2015 Mike Pall.
+3rdparty/dynasm/dynasm.lua	Expat	2005-2015 Mike Pall.
+3rdparty/dynasm/minilua.c	Expat	1994-2012 Lua.org, PUC-Rio.
+3rdparty/freebsd/memmem.c	Expat	2005-2014 Rich Felker, et al.
+3rdparty/msinttypes/inttypes.h	BSD-3-clause	2006-2013 Alexander Chemeris
+3rdparty/msinttypes/stdint.h	BSD-3-clause	2006-2013 Alexander Chemeris
+3rdparty/ryu/.classpath	UNKNOWN	*No copyright*
+3rdparty/ryu/.travis.yml	UNKNOWN	*No copyright*
+3rdparty/ryu/CONTRIBUTORS	UNKNOWN	*No copyright*
+3rdparty/ryu/LICENSE-Apache2	Apache-2.0	*No copyright*
+3rdparty/ryu/LICENSE-Boost	BSL-1.0	*No copyright*
+3rdparty/ryu/README.md	Apache-2.0 and/or BSL-1.0	*No copyright*
+3rdparty/ryu/run_benchmark.bat	UNKNOWN	*No copyright*
+3rdparty/ryu/run_benchmark_linux.sh	UNKNOWN	*No copyright*
+3rdparty/sha1/sha1.c	UNKNOWN	*No copyright*
+3rdparty/sha1/sha1.h	public-domain	*No copyright*
+3rdparty/tinymt/LICENSE.txt	BSD-3-clause	2011, 2013 Mutsuo Saito, Makoto Matsumoto,
+3rdparty/tinymt/README.txt	UNKNOWN	*No copyright*
+3rdparty/tinymt/tinymt64.c	UNKNOWN	2011 Mutsuo Saito, Makoto Matsumoto,
+3rdparty/tinymt/tinymt64.h	UNKNOWN	*No copyright*
+docs/jit/aarch64-jit-scope.md	UNKNOWN	*No copyright*
+docs/jit/how-to-add-an-missing-expression-operator.org	UNKNOWN	*No copyright*
+docs/jit/ir.md	UNKNOWN	*No copyright*
+docs/jit/overview.org	UNKNOWN	*No copyright*
+docs/jit/runtime.md	UNKNOWN	*No copyright*
+docs/jit/tiles.md	UNKNOWN	*No copyright*
+docs/jit/todo.org	UNKNOWN	*No copyright*
+lib/MAST/Nodes.nqp	UNKNOWN	*No copyright*
+lib/MAST/Ops.nqp	UNKNOWN	*No copyright*
+ports/macports/Portfile	UNKNOWN	*No copyright*
+ports/macports/README.md	UNKNOWN	*No copyright*
+src/6model/6model.c	UNKNOWN	*No copyright*
+src/6model/6model.h	UNKNOWN	*No copyright*
+src/6model/README.md	UNKNOWN	*No copyright*
+src/6model/bootstrap.c	UNKNOWN	*No copyright*
+src/6model/bootstrap.h	UNKNOWN	*No copyright*
+src/6model/containers.c	UNKNOWN	*No copyright*
+src/6model/containers.h	UNKNOWN	*No copyright*
+src/6model/parametric.c	UNKNOWN	*No copyright*
+src/6model/parametric.h	UNKNOWN	*No copyright*
+src/6model/reprconv.c	UNKNOWN	*No copyright*
+src/6model/reprconv.h	UNKNOWN	*No copyright*
+src/6model/reprs.c	UNKNOWN	*No copyright*
+src/6model/reprs.h	UNKNOWN	*No copyright*
+src/6model/sc.c	UNKNOWN	*No copyright*
+src/6model/sc.h	UNKNOWN	*No copyright*
+src/6model/serialization.c	UNKNOWN	*No copyright*
+src/6model/serialization.h	UNKNOWN	*No copyright*
+src/core/alloc.h	UNKNOWN	*No copyright*
+src/core/args.c	UNKNOWN	*No copyright*
+src/core/args.h	UNKNOWN	*No copyright*
+src/core/bitmap.h	UNKNOWN	*No copyright*
+src/core/bytecode.c	UNKNOWN	*No copyright*
+src/core/bytecode.h	UNKNOWN	*No copyright*
+src/core/bytecodedump.c	UNKNOWN	*No copyright*
+src/core/bytecodedump.h	UNKNOWN	*No copyright*
+src/core/callsite.c	UNKNOWN	*No copyright*
+src/core/callsite.h	UNKNOWN	*No copyright*
+src/core/callstack.c	UNKNOWN	*No copyright*
+src/core/callstack.h	UNKNOWN	*No copyright*
+src/core/coerce.c	Expat	2017 James Edward Anhalt III - https://github.com/jeaiii/itoa
+src/core/coerce.h	UNKNOWN	*No copyright*
+src/core/compunit.c	UNKNOWN	*No copyright*
+src/core/compunit.h	UNKNOWN	*No copyright*
+src/core/continuation.c	UNKNOWN	*No copyright*
+src/core/continuation.h	UNKNOWN	*No copyright*
+src/core/dll.c	UNKNOWN	*No copyright*
+src/core/dll.h	UNKNOWN	*No copyright*
+src/core/exceptions.c	UNKNOWN	*No copyright*
+src/core/exceptions.h	UNKNOWN	*No copyright*
+src/core/ext.c	UNKNOWN	*No copyright*
+src/core/ext.h	UNKNOWN	*No copyright*
+src/core/fixkey_hash_table.c	UNKNOWN	*No copyright*
+src/core/fixkey_hash_table.h	UNKNOWN	*No copyright*
+src/core/fixkey_hash_table_funcs.h	UNKNOWN	*No copyright*
+src/core/frame.c	UNKNOWN	*No copyright*
+src/core/frame.h	UNKNOWN	*No copyright*
+src/core/hll.c	UNKNOWN	*No copyright*
+src/core/hll.h	UNKNOWN	*No copyright*
+src/core/index_hash_table.c	UNKNOWN	*No copyright*
+src/core/index_hash_table.h	UNKNOWN	*No copyright*
+src/core/index_hash_table_funcs.h	UNKNOWN	*No copyright*
+src/core/instance.h	UNKNOWN	*No copyright*
+src/core/intcache.c	UNKNOWN	*No copyright*
+src/core/intcache.h	UNKNOWN	*No copyright*
+src/core/interp.c	UNKNOWN	*No copyright*
+src/core/interp.h	UNKNOWN	*No copyright*
+src/core/loadbytecode.c	UNKNOWN	*No copyright*
+src/core/loadbytecode.h	UNKNOWN	*No copyright*
+src/core/nativecall.c	UNKNOWN	*No copyright*
+src/core/nativecall.h	UNKNOWN	*No copyright*
+src/core/nativecall_dyncall.c	UNKNOWN	*No copyright*
+src/core/nativecall_dyncall.h	UNKNOWN	*No copyright*
+src/core/nativecall_libffi.c	UNKNOWN	*No copyright*
+src/core/nativecall_libffi.h	UNKNOWN	*No copyright*
+src/core/oplabels.h	UNKNOWN	*No copyright*
+src/core/oplist	UNKNOWN	*No copyright*
+src/core/ops.c	UNKNOWN	*No copyright*
+src/core/ops.h	UNKNOWN	*No copyright*
+src/core/ptr_hash_table.c	UNKNOWN	*No copyright*
+src/core/ptr_hash_table.h	UNKNOWN	*No copyright*
+src/core/ptr_hash_table_funcs.h	UNKNOWN	*No copyright*
+src/core/regionalloc.c	UNKNOWN	*No copyright*
+src/core/regionalloc.h	UNKNOWN	*No copyright*
+src/core/str_hash_table.c	UNKNOWN	restriction.
+src/core/str_hash_table.h	UNKNOWN	*No copyright*
+src/core/str_hash_table_funcs.h	UNKNOWN	*No copyright*
+src/core/threadcontext.c	UNKNOWN	*No copyright*
+src/core/threadcontext.h	UNKNOWN	*No copyright*
+src/core/threads.c	UNKNOWN	*No copyright*
+src/core/threads.h	UNKNOWN	*No copyright*
+src/core/uni_hash_table.c	UNKNOWN	*No copyright*
+src/core/uni_hash_table.h	UNKNOWN	*No copyright*
+src/core/uni_hash_table_funcs.h	UNKNOWN	*No copyright*
+src/core/validation.c	UNKNOWN	*No copyright*
+src/core/validation.h	UNKNOWN	*No copyright*
+src/core/vector.h	UNKNOWN	*No copyright*
+src/debug/debugserver.c	UNKNOWN	*No copyright*
+src/debug/debugserver.h	UNKNOWN	*No copyright*
+src/disp/boot.c	UNKNOWN	*No copyright*
+src/disp/boot.h	UNKNOWN	*No copyright*
+src/disp/inline_cache.c	UNKNOWN	*No copyright*
+src/disp/inline_cache.h	UNKNOWN	*No copyright*
+src/disp/labels.h	UNKNOWN	*No copyright*
+src/disp/program.c	UNKNOWN	*No copyright*
+src/disp/program.h	UNKNOWN	*No copyright*
+src/disp/registry.c	UNKNOWN	*No copyright*
+src/disp/registry.h	UNKNOWN	*No copyright*
+src/disp/resume.c	UNKNOWN	*No copyright*
+src/disp/resume.h	UNKNOWN	*No copyright*
+src/disp/syscall.c	UNKNOWN	*No copyright*
+src/disp/syscall.h	UNKNOWN	*No copyright*
+src/gc/allocation.c	UNKNOWN	*No copyright*
+src/gc/allocation.h	UNKNOWN	*No copyright*
+src/gc/collect.c	UNKNOWN	*No copyright*
+src/gc/collect.h	UNKNOWN	*No copyright*
+src/gc/debug.c	UNKNOWN	*No copyright*
+src/gc/debug.h	UNKNOWN	*No copyright*
+src/gc/finalize.c	UNKNOWN	*No copyright*
+src/gc/finalize.h	UNKNOWN	*No copyright*
+src/gc/gen2.c	UNKNOWN	*No copyright*
+src/gc/gen2.h	UNKNOWN	*No copyright*
+src/gc/objectid.c	UNKNOWN	*No copyright*
+src/gc/objectid.h	UNKNOWN	*No copyright*
+src/gc/orchestrate.c	UNKNOWN	*No copyright*
+src/gc/orchestrate.h	UNKNOWN	*No copyright*
+src/gc/roots.c	UNKNOWN	*No copyright*
+src/gc/roots.h	UNKNOWN	*No copyright*
+src/gc/wb.c	UNKNOWN	*No copyright*
+src/gc/wb.h	UNKNOWN	*No copyright*
+src/gc/worklist.c	UNKNOWN	*No copyright*
+src/gc/worklist.h	UNKNOWN	*No copyright*
+src/gen/config.c	UNKNOWN	*No copyright*
+src/gen/config.h	UNKNOWN	*No copyright*
+src/instrument/crossthreadwrite.c	UNKNOWN	*No copyright*
+src/instrument/crossthreadwrite.h	UNKNOWN	*No copyright*
+src/instrument/line_coverage.c	UNKNOWN	*No copyright*
+src/instrument/line_coverage.h	UNKNOWN	*No copyright*
+src/io/asyncsocket.c	UNKNOWN	*No copyright*
+src/io/asyncsocket.h	UNKNOWN	*No copyright*
+src/io/asyncsocketudp.c	UNKNOWN	*No copyright*
+src/io/asyncsocketudp.h	UNKNOWN	*No copyright*
+src/io/dirops.c	UNKNOWN	*No copyright*
+src/io/dirops.h	UNKNOWN	*No copyright*
+src/io/eventloop.c	UNKNOWN	*No copyright*
+src/io/eventloop.h	UNKNOWN	*No copyright*
+src/io/fileops.c	UNKNOWN	*No copyright*
+src/io/fileops.h	UNKNOWN	*No copyright*
+src/io/filewatchers.c	UNKNOWN	*No copyright*
+src/io/filewatchers.h	UNKNOWN	*No copyright*
+src/io/io.c	UNKNOWN	*No copyright*
+src/io/io.h	UNKNOWN	*No copyright*
+src/io/procops.c	UNKNOWN	*No copyright*
+src/io/procops.h	UNKNOWN	*No copyright*
+src/io/signals.c	UNKNOWN	*No copyright*
+src/io/signals.h	UNKNOWN	*No copyright*
+src/io/syncfile.c	UNKNOWN	*No copyright*
+src/io/syncfile.h	UNKNOWN	*No copyright*
+src/io/syncsocket.c	UNKNOWN	*No copyright*
+src/io/syncsocket.h	UNKNOWN	*No copyright*
+src/io/timers.c	UNKNOWN	*No copyright*
+src/io/timers.h	UNKNOWN	*No copyright*
+src/jit/compile.c	UNKNOWN	*No copyright*
+src/jit/compile.h	UNKNOWN	*No copyright*
+src/jit/core_templates.expr	UNKNOWN	*No copyright*
+src/jit/dump.c	UNKNOWN	*No copyright*
+src/jit/dump.h	UNKNOWN	*No copyright*
+src/jit/expr.c	UNKNOWN	*No copyright*
+src/jit/expr.h	UNKNOWN	*No copyright*
+src/jit/expr_ops.h	UNKNOWN	*No copyright*
+src/jit/graph.c	UNKNOWN	*No copyright*
+src/jit/graph.h	UNKNOWN	*No copyright*
+src/jit/interface.c	UNKNOWN	*No copyright*
+src/jit/interface.h	UNKNOWN	*No copyright*
+src/jit/internal.h	UNKNOWN	*No copyright*
+src/jit/label.c	UNKNOWN	*No copyright*
+src/jit/label.h	UNKNOWN	*No copyright*
+src/jit/linear_scan.c	UNKNOWN	*No copyright*
+src/jit/macro.expr	UNKNOWN	*No copyright*
+src/jit/register.h	UNKNOWN	*No copyright*
+src/jit/stub.c	UNKNOWN	*No copyright*
+src/jit/tile.c	UNKNOWN	*No copyright*
+src/jit/tile.h	UNKNOWN	*No copyright*
+src/jit/unsafe.expr	UNKNOWN	*No copyright*
+src/math/bigintops.c	UNKNOWN	*No copyright*
+src/math/bigintops.h	UNKNOWN	*No copyright*
+src/math/num.h	UNKNOWN	*No copyright*
+src/platform/fork.h	UNKNOWN	*No copyright*
+src/platform/inttypes.h	UNKNOWN	*No copyright*
+src/platform/io.h	UNKNOWN	*No copyright*
+src/platform/malloc_trim.c	UNKNOWN	*No copyright*
+src/platform/malloc_trim.h	UNKNOWN	*No copyright*
+src/platform/memmem.h	UNKNOWN	*No copyright*
+src/platform/memmem32.c	Expat	2018 Samantha McVey / 2005-2014 Rich Felker, et al.
+src/platform/memmem32.h	UNKNOWN	*No copyright*
+src/platform/mmap.h	UNKNOWN	*No copyright*
+src/platform/random.c	UNKNOWN	*No copyright*
+src/platform/random.h	UNKNOWN	*No copyright*
+src/platform/setjmp.h	UNKNOWN	*No copyright*
+src/platform/socket.h	UNKNOWN	*No copyright*
+src/platform/stdint.h	UNKNOWN	*No copyright*
+src/platform/sys.c	UNKNOWN	*No copyright*
+src/platform/sys.h	UNKNOWN	*No copyright*
+src/platform/threads.h	UNKNOWN	*No copyright*
+src/platform/time.h	UNKNOWN	*No copyright*
+src/profiler/configuration.c	UNKNOWN	*No copyright*
+src/profiler/configuration.h	UNKNOWN	*No copyright*
+src/profiler/heapsnapshot.c	UNKNOWN	*No copyright*
+src/profiler/heapsnapshot.h	UNKNOWN	*No copyright*
+src/profiler/instrument.c	UNKNOWN	*No copyright*
+src/profiler/instrument.h	UNKNOWN	*No copyright*
+src/profiler/log.c	UNKNOWN	*No copyright*
+src/profiler/log.h	UNKNOWN	*No copyright*
+src/profiler/profile.c	UNKNOWN	*No copyright*
+src/profiler/profile.h	UNKNOWN	*No copyright*
+src/profiler/telemeh.c	UNKNOWN	*No copyright*
+src/profiler/telemeh.h	UNKNOWN	*No copyright*
+src/spesh/arg_guard.c	UNKNOWN	*No copyright*
+src/spesh/arg_guard.h	UNKNOWN	*No copyright*
+src/spesh/args.c	UNKNOWN	*No copyright*
+src/spesh/args.h	UNKNOWN	*No copyright*
+src/spesh/codegen.c	UNKNOWN	*No copyright*
+src/spesh/codegen.h	UNKNOWN	*No copyright*
+src/spesh/dead_bb_elimination.c	UNKNOWN	*No copyright*
+src/spesh/dead_bb_elimination.h	UNKNOWN	*No copyright*
+src/spesh/dead_ins_elimination.c	UNKNOWN	*No copyright*
+src/spesh/dead_ins_elimination.h	UNKNOWN	*No copyright*
+src/spesh/debug.c	UNKNOWN	*No copyright*
+src/spesh/debug.h	UNKNOWN	*No copyright*
+src/spesh/deopt.c	UNKNOWN	*No copyright*
+src/spesh/deopt.h	UNKNOWN	*No copyright*
+src/spesh/disp.c	UNKNOWN	*No copyright*
+src/spesh/disp.h	UNKNOWN	*No copyright*
+src/spesh/dump.c	UNKNOWN	*No copyright*
+src/spesh/dump.h	UNKNOWN	*No copyright*
+src/spesh/facts.c	UNKNOWN	*No copyright*
+src/spesh/facts.h	UNKNOWN	*No copyright*
+src/spesh/frame_walker.c	UNKNOWN	*No copyright*
+src/spesh/frame_walker.h	UNKNOWN	*No copyright*
+src/spesh/graph.c	UNKNOWN	*No copyright*
+src/spesh/graph.h	UNKNOWN	*No copyright*
+src/spesh/inline.c	UNKNOWN	*No copyright*
+src/spesh/inline.h	UNKNOWN	*No copyright*
+src/spesh/iterator.c	UNKNOWN	*No copyright*
+src/spesh/iterator.h	UNKNOWN	*No copyright*
+src/spesh/log.c	UNKNOWN	*No copyright*
+src/spesh/log.h	UNKNOWN	*No copyright*
+src/spesh/lookup.c	UNKNOWN	*No copyright*
+src/spesh/lookup.h	UNKNOWN	*No copyright*
+src/spesh/manipulate.c	UNKNOWN	*No copyright*
+src/spesh/manipulate.h	UNKNOWN	*No copyright*
+src/spesh/optimize.c	UNKNOWN	*No copyright*
+src/spesh/optimize.h	UNKNOWN	*No copyright*
+src/spesh/osr.c	UNKNOWN	*No copyright*
+src/spesh/osr.h	UNKNOWN	*No copyright*
+src/spesh/pea.c	UNKNOWN	*No copyright*
+src/spesh/pea.h	UNKNOWN	*No copyright*
+src/spesh/plan.c	UNKNOWN	*No copyright*
+src/spesh/plan.h	UNKNOWN	*No copyright*
+src/spesh/stats.c	UNKNOWN	*No copyright*
+src/spesh/stats.h	UNKNOWN	*No copyright*
+src/spesh/threshold.c	UNKNOWN	*No copyright*
+src/spesh/threshold.h	UNKNOWN	*No copyright*
+src/spesh/usages.c	UNKNOWN	*No copyright*
+src/spesh/usages.h	UNKNOWN	*No copyright*
+src/spesh/worker.c	UNKNOWN	*No copyright*
+src/spesh/worker.h	UNKNOWN	*No copyright*
+src/strings/ascii.c	UNKNOWN	*No copyright*
+src/strings/ascii.h	UNKNOWN	*No copyright*
+src/strings/decode_stream.c	UNKNOWN	*No copyright*
+src/strings/decode_stream.h	UNKNOWN	*No copyright*
+src/strings/gb18030.c	UNKNOWN	*No copyright*
+src/strings/gb18030.h	UNKNOWN	*No copyright*
+src/strings/gb18030_codeindex.h	UNKNOWN	*No copyright*
+src/strings/gb2312.c	UNKNOWN	*No copyright*
+src/strings/gb2312.h	UNKNOWN	*No copyright*
+src/strings/gb2312_codeindex.h	UNKNOWN	*No copyright*
+src/strings/iter.h	UNKNOWN	*No copyright*
+src/strings/latin1.c	UNKNOWN	*No copyright*
+src/strings/latin1.h	UNKNOWN	*No copyright*
+src/strings/nfg.c	UNKNOWN	*No copyright*
+src/strings/nfg.h	UNKNOWN	*No copyright*
+src/strings/normalize.c	UNKNOWN	*No copyright*
+src/strings/normalize.h	UNKNOWN	*No copyright*
+src/strings/ops.c	UNKNOWN	*No copyright*
+src/strings/ops.h	UNKNOWN	*No copyright*
+src/strings/parse_num.c	UNKNOWN	*No copyright*
+src/strings/parse_num.h	UNKNOWN	*No copyright*
+src/strings/shiftjis.c	UNKNOWN	*No copyright*
+src/strings/shiftjis.h	UNKNOWN	*No copyright*
+src/strings/shiftjis_codeindex.h	UNKNOWN	*No copyright*
+src/strings/unicode.c	UNKNOWN	*No copyright*
+src/strings/unicode.h	UNKNOWN	*No copyright*
+src/strings/unicode_db.c	Unicode-DFS-2016	2020 Unicode®, Inc.
+src/strings/unicode_gen.h	UNKNOWN	*No copyright*
+src/strings/unicode_ops.c	UNKNOWN	*No copyright*
+src/strings/unicode_ops.h	UNKNOWN	*No copyright*
+src/strings/unicode_prop_macros.h	UNKNOWN	*No copyright*
+src/strings/unicode_uca.c	UNKNOWN	*No copyright*
+src/strings/utf16.c	UNKNOWN	*No copyright*
+src/strings/utf16.h	UNKNOWN	*No copyright*
+src/strings/utf8.c	Expat	2008-2010 Bjoern Hoehrmann <bjoern@hoehrmann.de>
+src/strings/utf8.h	UNKNOWN	*No copyright*
+src/strings/utf8_c8.c	UNKNOWN	2012 not_gerd
+src/strings/utf8_c8.h	UNKNOWN	*No copyright*
+src/strings/windows1252.c	UNKNOWN	*No copyright*
+src/strings/windows1252.h	UNKNOWN	*No copyright*
+tools/build-docs/build-docs-to-html.sh	UNKNOWN	*No copyright*
+tools/build-docs/markdown-to-ascii.patch	UNKNOWN	*No copyright*
+tools/lib/ArrayCompose.pm6	UNKNOWN	*No copyright*
+tools/lib/BitfieldPacking.pm6	UNKNOWN	*No copyright*
+tools/lib/Collation-Gram.pm6	UNKNOWN	*No copyright*
+tools/lib/IntWidth.pm6	UNKNOWN	*No copyright*
+tools/lib/expr_ops.pm	UNKNOWN	*No copyright*
+tools/lib/oplist.pm	UNKNOWN	*No copyright*
+tools/lib/sexpr.pm	UNKNOWN	*No copyright*
+tools/lib/timeout.pm	UNKNOWN	*No copyright*
+3rdparty/cmp/examples/example1.c	Expat	2017 Charles Gunyon
+3rdparty/cmp/examples/example2.c	Expat	2017 Charles Gunyon
+3rdparty/cmp/test/buf.c	Expat	2017 Charles Gunyon
+3rdparty/cmp/test/buf.h	Expat	2017 Charles Gunyon
+3rdparty/cmp/test/test.c	Expat	2017 Charles Gunyon
+3rdparty/cmp/test/utils.c	Expat	2017 Charles Gunyon
+3rdparty/cmp/test/utils.h	Expat	2017 Charles Gunyon
+3rdparty/ryu/ryu/BUILD	UNKNOWN	*No copyright*
+3rdparty/ryu/ryu/common.h	Apache-2.0 and/or BSL-1.0	2018 Ulf Adams
+3rdparty/ryu/ryu/d2fixed.c	Apache-2.0 and/or BSL-1.0	2018 Ulf Adams
+3rdparty/ryu/ryu/d2fixed_full_table.h	Apache-2.0 and/or BSL-1.0	2018 Ulf Adams
+3rdparty/ryu/ryu/d2s.c	Apache-2.0 and/or BSL-1.0	2018 Ulf Adams
+3rdparty/ryu/ryu/d2s_full_table.h	Apache-2.0 and/or BSL-1.0	2018 Ulf Adams
+3rdparty/ryu/ryu/d2s_intrinsics.h	Apache-2.0 and/or BSL-1.0	2018 Ulf Adams
+3rdparty/ryu/ryu/d2s_small_table.h	Apache-2.0 and/or BSL-1.0	2018 Ulf Adams
+3rdparty/ryu/ryu/digit_table.h	Apache-2.0 and/or BSL-1.0	2018 Ulf Adams
+3rdparty/ryu/ryu/f2s.c	Apache-2.0 and/or BSL-1.0	2018 Ulf Adams
+3rdparty/ryu/ryu/f2s_full_table.h	Apache-2.0 and/or BSL-1.0	2018 Ulf Adams
+3rdparty/ryu/ryu/f2s_intrinsics.h	Apache-2.0 and/or BSL-1.0	2018 Ulf Adams
+3rdparty/ryu/ryu/generic_128.c	Apache-2.0 and/or BSL-1.0	2018 Ulf Adams
+3rdparty/ryu/ryu/generic_128.h	Apache-2.0 and/or BSL-1.0	2018 Ulf Adams
+3rdparty/ryu/ryu/ryu.h	Apache-2.0 and/or BSL-1.0	2018 Ulf Adams
+3rdparty/ryu/ryu/ryu_generic_128.h	Apache-2.0 and/or BSL-1.0	2018 Ulf Adams
+3rdparty/ryu/ryu/ryu_parse.h	Apache-2.0 and/or BSL-1.0	2019 Ulf Adams
+3rdparty/ryu/ryu/s2d.c	Apache-2.0 and/or BSL-1.0	2019 Ulf Adams
+3rdparty/ryu/ryu/s2f.c	Apache-2.0 and/or BSL-1.0	2019 Ulf Adams
+3rdparty/ryu/scripts/BUILD	UNKNOWN	*No copyright*
+3rdparty/ryu/scripts/double.template	UNKNOWN	*No copyright*
+3rdparty/ryu/scripts/float.template	UNKNOWN	*No copyright*
+3rdparty/ryu/scripts/printf.template	UNKNOWN	*No copyright*
+src/6model/reprs/CArray.c	UNKNOWN	*No copyright*
+src/6model/reprs/CArray.h	UNKNOWN	*No copyright*
+src/6model/reprs/CPPStruct.c	UNKNOWN	*No copyright*
+src/6model/reprs/CPPStruct.h	UNKNOWN	*No copyright*
+src/6model/reprs/CPointer.c	UNKNOWN	*No copyright*
+src/6model/reprs/CPointer.h	UNKNOWN	*No copyright*
+src/6model/reprs/CStr.c	UNKNOWN	*No copyright*
+src/6model/reprs/CStr.h	UNKNOWN	*No copyright*
+src/6model/reprs/CStruct.c	UNKNOWN	*No copyright*
+src/6model/reprs/CStruct.h	UNKNOWN	*No copyright*
+src/6model/reprs/CUnion.c	UNKNOWN	*No copyright*
+src/6model/reprs/CUnion.h	UNKNOWN	*No copyright*
+src/6model/reprs/ConcBlockingQueue.c	UNKNOWN	*No copyright*
+src/6model/reprs/ConcBlockingQueue.h	UNKNOWN	*No copyright*
+src/6model/reprs/ConditionVariable.c	UNKNOWN	*No copyright*
+src/6model/reprs/ConditionVariable.h	UNKNOWN	*No copyright*
+src/6model/reprs/Decoder.c	UNKNOWN	*No copyright*
+src/6model/reprs/Decoder.h	UNKNOWN	*No copyright*
+src/6model/reprs/HashAttrStore.c	UNKNOWN	*No copyright*
+src/6model/reprs/HashAttrStore.h	UNKNOWN	*No copyright*
+src/6model/reprs/KnowHOWAttributeREPR.c	UNKNOWN	*No copyright*
+src/6model/reprs/KnowHOWAttributeREPR.h	UNKNOWN	*No copyright*
+src/6model/reprs/KnowHOWREPR.c	UNKNOWN	*No copyright*
+src/6model/reprs/KnowHOWREPR.h	UNKNOWN	*No copyright*
+src/6model/reprs/MVMAsyncTask.c	UNKNOWN	*No copyright*
+src/6model/reprs/MVMAsyncTask.h	UNKNOWN	*No copyright*
+src/6model/reprs/MVMCFunction.c	UNKNOWN	*No copyright*
+src/6model/reprs/MVMCFunction.h	UNKNOWN	*No copyright*
+src/6model/reprs/MVMCapture.c	UNKNOWN	*No copyright*
+src/6model/reprs/MVMCapture.h	UNKNOWN	*No copyright*
+src/6model/reprs/MVMCode.c	UNKNOWN	*No copyright*
+src/6model/reprs/MVMCode.h	UNKNOWN	*No copyright*
+src/6model/reprs/MVMCompUnit.c	UNKNOWN	*No copyright*
+src/6model/reprs/MVMCompUnit.h	UNKNOWN	*No copyright*
+src/6model/reprs/MVMContext.c	UNKNOWN	*No copyright*
+src/6model/reprs/MVMContext.h	UNKNOWN	*No copyright*
+src/6model/reprs/MVMContinuation.c	UNKNOWN	*No copyright*
+src/6model/reprs/MVMContinuation.h	UNKNOWN	*No copyright*
+src/6model/reprs/MVMDLLSym.c	UNKNOWN	*No copyright*
+src/6model/reprs/MVMDLLSym.h	UNKNOWN	*No copyright*
+src/6model/reprs/MVMException.c	UNKNOWN	*No copyright*
+src/6model/reprs/MVMException.h	UNKNOWN	*No copyright*
+src/6model/reprs/MVMHash.c	UNKNOWN	*No copyright*
+src/6model/reprs/MVMHash.h	UNKNOWN	*No copyright*
+src/6model/reprs/MVMIter.c	UNKNOWN	*No copyright*
+src/6model/reprs/MVMIter.h	UNKNOWN	*No copyright*
+src/6model/reprs/MVMNull.c	UNKNOWN	*No copyright*
+src/6model/reprs/MVMNull.h	UNKNOWN	*No copyright*
+src/6model/reprs/MVMOSHandle.c	UNKNOWN	*No copyright*
+src/6model/reprs/MVMOSHandle.h	UNKNOWN	*No copyright*
+src/6model/reprs/MVMSpeshCandidate.c	UNKNOWN	*No copyright*
+src/6model/reprs/MVMSpeshCandidate.h	UNKNOWN	*No copyright*
+src/6model/reprs/MVMSpeshLog.c	UNKNOWN	*No copyright*
+src/6model/reprs/MVMSpeshLog.h	UNKNOWN	*No copyright*
+src/6model/reprs/MVMStaticFrame.c	UNKNOWN	*No copyright*
+src/6model/reprs/MVMStaticFrame.h	UNKNOWN	*No copyright*
+src/6model/reprs/MVMStaticFrameSpesh.c	UNKNOWN	*No copyright*
+src/6model/reprs/MVMStaticFrameSpesh.h	UNKNOWN	*No copyright*
+src/6model/reprs/MVMString.c	UNKNOWN	*No copyright*
+src/6model/reprs/MVMString.h	UNKNOWN	*No copyright*
+src/6model/reprs/MVMThread.c	UNKNOWN	*No copyright*
+src/6model/reprs/MVMThread.h	UNKNOWN	*No copyright*
+src/6model/reprs/MVMTracked.c	UNKNOWN	*No copyright*
+src/6model/reprs/MVMTracked.h	UNKNOWN	*No copyright*
+src/6model/reprs/MultiDimArray.c	UNKNOWN	*No copyright*
+src/6model/reprs/MultiDimArray.h	UNKNOWN	*No copyright*
+src/6model/reprs/NFA.c	UNKNOWN	*No copyright*
+src/6model/reprs/NFA.h	UNKNOWN	*No copyright*
+src/6model/reprs/NativeCall.c	UNKNOWN	*No copyright*
+src/6model/reprs/NativeCall.h	UNKNOWN	*No copyright*
+src/6model/reprs/NativeRef.c	UNKNOWN	*No copyright*
+src/6model/reprs/NativeRef.h	UNKNOWN	*No copyright*
+src/6model/reprs/P6bigint.c	UNKNOWN	*No copyright*
+src/6model/reprs/P6bigint.h	UNKNOWN	*No copyright*
+src/6model/reprs/P6int.c	UNKNOWN	*No copyright*
+src/6model/reprs/P6int.h	UNKNOWN	*No copyright*
+src/6model/reprs/P6num.c	UNKNOWN	*No copyright*
+src/6model/reprs/P6num.h	UNKNOWN	*No copyright*
+src/6model/reprs/P6opaque.c	UNKNOWN	*No copyright*
+src/6model/reprs/P6opaque.h	UNKNOWN	*No copyright*
+src/6model/reprs/P6str.c	UNKNOWN	*No copyright*
+src/6model/reprs/P6str.h	UNKNOWN	*No copyright*
+src/6model/reprs/README.md	UNKNOWN	*No copyright*
+src/6model/reprs/ReentrantMutex.c	UNKNOWN	*No copyright*
+src/6model/reprs/ReentrantMutex.h	UNKNOWN	*No copyright*
+src/6model/reprs/SCRef.c	UNKNOWN	*No copyright*
+src/6model/reprs/SCRef.h	UNKNOWN	*No copyright*
+src/6model/reprs/Semaphore.c	UNKNOWN	*No copyright*
+src/6model/reprs/Semaphore.h	UNKNOWN	*No copyright*
+src/6model/reprs/Uninstantiable.c	UNKNOWN	*No copyright*
+src/6model/reprs/Uninstantiable.h	UNKNOWN	*No copyright*
+src/6model/reprs/VMArray.c	UNKNOWN	*No copyright*
+src/6model/reprs/VMArray.h	UNKNOWN	*No copyright*
+src/jit/x64/arch.c	UNKNOWN	*No copyright*
+src/jit/x64/arch.h	UNKNOWN	*No copyright*
+src/jit/x64/emit.dasc	UNKNOWN	*No copyright*
+src/jit/x64/tile_pattern.tile	UNKNOWN	*No copyright*
+src/jit/x64/tiles.dasc	UNKNOWN	*No copyright*
+src/platform/posix/fork.c	UNKNOWN	*No copyright*
+src/platform/posix/io.c	UNKNOWN	*No copyright*
+src/platform/posix/mmap.c	UNKNOWN	*No copyright*
+src/platform/posix/time.c	UNKNOWN	*No copyright*
+src/platform/win32/fork.c	UNKNOWN	*No copyright*
+src/platform/win32/io.c	UNKNOWN	*No copyright*
+src/platform/win32/mmap.c	UNKNOWN	*No copyright*
+src/platform/win32/time.c	UNKNOWN	*No copyright*
+src/strings/siphash/csiphash.h	Expat	2018 Samantha McVey <samantham@posteo.net> / 2013 Marek Majkowski <marek@popcount.org>
+src/strings/siphash/test.c	UNKNOWN	*No copyright*
+3rdparty/ryu/ryu/benchmark/BUILD	UNKNOWN	*No copyright*
+3rdparty/ryu/ryu/benchmark/benchmark.cc	Apache-2.0 and/or BSL-1.0	2018 Ulf Adams
+3rdparty/ryu/ryu/benchmark/benchmark_fixed.c	Apache-2.0 and/or BSL-1.0	2018 Ulf Adams
+3rdparty/ryu/ryu/benchmark/benchmark_fixed.cc	Apache-2.0 and/or BSL-1.0	2018 Ulf Adams
+3rdparty/ryu/ryu/tests/BUILD	UNKNOWN	*No copyright*
+3rdparty/ryu/ryu/tests/common_test.cc	Apache-2.0 and/or BSL-1.0	2019 Ulf Adams
+3rdparty/ryu/ryu/tests/d2fixed_test.cc	Apache-2.0 and/or BSL-1.0	2018 Ulf Adams
+3rdparty/ryu/ryu/tests/d2s_intrinsics_test.cc	Apache-2.0 and/or BSL-1.0	2018 Ulf Adams
+3rdparty/ryu/ryu/tests/d2s_table_test.cc	Apache-2.0 and/or BSL-1.0	2018 Ulf Adams
+3rdparty/ryu/ryu/tests/d2s_test.cc	Apache-2.0 and/or BSL-1.0	2018 Ulf Adams
+3rdparty/ryu/ryu/tests/f2s_test.cc	Apache-2.0 and/or BSL-1.0	2018 Ulf Adams
+3rdparty/ryu/ryu/tests/generic_128_test.cc	Apache-2.0 and/or BSL-1.0	2018 Ulf Adams
+3rdparty/ryu/ryu/tests/s2d_test.cc	Apache-2.0 and/or BSL-1.0	2019 Ulf Adams
+3rdparty/ryu/ryu/tests/s2f_test.cc	Apache-2.0 and/or BSL-1.0	2019 Ulf Adams
+3rdparty/ryu/third_party/double-conversion/AUTHORS	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/double-conversion/BUILD	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/double-conversion/CMakeLists.txt	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/double-conversion/COPYING	BSD-3-clause	2006-2011 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/Changelog	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/double-conversion/LICENSE	BSD-3-clause	2006-2011 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/METADATA	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/double-conversion/README.md	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/double-conversion/SConstruct	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/double-conversion/WORKSPACE	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/double-conversion/double-conversionBuildTreeSettings.cmake.in	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/double-conversion/double-conversionConfig.cmake.in	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/double-conversion/double-conversionConfigVersion.cmake.in	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/gtest/BUILD	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/gtest/LICENSE	BSD-3-clause	2008 Google Inc.
+3rdparty/ryu/third_party/gtest/README	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/gtest/gtest-all.cc	BSD-3-clause	2008 Google Inc.
+3rdparty/ryu/third_party/gtest/gtest.h	BSD-3-clause	2005 Google Inc.
+3rdparty/ryu/third_party/gtest/gtest_main.cc	BSD-3-clause	2006 Google Inc.
+3rdparty/ryu/third_party/jaffer/BUILD	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/jaffer/LICENSE	Apache-2.0	Aubrey Jaffer and copyright Heng Yuan. / Aubrey Jaffer 2014
+3rdparty/ryu/third_party/mersenne/BUILD	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/mersenne/LICENSE	GFDL	protection under copyright law or other applicable laws.
+3rdparty/ryu/third_party/mersenne/random.c	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/mersenne/random.h	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/third_party/mersenne_java/BUILD	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/double-conversion/double-conversion/CMakeLists.txt	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/double-conversion/double-conversion/SConscript	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/double-conversion/double-conversion/bignum-dtoa.cc	BSD-3-clause	2010 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/double-conversion/bignum-dtoa.h	BSD-3-clause	2010 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/double-conversion/bignum.cc	BSD-3-clause	2010 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/double-conversion/bignum.h	BSD-3-clause	2010 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/double-conversion/cached-powers.cc	BSD-3-clause	2006-2008 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/double-conversion/cached-powers.h	BSD-3-clause	2010 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/double-conversion/diy-fp.cc	BSD-3-clause	2010 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/double-conversion/diy-fp.h	BSD-3-clause	2010 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/double-conversion/double-conversion.cc	BSD-3-clause	2010 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/double-conversion/double-conversion.h	BSD-3-clause	2012 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/double-conversion/fast-dtoa.cc	BSD-3-clause	2012 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/double-conversion/fast-dtoa.h	BSD-3-clause	2010 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/double-conversion/fixed-dtoa.cc	BSD-3-clause	2010 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/double-conversion/fixed-dtoa.h	BSD-3-clause	2010 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/double-conversion/ieee.h	BSD-3-clause	2012 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/double-conversion/strtod.cc	BSD-3-clause	2010 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/double-conversion/strtod.h	BSD-3-clause	2010 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/double-conversion/utils.h	BSD-3-clause	2010 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/msvc/double-conversion.sln	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/double-conversion/msvc/double-conversion.vcxproj	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/double-conversion/msvc/double-conversion.vcxproj.filters	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/double-conversion/msvc/testrunner.cmd	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/double-conversion/test/CMakeLists.txt	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/double-conversion/msvc/run_tests/run_tests.vcxproj	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/double-conversion/msvc/run_tests/run_tests.vcxproj.filters	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/double-conversion/test/cctest/CMakeLists.txt	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/double-conversion/test/cctest/SConscript	UNKNOWN	*No copyright*
+3rdparty/ryu/third_party/double-conversion/test/cctest/cctest.cc	BSD-3-clause	2008 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/test/cctest/cctest.h	BSD-3-clause	2008 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/test/cctest/checks.h	BSD-3-clause	2006-2008 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/test/cctest/gay-fixed.cc	BSD-3-clause	2010 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/test/cctest/gay-fixed.h	BSD-3-clause	2006-2008 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/test/cctest/gay-precision.cc	BSD-3-clause	2010 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/test/cctest/gay-precision.h	BSD-3-clause	2006-2008 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/test/cctest/gay-shortest-single.cc	BSD-3-clause	2011 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/test/cctest/gay-shortest-single.h	BSD-3-clause	2011 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/test/cctest/gay-shortest.cc	BSD-3-clause	2006-2008 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/test/cctest/gay-shortest.h	BSD-3-clause	2006-2008 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/test/cctest/test-bignum-dtoa.cc	BSD-3-clause	2012 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/test/cctest/test-bignum.cc	BSD-3-clause	2010 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/test/cctest/test-conversions.cc	UNKNOWN	2012 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/test/cctest/test-diy-fp.cc	UNKNOWN	2006-2008 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/test/cctest/test-dtoa.cc	BSD-3-clause	2010 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/test/cctest/test-fast-dtoa.cc	UNKNOWN	2006-2008 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/test/cctest/test-fixed-dtoa.cc	BSD-3-clause	2010 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/test/cctest/test-ieee.cc	UNKNOWN	2006-2008 the V8 project authors.
+3rdparty/ryu/third_party/double-conversion/test/cctest/test-strtod.cc	UNKNOWN	2006-2008 the V8 project authors.
+3rdparty/ryu/src/main/java/info/adams/ryu/BUILD	UNKNOWN	*No copyright*
+3rdparty/ryu/src/main/java/info/adams/ryu/RoundingMode.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/src/main/java/info/adams/ryu/RyuDouble.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/src/main/java/info/adams/ryu/RyuFloat.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/src/test/java/info/adams/ryu/AllTests.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/src/test/java/info/adams/ryu/BUILD	UNKNOWN	*No copyright*
+3rdparty/ryu/src/test/java/info/adams/ryu/DoubleToStringTest.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/src/test/java/info/adams/ryu/EuclidMinMaxTest.java	UNKNOWN	*No copyright*
+3rdparty/ryu/src/test/java/info/adams/ryu/FloatToStringTest.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/src/test/java/info/adams/ryu/JafferDoubleTest.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/src/test/java/info/adams/ryu/RyuDoubleTest.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/src/test/java/info/adams/ryu/RyuFloatTest.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/src/test/java/info/adams/ryu/SlowDoubleTest.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/src/test/java/info/adams/ryu/SlowFloatTest.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/third_party/jaffer/java/org/yuanheng/cookjson/DoubleUtils.java	Apache-2.0	2016 Heng Yuan
+3rdparty/ryu/third_party/mersenne_java/java/info/adams/random/MersenneTwister.java	Apache-2.0	1997-2002 Makoto Matsumoto and Takuji Nishimura,
+3rdparty/ryu/src/main/java/info/adams/ryu/analysis/BUILD	UNKNOWN	*No copyright*
+3rdparty/ryu/src/main/java/info/adams/ryu/analysis/ComputeRequiredBitSizes.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/src/main/java/info/adams/ryu/analysis/ComputeTableSizes.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/src/main/java/info/adams/ryu/analysis/EuclidMinMax.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/src/main/java/info/adams/ryu/analysis/ExhaustiveFloatComparison.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/src/main/java/info/adams/ryu/analysis/ExtensiveDoubleComparison.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/src/main/java/info/adams/ryu/analysis/FindDifferences.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/src/main/java/info/adams/ryu/analysis/FloatingPointFormat.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/src/main/java/info/adams/ryu/analysis/PrintDoubleLookupTable.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/src/main/java/info/adams/ryu/analysis/PrintFloatLookupTable.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/src/main/java/info/adams/ryu/analysis/PrintGenericLookupTable.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/src/main/java/info/adams/ryu/analysis/RandomizedDoubleComparison.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/src/main/java/info/adams/ryu/analysis/SlowConversion.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/src/main/java/info/adams/ryu/benchmark/BUILD	UNKNOWN	*No copyright*
+3rdparty/ryu/src/main/java/info/adams/ryu/benchmark/BenchmarkMain.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/src/main/java/info/adams/ryu/benchmark/MeanAndVariance.java	Apache-2.0	2018 Ulf Adams
+3rdparty/ryu/src/main/java/info/adams/ryu/printf/PrintPrintfLookupTable.java	Apache-2.0	2018 Ulf Adams
