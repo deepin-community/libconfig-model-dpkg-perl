@@ -1,8 +1,9 @@
 Files: *
 Copyright: JS Foundation and other contributors | jquery.org/license
 License: UNKNOWN
+ Please fill license text from header of files
 
 Files: jquery-migrate-3.0.0.min.js
 Copyright: jQuery Foundation and other contributors | jquery.org/license
 License: UNKNOWN
-
+ Please fill license text from header of files

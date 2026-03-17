@@ -9,6 +9,8 @@ use File::Path;
 use Log::Log4perl qw(get_logger :levels);
 use 5.20.1;
 
+use Config::Model::Backend::Dpkg::DebHelperFile;
+
 use feature qw/postderef signatures/;
 no warnings qw/experimental::postderef experimental::signatures/;
 
@@ -18,6 +20,7 @@ with 'Config::Model::Role::FileHandler';
 
 my $logger = get_logger("Backend::Dpkg::Root");
 my $user_logger = get_logger('User');
+my $misc_install_regexp = Config::Model::Backend::Dpkg::DebHelperFile::get_misc_install_regexp();
 
 my %hash_dispatch = (
     patches => \&read_patch_series,
@@ -25,6 +28,7 @@ my %hash_dispatch = (
     examples => \&read_examples_files,
     'lintian-overrides' => \&read_lintian_overrides,
 );
+
 around read_hash => sub ( $orig, $self, $obj, $elt, $file, $check, $args ) {
 
     $logger->info("around read_hash called for $elt ".$obj->location." file $file" );
@@ -75,6 +79,13 @@ sub read_install_files ( $self, $hash, $elt, $check, $args ) {
         $logger->info("install: found $arch install file");
         $hash->fetch_with_id("./$arch");
     }
+    # Note: file name for writing back is given by Config::Model::Backend::Dpkg::DebHelperFile
+    foreach my $file ($dir->children($misc_install_regexp)) {
+        my $elt_name = $file->basename;
+        $logger->info("install: found $elt_name");
+        $hash->fetch_with_id("$elt_name");
+    }
+
     return;
 }
 

@@ -15,7 +15,7 @@ with 'Config::Model::Backend::DpkgSyntax';
 
 package main ;
 use Path::Tiny;
-use YAML::XS;
+use YAML::PP;
 
 # load control file
 my $file = path('dpkg-test');

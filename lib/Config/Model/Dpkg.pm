@@ -235,10 +235,11 @@ In alphabetical order:
  Paul Wise
  Ross Vandegrift
  Salvatore Bonaccorso
+ Victor Westerhuis
  Walter Lozano
  Xavier Guimard
 
-Thanks all.
+Many thanks to all.
 
 =head1 AUTHOR
 

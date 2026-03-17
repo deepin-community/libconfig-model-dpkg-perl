@@ -1,0 +1,6 @@
+Source: dummy
+Standards-Version: 4.7.3
+Maintainer: foo@bar.com
+Section: misc
+Build-Depends:
+ debhelper-compat (= 13),

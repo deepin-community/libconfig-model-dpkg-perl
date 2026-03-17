@@ -5,60 +5,79 @@ License: Artistic-2.0
 Files: Configure.pl
 Copyright: 2009-2016, The Perl Foundation
 License: UNKNOWN
+ Please fill license text from header of files
 
-Files: modules/*
+Files: modules/Bailador/*
 Copyright: 2010, 2012-2015, Tadeusz Sośnierz
 License: Expat
 
-Files: modules/doc/*
+Files: modules/Template-Mojo/*
+Copyright: 2010, 2012-2015, Tadeusz Sośnierz
+License: Expat
+
+Files: modules/Terminal-ANSIColor/*
+Copyright: 2010, 2012-2015, Tadeusz Sośnierz
+License: Expat
+
+Files: modules/doc/html/css/custom-theme/jquery-ui.css
 Copyright: 2015, jQuery Foundation and other contributors; Licensed MIT
 License: UNKNOWN
+ Please fill license text from header of files
 
 Files: modules/doc/html/js/jquery-1.11.3.min.js
 Copyright: 2005, 2015, jQuery Foundation, Inc. | jquery.org/license
 License: UNKNOWN
+ Please fill license text from header of files
+
+Files: modules/doc/html/js/jquery-ui.min.js
+Copyright: 2015, jQuery Foundation and other contributors; Licensed MIT
+License: UNKNOWN
+ Please fill license text from header of files
 
 Files: modules/doc/html/js/jquery.cookie.js
 Copyright: 2006, 2015, Klaus Hartl & Fagner Brack
 License: UNKNOWN
+ Please fill license text from header of files
+
+Files: modules/doc/template/footer.html
+Copyright: 2009, Larry Wall.
+License: Artistic-2.0
+
+Files: modules/file-find/*
+Copyright: 2010, 2012-2015, Tadeusz Sośnierz
+License: Expat
 
 Files: modules/json/*
 Copyright: no-info-found
 License: Artistic-2
 
-Files: modules/json_fast/*
-Copyright: 2015
-License: Artistic-2.0
-
 Files: modules/p6-file-directory-tree/*
 Copyright: This code is free software, licensed under the same terms as Perl 6; see the LICENSE file for details.
 License: UNKNOWN
+ Please fill license text from header of files
+
+Files: modules/panda/*
+Copyright: 2010, 2012-2015, Tadeusz Sośnierz
+License: Expat
 
 Files: modules/panda/ext/File__Which/*
 Copyright: 2016, Ahmad M. Zawawi
 License: Expat
 
-Files: modules/panda/ext/File__Which/lib/*
-Copyright: 2016, Ahmad M. Zawawi
-License: UNKNOWN
-
 Files: modules/panda/ext/JSON__Fast/*
-Copyright: 2015
-License: Artistic-2.0
-
-Files: modules/perl6-http-status/*
 Copyright: no-info-found
 License: Artistic-2.0
 
-Files: modules/svg/*
-Copyright: no-info-found
-License: Artistic-2.0
+Files: modules/shell-command/*
+Copyright: 2010, 2012-2015, Tadeusz Sośnierz
+License: Expat
 
 Files: modules/xml-writer/*
 Copyright: 2009, 2010, the XML::Writer contributors (as listed in AUTHORS).
 License: UNKNOWN
+ Please fill license text from header of files
 
-Files: tools/*
+Files: tools/build/Makefile.in
 Copyright: 2006-2016, The Perl Foundation.
 License: UNKNOWN
-
+ Please fill license text from header of files

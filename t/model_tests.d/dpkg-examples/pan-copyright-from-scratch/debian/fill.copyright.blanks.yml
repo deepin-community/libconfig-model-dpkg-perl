@@ -1,0 +1,6 @@
+---
+pan/gui/*:
+  forwarded-comment: some comment about gui
+debian/:
+  copyright: "\xA9 1999-2023 Jordi Mallach <jordi@debian.org>"
+  license: GPL-3+

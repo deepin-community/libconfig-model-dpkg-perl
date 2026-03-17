@@ -35,11 +35,8 @@ Copyright: 2014-2018, Jon Schlinkert.
 License: Expat
 
 Files: array-initial/*
-Copyright: 2014, 2015, 2017, Jon Schlinkert
-License: Expat
-
-Files: array-initial/index.js
 Copyright: 2014, Jon Schlinkert, contributors.
+ 2014, 2015, 2017, Jon Schlinkert
 License: Expat
 
 Files: array-last/*
@@ -98,13 +95,15 @@ Files: gulp-cli/*
 Copyright: 2014, 2015, Blaine Bublitz, Eric Schoffstall and other contributors
 License: Expat
 
-Files: gulp-cli/completion/*
+Files: gulp-cli/completion/bash
+ gulp-cli/completion/zsh
 Copyright: 2012, Tyler Kellen, contributors
 License: Expat
 
 Files: gulp-cli/completion/powershell
 Copyright: 2014, Jason Jarrett
 License: UNKNOWN
+ Please fill license text from header of files
 
 Files: homedir-polyfill/*
 Copyright: 2016, Brian Woodward
@@ -128,20 +127,12 @@ Copyright: 2014, 2015, Blaine Bublitz, Eric Schoffstall and other contributors
 License: Expat
 
 Files: make-iterator/*
-Copyright: 2012, 2013, moutjs team and contributors (http:moutjs.com)
-2014-2018, Jon Schlinkert.
-License: Expat
-
-Files: make-iterator/README.md
-Copyright: 2012, 2013, moutjs team and contributors (http:moutjs.com)
-License: UNKNOWN
-
-Files: make-iterator/index.js
 Copyright: 2014-2018, Jon Schlinkert.
+ 2012, 2013, moutjs team and contributors (http:moutjs.com)
 License: Expat
 
 Files: matchdep/*
-Copyright: 2012, Tyler Kellen
+Copyright: 2012, 2013, Tyler Kellen
 License: Expat
 
 Files: mute-stdout/*
@@ -185,7 +176,6 @@ Copyright: 2014, Contributors (ben@npmjs.com)
  2010, James Halliday (mail@substack.net)
 License: Expat
 
-Files: yargs/lib/*
+Files: yargs/lib/levenshtein.js
 Copyright: 2011, Andrei Mackenzie
 License: Expat
-

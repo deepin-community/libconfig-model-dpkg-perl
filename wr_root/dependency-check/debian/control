@@ -1,0 +1,18 @@
+Source: libdist-zilla-plugins-cjm-perl
+Section: perl
+Priority: optional
+Build-Depends: debhelper, libsdl1.2, dpkg
+Build-Depends-Indep: libcpan-meta-perl, perl (>= 5.10) | libmodule-build-perl,
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: Dominique Dumont <dominique.dumont@some.com>
+Standards-Version: 4.1.2
+Homepage: http://search.cpan.org/dist/Dist-Zilla-Plugins-CJM/
+
+Package: libdist-zilla-plugins-cjm-perl
+Architecture: all
+Depends: ${misc:Depends}, ${perl:Depends}, libcpan-meta-perl ,
+ perl (>= 5.10.1), dpkg (>= 0.01), perl-modules,  dpkg (<< ${source:Version}.1~)
+Conflicts: libuv0.10-dev
+Description: collection of CJM's plugins for Dist::Zilla
+ Collection of Dist::Zilla plugins. This package features the 
+ following [snip]

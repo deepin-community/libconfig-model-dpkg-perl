@@ -52,6 +52,21 @@ To upgrade your file from an old spec, run:
           }
         }
       },
+      'Source',
+      {
+        'description' => 'An explanation from where the upstream source came from. Typically this would be a URL, but it might be a free-form explanation. The Debian Policy, 12.5 requires this information unless there are no upstream sources, which is mainly the case for native Debian packages. If the upstream source has been modified to remove non-free parts, that should be explained in this field.',
+        'migrate_from' => {
+          'formula' => '$old || $older ;',
+          'undef_is' => '\'\'',
+          'use_eval' => '1',
+          'variables' => {
+            'old' => '- Upstream-Source',
+            'older' => '- Original-Source-Location'
+          }
+        },
+        'type' => 'leaf',
+        'value_type' => 'string'
+      },
       'Upstream-Name',
       {
         'description' => 'The name upstream uses for the software.',
@@ -73,21 +88,6 @@ To upgrade your file from an old spec, run:
         'description' => 'The preferred address(es) to reach the upstream project. May be free-form text, but by convention will usually be written as a list of RFC5822 addresses or URIs.',
         'migrate_values_from' => '- Upstream-Maintainer',
         'type' => 'list'
-      },
-      'Source',
-      {
-        'description' => 'An explanation from where the upstream source came from. Typically this would be a URL, but it might be a free-form explanation. The Debian Policy, 12.5 requires this information unless there are no upstream sources, which is mainly the case for native Debian packages. If the upstream source has been modified to remove non-free parts, that should be explained in this field.',
-        'migrate_from' => {
-          'formula' => '$old || $older ;',
-          'undef_is' => '\'\'',
-          'use_eval' => '1',
-          'variables' => {
-            'old' => '- Upstream-Source',
-            'older' => '- Original-Source-Location'
-          }
-        },
-        'type' => 'leaf',
-        'value_type' => 'string'
       },
       'Disclaimer',
       {

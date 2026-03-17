@@ -1,0 +1,8 @@
+# -*- yaml -*-
+---
+Screenshots:
+  - 'https://github.com/paperwm/media/blob/master/tiling.png'
+  - 'https://github.com/paperwm/media/raw/master/scratch.png'
+Registry:
+  - Entry: 'r-gsignal'
+    Name: 'conda:conda-forge'

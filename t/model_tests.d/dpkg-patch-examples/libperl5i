@@ -34,11 +34,6 @@ index d50a967..086d2ad 100644
 -    END { unlink "perlio_test" }
 -    for my $fh (*STDOUT, *STDIN, *STDERR, $test_fh) {
 +    END { unlink 'perlio_test' if -e 'perlio_test' }
-+    TODO: {
-+        local $TODO = 'autodie clobbers IO layers';
-+        my @layers = PerlIO::get_layers($test_fh);
-+        ok(@layers->grep(qr/utf8/)->flatten) or diag explain { $test_fh => \@layers};
-+    }
 +    for my $fh (*STDOUT, *STDIN, *STDERR) {
          my @layers = PerlIO::get_layers($fh);
          ok(@layers->grep(qr/utf8/)->flatten) or diag explain { $fh => \@layers };

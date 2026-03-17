@@ -60,12 +60,14 @@ my @tests = (
             'source Build-Depends-Indep:5', "libpath-class-perl",
             'source Build-Depends-Indep:6', "libmodule-build-perl (>= 0.360000)", # fixed
             'source Build-Depends-Indep:7', "udev [linux-any] | makedev [linux-any]",
+            'source Synopsis' => "foo synopsis",
+            'source Description' => "not so long foo description",
             'source X-Comment' => qr/Debian #810023/,
             'source Priority' => 'optional',
             'binary:libdist-zilla-plugins-cjm-perl X-Comment' => qr/Debian #810023/,
 
-            'binary:libdist-zilla-plugins-cjm-perl Depends:0',
-            '${misc:Depends}',
+            'binary:libdist-zilla-plugins-cjm-perl Depends:0' => '${misc:Depends}',
+            'binary:libdist-zilla-plugins-cjm-perl Conflicts:0' => undef, # removed by apply-fix
             'source Vcs-Browser' ,'https://salsa.debian.org/perl-team/modules/packages/libdist-zilla-plugins-cjm-perl',
             'source Vcs-Git', 'https://salsa.debian.org/perl-team/modules/packages/libdist-zilla-plugins-cjm-perl.git',
         },
@@ -74,26 +76,59 @@ my @tests = (
             qr/dependency/,
             (qr/unnecessary/) x 3, qr/Dual dependency/, (qr/dependency/) x 2,
             qr/unnecessary/,
+            qr/applied on too old package/, # warning about Conflicts field
         ) ] ],
         apply_fix => 1,
         file_contents_like => {
             'debian/control' => [
-                # check that write order is tweaked for Standards-Version
-                qr!Standards-Version: [\d.]+\nVcs-Browser!
+                # check that accepted fields are in sable alphabetical order
+                qr!X-t1: foo\nX-t2: foo\nX-t3: foo\nX-t4: foo\n!,
+            ]
+        },
+        file_contents_unlike => {
+            'debian/control' => [
+                # check that libuv0.10-dev conflicts was removed
+                qr!libuv0.10-dev!,
+                # check that Priority was removed from debian/control
+                qr!Priority: optional!,
             ]
         },
     },
     {
 
         # t1
-        check => { 'binary:seaview Recommends:0', 'clustalw', },
+        check => {
+            'binary:seaview Recommends:0', 'clustalw',
+            'source Description' => "",
+            'source Synopsis' => "oops, no long description"
+        },
         apply_fix => 1,
-        load => 'binary:seaview Synopsis="multiplatform interface for sequence alignment"',
+        # remove Priority field
+        # see https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1111391
+        load => 'source Priority~ - '
+        . 'binary:seaview Synopsis="multiplatform interface for sequence alignment"',
+        file_contents_unlike => {
+            'debian/control' => [
+                # check that Priority was removed from debian/control
+                qr!Priority: optional!,
+            ],
+        },
+        file_contents_like => {
+            'debian/control' => [
+                # check output style of lists is like wrap-and-sort -asr
+                # see https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=849498
+                qr!Depends:\n \$\{shlibs:Depends\},\n \$\{misc:Depends\},\nRecommends:\n !
+            ],
+        },
     },
     {
 
         # t2
         check => {
+            'source Synopsis' => "",
+            'source Description' => "oops, no synopsis",
+            # test migration from XB-Important to Protected
+            'binary:x11-common Protected' => 1,
             'binary:xserver-xorg-video-all Architecture' => 'any',
             'binary:xserver-xorg-video-all Depends:0'    => '${F:XServer-Xorg-Video-Depends}',
             'binary:xserver-xorg-video-all Depends:1'    => '${misc:Depends}',
@@ -119,7 +154,7 @@ my @tests = (
 
         # t4, also checks XS-Python-Version deprecation
         check => {
-            'source Priority' => 'extra',
+            'source Priority' => 'optional',
             'source X-Python-Version' => ">= 2.3, << 2.5",
             'source Standards-Version', "3.9.8",
         },
@@ -128,6 +163,12 @@ my @tests = (
             warn => qr/Standards-Version/,
             warn => qr/deprecated/
         ] ],
+        file_contents_like => {
+            'debian/control' => [
+                # check that Priority was updated even without fix
+                qr!Priority: optional!,
+            ],
+        },
     },
     {
 
@@ -199,6 +240,10 @@ my @tests = (
             'source XS-Ruby-Versions' => 'all',
             'binary:libfast-xs-ruby XB-Ruby-Versions' => '${ruby:Versions}',
         },
+        file_contents_unlike => {
+            # XB-Ruby is now deprecated (See https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1075762)
+            "debian/control" => qr/XB-Ruby/
+        },
     },
     {
         # test for #903905,  XS-Ruby-Versions in a package not maintained
@@ -207,6 +252,10 @@ my @tests = (
         check => {
             'source XS-Ruby-Versions' => 'all',
             'binary:ruby-rgfa XB-Ruby-Versions' => '${ruby:Versions}',
+        },
+        file_contents_unlike => {
+            # XB-Ruby is now deprecated (See https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1075762)
+            "debian/control" => qr/XB-Ruby/
         },
     },
     {
@@ -359,6 +408,14 @@ my @tests = (
             'source Build-Depends:1' => 'pkg-config',
             'source Build-Depends:2' => 'debhelper-compat (= 13)',
             'source Build-Depends:3' => qr/libcam-dev/,
+        }
+    },
+    {
+        name => 'cpuinfo-with-multi-arch-no',
+        check => {
+            'source Rules-Requires-Root' => 'no',
+            'binary:cpuinfo Multi-Arch' => 'no',
+            'binary:cpuinfo Architecture' => 'amd64 arm64 armel armhf i386 x32 riscv64',
         }
     }
 );

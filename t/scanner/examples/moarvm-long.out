@@ -1,0 +1,1144 @@
+Files: 3rdparty/dynasm/COPYRIGHT
+ 3rdparty/dynasm/dynasm.lua
+Copyright: 2005-2014, Mike Pall.
+License: Expat
+
+Files: 3rdparty/dynasm/dasm_arm.h
+ 3rdparty/dynasm/dasm_arm.lua
+ 3rdparty/dynasm/dasm_mips.h
+ 3rdparty/dynasm/dasm_mips.lua
+ 3rdparty/dynasm/dasm_ppc.h
+ 3rdparty/dynasm/dasm_ppc.lua
+ 3rdparty/dynasm/dasm_proto.h
+ 3rdparty/dynasm/dasm_x64.lua
+ 3rdparty/dynasm/dasm_x86.h
+ 3rdparty/dynasm/dasm_x86.lua
+Copyright: 2005-2014, Mike Pall.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: 3rdparty/dynasm/minilua.c
+Copyright: 1994-2012, Lua.org, PUC-Rio.
+License: Expat
+
+Files: 3rdparty/dyncall/CMakeLists.txt
+ 3rdparty/dyncall/LICENSE
+ 3rdparty/dyncall/Nmakefile
+ 3rdparty/dyncall/configure.bat
+ 3rdparty/dyncall/configure.rc
+ 3rdparty/dyncall/mkfile
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/autovar/LICENSE.txt
+ 3rdparty/dyncall/autovar/autovar_ABI.h
+ 3rdparty/dyncall/autovar/autovar_ARCH.h
+ 3rdparty/dyncall/autovar/autovar_CC.h
+ 3rdparty/dyncall/autovar/autovar_OS.h
+ 3rdparty/dyncall/autovar/autovar_OSFAMILY.h
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/buildsys/cmake/Modules/FindDynCall.cmake
+ 3rdparty/dyncall/buildsys/cmake/Modules/FindDynCallback.cmake
+ 3rdparty/dyncall/buildsys/cmake/Modules/FindDynLoad.cmake
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/buildsys/cmake/Modules/UseLATEX.cmake
+Copyright: 2004, Sandia Corporation.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: 3rdparty/dyncall/buildsys/lua/mkfile
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/buildsys/mk/app.mk
+ 3rdparty/dyncall/buildsys/mk/dirs.mk
+ 3rdparty/dyncall/buildsys/mk/epilog.mk
+ 3rdparty/dyncall/buildsys/mk/lib.mk
+ 3rdparty/dyncall/buildsys/mk/pcc.mk
+ 3rdparty/dyncall/buildsys/mk/prolog.mk
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/buildsys/nmake/common.nmake
+ 3rdparty/dyncall/buildsys/nmake/epilog.nmake
+ 3rdparty/dyncall/buildsys/nmake/prolog.nmake
+ 3rdparty/dyncall/buildsys/nmake/tool_gcc.nmake
+ 3rdparty/dyncall/buildsys/nmake/tool_msvc.nmake
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/buildsys/scripts/conf-nds.bat
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/doc/License.txt
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/doc/manual/Nmakefile
+ 3rdparty/dyncall/doc/manual/manual.tex
+ 3rdparty/dyncall/doc/manual/manual_bindings.tex
+ 3rdparty/dyncall/doc/manual/manual_build.tex
+ 3rdparty/dyncall/doc/manual/manual_cc.tex
+ 3rdparty/dyncall/doc/manual/manual_design.tex
+ 3rdparty/dyncall/doc/manual/manual_devel.tex
+ 3rdparty/dyncall/doc/manual/manual_dyncall_api.tex
+ 3rdparty/dyncall/doc/manual/manual_dyncallback_api.tex
+ 3rdparty/dyncall/doc/manual/manual_dynload_api.tex
+ 3rdparty/dyncall/doc/manual/manual_epilog.tex
+ 3rdparty/dyncall/doc/manual/manual_literature.tex
+ 3rdparty/dyncall/doc/manual/manual_motivation.tex
+ 3rdparty/dyncall/doc/manual/manual_overview.tex
+ 3rdparty/dyncall/doc/manual/manual_title.tex
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/doc/manual/callconvs/callconv_arm32.tex
+ 3rdparty/dyncall/doc/manual/callconvs/callconv_arm64.tex
+ 3rdparty/dyncall/doc/manual/callconvs/callconv_mips.tex
+ 3rdparty/dyncall/doc/manual/callconvs/callconv_mips64.tex
+ 3rdparty/dyncall/doc/manual/callconvs/callconv_ppc32.tex
+ 3rdparty/dyncall/doc/manual/callconvs/callconv_ppc64.tex
+ 3rdparty/dyncall/doc/manual/callconvs/callconv_sparc.tex
+ 3rdparty/dyncall/doc/manual/callconvs/callconv_sparc64.tex
+ 3rdparty/dyncall/doc/manual/callconvs/callconv_x64.tex
+ 3rdparty/dyncall/doc/manual/callconvs/callconv_x86.tex
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/dyncall/CMakeLists.txt
+ 3rdparty/dyncall/dyncall/Nmakefile
+ 3rdparty/dyncall/dyncall/dyncall.3
+ 3rdparty/dyncall/dyncall/dyncall.h
+ 3rdparty/dyncall/dyncall/dyncall_alloc.h
+ 3rdparty/dyncall/dyncall/dyncall_api.c
+ 3rdparty/dyncall/dyncall/dyncall_call.S
+ 3rdparty/dyncall/dyncall/dyncall_call_arm32_arm.S
+ 3rdparty/dyncall/dyncall/dyncall_call_arm32_arm.h
+ 3rdparty/dyncall/dyncall/dyncall_call_arm32_arm_armhf.S
+ 3rdparty/dyncall/dyncall/dyncall_call_arm32_arm_armhf.h
+ 3rdparty/dyncall/dyncall/dyncall_call_arm32_thumb.h
+ 3rdparty/dyncall/dyncall/dyncall_call_arm32_thumb_apple.s
+ 3rdparty/dyncall/dyncall/dyncall_call_arm32_thumb_armhf.S
+ 3rdparty/dyncall/dyncall/dyncall_call_arm32_thumb_gas.s
+ 3rdparty/dyncall/dyncall/dyncall_call_arm64.S
+ 3rdparty/dyncall/dyncall/dyncall_call_arm64.h
+ 3rdparty/dyncall/dyncall/dyncall_call_mips.h
+ 3rdparty/dyncall/dyncall/dyncall_call_mips_eabi.h
+ 3rdparty/dyncall/dyncall/dyncall_call_mips_eabi_gas.s
+ 3rdparty/dyncall/dyncall/dyncall_call_mips_gas.S
+ 3rdparty/dyncall/dyncall/dyncall_call_mips_n32.h
+ 3rdparty/dyncall/dyncall/dyncall_call_mips_n32_gas.s
+ 3rdparty/dyncall/dyncall/dyncall_call_mips_n64.h
+ 3rdparty/dyncall/dyncall/dyncall_call_mips_n64_gas.s
+ 3rdparty/dyncall/dyncall/dyncall_call_mips_o32.h
+ 3rdparty/dyncall/dyncall/dyncall_call_mips_o32_gas.s
+ 3rdparty/dyncall/dyncall/dyncall_call_ppc32.S
+ 3rdparty/dyncall/dyncall/dyncall_call_ppc32.h
+ 3rdparty/dyncall/dyncall/dyncall_call_sparc.S
+ 3rdparty/dyncall/dyncall/dyncall_call_sparc.h
+ 3rdparty/dyncall/dyncall/dyncall_call_sparc64.S
+ 3rdparty/dyncall/dyncall/dyncall_call_sparc64.h
+ 3rdparty/dyncall/dyncall/dyncall_call_sparc_v9.h
+ 3rdparty/dyncall/dyncall/dyncall_call_x64-att.S
+ 3rdparty/dyncall/dyncall/dyncall_call_x64.S
+ 3rdparty/dyncall/dyncall/dyncall_call_x64.h
+ 3rdparty/dyncall/dyncall/dyncall_call_x86.S
+ 3rdparty/dyncall/dyncall/dyncall_call_x86.h
+ 3rdparty/dyncall/dyncall/dyncall_call_x86_8a.s
+ 3rdparty/dyncall/dyncall/dyncall_call_x86_nasm.asm
+ 3rdparty/dyncall/dyncall/dyncall_callf.c
+ 3rdparty/dyncall/dyncall/dyncall_callf.h
+ 3rdparty/dyncall/dyncall/dyncall_callvm.c
+ 3rdparty/dyncall/dyncall/dyncall_callvm.h
+ 3rdparty/dyncall/dyncall/dyncall_callvm_arm32_arm.c
+ 3rdparty/dyncall/dyncall/dyncall_callvm_arm32_arm.h
+ 3rdparty/dyncall/dyncall/dyncall_callvm_arm32_arm_armhf.c
+ 3rdparty/dyncall/dyncall/dyncall_callvm_arm32_arm_armhf.h
+ 3rdparty/dyncall/dyncall/dyncall_callvm_arm32_thumb.c
+ 3rdparty/dyncall/dyncall/dyncall_callvm_arm32_thumb.h
+ 3rdparty/dyncall/dyncall/dyncall_callvm_arm64.c
+ 3rdparty/dyncall/dyncall/dyncall_callvm_arm64.h
+ 3rdparty/dyncall/dyncall/dyncall_callvm_base.c
+ 3rdparty/dyncall/dyncall/dyncall_callvm_mips.c
+ 3rdparty/dyncall/dyncall/dyncall_callvm_mips.h
+ 3rdparty/dyncall/dyncall/dyncall_callvm_mips_eabi.c
+ 3rdparty/dyncall/dyncall/dyncall_callvm_mips_eabi.h
+ 3rdparty/dyncall/dyncall/dyncall_callvm_mips_n32.c
+ 3rdparty/dyncall/dyncall/dyncall_callvm_mips_n64.c
+ 3rdparty/dyncall/dyncall/dyncall_callvm_mips_n64.h
+ 3rdparty/dyncall/dyncall/dyncall_callvm_mips_o32.c
+ 3rdparty/dyncall/dyncall/dyncall_callvm_mips_o32.h
+ 3rdparty/dyncall/dyncall/dyncall_callvm_ppc32.c
+ 3rdparty/dyncall/dyncall/dyncall_callvm_ppc32.h
+ 3rdparty/dyncall/dyncall/dyncall_callvm_sparc.c
+ 3rdparty/dyncall/dyncall/dyncall_callvm_sparc.h
+ 3rdparty/dyncall/dyncall/dyncall_callvm_sparc64.c
+ 3rdparty/dyncall/dyncall/dyncall_callvm_sparc64.h
+ 3rdparty/dyncall/dyncall/dyncall_callvm_sparc_v9.c
+ 3rdparty/dyncall/dyncall/dyncall_callvm_sparc_v9.h
+ 3rdparty/dyncall/dyncall/dyncall_callvm_x64.c
+ 3rdparty/dyncall/dyncall/dyncall_callvm_x64.h
+ 3rdparty/dyncall/dyncall/dyncall_callvm_x86.c
+ 3rdparty/dyncall/dyncall/dyncall_callvm_x86.h
+ 3rdparty/dyncall/dyncall/dyncall_config.h
+ 3rdparty/dyncall/dyncall/dyncall_macros.h
+ 3rdparty/dyncall/dyncall/dyncall_signature.h
+ 3rdparty/dyncall/dyncall/dyncall_types.h
+ 3rdparty/dyncall/dyncall/dyncall_utils.h
+ 3rdparty/dyncall/dyncall/dyncall_value.h
+ 3rdparty/dyncall/dyncall/dyncall_vector.c
+ 3rdparty/dyncall/dyncall/dyncall_vector.h
+ 3rdparty/dyncall/dyncall/mkfile
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/dyncall/dyncall_call_ppc64.S
+ 3rdparty/dyncall/dyncall/dyncall_call_ppc64.h
+ 3rdparty/dyncall/dyncall/dyncall_callvm_ppc64.c
+ 3rdparty/dyncall/dyncall/dyncall_callvm_ppc64.h
+Copyright: 2014, 2015, Masanori Mitsugi <mitsugi@linux.vnet.ibm.com>
+License: ISC
+
+Files: 3rdparty/dyncall/dyncall/dyncall_struct.c
+ 3rdparty/dyncall/dyncall/dyncall_struct.h
+Copyright: 2007-2011, Olivier Chafik <olivier.chafik@gmail.com>
+License: ISC
+
+Files: 3rdparty/dyncall/dyncallback/CMakeLists.txt
+ 3rdparty/dyncall/dyncallback/Nmakefile
+ 3rdparty/dyncall/dyncallback/dyncall_alloc_wx.c
+ 3rdparty/dyncall/dyncallback/dyncall_alloc_wx.h
+ 3rdparty/dyncall/dyncallback/dyncall_alloc_wx_malloc.c
+ 3rdparty/dyncall/dyncallback/dyncall_alloc_wx_mmap.c
+ 3rdparty/dyncall/dyncallback/dyncall_alloc_wx_win32.c
+ 3rdparty/dyncall/dyncallback/dyncall_args.c
+ 3rdparty/dyncall/dyncallback/dyncall_args.h
+ 3rdparty/dyncall/dyncallback/dyncall_args_arm32_arm.c
+ 3rdparty/dyncall/dyncallback/dyncall_args_arm32_arm.h
+ 3rdparty/dyncall/dyncallback/dyncall_args_arm32_thumb.c
+ 3rdparty/dyncall/dyncallback/dyncall_args_arm32_thumb.h
+ 3rdparty/dyncall/dyncallback/dyncall_args_arm64.c
+ 3rdparty/dyncall/dyncallback/dyncall_args_mips.c
+ 3rdparty/dyncall/dyncallback/dyncall_args_mips.h
+ 3rdparty/dyncall/dyncallback/dyncall_args_ppc32.c
+ 3rdparty/dyncall/dyncallback/dyncall_args_ppc32.h
+ 3rdparty/dyncall/dyncallback/dyncall_args_ppc32_sysv.c
+ 3rdparty/dyncall/dyncallback/dyncall_args_sparc32.c
+ 3rdparty/dyncall/dyncallback/dyncall_args_sparc32.h
+ 3rdparty/dyncall/dyncallback/dyncall_args_sparc64.c
+ 3rdparty/dyncall/dyncallback/dyncall_args_sparc64.h
+ 3rdparty/dyncall/dyncallback/dyncall_args_x64.c
+ 3rdparty/dyncall/dyncallback/dyncall_args_x64.h
+ 3rdparty/dyncall/dyncallback/dyncall_args_x86.c
+ 3rdparty/dyncall/dyncallback/dyncall_args_x86.h
+ 3rdparty/dyncall/dyncallback/dyncall_callback.c
+ 3rdparty/dyncall/dyncallback/dyncall_callback.h
+ 3rdparty/dyncall/dyncallback/dyncall_callback_arch.S
+ 3rdparty/dyncall/dyncallback/dyncall_callback_arm32_arm.c
+ 3rdparty/dyncall/dyncallback/dyncall_callback_arm32_arm.h
+ 3rdparty/dyncall/dyncallback/dyncall_callback_arm32_arm_apple.s
+ 3rdparty/dyncall/dyncallback/dyncall_callback_arm32_arm_gas.s
+ 3rdparty/dyncall/dyncallback/dyncall_callback_arm32_thumb.c
+ 3rdparty/dyncall/dyncallback/dyncall_callback_arm32_thumb.h
+ 3rdparty/dyncall/dyncallback/dyncall_callback_arm32_thumb_apple.s
+ 3rdparty/dyncall/dyncallback/dyncall_callback_arm32_thumb_gas.s
+ 3rdparty/dyncall/dyncallback/dyncall_callback_arm64.c
+ 3rdparty/dyncall/dyncallback/dyncall_callback_arm64.s
+ 3rdparty/dyncall/dyncallback/dyncall_callback_mips.c
+ 3rdparty/dyncall/dyncallback/dyncall_callback_mips.h
+ 3rdparty/dyncall/dyncallback/dyncall_callback_ppc32.S
+ 3rdparty/dyncall/dyncallback/dyncall_callback_ppc32.c
+ 3rdparty/dyncall/dyncallback/dyncall_callback_ppc32.h
+ 3rdparty/dyncall/dyncallback/dyncall_callback_ppc32_apple.s
+ 3rdparty/dyncall/dyncallback/dyncall_callback_sparc32.c
+ 3rdparty/dyncall/dyncallback/dyncall_callback_sparc32.h
+ 3rdparty/dyncall/dyncallback/dyncall_callback_sparc32.s
+ 3rdparty/dyncall/dyncallback/dyncall_callback_sparc64.c
+ 3rdparty/dyncall/dyncallback/dyncall_callback_sparc64.s
+ 3rdparty/dyncall/dyncallback/dyncall_callback_x64.S
+ 3rdparty/dyncall/dyncallback/dyncall_callback_x64.c
+ 3rdparty/dyncall/dyncallback/dyncall_callback_x64.h
+ 3rdparty/dyncall/dyncallback/dyncall_callback_x86.S
+ 3rdparty/dyncall/dyncallback/dyncall_callback_x86.c
+ 3rdparty/dyncall/dyncallback/dyncall_callback_x86.h
+ 3rdparty/dyncall/dyncallback/dyncall_thunk.c
+ 3rdparty/dyncall/dyncallback/dyncall_thunk.h
+ 3rdparty/dyncall/dyncallback/dyncall_thunk_arm32_arm.c
+ 3rdparty/dyncall/dyncallback/dyncall_thunk_arm32_arm.h
+ 3rdparty/dyncall/dyncallback/dyncall_thunk_arm32_thumb.c
+ 3rdparty/dyncall/dyncallback/dyncall_thunk_arm32_thumb.h
+ 3rdparty/dyncall/dyncallback/dyncall_thunk_arm64.c
+ 3rdparty/dyncall/dyncallback/dyncall_thunk_arm64.h
+ 3rdparty/dyncall/dyncallback/dyncall_thunk_mips.c
+ 3rdparty/dyncall/dyncallback/dyncall_thunk_mips.h
+ 3rdparty/dyncall/dyncallback/dyncall_thunk_ppc32.c
+ 3rdparty/dyncall/dyncallback/dyncall_thunk_ppc32.h
+ 3rdparty/dyncall/dyncallback/dyncall_thunk_ppc32_sysv.c
+ 3rdparty/dyncall/dyncallback/dyncall_thunk_sparc32.c
+ 3rdparty/dyncall/dyncallback/dyncall_thunk_sparc32.h
+ 3rdparty/dyncall/dyncallback/dyncall_thunk_sparc64.c
+ 3rdparty/dyncall/dyncallback/dyncall_thunk_sparc64.h
+ 3rdparty/dyncall/dyncallback/dyncall_thunk_x64.c
+ 3rdparty/dyncall/dyncallback/dyncall_thunk_x64.h
+ 3rdparty/dyncall/dyncallback/dyncall_thunk_x86.c
+ 3rdparty/dyncall/dyncallback/dyncall_thunk_x86.h
+ 3rdparty/dyncall/dyncallback/dyncallback.3
+ 3rdparty/dyncall/dyncallback/mkfile
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/dyncallback/dyncall_args_ppc64.c
+ 3rdparty/dyncall/dyncallback/dyncall_args_ppc64.h
+ 3rdparty/dyncall/dyncallback/dyncall_callback_ppc64.S
+ 3rdparty/dyncall/dyncallback/dyncall_callback_ppc64.c
+ 3rdparty/dyncall/dyncallback/dyncall_callback_ppc64.h
+ 3rdparty/dyncall/dyncallback/dyncall_thunk_ppc64.c
+ 3rdparty/dyncall/dyncallback/dyncall_thunk_ppc64.h
+Copyright: 2014, 2015, Masanori Mitsugi <mitsugi@linux.vnet.ibm.com>
+License: ISC
+
+Files: 3rdparty/dyncall/dyncallback/dyncall_callback_x86_8a.s
+Copyright: 2013, Tassilo Philipp <tphilipp@potion-studios.com>
+License: ISC
+
+Files: 3rdparty/dyncall/dynload/CMakeLists.txt
+ 3rdparty/dyncall/dynload/Nmakefile
+ 3rdparty/dyncall/dynload/dynload.3
+ 3rdparty/dyncall/dynload/dynload.c
+ 3rdparty/dyncall/dynload/dynload.h
+ 3rdparty/dyncall/dynload/dynload_alloc.h
+ 3rdparty/dyncall/dynload/dynload_syms.c
+ 3rdparty/dyncall/dynload/dynload_syms_elf.c
+ 3rdparty/dyncall/dynload/dynload_syms_pe.c
+ 3rdparty/dyncall/dynload/dynload_unix.c
+ 3rdparty/dyncall/dynload/dynload_windows.c
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/dynload/dynload_darwin.c
+ 3rdparty/dyncall/dynload/dynload_syms_mach-o.c
+Copyright: 2007-2011, Olivier Chafik <olivier.chafik@gmail.com>
+License: ISC
+
+Files: 3rdparty/dyncall/portasm/README.txt
+Copyright: 2011, Daniel Adler <dadler@uni-goettingen.de>.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: 3rdparty/dyncall/portasm/portasm-arm.S
+ 3rdparty/dyncall/portasm/portasm-ppc.S
+ 3rdparty/dyncall/portasm/portasm-x64-att.S
+ 3rdparty/dyncall/portasm/portasm-x86.S
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/Nmakefile
+ 3rdparty/dyncall/test/mkfile
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/call_suite/Nmakefile
+ 3rdparty/dyncall/test/call_suite/cases.c
+ 3rdparty/dyncall/test/call_suite/cases.h
+ 3rdparty/dyncall/test/call_suite/globals.c
+ 3rdparty/dyncall/test/call_suite/globals.h
+ 3rdparty/dyncall/test/call_suite/invoke.c
+ 3rdparty/dyncall/test/call_suite/main.c
+ 3rdparty/dyncall/test/call_suite/mkfile
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/callback_plain/Nmakefile
+ 3rdparty/dyncall/test/callback_plain/callback_plain.c
+ 3rdparty/dyncall/test/callback_plain/mkfile
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/callback_suite/Nmakefile
+ 3rdparty/dyncall/test/callback_suite/do_test.c
+ 3rdparty/dyncall/test/callback_suite/dyncall_value_set.h
+ 3rdparty/dyncall/test/callback_suite/env.c
+ 3rdparty/dyncall/test/callback_suite/env.h
+ 3rdparty/dyncall/test/callback_suite/handler.c
+ 3rdparty/dyncall/test/callback_suite/invokers.c
+ 3rdparty/dyncall/test/callback_suite/invokers.h
+ 3rdparty/dyncall/test/callback_suite/main.c
+ 3rdparty/dyncall/test/callback_suite/mkfile
+ 3rdparty/dyncall/test/callback_suite/print.c
+ 3rdparty/dyncall/test/callback_suite/print.h
+ 3rdparty/dyncall/test/callback_suite/signature_utils.c
+ 3rdparty/dyncall/test/callback_suite/signature_utils.h
+ 3rdparty/dyncall/test/callback_suite/sigstrings.c
+ 3rdparty/dyncall/test/callback_suite/sigstrings.h
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/callf/Nmakefile
+ 3rdparty/dyncall/test/callf/main.c
+ 3rdparty/dyncall/test/callf/mkfile
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/common/platformInit.h
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/ellipsis/Nmakefile
+ 3rdparty/dyncall/test/ellipsis/README.txt
+ 3rdparty/dyncall/test/ellipsis/case.h
+ 3rdparty/dyncall/test/ellipsis/config.h
+ 3rdparty/dyncall/test/ellipsis/ellipsis.cc
+ 3rdparty/dyncall/test/ellipsis/main.cc
+ 3rdparty/dyncall/test/ellipsis/mkcase.py
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/gen-masm/call_x64.S
+ 3rdparty/dyncall/test/gen-masm/call_x86.S
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/hacking-arm-thumb-interwork/arm.c
+ 3rdparty/dyncall/test/hacking-arm-thumb-interwork/test.c
+ 3rdparty/dyncall/test/hacking-arm-thumb-interwork/thumb.c
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/hacking-arm-thumb-interwork/diff-gcc-defs/empty.S
+ 3rdparty/dyncall/test/hacking-arm-thumb-interwork/diff-gcc-defs/empty.c
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/hacking-mips/call.c
+ 3rdparty/dyncall/test/hacking-mips/calls.c
+ 3rdparty/dyncall/test/hacking-mips/common.h
+ 3rdparty/dyncall/test/hacking-mips/dispatch.c
+ 3rdparty/dyncall/test/hacking-mips/f.c
+ 3rdparty/dyncall/test/hacking-mips/f0.c
+ 3rdparty/dyncall/test/hacking-mips/funs.c
+ 3rdparty/dyncall/test/hacking-mips/main.c
+ 3rdparty/dyncall/test/hacking-mips/node.c
+ 3rdparty/dyncall/test/hacking-mips/prolog.c
+ 3rdparty/dyncall/test/hacking-mips/retn.c
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/malloc_wx/Nmakefile
+ 3rdparty/dyncall/test/malloc_wx/mkfile
+ 3rdparty/dyncall/test/malloc_wx/test_wx.c
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/nm/Nmakefile
+ 3rdparty/dyncall/test/nm/nm.c
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/plain/Nmakefile
+ 3rdparty/dyncall/test/plain/mkfile
+ 3rdparty/dyncall/test/plain/test_framework.h
+ 3rdparty/dyncall/test/plain/test_main.c
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/plain/test_structs.c
+Copyright: 2007-2011, Olivier Chafik <olivier.chafik@gmail.com>
+License: ISC
+
+Files: 3rdparty/dyncall/test/plain_c++/Nmakefile
+ 3rdparty/dyncall/test/plain_c++/mkfile
+ 3rdparty/dyncall/test/plain_c++/test_framework.h
+ 3rdparty/dyncall/test/plain_c++/test_main.cc
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/resolve_self/Nmakefile
+ 3rdparty/dyncall/test/resolve_self/main.c
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/samples/calls/d16.c
+ 3rdparty/dyncall/test/samples/calls/d20.c
+ 3rdparty/dyncall/test/samples/calls/d40.c
+ 3rdparty/dyncall/test/samples/calls/f16.c
+ 3rdparty/dyncall/test/samples/calls/f20.c
+ 3rdparty/dyncall/test/samples/calls/f40.c
+ 3rdparty/dyncall/test/samples/calls/fd40.c
+ 3rdparty/dyncall/test/samples/calls/i3.c
+ 3rdparty/dyncall/test/samples/calls/i7.c
+ 3rdparty/dyncall/test/samples/calls/id40.c
+ 3rdparty/dyncall/test/samples/calls/l16.c
+ 3rdparty/dyncall/test/samples/calls/many.c
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/sharedlib/sharedlib.c
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/sign/sign.c
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/suite/Nmakefile
+ 3rdparty/dyncall/test/suite/README.txt
+ 3rdparty/dyncall/test/suite/case.c
+ 3rdparty/dyncall/test/suite/case.h
+ 3rdparty/dyncall/test/suite/config.h
+ 3rdparty/dyncall/test/suite/main.c
+ 3rdparty/dyncall/test/suite/mkcase.py
+ 3rdparty/dyncall/test/suite/mkfile
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/suite2/Nmakefile
+ 3rdparty/dyncall/test/suite2/case.cc
+ 3rdparty/dyncall/test/suite2/case.h
+ 3rdparty/dyncall/test/suite2/config.h
+ 3rdparty/dyncall/test/suite2/funcinfo.h
+ 3rdparty/dyncall/test/suite2/main.cc
+ 3rdparty/dyncall/test/suite2/mkcase.py
+ 3rdparty/dyncall/test/suite2/rand.py
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/suite2_x86win32fast/Nmakefile
+ 3rdparty/dyncall/test/suite2_x86win32fast/case.cc
+ 3rdparty/dyncall/test/suite2_x86win32fast/case.h
+ 3rdparty/dyncall/test/suite2_x86win32fast/config.h
+ 3rdparty/dyncall/test/suite2_x86win32fast/funcinfo.h
+ 3rdparty/dyncall/test/suite2_x86win32fast/main.cc
+ 3rdparty/dyncall/test/suite2_x86win32fast/mkcase.py
+ 3rdparty/dyncall/test/suite2_x86win32fast/rand.py
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/suite2_x86win32std/Nmakefile
+ 3rdparty/dyncall/test/suite2_x86win32std/case.cc
+ 3rdparty/dyncall/test/suite2_x86win32std/case.h
+ 3rdparty/dyncall/test/suite2_x86win32std/config.h
+ 3rdparty/dyncall/test/suite2_x86win32std/funcinfo.h
+ 3rdparty/dyncall/test/suite2_x86win32std/main.cc
+ 3rdparty/dyncall/test/suite2_x86win32std/mkcase.py
+ 3rdparty/dyncall/test/suite2_x86win32std/rand.py
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/suite3/Nmakefile
+ 3rdparty/dyncall/test/suite3/README.txt
+ 3rdparty/dyncall/test/suite3/case.cc
+ 3rdparty/dyncall/test/suite3/case.h
+ 3rdparty/dyncall/test/suite3/config.h
+ 3rdparty/dyncall/test/suite3/main.cc
+ 3rdparty/dyncall/test/suite3/mkcase.py
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/suite_floats/Nmakefile
+ 3rdparty/dyncall/test/suite_floats/README.txt
+ 3rdparty/dyncall/test/suite_floats/case.cc
+ 3rdparty/dyncall/test/suite_floats/case.h
+ 3rdparty/dyncall/test/suite_floats/config.h
+ 3rdparty/dyncall/test/suite_floats/main.cc
+ 3rdparty/dyncall/test/suite_floats/mkcase.py
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/suite_x86win32fast/Nmakefile
+ 3rdparty/dyncall/test/suite_x86win32fast/README.txt
+ 3rdparty/dyncall/test/suite_x86win32fast/case.cc
+ 3rdparty/dyncall/test/suite_x86win32fast/case.h
+ 3rdparty/dyncall/test/suite_x86win32fast/config.h
+ 3rdparty/dyncall/test/suite_x86win32fast/main.cc
+ 3rdparty/dyncall/test/suite_x86win32fast/mkcase.py
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/suite_x86win32std/Nmakefile
+ 3rdparty/dyncall/test/suite_x86win32std/README.txt
+ 3rdparty/dyncall/test/suite_x86win32std/case.cc
+ 3rdparty/dyncall/test/suite_x86win32std/case.h
+ 3rdparty/dyncall/test/suite_x86win32std/config.h
+ 3rdparty/dyncall/test/suite_x86win32std/main.cc
+ 3rdparty/dyncall/test/suite_x86win32std/mkcase.py
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/syscall/syscall.c
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/dyncall/test/thunk/Nmakefile
+ 3rdparty/dyncall/test/thunk/mkfile
+ 3rdparty/dyncall/test/thunk/test_thunk.c
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
+License: ISC
+
+Files: 3rdparty/libatomic_ops/COPYING
+ 3rdparty/libatomic_ops/aclocal.m4
+Copyright: 1989, 1991, 1994-2013, Free Software Foundation, Inc.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: 3rdparty/libatomic_ops/compile
+ 3rdparty/libatomic_ops/depcomp
+ 3rdparty/libatomic_ops/missing
+Copyright: 1996-2013, Free Software Foundation, Inc.
+License: GPL-2+
+
+Files: 3rdparty/libatomic_ops/config.guess
+ 3rdparty/libatomic_ops/config.sub
+Copyright: 1992-2013, Free Software Foundation, Inc.
+License: GPL-3
+
+Files: 3rdparty/libatomic_ops/configure
+Copyright: 1992-1996, 1998-2012, Free Software Foundation, Inc.
+License: FSFUL
+
+Files: 3rdparty/libatomic_ops/doc/LICENSING.txt
+Copyright: no-info-found
+License: Expat
+
+Files: 3rdparty/libatomic_ops/doc/README_stack.txt
+Copyright: no-info-found
+License: GPL
+
+Files: 3rdparty/libatomic_ops/install-sh
+Copyright: 1994, X Consortium
+License: Expat
+
+Files: 3rdparty/libatomic_ops/src/Makefile.in
+Copyright: 1989, 1991, 1994-2013, Free Software Foundation, Inc.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: 3rdparty/libatomic_ops/src/atomic_ops.c
+ 3rdparty/libatomic_ops/src/atomic_ops.h
+Copyright: 2003-2011, Hewlett-Packard Development Company, L.P.
+License: Expat
+
+Files: 3rdparty/libatomic_ops/src/atomic_ops/ao_version.h
+ 3rdparty/libatomic_ops/src/atomic_ops/generalize-arithm.h
+ 3rdparty/libatomic_ops/src/atomic_ops/generalize-arithm.template
+ 3rdparty/libatomic_ops/src/atomic_ops/generalize-small.h
+ 3rdparty/libatomic_ops/src/atomic_ops/generalize-small.template
+ 3rdparty/libatomic_ops/src/atomic_ops/generalize.h
+Copyright: 2003-2011, Hewlett-Packard Development Company, L.P.
+License: Expat
+
+Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/all_acquire_release_volatile.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/all_aligned_atomic_load_store.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/all_atomic_load_store.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/all_atomic_only_load.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/ao_t_is_int.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/ao_t_is_int.template
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/ordered.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/standard_ao_double_t.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/test_and_set_t_is_ao_t.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/test_and_set_t_is_char.h
+Copyright: 2003-2011, Hewlett-Packard Development Company, L.P.
+License: Expat
+
+Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/armcc/arm_v6.h
+Copyright: 2007, NEC LE-IT:
+ 1999-2003, Hewlett-Packard Company.
+ 1996-1999, Silicon Graphics.
+ 1991-1994, Xerox Corporation.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/emul_cas.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/generic_pthread.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/ordered_except_wr.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/read_ordered.h
+Copyright: 2003, Hewlett-Packard Company.
+License: Expat
+
+Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/aarch64.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/alpha.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/arm.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/m68k.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/s390.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/sparc.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/x86.h
+Copyright: 1999-2003, Hewlett-Packard Company.
+ 1996-1999, Silicon Graphics.
+ 1991-1994, Xerox Corporation.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/avr32.h
+Copyright: 2009, Bradley Smith <brad@brad-smith.co.uk>
+License: Expat
+
+Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/cris.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/hppa.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/ia64.h
+Copyright: 2003-2011, Hewlett-Packard Development Company, L.P.
+License: Expat
+
+Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/generic-arithm.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/generic-arithm.template
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/generic-small.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/generic-small.template
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/generic.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/powerpc.h
+Copyright: 2003-2011, Hewlett-Packard Development Company, L.P.
+ 1996-1999, Silicon Graphics.
+ 1991-1994, Xerox Corporation.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/mips.h
+Copyright: 2005, 2007, Thiemo Seufer <ths@networkno.de>
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/sh.h
+Copyright: 2009, Takashi YOSHII.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/hpc/hppa.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/hpc/ia64.h
+Copyright: 2003-2011, Hewlett-Packard Development Company, L.P.
+License: Expat
+
+Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/icc/ia64.h
+Copyright: 2003, Hewlett-Packard Company.
+License: Expat
+
+Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/loadstore/acquire_release_volatile.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/loadstore/acquire_release_volatile.template
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/loadstore/atomic_load.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/loadstore/atomic_load.template
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/loadstore/atomic_store.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/loadstore/atomic_store.template
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/loadstore/char_acquire_release_volatile.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/loadstore/char_atomic_load.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/loadstore/char_atomic_store.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/loadstore/double_atomic_load_store.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/loadstore/int_acquire_release_volatile.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/loadstore/int_atomic_load.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/loadstore/int_atomic_store.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/loadstore/short_acquire_release_volatile.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/loadstore/short_atomic_load.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/loadstore/short_atomic_store.h
+Copyright: 2003-2011, Hewlett-Packard Development Company, L.P.
+License: Expat
+
+Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/loadstore/ordered_loads_only.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/loadstore/ordered_loads_only.template
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/loadstore/ordered_stores_only.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/loadstore/ordered_stores_only.template
+Copyright: 2003, Hewlett-Packard Company.
+License: Expat
+
+Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/msftc/arm.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/msftc/common32_defs.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/msftc/x86.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/msftc/x86_64.h
+Copyright: 2003-2011, Hewlett-Packard Development Company, L.P.
+License: Expat
+
+Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/sunc/sparc.h
+Copyright: 2003-2011, Hewlett-Packard Development Company, L.P.
+License: Expat
+
+Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/sunc/x86.h
+Copyright: 1999-2003, Hewlett-Packard Company.
+ 1996-1999, Silicon Graphics.
+ 1991-1994, Xerox Corporation.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: 3rdparty/libtommath/LICENSE
+Copyright: 2004, Sam Hocevar <sam@hocevar.net>
+License: WTFPL-2
+
+Files: 3rdparty/libtommath/bn_mp_n_root.c
+Copyright: b <= a and (c+1)**b > a
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: 3rdparty/libuv/LICENSE
+Copyright: Joyent, Inc. and other Node contributors.
+License: Expat
+
+Files: 3rdparty/libuv/Makefile.am
+ 3rdparty/libuv/Makefile.mingw
+ 3rdparty/libuv/autogen.sh
+ 3rdparty/libuv/checksparse.sh
+ 3rdparty/libuv/configure.ac
+Copyright: 2013, Ben Noordhuis <info@bnoordhuis.nl>
+License: ISC
+
+Files: 3rdparty/libuv/include/android-ifaddrs.h
+Copyright: 1995, 1999, Berkeley Software Design, Inc.
+License: BSD~unspecified
+
+Files: 3rdparty/libuv/include/pthread-fixes.h
+Copyright: 2013, Sony Mobile Communications AB
+ 2012, Google Inc.
+License: BSD-3-clause
+
+Files: 3rdparty/libuv/include/stdint-msvc2008.h
+Copyright: 2006-2008, Alexander Chemeris
+License: BSD-2-clause
+
+Files: 3rdparty/libuv/include/tree.h
+Copyright: 2002, Niels Provos <provos@citi.umich.edu>
+License: BSD-2-clause
+
+Files: 3rdparty/libuv/include/uv-aix.h
+ 3rdparty/libuv/include/uv-bsd.h
+ 3rdparty/libuv/include/uv-darwin.h
+ 3rdparty/libuv/include/uv-errno.h
+ 3rdparty/libuv/include/uv-linux.h
+ 3rdparty/libuv/include/uv-sunos.h
+ 3rdparty/libuv/include/uv-threadpool.h
+ 3rdparty/libuv/include/uv-unix.h
+ 3rdparty/libuv/include/uv-version.h
+ 3rdparty/libuv/include/uv-win.h
+ 3rdparty/libuv/include/uv.h
+Copyright: Joyent, Inc. and other Node contributors.
+License: Expat
+
+Files: 3rdparty/libuv/m4/libuv-check-flags.m4
+Copyright: 2006-2008, xine project
+ 2006-2008, Diego Pettena <flameeyes gmail com>
+License: GPL-3+
+
+Files: 3rdparty/libuv/samples/socks5-proxy/LICENSE
+Copyright: StrongLoop, Inc.
+License: BSD-3-clause or Expat
+
+Files: 3rdparty/libuv/samples/socks5-proxy/Makefile
+ 3rdparty/libuv/samples/socks5-proxy/build.gyp
+ 3rdparty/libuv/samples/socks5-proxy/client.c
+ 3rdparty/libuv/samples/socks5-proxy/defs.h
+ 3rdparty/libuv/samples/socks5-proxy/main.c
+ 3rdparty/libuv/samples/socks5-proxy/s5.c
+ 3rdparty/libuv/samples/socks5-proxy/s5.h
+ 3rdparty/libuv/samples/socks5-proxy/server.c
+ 3rdparty/libuv/samples/socks5-proxy/util.c
+Copyright: StrongLoop, Inc.
+License: Expat
+
+Files: 3rdparty/libuv/samples/socks5-proxy/getopt.c
+Copyright: 1987, 1993, 1994, The Regents of the University of California.
+License: BSD-3-clause
+
+Files: 3rdparty/libuv/src/fs-poll.c
+ 3rdparty/libuv/src/threadpool.c
+ 3rdparty/libuv/src/uv-common.c
+ 3rdparty/libuv/src/uv-common.h
+ 3rdparty/libuv/src/version.c
+Copyright: Joyent, Inc. and other Node contributors.
+License: Expat
+
+Files: 3rdparty/libuv/src/heap-inl.h
+ 3rdparty/libuv/src/queue.h
+Copyright: 2013, Ben Noordhuis <info@bnoordhuis.nl>
+License: ISC
+
+Files: 3rdparty/libuv/src/inet.c
+Copyright: 2004, Internet Systems Consortium, Inc. ("ISC")
+ 1996-1999, Internet Software Consortium.
+License: ISC
+
+Files: 3rdparty/libuv/src/unix/aix.c
+ 3rdparty/libuv/src/unix/async.c
+ 3rdparty/libuv/src/unix/core.c
+ 3rdparty/libuv/src/unix/darwin-proctitle.c
+ 3rdparty/libuv/src/unix/darwin.c
+ 3rdparty/libuv/src/unix/dl.c
+ 3rdparty/libuv/src/unix/freebsd.c
+ 3rdparty/libuv/src/unix/fs.c
+ 3rdparty/libuv/src/unix/fsevents.c
+ 3rdparty/libuv/src/unix/getaddrinfo.c
+ 3rdparty/libuv/src/unix/getnameinfo.c
+ 3rdparty/libuv/src/unix/internal.h
+ 3rdparty/libuv/src/unix/kqueue.c
+ 3rdparty/libuv/src/unix/linux-core.c
+ 3rdparty/libuv/src/unix/linux-inotify.c
+ 3rdparty/libuv/src/unix/linux-syscalls.c
+ 3rdparty/libuv/src/unix/linux-syscalls.h
+ 3rdparty/libuv/src/unix/loop-watcher.c
+ 3rdparty/libuv/src/unix/loop.c
+ 3rdparty/libuv/src/unix/netbsd.c
+ 3rdparty/libuv/src/unix/openbsd.c
+ 3rdparty/libuv/src/unix/pipe.c
+ 3rdparty/libuv/src/unix/poll.c
+ 3rdparty/libuv/src/unix/process.c
+ 3rdparty/libuv/src/unix/proctitle.c
+ 3rdparty/libuv/src/unix/signal.c
+ 3rdparty/libuv/src/unix/stream.c
+ 3rdparty/libuv/src/unix/sunos.c
+ 3rdparty/libuv/src/unix/tcp.c
+ 3rdparty/libuv/src/unix/thread.c
+ 3rdparty/libuv/src/unix/timer.c
+ 3rdparty/libuv/src/unix/tty.c
+ 3rdparty/libuv/src/unix/udp.c
+ 3rdparty/libuv/src/unix/uv-dtrace.d
+Copyright: Joyent, Inc. and other Node contributors.
+License: Expat
+
+Files: 3rdparty/libuv/src/unix/android-ifaddrs.c
+Copyright: 2014, Emergya (Cloud4all, FP7/2007-2013, grant agreement n° 289016)
+ 2013, Kenneth MacKay
+License: BSD-2-clause
+
+Files: 3rdparty/libuv/src/unix/atomic-ops.h
+ 3rdparty/libuv/src/unix/spinlock.h
+Copyright: 2013, Ben Noordhuis <info@bnoordhuis.nl>
+License: ISC
+
+Files: 3rdparty/libuv/src/unix/pthread-fixes.c
+Copyright: 2013, Sony Mobile Communications AB
+ 2012, Google Inc.
+License: BSD-3-clause
+
+Files: 3rdparty/libuv/src/win/async.c
+ 3rdparty/libuv/src/win/atomicops-inl.h
+ 3rdparty/libuv/src/win/core.c
+ 3rdparty/libuv/src/win/dl.c
+ 3rdparty/libuv/src/win/error.c
+ 3rdparty/libuv/src/win/fs-event.c
+ 3rdparty/libuv/src/win/fs.c
+ 3rdparty/libuv/src/win/getaddrinfo.c
+ 3rdparty/libuv/src/win/getnameinfo.c
+ 3rdparty/libuv/src/win/handle-inl.h
+ 3rdparty/libuv/src/win/handle.c
+ 3rdparty/libuv/src/win/internal.h
+ 3rdparty/libuv/src/win/loop-watcher.c
+ 3rdparty/libuv/src/win/pipe.c
+ 3rdparty/libuv/src/win/poll.c
+ 3rdparty/libuv/src/win/process-stdio.c
+ 3rdparty/libuv/src/win/process.c
+ 3rdparty/libuv/src/win/req-inl.h
+ 3rdparty/libuv/src/win/req.c
+ 3rdparty/libuv/src/win/signal.c
+ 3rdparty/libuv/src/win/stream-inl.h
+ 3rdparty/libuv/src/win/stream.c
+ 3rdparty/libuv/src/win/tcp.c
+ 3rdparty/libuv/src/win/thread.c
+ 3rdparty/libuv/src/win/timer.c
+ 3rdparty/libuv/src/win/tty.c
+ 3rdparty/libuv/src/win/udp.c
+ 3rdparty/libuv/src/win/util.c
+ 3rdparty/libuv/src/win/winapi.c
+ 3rdparty/libuv/src/win/winapi.h
+ 3rdparty/libuv/src/win/winsock.c
+ 3rdparty/libuv/src/win/winsock.h
+Copyright: Joyent, Inc. and other Node contributors.
+License: Expat
+
+Files: 3rdparty/libuv/test/benchmark-async-pummel.c
+ 3rdparty/libuv/test/benchmark-async.c
+ 3rdparty/libuv/test/benchmark-fs-stat.c
+ 3rdparty/libuv/test/benchmark-getaddrinfo.c
+ 3rdparty/libuv/test/benchmark-list.h
+ 3rdparty/libuv/test/benchmark-loop-count.c
+ 3rdparty/libuv/test/benchmark-million-async.c
+ 3rdparty/libuv/test/benchmark-million-timers.c
+ 3rdparty/libuv/test/benchmark-multi-accept.c
+ 3rdparty/libuv/test/benchmark-ping-pongs.c
+ 3rdparty/libuv/test/benchmark-pound.c
+ 3rdparty/libuv/test/benchmark-pump.c
+ 3rdparty/libuv/test/benchmark-sizes.c
+ 3rdparty/libuv/test/benchmark-spawn.c
+ 3rdparty/libuv/test/benchmark-tcp-write-batch.c
+ 3rdparty/libuv/test/benchmark-thread.c
+ 3rdparty/libuv/test/benchmark-udp-pummel.c
+ 3rdparty/libuv/test/blackhole-server.c
+ 3rdparty/libuv/test/dns-server.c
+ 3rdparty/libuv/test/echo-server.c
+ 3rdparty/libuv/test/run-benchmarks.c
+ 3rdparty/libuv/test/run-tests.c
+ 3rdparty/libuv/test/runner-unix.c
+ 3rdparty/libuv/test/runner-unix.h
+ 3rdparty/libuv/test/runner-win.c
+ 3rdparty/libuv/test/runner-win.h
+ 3rdparty/libuv/test/runner.c
+ 3rdparty/libuv/test/runner.h
+ 3rdparty/libuv/test/task.h
+ 3rdparty/libuv/test/test-active.c
+ 3rdparty/libuv/test/test-async-null-cb.c
+ 3rdparty/libuv/test/test-async.c
+ 3rdparty/libuv/test/test-barrier.c
+ 3rdparty/libuv/test/test-callback-order.c
+ 3rdparty/libuv/test/test-callback-stack.c
+ 3rdparty/libuv/test/test-close-fd.c
+ 3rdparty/libuv/test/test-close-order.c
+ 3rdparty/libuv/test/test-condvar.c
+ 3rdparty/libuv/test/test-connection-fail.c
+ 3rdparty/libuv/test/test-cwd-and-chdir.c
+ 3rdparty/libuv/test/test-default-loop-close.c
+ 3rdparty/libuv/test/test-delayed-accept.c
+ 3rdparty/libuv/test/test-dlerror.c
+ 3rdparty/libuv/test/test-embed.c
+ 3rdparty/libuv/test/test-emfile.c
+ 3rdparty/libuv/test/test-error.c
+ 3rdparty/libuv/test/test-fail-always.c
+ 3rdparty/libuv/test/test-fs-event.c
+ 3rdparty/libuv/test/test-fs-poll.c
+ 3rdparty/libuv/test/test-fs.c
+ 3rdparty/libuv/test/test-get-currentexe.c
+ 3rdparty/libuv/test/test-get-loadavg.c
+ 3rdparty/libuv/test/test-get-memory.c
+ 3rdparty/libuv/test/test-getaddrinfo.c
+ 3rdparty/libuv/test/test-getnameinfo.c
+ 3rdparty/libuv/test/test-getsockname.c
+ 3rdparty/libuv/test/test-handle-fileno.c
+ 3rdparty/libuv/test/test-hrtime.c
+ 3rdparty/libuv/test/test-idle.c
+ 3rdparty/libuv/test/test-ip4-addr.c
+ 3rdparty/libuv/test/test-ip6-addr.c
+ 3rdparty/libuv/test/test-ipc-send-recv.c
+ 3rdparty/libuv/test/test-ipc.c
+ 3rdparty/libuv/test/test-list.h
+ 3rdparty/libuv/test/test-loop-alive.c
+ 3rdparty/libuv/test/test-loop-close.c
+ 3rdparty/libuv/test/test-loop-handles.c
+ 3rdparty/libuv/test/test-loop-stop.c
+ 3rdparty/libuv/test/test-loop-time.c
+ 3rdparty/libuv/test/test-multiple-listen.c
+ 3rdparty/libuv/test/test-mutexes.c
+ 3rdparty/libuv/test/test-osx-select.c
+ 3rdparty/libuv/test/test-pass-always.c
+ 3rdparty/libuv/test/test-ping-pong.c
+ 3rdparty/libuv/test/test-pipe-bind-error.c
+ 3rdparty/libuv/test/test-pipe-close-stdout-read-stdin.c
+ 3rdparty/libuv/test/test-pipe-connect-error.c
+ 3rdparty/libuv/test/test-pipe-getsockname.c
+ 3rdparty/libuv/test/test-pipe-sendmsg.c
+ 3rdparty/libuv/test/test-pipe-server-close.c
+ 3rdparty/libuv/test/test-platform-output.c
+ 3rdparty/libuv/test/test-poll-close.c
+ 3rdparty/libuv/test/test-poll-closesocket.c
+ 3rdparty/libuv/test/test-poll.c
+ 3rdparty/libuv/test/test-process-title.c
+ 3rdparty/libuv/test/test-ref.c
+ 3rdparty/libuv/test/test-run-nowait.c
+ 3rdparty/libuv/test/test-run-once.c
+ 3rdparty/libuv/test/test-semaphore.c
+ 3rdparty/libuv/test/test-shutdown-close.c
+ 3rdparty/libuv/test/test-shutdown-eof.c
+ 3rdparty/libuv/test/test-shutdown-twice.c
+ 3rdparty/libuv/test/test-signal-multiple-loops.c
+ 3rdparty/libuv/test/test-signal.c
+ 3rdparty/libuv/test/test-socket-buffer-size.c
+ 3rdparty/libuv/test/test-spawn.c
+ 3rdparty/libuv/test/test-stdio-over-pipes.c
+ 3rdparty/libuv/test/test-tcp-bind-error.c
+ 3rdparty/libuv/test/test-tcp-bind6-error.c
+ 3rdparty/libuv/test/test-tcp-close-accept.c
+ 3rdparty/libuv/test/test-tcp-close-while-connecting.c
+ 3rdparty/libuv/test/test-tcp-close.c
+ 3rdparty/libuv/test/test-tcp-connect-error-after-write.c
+ 3rdparty/libuv/test/test-tcp-connect-error.c
+ 3rdparty/libuv/test/test-tcp-connect-timeout.c
+ 3rdparty/libuv/test/test-tcp-connect6-error.c
+ 3rdparty/libuv/test/test-tcp-flags.c
+ 3rdparty/libuv/test/test-tcp-open.c
+ 3rdparty/libuv/test/test-tcp-read-stop.c
+ 3rdparty/libuv/test/test-tcp-shutdown-after-write.c
+ 3rdparty/libuv/test/test-tcp-try-write.c
+ 3rdparty/libuv/test/test-tcp-unexpected-read.c
+ 3rdparty/libuv/test/test-tcp-write-after-connect.c
+ 3rdparty/libuv/test/test-tcp-write-queue-order.c
+ 3rdparty/libuv/test/test-tcp-write-to-half-open-connection.c
+ 3rdparty/libuv/test/test-tcp-writealot.c
+ 3rdparty/libuv/test/test-thread-equal.c
+ 3rdparty/libuv/test/test-thread.c
+ 3rdparty/libuv/test/test-threadpool-cancel.c
+ 3rdparty/libuv/test/test-threadpool.c
+ 3rdparty/libuv/test/test-timer-again.c
+ 3rdparty/libuv/test/test-timer-from-check.c
+ 3rdparty/libuv/test/test-timer.c
+ 3rdparty/libuv/test/test-tty.c
+ 3rdparty/libuv/test/test-udp-bind.c
+ 3rdparty/libuv/test/test-udp-dgram-too-big.c
+ 3rdparty/libuv/test/test-udp-ipv6.c
+ 3rdparty/libuv/test/test-udp-multicast-interface.c
+ 3rdparty/libuv/test/test-udp-multicast-interface6.c
+ 3rdparty/libuv/test/test-udp-multicast-join.c
+ 3rdparty/libuv/test/test-udp-multicast-join6.c
+ 3rdparty/libuv/test/test-udp-multicast-ttl.c
+ 3rdparty/libuv/test/test-udp-open.c
+ 3rdparty/libuv/test/test-udp-options.c
+ 3rdparty/libuv/test/test-udp-send-and-recv.c
+ 3rdparty/libuv/test/test-udp-send-immediate.c
+ 3rdparty/libuv/test/test-udp-send-unreachable.c
+ 3rdparty/libuv/test/test-udp-try-send.c
+ 3rdparty/libuv/test/test-walk-handles.c
+ 3rdparty/libuv/test/test-watcher-cross-stop.c
+Copyright: Joyent, Inc. and other Node contributors.
+License: Expat
+
+Files: 3rdparty/linenoise/linenoise.c
+ 3rdparty/linenoise/linenoise.h
+Copyright: 2010-2013, Salvatore Sanfilippo <antirez at gmail dot com>
+ 2010-2013, Pieter Noordhuis <pcnoordhuis at gmail dot com>
+License: BSD-2-clause
+
+Files: 3rdparty/msinttypes/inttypes.h
+ 3rdparty/msinttypes/stdint.h
+Copyright: 2006-2013, Alexander Chemeris
+License: BSD-3-clause
+
+Files: 3rdparty/sha1/sha1.h
+Copyright: no-info-found
+License: public-domain
+
+Files: 3rdparty/tinymt/LICENSE.txt
+Copyright: 2011, 2013, Mutsuo Saito, Makoto Matsumoto
+License: BSD-3-clause
+
+Files: 3rdparty/tinymt/tinymt64.c
+Copyright: 2011, Mutsuo Saito, Makoto Matsumoto
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: 3rdparty/uthash.h
+Copyright: 2003-2014, Troy D. Hanson http:troydhanson.github.com/uthash
+License: BSD~unspecified
+
+Files: Artistic2.txt
+Copyright: 2000-2006, The Perl Foundation.
+License: Artistic-2.0
+
+Files: LICENSE
+Copyright: 2012-2015, Jonathan Worthington and others.
+License: Artistic-2.0
+
+Files: build/mk-moar-pc.in
+ build/mk-moar-pc.pl
+Copyright: 2014, Daniel Dehennin <daniel.dehennin@baby-gnu.org>
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: docs/moar.pod
+Copyright: 2012-2014, the MoarVM contributors. See the F<CREDITS> file for
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: src/strings/unicode_db.c
+Copyright: 1991-2012, Unicode, Inc.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: src/strings/utf8.c
+Copyright: 2008-2010, Bjoern Hoehrmann <bjoern@hoehrmann.de>
+License: Expat
+
+Files: tools/ucd2c.p6
+Copyright: 1991-2012, Unicode, Inc.
+License: UNKNOWN
+ Please fill license text from header of files

@@ -1,0 +1,78 @@
+* cme dpkg AKA libconfig-model-dpkg-perl
+
+This package provides =Config::Model::Dpkg=, a plugin for [[https://metacpan.org/pod/App::Cmecme][cme]] and
+[[https://metacpan.org/pod/Config::Model][Config::Model]]. Once this package is installed, cme is able to handle
+dpkg source file.
+
+** Installation
+
+#+begin_src shell
+  apt install cme libconfig-model-dpkg-perl
+#+end_src
+
+** Usage
+
+In your package directory, run:
+
+- =cme edit dpkg= :: Edit your package files with a GUI
+- =cme check dpkg= :: Check your package files
+- =cme fix dpkg= :: Fix some issues in your package files
+- =cme run add-me-to-uploaders= :: Add yourself as an uploader
+- =cme run sort-dependencies= :: Sort all depends fields in control file
+- =cme run update-standards-version= :: Update Standard-Version in control file
+- =cme run update-my-copyright-year= :: Set your copyright to current year in =debian/copyright=
+
+* How to contribute
+:PROPERTIES:
+:CUSTOM_ID: how-to-contribute
+:END:
+** Ask questions
+:PROPERTIES:
+:CUSTOM_ID: ask-questions
+:END:
+Yes, asking a question is a form of contribution that helps the author
+to improve documentation.
+
+This package is used a lot by Debian Perl team, so you can ask question
+on [[mailto:debian-perl@lists.debian.org][debian-perl mailing list]] or
+on =#debian-perl= (IRC)
+
+** Log a bug
+:PROPERTIES:
+:CUSTOM_ID: log-a-bug
+:END:
+Please report issue on Debian BTS: run
+=reportbug libconfig-model-dpkg-perl=
+
+* How to update this package
+** Install development tools
+
+#+begin_src shell
+  apt-get build-dep libconfig-model-dpkg-perl
+  apt install libconfig-model-itself-perl
+#+end_src
+
+** Source code structure
+:PROPERTIES:
+:CUSTOM_ID: source-code-structure
+:END:
+This package delivers 2 main tools:
+
+- a =scan-copyrights= command which parse a source files for copyright
+  and license information and provides =Files= section of a
+  =debian/copyright= file.
+- The Dpkg plugin for =cme=
+
+The details of the source is shown in [[https://salsa.debian.org/perl-team/modules/packages/libconfig-model-dpkg-perl/-/blob/master/debian/README.source.org][README.source.org]]
+
+** Edit source code
+:PROPERTIES:
+:CUSTOM_ID: edit-source-code
+:END:
+
+The recommended way is to run =cme meta edit=. This command will open
+a GUI to edit Dpkg model. See [[https://github.com/dod38fr/config-model/wiki/How-to-add-a-new-parameter-to-an-existing-model][cme wiki]] for details.
+
+Then:
+- run =prove -r -l t= to run non-regression tests (use =-j= option to run tests in parrallel)
+- run =gbp buildpackage= to build the package

@@ -147,6 +147,7 @@ my @virtual_list = qw/
 # other less official virtual packages
 push @virtual_list, qw/
  debhelper-compat
+ dpkg-build-api
  libkvm-dev
  libgl-dev
  libqt5opengl5-desktop-dev
@@ -186,6 +187,10 @@ $_config->init;
 # determine the appropriate system type
 $_system = $_config->system;
 
+# snatched from libapt-pkg-perl/examples/apt-cache
+# suppress cache building messages
+$_config->{quiet} = 2;
+
 # fetch a versioning system
 my $vs = $_system->versioning;
 
@@ -206,10 +211,11 @@ my $grammar = << 'EOG' ;
     } ;
     my $arch_list = qr/(any |alpha|amd64
          |arm(64|eb|el|hf)?
-         |avr32 |hppa |i386 |ia64 |lpia |m32r |m68k
+         |avr32 |hppa |loong64 |i386 |ia64 |lpia |m32r |m68k
          |mips(el|64el|64)?
          |powerpc(el|spe)?
          |ppc64\b |ppc64el |s390x?
+         |riscv64
          |sh3\b |sh3eb |sh4\b |sh4eb |sparc\b |sparc64 |x32 )/x;
 }
 
@@ -248,12 +254,13 @@ profile_extention: '.' /[\w\-]+/ '.' /[\w-]+/ {
     $return = join('', @item[1..4]) ;
 }
 
-profile_name: 'cross' | 'pkg' | 'stage1'| 'stage2' |
-   'nobiarch' | 'nocheck' | 'nodoc' | 'nogolang' | 'nojava' | 'noperl' | 'nopython' | 'noudeb' |
+profile_name: 'cross' | 'pkg' | 'stage1'| 'stage2' | 'nobiarch' | 'nocheck' | 'nocil' | 'nodoc' |
+    'nogolang' | 'noinsttest' | 'nojava' | 'noperl' | 'nopython' | 'noruby' | 'nolua' | 'noguile' |
+    'noocaml' | 'nowasm' | 'nowindows' | 'noudeb' |
 {
-    my @a = ('cross', 'pkg', 'stage1', 'stage2',
-            'nobiarch', 'nocheck', 'nodoc', 'nogolang', 'nojava', 'noperl', 'nopython', 'noudeb');
-    my ($bad) = split / /, $text;
+    my @a = qw/cross pkg stage1 stage2 nobiarch nocheck nocil nodoc nogolang noinsttest nojava noperl
+               nopython noruby nolua noguile noocaml nowasm nowindows noudeb/;
+    my ($bad) = ($text =~ /^(\w+)/) ;
     $add_error->("Unknown build profile name '$bad'","Expected one of @a") ;
 }
 
@@ -339,15 +346,14 @@ sub dep_parser {
 # check_dep -> meta filter -> control maintainer -> create control class
 # autoread started -> read all fileds -> read dependency -> check_dep ...
 
-sub check_value { ## no critic (RequireArgUnpacking)
-    my $self = shift ;
-    my %args = @_ > 1 ? @_ : (value => $_[0]) ;
+around check_value => sub($orig, $self, @args) {
+    my %args = @args > 1 ? @args : (value => $args[0]) ;
 
     $args{fix} //= 0;
-	# when fixing, SUPER::check_value may modify $args{value} before calling back
-    my ($ok, $value) = $self->SUPER::check_value(%args) ;
+	# when fixing, $orig->() may modify $args{value} before calling back
+    my ($ok, $value) = $orig->($self, %args) ;
     return $self->check_dependency(%args, value => $value, ok => $ok) ;
-}
+};
 
 sub check_dependency ($self, %args){
     my ($value, $check, $silent, $notify_change, $ok, $apply_fix)
@@ -383,6 +389,7 @@ sub check_dependency ($self, %args){
     foreach my $dep (@dep_chain) {
         next unless ref($dep) ; # no need to check debhelper variables
         $self->check_or_fix_pkg_name($apply_fix, $dep, $old, \@msgs) ;
+        $self->check_or_fix_too_old_pkg($apply_fix, $dep, $old, \@msgs) ;
 		$self->check_or_fix_essential_package($apply_fix, $dep, \@msgs) ;
 		$self->check_or_fix_dep($apply_fix, $dep, $old, \@msgs) ;
     }
@@ -531,7 +538,7 @@ sub struct_to_dep ($self, @input) {
         # empty name is skipped
         if (ref $d) {
             my ($name, $dep,$arch, $prof) = @{$d}{qw/name dep arch profile/} ;
-            if ( $name) {
+            if ($name) {
                 $line .= $name;
 
                 $line .= " (@$dep)" if defined $dep->[1];
@@ -657,8 +664,6 @@ sub check_versioned_dep {
 		 and defined $oper
 		 and $vers !~ /^\$/  # a dpkg variable
 	 ) {
-		my $src_pkg_name = $self->grab_value("!Dpkg::Control source Source") ;
-
 		return ($self->has_older_version_than ($pkg, $vers, \@dist_version ));
 	}
 	else {
@@ -675,8 +680,7 @@ sub has_older_version_than {
         my ($d,$v) = splice @$dist_version,0,2 ;
 
         push @list, "$d -> $v;" ;
-
-        if ($vs->compare($vers,$v) > 0 ) {
+        if ($d !~ /oldold/ and $vs->compare($vers,$v) > 0 ) {
             $has_older = 1 ;
         }
     }
@@ -687,14 +691,23 @@ sub has_older_version_than {
     return (0,@list) ;
 }
 
-#
-# New subroutine "check_essential_package" extracted - Thu Aug 30 14:14:32 2012.
-#
 sub check_or_fix_essential_package {
     my ( $self, $apply_fix, $dep_info, $msgs ) = @_;
     my $pkg = $dep_info->{name};
     my ($oper, $vers) = @{ $dep_info->{dep} || []};
     $logger->debug("called with '", scalar $self->struct_to_dep($dep_info), "' and fix $apply_fix") if $logger->is_debug;
+
+    if (not defined $pkg) {
+        # pkg may be cleaned up during fix
+        return;
+    }
+
+    if ($pkg eq "apt") {
+        # apt package is wrongly listed by apt-cache as essential, so it
+        # must be filtered out here. For details, see
+        # https://salsa.debian.org/perl-team/modules/packages/libconfig-model-dpkg-perl/-/merge_requests/8
+        return;
+    }
 
     # Remove unversioned dependency on essential package (Debian bug 684208)
     # see /usr/share/doc/libapt-pkg-perl/examples/apt-cache
@@ -762,6 +775,42 @@ sub check_or_fix_pkg_name {
 		}
     }
     return;
+}
+
+sub check_or_fix_too_old_pkg ( $self, $apply_fix, $dep_info, $old, $msgs ) {
+    my $pkg = $dep_info->{name};
+
+    $logger->debug("called with '", scalar $self->struct_to_dep($dep_info), "' and fix $apply_fix")
+        if $logger->is_debug;
+
+    if (not defined $pkg) {
+        # pkg may be cleaned up during fix
+        return;
+    }
+
+    my @dist_version = $self->get_available_version( $pkg ) ;
+
+    my $is_too_old = scalar @dist_version ? 1 : 0;
+    while (@dist_version) {
+        my ($d,$v) = splice @dist_version,0,2 ;
+        $is_too_old = 0 unless $d =~ /oldold/;
+    }
+
+    if ($is_too_old) {
+        $logger->debug("Found dependency on too old package: $pkg");
+        my $msg = "applied on too old package: $pkg";
+        if ($apply_fix) {
+            %$dep_info = ();
+            $logger->info("fix: removed relation with too old $pkg package");
+            push $msgs->@*, $msg;
+        }
+        else {
+            $self->add_warning($msg);
+            $self->{nb_of_fixes}++;
+            $logger->info("will warn: $msg (fix++)");
+        }
+    }
+    return $is_too_old;
 }
 
 sub check_or_fix_dep {
@@ -959,7 +1008,6 @@ sub extract_madison_info ($json) {
 	foreach my $name ( keys $data->%* ) {
         my %avail;
         foreach my $dist (keys $data->{$name}->%*) {
-            next if $dist =~ /oldold/; # skip too old versions
             foreach my $available_v (keys $data->{$name}{$dist}->%*) {
                 my $arches = $data->{$name}{$dist}{$available_v}{architectures};
                 # see #841667: relevant pkg version is found in arch all or arch amd64
@@ -1092,7 +1140,7 @@ as-is. No check are performed.
 =item *
 
 Virtual package names are found scanning local apt cache. Hence an unknown package
-on your system may a virtual package on another system.
+on your system may be a virtual package on another system.
 
 =item *
 

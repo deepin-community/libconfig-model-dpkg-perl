@@ -1,0 +1,52 @@
+* Source organisation
+
+The main parts of this package are:
+- =scan-copyright= files:
+  - =bin/scan-copyright=
+  - =lib/Dpkg/Copyright/=: library used by =scan-copyrights=. This
+    classes coalesce the information found by =licensecheck= and provides
+    a set of =Files= entries that can be copied in =debian/copyright=
+- Model of the package files:
+  - =lib/Config/Model/application.d=: declares the applications that
+    =cme= can configure with this package (e.g. =dpkg= for =cme edit
+    dpkg= command)
+  - =lib/Config/Model/models/*.pl=: the models of the package
+    files. These files can be modified with =cme meta edit=
+    command. Their structure can be viewed with =cme meta gen-dot= and
+    =dot -Tps model.dot > model.ps=
+  - =lib/Config/Model/models/
+  -.pod=: the doc of the above models. Can be re-generated with =cme gen_class_pod=
+- Scripts for dpkg files used by =cme run= command:
+  - =lib/Config/Model/scripts=
+- Specialized class to perform tasks not done by =Config::Model=:
+  - =lib/Dpkg/Grant=: Class used to implement license grants between source
+    files and =Software::Copyight= objects
+  - =lib/Dpkg/=: files used mostly by =scan-copyright= command
+  - =lib/Config/Model/Dpkg/Copyright.pm=: class that merges the result
+    of =Dpkg::Copyright::Scanner= in the existing
+    =debian/copyright=. Not for the faint of heart.
+  - =lib/Config/Model/Dpkg/Dependency.pm=: class that parses and
+    validates and fix the dependency fields of
+    =debian/control=. Dependency specification and its validation
+    rules are quite complex. This class is rather hairy.
+- The backends: classes used to read and write package files when the
+  backends provided by [[https://metacpan.org/pod/Config::Model#Read-and-write-backends][Config::Model]] are not enough
+  - =lib/Config/Model/Backend/DpkgSyntax.pm=: helper functions to read
+    and write files based on =debian/control= syntax.
+  - =lib/Config/Model/Backend/Dpkg/Copyright.pm=: R/W backend for =debian/copyright=
+  - =lib/Config/Model/Backend/Dpkg/Patch.pm=: R/W backend for debian patch headers
+  - =lib/Config/Model/Backend/Dpkg/Control.pm=: R/W backend for =debian/control=
+  - =lib/Config/Model/Backend/Dpkg.pm=: R/W backend for some simple
+    package files (like =compat=)
+- Non-regression tests:
+  - =t=: test files. Run the tests with =prove -l t=
+  - =t/examples=: fixtures used by =t/cme-scripts=
+  - =t/model_tests.d= model test based on [[http://search.cpan.org/dist/Config-Model-Tester/lib/Config/Model/Tester.pm][Config::Model::Tester]]. Use
+    =prove -l t/model_test.t= command to run only model tests.
+  - =t/grant= : test files for =lib/Dpkg/Grant= files
+  - =t/model_tests.d=: test files used by =t/model_test.t= with
+    =Config::Model::Tester= for complete model tests
+  - =t/model_test.d/*-examples=: test data used by =t/model_test.d/*-test.pl= with
+    =Config::Model::Tester=
+  - =t/scanner= : test and data files to test files from =lib/Dpkg=.
+
