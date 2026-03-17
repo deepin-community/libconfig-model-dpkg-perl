@@ -1,0 +1,15 @@
+./ChangeLog	UNKNOWN	*No copyright*
+./LICENSE	UNKNOWN	2000-2006 The Perl Foundation.
+./META6.json	Artistic-2.0	*No copyright*
+./README.md	UNKNOWN	2017 Ronald Schmidt. / 2015 Raku Community Authors
+./debian/changelog	UNKNOWN	*No copyright*
+./debian/control	UNKNOWN	*No copyright*
+./debian/copyright	Artistic-2.0	Perl 6 community
+./debian/fill.copyright.blanks.yml	Artistic-2.0	*No copyright*
+./debian/gbp.conf	UNKNOWN	*No copyright*
+./debian/rules	UNKNOWN	*No copyright*
+./debian/watch	UNKNOWN	*No copyright*
+./lib/URI.rakumod	UNKNOWN	2017 Ronald Schmidt.
+./texmf-dist/doc/generic/pst-barcode/images/rm4scc-1.eps	UNKNOWN	Barcode Writer in Pure PostScript - Version 2015-01-11
+./texmf-dist/doc/latex/filedate/README	LPPL-1.3c	Uwe Lueck 2012-11-06
+./texmf-dist/tex/latex/bewerbung/bewerbung-cv-classic.sty	UNKNOWN	2022 -01-17:16:26:37 -- Version 1.3 André Hilbig, mail@andrehilbig.de

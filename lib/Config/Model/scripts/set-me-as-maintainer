@@ -1,0 +1,20 @@
+# Format: YAML -*- yaml -*-
+---
+doc: |
+  set $DEBFULLNAME <$DEBEMAIL> as package maintainer.
+
+  Accepts --arg closes=<bug_nb> to add "Closes: xxx" to commit message
+
+  Example:
+    cme run set-me-as-maintainer -arg closes=123456
+
+app: dpkg-control
+
+var: |
+  $var{close_str} = defined $args{closes} ? " (Closes: #$args{closes})" : ""
+
+# the variables can be overridden by command line arguments
+load: source Maintainer="$DEBFULLNAME <$DEBEMAIL>"
+
+commit: |
+  control: set $DEBEMAIL as Maintainer$close_str

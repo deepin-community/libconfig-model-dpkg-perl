@@ -8,7 +8,9 @@ return [
       {
         'description' => 'Additional user-defined fields
 
-Fields in the main source control information file with names starting X, followed by one or more of the letters BCS and a hyphen -, will be copied to the output files. Only the part of the field name after the hyphen will be used in the output file. Where the letter B is used the field will appear in binary package control files, where the letter S is used in Debian source control files and where C is used in upload control (.changes) files.
+Fields in the main source control information file with names starting X, followed by one or more of the letters BCS and a hyphen -, will be copied to the output files.
+Only the part of the field name after the hyphen will be used in the output file. Where the letter B is used the field will appear in binary package control files, where the letter S
+is used in Debian source control files and where C is used in upload control (.changes) files.
 
 For details, see L<section 5.7 of Debian policy|https://www.debian.org/doc/debian-policy/#document-ch-controlfields>',
         'summary' => 'User defined field',
@@ -27,12 +29,13 @@ For details, see L<section 5.7 of Debian policy|https://www.debian.org/doc/debia
       {
         'compute' => {
           'allow_override' => '1',
-          'formula' => 'use Cwd; getcwd =~ m!/([^/]+)$!; $1;',
+          'formula' => 'use Cwd; my $res = getcwd =~ m!/([a-z0-9][a-z0-9+.-]+)$! ? $1 : undef;
+',
           'use_eval' => '1'
         },
-        'description' => 'Source package name. Defaults to the name of the current directory.',
+        'description' => 'Source package name. Defaults to the name of the current directory or undef if the directory name does not match Debian requirements for a source package',
         'mandatory' => '1',
-        'match' => '\\w[\\w+\\-\\.]{1,}',
+        'match' => '^[a-z0-9][a-z0-9+.-]+$',
         'summary' => 'source package name',
         'type' => 'leaf',
         'value_type' => 'uniline'
@@ -44,6 +47,45 @@ For details, see L<section 5.7 of Debian policy|https://www.debian.org/doc/debia
         'level' => 'hidden',
         'type' => 'leaf',
         'value_type' => 'integer'
+      },
+      'X-Style',
+      {
+        'description' => 'Uncompromising file formatting of Debian packaging files
+
+By using it, you agree to cede control over minutiae of hand-formatting. In return, the formatter gives you speed, determinism, and freedom from style discussions about formatting.
+
+The C<black> style is inspired by the C<black> Python code formatter. As with C<black>, the style will evolve over time.
+',
+        'summary' => 'Uncompromising file formatting of Debian packaging files',
+        'type' => 'leaf',
+        'value_type' => 'uniline'
+      },
+      'Standards-Version',
+      {
+        'class' => 'Config::Model::Dpkg::Control::Source::StandardVersion',
+        'description' => 'This field indicates the Debian policy version number this package complies to.
+
+Before updating this field, please read L<upgrading-checklist|https://www.debian.org/doc/debian-policy/upgrading-checklist.html>
+to know what changes came with a new policy version number and apply the required changes (if any) to your package.',
+        'mandatory' => '1',
+        'match' => '^\\d+\\.\\d+\\.\\d+(\\.\\d+)?$',
+        'summary' => 'Debian policy version number this package complies to',
+        'type' => 'leaf',
+        'value_type' => 'uniline',
+        'warn_if' => {
+          'current' => {
+            'code' => '$self->compare_with_last_version($_) == -1;',
+            'fix' => '$_ = $self->_fetch_std; # restore default value',
+            'msg' => 'Current standards version is \'$std_value\'. Please read https://www.debian.org/doc/debian-policy/upgrading-checklist.html for the changes that may be needed on your package
+to upgrade it from standard version \'$_\' to \'$std_value\'.
+'
+          },
+          'old_lintian' => {
+            'code' => '$self->compare_with_last_version($_) == 1;',
+            'msg' => 'Current standards version \'$_\' is newer than lintian version ($std_value). Please check your system
+'
+          }
+        }
       },
       'Maintainer',
       {
@@ -58,7 +100,8 @@ $ret;',
         },
         'description' => 'The package maintainer\'s name and email address. The name must come first, then the email address inside angle brackets <> (in RFC822 format).
 
-If the maintainer\'s name contains a full stop then the whole field will not work directly as an email address due to a misfeature in the syntax specified in RFC822; a program using this field as an address must check for this and correct the problem if necessary (for example by putting the name in round brackets and moving it to the end, and bringing the email address forward). ',
+If the maintainer\'s name contains a full stop then the whole field will not work directly as an email address due to a misfeature in the syntax specified in RFC822;
+a program using this field as an address must check for this and correct the problem if necessary (for example by putting the name in round brackets and moving it to the end, and bringing the email address forward). ',
         'summary' => 'package maintainer\'s name and email address',
         'type' => 'leaf',
         'value_type' => 'uniline',
@@ -77,32 +120,6 @@ If the maintainer\'s name contains a full stop then the whole field will not wor
         },
         'type' => 'list'
       },
-      'Standards-Version',
-      {
-        'class' => 'Config::Model::Dpkg::Control::Source::StandardVersion',
-        'description' => 'This field indicates the Debian policy version number this package complies to.
-
-Before updating this field, please read L<upgrading-checklist|https://www.debian.org/doc/debian-policy/upgrading-checklist.html>
-to know what changes came with a new policy version number and apply the required changes (if any) to your package.',
-        'mandatory' => '1',
-        'match' => '\\d+\\.\\d+\\.\\d+(\\.\\d+)?',
-        'summary' => 'Debian policy version number this package complies to',
-        'type' => 'leaf',
-        'value_type' => 'uniline',
-        'warn_if' => {
-          'current' => {
-            'code' => '$self->compare_with_last_version($_) == -1;',
-            'fix' => '$_ = $self->_fetch_std; # restore default value',
-            'msg' => 'Current standards version is \'$std_value\'. Please read https://www.debian.org/doc/debian-policy/upgrading-checklist.html for the changes that may be needed on your package to upgrade it from standard version \'$_\' to \'$std_value\'.
-'
-          },
-          'old_lintian' => {
-            'code' => '$self->compare_with_last_version($_) == 1;',
-            'msg' => 'Current standards version \'$_\' is newer than lintian version ($std_value). Please check your system
-'
-          }
-        }
-      },
       'Section',
       {
         'default' => 'misc',
@@ -110,7 +127,7 @@ to know what changes came with a new policy version number and apply the require
 grouped further into sections to simplify handling.
 
 The archive area and section for each package should be specified in
-the package\'s Section control record (see 
+the package\'s Section control record (see
 L<Section 5.6.5|https://www.debian.org/doc/debian-policy/#section>).
 However, the maintainer of the Debian archive may override
 this selection to ensure the consistency of the Debian
@@ -118,7 +135,7 @@ distribution. The Section field should be of the form:
 
 '.'=over
 
-'.'=item * 
+'.'=item *
 
 section if the package is in the main archive area,
 
@@ -187,19 +204,19 @@ $_ = $str ? \'autopkgtest-pkg-\'.$str : undef;',
           }
         },
         'warn_unless_match' => {
-          '^autopkgtest(-pkg-(dkms|elpa|go|nodejs|octave|perl|python|r|ruby))?$' => {
+          '^autopkgtest(-pkg-(dkms|elpa|go|nodejs|octave|perl|pybuild|python|r|ruby))?$' => {
             'fix' => 'my $m = $self->grab_value(\'- Maintainer\');
 my ($str) = ($m =~ /pkg-(perl|ruby|go)/);
 $_ = $str ? \'autopkgtest-pkg-\'.$str : undef;',
-            'msg' => 'Unknown value'
+            'msg' => 'Testsuite $_ is not a known automatic test suite'
           }
         }
       },
       'XS-Autobuild',
       {
         'default' => '0',
-        'description' => 'Read the full description from 
-L<section 5.10.5|https://www.debian.org/doc/manuals/developers-reference/pkgs.html#non-free-buildd> 
+        'description' => 'Read the full description from
+L<section 5.10.5|https://www.debian.org/doc/manuals/developers-reference/pkgs.html#non-free-buildd>
 in Debian developer reference.',
         'level' => 'hidden',
         'summary' => 'Allow automatic build of non-free or contrib package',
@@ -230,13 +247,23 @@ in Debian developer reference.',
           'optional',
           'extra'
         ],
-        'default' => 'optional',
         'help' => {
-          'extra' => 'This contains all packages that conflict with others with required, important, standard or optional priorities, or are only likely to be useful if you already know what they are or have specialized requirements (such as packages containing only detached debugging symbols).',
-          'important' => 'Important programs, including those which one would expect to find on any Unix-like system. If the expectation is that an experienced Unix person who found it missing would say "What on earth is going on, where is foo?", it must be an important package.[5] Other packages without which the system will not run well or be usable must also have priority important. This does not include Emacs, the X Window System, TeX or any other large applications. The important packages are just a bare minimum of commonly-expected and necessary tools.',
-          'optional' => '(In a sense everything that isn\'t required is optional, but that\'s not what is meant here.) This is all the software that you might reasonably want to install if you didn\'t know what it was and don\'t have specialized requirements. This is a much larger system and includes the X Window System, a full TeX distribution, and many applications. Note that optional packages should not conflict with each other. ',
-          'required' => 'Packages which are necessary for the proper functioning of the system (usually, this means that dpkg functionality depends on these packages). Removing a required package may cause your system to become totally broken and you may not even be able to use dpkg to put things back, so only do so if you know what you are doing. Systems with only the required packages are probably unusable, but they do have enough functionality to allow the sysadmin to boot and install more software. ',
-          'standard' => 'These packages provide a reasonably small but not too limited character-mode system. This is what will be installed by default if the user doesn\'t select anything else. It doesn\'t include many large applications. '
+          'extra' => 'This contains all packages that conflict with others with required, important, standard or optional priorities, or are only likely to be useful
+if you already know what they are or have specialized requirements (such as packages containing only detached debugging symbols).',
+          'important' => 'Important programs, including those which one would expect to find on any Unix-like system. If the expectation is that an experienced Unix person
+who found it missing would say "What on earth is going on, where is foo?", it must be an important package.[5] Other packages without which the system will not run well or
+be usable must also have priority important. This does not include Emacs, the X Window System, TeX or any other large applications. The important packages are just a bare minimum of commonly-expected and necessary tools.',
+          'optional' => '(In a sense everything that isn\'t required is optional, but that\'s not what is meant here.) This is all the software that you might reasonably
+want to install if you didn\'t know what it was and don\'t have specialized requirements. This is a much larger system and includes the X Window System, a full TeX distribution, and many applications.
+Note that optional packages should not conflict with each other. ',
+          'required' => 'Packages which are necessary for the proper functioning of the system (usually, this means that dpkg functionality depends on these packages).
+Removing a required package may cause your system to become totally broken and you may not even be able to use dpkg to put things back, so only do so if you know what you are doing.
+Systems with only the required packages are probably unusable, but they do have enough functionality to allow the sysadmin to boot and install more software. ',
+          'standard' => 'These packages provide a reasonably small but not too limited character-mode system. This is what will be installed by default if the user doesn\'t
+select anything else. It doesn\'t include many large applications. '
+        },
+        'replace' => {
+          'extra' => 'optional'
         },
         'type' => 'leaf',
         'value_type' => 'enum',
@@ -245,14 +272,24 @@ in Debian developer reference.',
             'std_ver' => '- Standards-Version'
           },
           'rules' => [
-            '$std_ver ge \'4.0.1\'',
+            '$std_ver lt \'4.7.3\'',
             {
-              'replace' => {
-                'extra' => 'optional'
-              }
+              'default' => 'optional'
+            },
+            '$std_ver ge \'4.7.3\'',
+            {
+              'upstream_default' => 'optional'
             }
           ]
         }
+      },
+      'Build-Driver',
+      {
+        'description' => 'The name of the build driver that dpkg (`dpkg-buildpackage`) will use for assembling the package.',
+        'summary' => 'Which build-driver implementation dpkg should use for the package build',
+        'type' => 'leaf',
+        'upstream_default' => 'debian-rules',
+        'value_type' => 'uniline'
       },
       'Build-Depends',
       {
@@ -284,7 +321,12 @@ in Debian developer reference.',
           }
         },
         'class' => 'Config::Model::Dpkg::DependencyList',
-        'description' => 'List of packages that must be installed:
+        'default_with_init' => {
+          '0' => 'debhelper-compat (= 13)'
+        },
+        'description' => '=pod
+
+List of packages that must be installed:
 
 '.'=over
 
@@ -305,7 +347,15 @@ On the other hand, the list of packages that must be installed to build architec
 
 Including a dependency in this field does not have the exact same effect as including it in both Build-Depends-Arch and Build-Depends-Indep, because the dependency also needs to be satisfied when building the source package.
 
-See also L<deb-src-control|https://manpages.debian.org/unstable/dpkg-dev/deb-src-control.5.en.html> man page',
+See also L<deb-src-control|https://manpages.debian.org/unstable/dpkg-dev/deb-src-control.5.en.html> man page.
+
+This parameter can aslo have restriction formula. For instance:
+
+    Build-Depends: foo (>= 1.0) [i386 arm] <!nocheck> <!cross>, bar
+
+See L<debian wiki|https://wiki.debian.org/BuildProfileSpec#Build-Depends_syntax_extension_.28restriction_formulas.29>
+for more details.
+',
         'duplicates' => 'warn',
         'summary' => 'List of package required during clean or build of architecture-dependent packages',
         'type' => 'list'
@@ -318,7 +368,7 @@ See also L<deb-src-control|https://manpages.debian.org/unstable/dpkg-dev/deb-src
           'value_type' => 'uniline'
         },
         'class' => 'Config::Model::Dpkg::DependencyList',
-        'description' => 'Same as Build-Depends, but these packages are only needed when building the architecture dependent packages. The Build-Depends are also installed in this case. 
+        'description' => 'Same as Build-Depends, but these packages are only needed when building the architecture dependent packages. The Build-Depends are also installed in this case.
 
 See L<deb-src-control man page|https://manpages.debian.org/unstable/dpkg-dev/deb-src-control.5.en.html> for details',
         'duplicates' => 'warn',
@@ -333,12 +383,22 @@ See L<deb-src-control man page|https://manpages.debian.org/unstable/dpkg-dev/deb
           'value_type' => 'uniline'
         },
         'class' => 'Config::Model::Dpkg::DependencyList',
-        'description' => 'List of packages that must be installed to build architecture-independent binaries ("Architecture: all").
+        'description' => '=pod
+
+List of packages that must be installed to build architecture-independent binaries ("Architecture: all").
 
 Technically, these packages must be installed for the following build targets: build, build-indep, binary, and binary-indep.
 See L<build target|https://www.debian.org/doc/debian-policy/#relationships-between-source-and-binary-packages-build-depends-build-depends-indep-build-depends-arch-build-conflicts-build-conflicts-indep-build-conflicts-arch>.
 
-Note that packages required during "clean" phase must be declared in "Build-Depends" field.',
+Note that packages required during "clean" phase must be declared in "Build-Depends" field.
+
+This parameter can aslo have restriction formula. For instance:
+
+    Build-Depends: foo (>= 1.0) [i386 arm] <!nocheck> <!cross>, bar
+
+See L<debian wiki|https://wiki.debian.org/BuildProfileSpec#Build-Depends_syntax_extension_.28restriction_formulas.29>
+for more details.
+',
         'duplicates' => 'warn',
         'summary' => 'List of package required during build of architecture-independent package',
         'type' => 'list'
@@ -369,7 +429,7 @@ See L<build target|https://www.debian.org/doc/debian-policy/#relationships-betwe
 
 On the other hand, the list of packages that must B<not> be installed to build architecture-independent binaries ("Architecture: all") should be listed in "Build-Conflicts-Indep" field.
 
-Including a dependency in this list has the same effect as including it in both Build-Conflicts-Arch and Build-Conflicts-Indep, with the additional effect of being used for source-only builds. 
+Including a dependency in this list has the same effect as including it in both Build-Conflicts-Arch and Build-Conflicts-Indep, with the additional effect of being used for source-only builds.
 
 See L<deb-src-control man page|https://manpages.debian.org/unstable/dpkg-dev/deb-src-control.5.en.html> for details.',
         'duplicates' => 'warn',
@@ -383,7 +443,7 @@ See L<deb-src-control man page|https://manpages.debian.org/unstable/dpkg-dev/deb
           'value_type' => 'uniline'
         },
         'class' => 'Config::Model::Dpkg::DependencyList',
-        'description' => 'List of packages that must be missing (i.e. B<not> installed) to build archictecture dependent binaries 
+        'description' => 'List of packages that must be missing (i.e. B<not> installed) to build archictecture dependent binaries
 
 See L<deb-src-control man page|https://manpages.debian.org/unstable/dpkg-dev/deb-src-control.5.en.html> for details.',
         'duplicates' => 'warn',
@@ -415,7 +475,8 @@ Note that packages not wanted during "clean" phase must be declared in "Build-Co
           'value_type' => 'uniline'
         },
         'class' => 'Config::Model::Dpkg::DependencyList',
-        'description' => ' Some binary packages incorporate parts of other packages when built but do not have to depend on those packages. Examples include linking with static libraries or incorporating source code from another package during the build. In this case, the source packages of those other packages are a required part of the complete source (the binary package is not reproducible without them).
+        'description' => ' Some binary packages incorporate parts of other packages when built but do not have to depend on those packages. Examples include linking with static libraries
+or incorporating source code from another package during the build. In this case, the source packages of those other packages are a required part of the complete source (the binary package is not reproducible without them).
 
 A Built-Using field must list the corresponding source package for any such binary package incorporated during the build, including an B<exactly equal> ("=") version relation on the version that was used to build that binary package[57].
 
@@ -469,9 +530,14 @@ The information is meant to be useful for the final user, willing to browse the 
       },
       'Vcs-Arch',
       {
-        'description' => 'Value of this field should be a string identifying unequivocally the location of the Version Control System repository used to maintain the given package, if available. * identify the Version Control System; currently the following systems are supported by the package tracking system: arch, bzr (Bazaar), cvs, darcs, git, hg (Mercurial), mtn (Monotone), svn (Subversion). It is allowed to specify different VCS fields for the same package: they will all be shown in the PTS web interface.
+        'description' => 'Value of this field should be a string identifying unequivocally the location of the Version Control System repository used to maintain the given package,
+if available. * identify the Version Control System; currently the following systems are supported by the package tracking system: arch, bzr (Bazaar), cvs, darcs, git, hg (Mercurial),
+mtn (Monotone), svn (Subversion). It is allowed to specify different VCS fields for the same package: they will all be shown in the PTS web interface.
 
-The information is meant to be useful for a user knowledgeable in the given Version Control System and willing to build the current version of a package from the VCS sources. Other uses of this information might include automatic building of the latest VCS version of the given package. To this end the location pointed to by the field should better be version agnostic and point to the main branch (for VCSs supporting such a concept). Also, the location pointed to should be accessible to the final user; fulfilling this requirement might imply pointing to an anonymous access of the repository instead of pointing to an SSH-accessible version of the same. ',
+The information is meant to be useful for a user knowledgeable in the given Version Control System and willing to build the current version of a package from the VCS sources.
+Other uses of this information might include automatic building of the latest VCS version of the given package. To this end the location pointed to by the field should better be version agnostic
+and point to the main branch (for VCSs supporting such a concept). Also, the location pointed to should be accessible to the final user; fulfilling this requirement might imply pointing to an
+anonymous access of the repository instead of pointing to an SSH-accessible version of the same. ',
         'summary' => 'URL of the VCS repository',
         'type' => 'leaf',
         'value_type' => 'uniline',
@@ -485,9 +551,15 @@ The information is meant to be useful for a user knowledgeable in the given Vers
       },
       'Vcs-Bzr',
       {
-        'description' => 'Value of this field should be a string identifying unequivocally the location of the Version Control System repository used to maintain the given package, if available. * identify the Version Control System; currently the following systems are supported by the package tracking system: arch, bzr (Bazaar), cvs, darcs, git, hg (Mercurial), mtn (Monotone), svn (Subversion). It is allowed to specify different VCS fields for the same package: they will all be shown in the PTS web interface.
+        'description' => 'Value of this field should be a string identifying unequivocally the location of the Version Control System repository used to maintain the given package,
+if available. * identify the Version Control System; currently the following systems are supported by the package tracking system: arch, bzr (Bazaar), cvs, darcs, git, hg (Mercurial),
+mtn (Monotone), svn (Subversion). It is allowed to specify different VCS fields for the same package: they will all be shown in the PTS web interface.
 
-The information is meant to be useful for a user knowledgeable in the given Version Control System and willing to build the current version of a package from the VCS sources. Other uses of this information might include automatic building of the latest VCS version of the given package. To this end the location pointed to by the field should better be version agnostic and point to the main branch (for VCSs supporting such a concept). Also, the location pointed to should be accessible to the final user; fulfilling this requirement might imply pointing to an anonymous access of the repository instead of pointing to an SSH-accessible version of the same. ',
+The information is meant to be useful for a user knowledgeable in the given Version Control System and willing to build the current version of a package from the VCS sources.
+Other uses of this information might include automatic building of the latest VCS version of the given package.
+To this end the location pointed to by the field should better be version agnostic and point to the main branch (for VCSs supporting such a concept).
+Also, the location pointed to should be accessible to the final user; fulfilling this requirement might imply pointing to an anonymous access of the repository instead
+of pointing to an SSH-accessible version of the same. ',
         'summary' => 'URL of the VCS repository',
         'type' => 'leaf',
         'value_type' => 'uniline',
@@ -501,9 +573,14 @@ The information is meant to be useful for a user knowledgeable in the given Vers
       },
       'Vcs-Cvs',
       {
-        'description' => 'Value of this field should be a string identifying unequivocally the location of the Version Control System repository used to maintain the given package, if available. * identify the Version Control System; currently the following systems are supported by the package tracking system: arch, bzr (Bazaar), cvs, darcs, git, hg (Mercurial), mtn (Monotone), svn (Subversion). It is allowed to specify different VCS fields for the same package: they will all be shown in the PTS web interface.
+        'description' => 'Value of this field should be a string identifying unequivocally the location of the Version Control System repository used to maintain the given package,
+if available. * identify the Version Control System; currently the following systems are supported by the package tracking system: arch, bzr (Bazaar), cvs, darcs, git, hg (Mercurial),
+mtn (Monotone), svn (Subversion). It is allowed to specify different VCS fields for the same package: they will all be shown in the PTS web interface.
 
-The information is meant to be useful for a user knowledgeable in the given Version Control System and willing to build the current version of a package from the VCS sources. Other uses of this information might include automatic building of the latest VCS version of the given package. To this end the location pointed to by the field should better be version agnostic and point to the main branch (for VCSs supporting such a concept). Also, the location pointed to should be accessible to the final user; fulfilling this requirement might imply pointing to an anonymous access of the repository instead of pointing to an SSH-accessible version of the same. ',
+The information is meant to be useful for a user knowledgeable in the given Version Control System and willing to build the current version of a package from the VCS sources.
+Other uses of this information might include automatic building of the latest VCS version of the given package. To this end the location pointed to by the field should better be
+version agnostic and point to the main branch (for VCSs supporting such a concept).
+Also, the location pointed to should be accessible to the final user; fulfilling this requirement might imply pointing to an anonymous access of the repository instead of pointing to an SSH-accessible version of the same. ',
         'summary' => 'URL of the VCS repository',
         'type' => 'leaf',
         'value_type' => 'uniline',
@@ -517,9 +594,14 @@ The information is meant to be useful for a user knowledgeable in the given Vers
       },
       'Vcs-Darcs',
       {
-        'description' => 'Value of this field should be a string identifying unequivocally the location of the Version Control System repository used to maintain the given package, if available. * identify the Version Control System; currently the following systems are supported by the package tracking system: arch, bzr (Bazaar), cvs, darcs, git, hg (Mercurial), mtn (Monotone), svn (Subversion). It is allowed to specify different VCS fields for the same package: they will all be shown in the PTS web interface.
+        'description' => 'Value of this field should be a string identifying unequivocally the location of the Version Control System repository used to maintain the given package,
+if available. * identify the Version Control System; currently the following systems are supported by the package tracking system: arch, bzr (Bazaar), cvs, darcs, git, hg (Mercurial), mtn (Monotone), svn (Subversion).
+It is allowed to specify different VCS fields for the same package: they will all be shown in the PTS web interface.
 
-The information is meant to be useful for a user knowledgeable in the given Version Control System and willing to build the current version of a package from the VCS sources. Other uses of this information might include automatic building of the latest VCS version of the given package. To this end the location pointed to by the field should better be version agnostic and point to the main branch (for VCSs supporting such a concept). Also, the location pointed to should be accessible to the final user; fulfilling this requirement might imply pointing to an anonymous access of the repository instead of pointing to an SSH-accessible version of the same. ',
+The information is meant to be useful for a user knowledgeable in the given Version Control System and willing to build the current version of a package from the VCS sources.
+Other uses of this information might include automatic building of the latest VCS version of the given package.
+To this end the location pointed to by the field should better be version agnostic and point to the main branch (for VCSs supporting such a concept).
+Also, the location pointed to should be accessible to the final user; fulfilling this requirement might imply pointing to an anonymous access of the repository instead of pointing to an SSH-accessible version of the same. ',
         'summary' => 'URL of the VCS repository',
         'type' => 'leaf',
         'value_type' => 'uniline'
@@ -545,9 +627,13 @@ The information is meant to be useful for a user knowledgeable in the given Vers
             'pkgname' => '- Source'
           }
         },
-        'description' => 'Value of this field should be a string identifying unequivocally the location of the Version Control System repository used to maintain the given package, if available. * identify the Version Control System; currently the following systems are supported by the package tracking system: arch, bzr (Bazaar), cvs, darcs, git, hg (Mercurial), mtn (Monotone), svn (Subversion). It is allowed to specify different VCS fields for the same package: they will all be shown in the PTS web interface.
+        'description' => 'Value of this field should be a string identifying unequivocally the location of the Version Control System repository used to maintain the given package,
+if available. * identify the Version Control System; currently the following systems are supported by the package tracking system: arch, bzr (Bazaar), cvs, darcs, git, hg (Mercurial), mtn (Monotone), svn (Subversion). It is allowed to specify different VCS fields for the same package: they will all be shown in the PTS web interface.
 
-The information is meant to be useful for a user knowledgeable in the given Version Control System and willing to build the current version of a package from the VCS sources. Other uses of this information might include automatic building of the latest VCS version of the given package. To this end the location pointed to by the field should better be version agnostic and point to the main branch (for VCSs supporting such a concept). Also, the location pointed to should be accessible to the final user; fulfilling this requirement might imply pointing to an anonymous access of the repository instead of pointing to an SSH-accessible version of the same. ',
+The information is meant to be useful for a user knowledgeable in the given Version Control System and willing to build the current version of a package from the VCS sources.
+Other uses of this information might include automatic building of the latest VCS version of the given package. To this end the location pointed to by the field should better be
+version agnostic and point to the main branch (for VCSs supporting such a concept).
+Also, the location pointed to should be accessible to the final user; fulfilling this requirement might imply pointing to an anonymous access of the repository instead of pointing to an SSH-accessible version of the same. ',
         'summary' => 'URL of the VCS repository',
         'type' => 'leaf',
         'value_type' => 'uniline',
@@ -570,9 +656,14 @@ The information is meant to be useful for a user knowledgeable in the given Vers
       },
       'Vcs-Hg',
       {
-        'description' => 'Value of this field should be a string identifying unequivocally the location of the Version Control System repository used to maintain the given package, if available. * identify the Version Control System; currently the following systems are supported by the package tracking system: arch, bzr (Bazaar), cvs, darcs, git, hg (Mercurial), mtn (Monotone), svn (Subversion). It is allowed to specify different VCS fields for the same package: they will all be shown in the PTS web interface.
+        'description' => 'Value of this field should be a string identifying unequivocally the location of the Version Control System repository used to maintain the given package,
+if available. * identify the Version Control System; currently the following systems are supported by the package tracking system: arch, bzr (Bazaar), cvs, darcs, git, hg (Mercurial), mtn (Monotone), svn (Subversion).
+It is allowed to specify different VCS fields for the same package: they will all be shown in the PTS web interface.
 
-The information is meant to be useful for a user knowledgeable in the given Version Control System and willing to build the current version of a package from the VCS sources. Other uses of this information might include automatic building of the latest VCS version of the given package. To this end the location pointed to by the field should better be version agnostic and point to the main branch (for VCSs supporting such a concept). Also, the location pointed to should be accessible to the final user; fulfilling this requirement might imply pointing to an anonymous access of the repository instead of pointing to an SSH-accessible version of the same. ',
+The information is meant to be useful for a user knowledgeable in the given Version Control System and willing to build the current version of a package from the VCS sources.
+Other uses of this information might include automatic building of the latest VCS version of the given package. To this end the location pointed to by the field should better
+be version agnostic and point to the main branch (for VCSs supporting such a concept).
+Also, the location pointed to should be accessible to the final user; fulfilling this requirement might imply pointing to an anonymous access of the repository instead of pointing to an SSH-accessible version of the same. ',
         'summary' => 'URL of the VCS repository',
         'type' => 'leaf',
         'value_type' => 'uniline',
@@ -586,18 +677,28 @@ The information is meant to be useful for a user knowledgeable in the given Vers
       },
       'Vcs-Mtn',
       {
-        'description' => 'Value of this field should be a string identifying unequivocally the location of the Version Control System repository used to maintain the given package, if available. * identify the Version Control System; currently the following systems are supported by the package tracking system: arch, bzr (Bazaar), cvs, darcs, git, hg (Mercurial), mtn (Monotone), svn (Subversion). It is allowed to specify different VCS fields for the same package: they will all be shown in the PTS web interface.
+        'description' => 'Value of this field should be a string identifying unequivocally the location of the Version Control System repository used to maintain the given package,
+if available. * identify the Version Control System; currently the following systems are supported by the package tracking system: arch, bzr (Bazaar), cvs, darcs, git, hg (Mercurial), mtn (Monotone), svn (Subversion).
+It is allowed to specify different VCS fields for the same package: they will all be shown in the PTS web interface.
 
-The information is meant to be useful for a user knowledgeable in the given Version Control System and willing to build the current version of a package from the VCS sources. Other uses of this information might include automatic building of the latest VCS version of the given package. To this end the location pointed to by the field should better be version agnostic and point to the main branch (for VCSs supporting such a concept). Also, the location pointed to should be accessible to the final user; fulfilling this requirement might imply pointing to an anonymous access of the repository instead of pointing to an SSH-accessible version of the same. ',
+The information is meant to be useful for a user knowledgeable in the given Version Control System and willing to build the current version of a package from the VCS sources.
+Other uses of this information might include automatic building of the latest VCS version of the given package.
+To this end the location pointed to by the field should better be version agnostic and point to the main branch (for VCSs supporting such a concept).
+Also, the location pointed to should be accessible to the final user; fulfilling this requirement might imply pointing to an anonymous access of the repository instead of pointing to an SSH-accessible version of the same. ',
         'summary' => 'URL of the VCS repository',
         'type' => 'leaf',
         'value_type' => 'uniline'
       },
       'Vcs-Svn',
       {
-        'description' => 'Value of this field should be a string identifying unequivocally the location of the Version Control System repository used to maintain the given package, if available. * identify the Version Control System; currently the following systems are supported by the package tracking system: arch, bzr (Bazaar), cvs, darcs, git, hg (Mercurial), mtn (Monotone), svn (Subversion). It is allowed to specify different VCS fields for the same package: they will all be shown in the PTS web interface.
+        'description' => 'Value of this field should be a string identifying unequivocally the location of the Version Control System repository used to maintain the given package,
+if available. * identify the Version Control System; currently the following systems are supported by the package tracking system: arch, bzr (Bazaar), cvs, darcs, git, hg (Mercurial), mtn (Monotone), svn (Subversion).
+It is allowed to specify different VCS fields for the same package: they will all be shown in the PTS web interface.
 
-The information is meant to be useful for a user knowledgeable in the given Version Control System and willing to build the current version of a package from the VCS sources. Other uses of this information might include automatic building of the latest VCS version of the given package. To this end the location pointed to by the field should better be version agnostic and point to the main branch (for VCSs supporting such a concept). Also, the location pointed to should be accessible to the final user; fulfilling this requirement might imply pointing to an anonymous access of the repository instead of pointing to an SSH-accessible version of the same. ',
+The information is meant to be useful for a user knowledgeable in the given Version Control System and willing to build the current version of a package from the VCS sources.
+Other uses of this information might include automatic building of the latest VCS version of the given package.
+To this end the location pointed to by the field should better be version agnostic and point to the main branch (for VCSs supporting such a concept).
+Also, the location pointed to should be accessible to the final user; fulfilling this requirement might imply pointing to an anonymous access of the repository instead of pointing to an SSH-accessible version of the same. ',
         'summary' => 'URL of the VCS repository',
         'type' => 'leaf',
         'value_type' => 'uniline',
@@ -611,7 +712,8 @@ The information is meant to be useful for a user knowledgeable in the given Vers
       },
       'DM-Upload-Allowed',
       {
-        'description' => 'If this field is present, then any Debian Maintainers listed in the Maintainer or Uploaders fields may upload the package directly to the Debian archive.  For more information see the "Debian Maintainer" page at the Debian Wiki - https://wiki.debian.org/DebianMaintainer',
+        'description' => 'If this field is present, then any Debian Maintainers listed in the Maintainer or Uploaders fields may upload the package directly to the Debian archive.
+For more information see the "Debian Maintainer" page at the Debian Wiki - https://wiki.debian.org/DebianMaintainer',
         'match' => 'yes',
         'status' => 'deprecated',
         'summary' => 'The package may be uploaded by a Debian Maintainer',
@@ -623,14 +725,36 @@ The information is meant to be useful for a user knowledgeable in the given Vers
         'type' => 'leaf',
         'value_type' => 'uniline'
       },
+      'Bugs',
+      {
+        'description' => 'Provide a custom bug tracker URL
+
+This field is *not* used by packages uploaded to Debian or most derivatives as the distro tooling has a default bugtracker built in. It is primarily useful for third-party provided packages so that bug reporting tooling can redirect the user to their bug tracker.',
+        'summary' => 'Custom bugtracker URL (for third-party packages)',
+        'type' => 'leaf',
+        'value_type' => 'uniline'
+      },
+      'Origin',
+      {
+        'description' => 'Declare the origin of the package.
+
+This field is *not* used by packages uploaded to Debian or most derivatives as the origin would be the distribution. It is primarily useful for third-party provided packages as some tools will detect this field and change behavior, for instance by informing the user that the package is a third-party package.',
+        'summary' => 'Custom origin (for third-party packages)',
+        'type' => 'leaf',
+        'value_type' => 'uniline'
+      },
       'Rules-Requires-Root',
       {
-        'description' => 'Depending on the value of the Rules-Requires-Root field, the package builder (e.g. dpkg-buildpackage) may run the debian/rules target as an unprivileged user and provide a gain root command. This command allows the debian/rules target to run particular subcommands under (fake)root. Can be \'no\', \'binary-targets\' (default)), or a space separated list of keywords containing a forward slash (e.g. "/").
+        'description' => 'Depending on the value of the Rules-Requires-Root field, the package builder (e.g. dpkg-buildpackage) may run the debian/rules target as an unprivileged user and provide a gain root command.
+This command allows the debian/rules target to run particular subcommands under (fake)root. Can be \'no\', \'binary-targets\' (default)), or a space separated list of keywords containing a forward slash (e.g. "/").
 
 For details, see L<section 5.6.31.2 of Debian policy|https://www.debian.org/doc/debian-policy/ch-controlfields.html#rules-requires-root>',
         'help' => {
-          '.+/' => 'Space separated list of keywords. These keywords must always contain a forward slash, which sets them apart from the other possible values of Rules-Requires-Root. When this list is provided, the builder must provide a gain root command (as defined in debian/rules and Rules-Requires-Root) or pretend that the value was set to binary-targets, and both the builder and the package’s debian/rules script must downgrade accordingly.',
-          'binary-targets' => '(Default) Declares that the package will need the root (or fakeroot) when either of the binary, binary-arch or binary-indep targets are called. This is how every tool behaved before this field was defined.',
+          '.+/' => 'Space separated list of keywords. These keywords must always contain a forward slash, which sets them apart from the other possible values of Rules-Requires-Root.
+When this list is provided, the builder must provide a gain root command (as defined in debian/rules and Rules-Requires-Root) or pretend that the value was set to binary-targets,
+and both the builder and the package’s debian/rules script must downgrade accordingly.',
+          'binary-targets' => '(Default) Declares that the package will need the root (or fakeroot) when either of the binary, binary-arch or binary-indep targets are called.
+This is how every tool behaved before this field was defined.',
           'no' => 'Declares that neither root nor fakeroot is required. Package builders (e.g. dpkg-buildpackage) may choose to invoke any target in debian/rules with an unprivileged user.'
         },
         'summary' => 'Defines if access to root (or fakeroot) is required during build.',
@@ -642,6 +766,54 @@ For details, see L<section 5.6.31.2 of Debian policy|https://www.debian.org/doc/
           }
         }
       },
+      'X-DH-Compat',
+      {
+        'description' => '=pod
+
+The C<X-DH-Compat> field is accepted by C<debhelper> as a way to declare the "debhelper compat level".
+Though, whenever possible, it is better to add C<debhelper-compat (= N)> to C<Build-Depends> as a way
+to declare the debhelper compat level.
+
+This field does B<not> count as a build-dependency, so the package will still need an explicit
+build-dependency on C<debhelper> on top of this field. As of C<debhelper compat> level 14, this is
+the only supported way to request a C<debhelper compat> level that is not yet stable.
+
+Example:
+
+    Source: foo
+    Build-Depends: debhelper (>= 13.26~)
+    # Use the experimental compat 14
+    X-DH-Compat: 14
+    # ...
+
+This field replaces the C<debian/compat> file that was the prior way of declaring unstable
+and experimental C<debhelper compat> levels.
+',
+        'summary' => 'Declare debhelper compat level (used for experimental compat levels)',
+        'type' => 'leaf',
+        'value_type' => 'uniline'
+      },
+      'X-Cargo-Crate',
+      {
+        'description' => 'This fields contains the name of the Rust cargo crate, which is packaged in this source package.
+
+It is used by Debian\'s Rust tooling to reliably identify the crate when it needs it. The source package name is not always sufficient for this purpose. As an example, the package name for the `utf-8` crate can both be read as `utf` with a major version of `8` or a as the crate name `utf-8`. This field is used to avoid the ambiguity. It is recommended to always include it for Rust packages.',
+        'summary' => 'Name of the Rust cargo crate packaged in this source package',
+        'type' => 'leaf',
+        'value_type' => 'uniline',
+        'warp' => {
+          'follow' => {
+            'maintainer' => '- Maintainer',
+            'source' => '- Source'
+          },
+          'rules' => [
+            '$maintainer =~ m!Debian Ruby!i or $source =~ /^ruby/',
+            {
+              'level' => 'normal'
+            }
+          ]
+        }
+      },
       'XS-Python-Version',
       {
         'status' => 'deprecated',
@@ -650,17 +822,19 @@ For details, see L<section 5.6.31.2 of Debian policy|https://www.debian.org/doc/
       },
       'X-Python-Version',
       {
-        'description' => 'This field specifies the versions of Python (not versions of Python 3) supported by the source package.  When not specified, they default to all currently supported Python (or Python 3) versions. For more detail, See L<python policy|https://www.debian.org/doc/packaging-manuals/python-policy/ch-module_packages.html#s-specifying_versions>',
+        'description' => 'This field specifies the versions of Python (not versions of Python 3) supported by the source package.
+When not specified, they default to all currently supported Python (or Python 3) versions. For more detail,
+See L<python policy|https://www.debian.org/doc/packaging-manuals/python-policy/ch-module_packages.html#s-specifying_versions>',
         'migrate_from' => {
           'formula' => 'my $old = $xspython ;
 my $new ;
 if ($old =~ /,/) {
    # list of versions
-   my @list = sort split /\\s*,\\s*/, $old ; 
+   my @list = sort split /\\s*,\\s*/, $old ;
    $new = ">= ". (shift @list) . ", << " .  (pop @list) ;
 }
 elsif ($old =~ /-/) {
-   my @list = sort grep { $_ ;} split /\\s*-\\s*/, $old ; 
+   my @list = sort grep { $_ ;} split /\\s*-\\s*/, $old ;
    $new = ">= ". shift @list ;
    $new .= ", << ". pop @list if @list ;
 }
@@ -680,7 +854,8 @@ $new ;',
       },
       'X-Python3-Version',
       {
-        'description' => 'This field specifies the versions of Python 3 supported by the package. For more detail, See L<python policy|https://www.debian.org/doc/packaging-manuals/python-policy/ch-module_packages.html#s-specifying_versions>',
+        'description' => 'This field specifies the versions of Python 3 supported by the package. For more detail,
+See L<python policy|https://www.debian.org/doc/packaging-manuals/python-policy/ch-module_packages.html#s-specifying_versions>',
         'summary' => 'supported versions of Python3 ',
         'type' => 'leaf',
         'value_type' => 'uniline'
@@ -690,6 +865,7 @@ $new ;',
         'description' => 'indicate the versions of the interpreter
 supported by the library',
         'level' => 'hidden',
+        'status' => 'deprecated',
         'type' => 'leaf',
         'value_type' => 'uniline',
         'warp' => {
@@ -704,6 +880,51 @@ supported by the library',
             }
           ]
         }
+      },
+      'Synopsis',
+      {
+        'description' => '=head1 NAME
+
+This field contains a human-readable synopsis of the package. However,
+it is not used directly.  Binary packages can reference it via the
+C<${{source:Synopsis}}> substvars. Without any of these substvars, the
+C<Synopsis> (part of the C<Description> field) of the C<Source> stanza
+remains unused.  The B<Synopsis> is a short "noun-phrase" intended to provide a
+one-line summary of a package.
+
+The B<Synopsis> is usually displayed in cases where there is limited space such as when reviewing
+the search results from C<apt search foo>.  It is often a good idea to imagine that the B<Synopsis>
+part is inserted into a sentence like "The package provides {{Synopsis-goes-here}}".
+
+Please see L<control field doc|https://www.debian.org/doc/debian-policy/ch-controlfields.html#description>
+for more details about the description field and suggestions for how to write it.
+',
+        'summary' => 'Common base synopsis for all packages via substvar',
+        'type' => 'leaf',
+        'value_type' => 'string'
+      },
+      'Description',
+      {
+        'description' => '=head1 NAME
+
+This field contains a human-readable description of the
+package. However, it is not used directly.  Binary packages can
+reference parts it via the C<${{source:Extended-Description}}>
+substvars. Without this substvars, the C<Description> field of the
+C<Source> stanza remains unused.
+
+The B<Extended Description> is a standalone description that should
+describe what the package does and how it relates to the rest of the
+system (in terms of, for example, which subsystem it is which part
+of).
+
+Please see
+L<control field doc|https://www.debian.org/doc/debian-policy/ch-controlfields.html#description>
+for more details about the description field and suggestions for how to write it.
+',
+        'summary' => 'Common base description for all packages via substvar',
+        'type' => 'leaf',
+        'value_type' => 'string'
       }
     ],
     'license' => 'LGPL2',

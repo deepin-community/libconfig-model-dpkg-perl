@@ -1,0 +1,18 @@
+# -*- yaml -*-
+---
+ASCL-Id: 1112.019
+Reference:
+  Author: >-
+    Bonnarel, F. and Fernique, P. and Bienayme, O. and Egret, D.
+    and Genova, F. and Louys, M. and Ochsenbein, F. and Wenger, M.
+    and Bartlett, J. G.
+  Title: >-
+    The ALADIN interactive sky atlas. A reference tool for
+    identification of astronomical sources
+  Journal: Astronomy and Astrophysics Supplement Series
+  Year: 2000
+  Volume: 143
+  Pages: 33 - 40
+  URL: http://cdsads.u-strasbg.fr/abs/2000A%26AS..143...33B
+  Eprint: http://aas.aanda.org/articles/aas/pdf/2000/07/ds1785.pdf
+  DOI: 10.1051/aas:2000331

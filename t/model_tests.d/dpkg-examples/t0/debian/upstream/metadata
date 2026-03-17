@@ -1,0 +1,17 @@
+Bug-Database: http://www.netlib.org/lapack/bug_list.html
+              https://github.com/Reference-LAPACK/lapack/issues
+Bug-Submit: https://github.com/Reference-LAPACK/lapack/issues/new
+Documentation: http://www.netlib.org/lapack/lug/
+FAQ: http://www.netlib.org/lapack/faq.html
+Repository: https://github.com/Reference-LAPACK/lapack.git
+Repository-Browse: https://github.com/Reference-LAPACK/lapack
+Reference:
+  Author: Anderson, E. and Bai, Z. and Bischof, C. and
+          Blackford, S. and Demmel, J. and Dongarra, J. and
+          Du Croz, J. and Greenbaum, A. and Hammarling, S. and
+          McKenney, A. and Sorensen, D.
+  Title: LAPACK Users' Guide
+  Publisher: Society for Industrial and Applied Mathematics
+  Year: 1999
+  ISBN: 0-89871-447-8
+Security-Contact: https://github.com/Reference-LAPACK/lapack/tree/HEAD/.github/SECURITY.md

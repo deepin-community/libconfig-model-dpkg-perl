@@ -2,43 +2,49 @@ Files: *
 Copyright: 2002-2015, OpenNebula Project (OpenNebula.org), C12G Labs
 License: Apache-2.0
 
-Files: NOTICE
-Copyright: 2002-2015, OpenNebula Project, OpenNebula Systems (formerly C12G Labs)
-License: Apache-2.0
-
-Files: debian/*
-Copyright: OpenNebula is Copyright 2002-2010, Distributed Systems Architecture Group, Universidad
+Files: debian/manpages/*
+Copyright: OpenNebula is 2002-2010, Distributed Systems Architecture Group, Universidad
 License: UNKNOWN
+ Please fill license text from header of files
 
 Files: debian/manpages/sunstone-server.1
-Copyright: OpenNebula is Copyright 2002-2011, Distributed Systems Architecture Group, Universidad
+Copyright: OpenNebula is 2002-2011, Distributed Systems Architecture Group, Universidad
 License: UNKNOWN
+ Please fill license text from header of files
 
-Files: share/pkgs/*
-Copyright: no-info-found
-License: Apache-2.0
-
-Files: share/vendor/*
+Files: share/vendor/ruby/gems/rbvmomi/*
 Copyright: 2010, 2011, VMware, Inc.
 License: Expat
 
-Files: share/vendor/ruby/gems/rbvmomi/lib/*
+Files: share/vendor/ruby/gems/rbvmomi/lib/rbvmomi.rb
 Copyright: 2010-2012, VMware, Inc.
 License: UNKNOWN
+ Please fill license text from header of files
 
-Files: share/vendor/ruby/gems/rbvmomi/lib/rbvmomi/vim/*
-Copyright: 2010, 2011, VMware, Inc.
-License: Expat
+Files: share/vendor/ruby/gems/rbvmomi/lib/rbvmomi/basic_types.rb
+ share/vendor/ruby/gems/rbvmomi/lib/rbvmomi/connection.rb
+ share/vendor/ruby/gems/rbvmomi/lib/rbvmomi/deserialization.rb
+ share/vendor/ruby/gems/rbvmomi/lib/rbvmomi/fault.rb
+ share/vendor/ruby/gems/rbvmomi/lib/rbvmomi/pbm.rb
+ share/vendor/ruby/gems/rbvmomi/lib/rbvmomi/trivial_soap.rb
+ share/vendor/ruby/gems/rbvmomi/lib/rbvmomi/trollop.rb
+ share/vendor/ruby/gems/rbvmomi/lib/rbvmomi/type_loader.rb
+ share/vendor/ruby/gems/rbvmomi/lib/rbvmomi/vim.rb
+Copyright: 2010-2012, VMware, Inc.
+License: UNKNOWN
+ Please fill license text from header of files
 
 Files: share/websockify/*
 Copyright: 2011, Joel Martin
 License: UNKNOWN
+ Please fill license text from header of files
 
 Files: src/authm_mad/remotes/ldap/*
 Copyright: 2010-2015, C12G Labs S.L
 License: Apache-2.0
 
 Files: src/cli/oneflow
+ src/cli/oneflow-template
 Copyright: 2010-2015, C12G Labs S.L.
 License: Apache-2.0
 
@@ -58,33 +64,36 @@ Files: src/im_mad/collectd/SConstruct
 Copyright: 2010-2015, C12G Labs S.L
 License: Apache-2.0
 
-Files: src/im_mad/remotes/*
+Files: src/im_mad/remotes/az.d/*
 Copyright: 2010-2015, C12G Labs S.L
 License: Apache-2.0
 
-Files: src/im_mad/remotes/common.d/*
-Copyright: 2002-2015, OpenNebula Project (OpenNebula.org), C12G Labs
+Files: src/im_mad/remotes/ec2.d/*
+Copyright: 2010-2015, C12G Labs S.L
 License: Apache-2.0
 
-Files: src/im_mad/remotes/kvm-probes.d/*
-Copyright: 2002-2015, OpenNebula Project (OpenNebula.org), C12G Labs
+Files: src/im_mad/remotes/sl.d/*
+Copyright: 2010-2015, C12G Labs S.L
 License: Apache-2.0
 
-Files: src/im_mad/remotes/run_probes
- src/im_mad/remotes/stop_probes
-Copyright: 2002-2015, OpenNebula Project (OpenNebula.org), C12G Labs
+Files: src/im_mad/remotes/vcenter.d/*
+Copyright: 2010-2015, C12G Labs S.L
 License: Apache-2.0
 
-Files: src/im_mad/remotes/xen-probes.d/*
-Copyright: 2002-2015, OpenNebula Project (OpenNebula.org), C12G Labs
+Files: src/im_mad/remotes/vmware.d/*
+Copyright: 2010-2015, C12G Labs S.L
 License: Apache-2.0
 
 Files: src/mad/utils/*
+Copyright: 2010-2015, C12G Labs S.L.
+License: Apache-2.0
+
+Files: src/mad/utils/SConstruct
 Copyright: 2010-2015, C12G Labs S.L
 License: Apache-2.0
 
-Files: src/mad/utils/tty_expect.c
-Copyright: 2010-2015, C12G Labs S.L.
+Files: src/oca/java/lib/*
+Copyright: 1999-2009, The Apache Software Foundation
 License: Apache-2.0
 
 Files: src/oca/ruby/opennebula/oneflow_client.rb
@@ -104,35 +113,70 @@ Files: src/sunstone/models/SunstoneMarketplace.rb
 Copyright: 2010-2015, C12G Labs S.L
 License: Apache-2.0
 
-Files: src/sunstone/public/css/*
+Files: src/sunstone/public/css/novnc-custom.css
 Copyright: 2013, Samuel Mannehed for Cendio AB
  2012, Joel Martin
 License: MPL-2.0
 
-Files: src/sunstone/public/css/login.css
-Copyright: 2002-2015, OpenNebula Project (OpenNebula.org), C12G Labs
-License: Apache-2.0
+Files: src/sunstone/public/locale/languages/ca.po
+ src/sunstone/public/locale/languages/cs_CZ.po
+ src/sunstone/public/locale/languages/da.po
+ src/sunstone/public/locale/languages/de.po
+ src/sunstone/public/locale/languages/el_GR.po
+ src/sunstone/public/locale/languages/en.po
+ src/sunstone/public/locale/languages/en_US.po
+ src/sunstone/public/locale/languages/es_ES.po
+ src/sunstone/public/locale/languages/fa_IR.po
+ src/sunstone/public/locale/languages/fr_FR.po
+ src/sunstone/public/locale/languages/it_IT.po
+ src/sunstone/public/locale/languages/ja.po
+ src/sunstone/public/locale/languages/lt_LT.po
+ src/sunstone/public/locale/languages/nl_NL.po
+ src/sunstone/public/locale/languages/pl.po
+ src/sunstone/public/locale/languages/pt_BR.po
+ src/sunstone/public/locale/languages/pt_PT.po
+ src/sunstone/public/locale/languages/ru_RU.po
+ src/sunstone/public/locale/languages/sk_SK.po
+ src/sunstone/public/locale/languages/zh_CN.po
+ src/sunstone/public/locale/languages/zh_TW.po
+Copyright: YEAR 2002-2015, OpenNebula Project (OpenNebula.org), C12G Labs
+License: UNKNOWN
+ Please fill license text from header of files
 
-Files: src/sunstone/public/vendor/*
+Files: src/sunstone/public/locale/messages.pot
+Copyright: YEAR 2002-2015, OpenNebula Project (OpenNebula.org), C12G Labs
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: src/sunstone/public/vendor/crypto-js/*
+Copyright: 2009-2012, Jeff Mott
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: src/sunstone/public/vendor/crypto-js/core-min.js
+ src/sunstone/public/vendor/crypto-js/enc-base64-min.js
+ src/sunstone/public/vendor/crypto-js/sha1-min.js
 Copyright: 2009-2012, Jeff Mott.
 License: UNKNOWN
-
-Files: src/sunstone/public/vendor/crypto-js/NOTICE
-Copyright: Copyright 2009-2012,Jeff Mott
-License: UNKNOWN
+ Please fill license text from header of files
 
 Files: src/sunstone/routes/*
 Copyright: 2010-2015, C12G Labs S.L.
 License: Apache-2.0
 
-Files: src/template/*
+Files: src/sunstone/views/spice.erb
+Copyright: 2012, Jeremy P. White <jwhite@codeweavers.com>
+License: LGPL-3+
+
+Files: src/sunstone/views/vnc.erb
+Copyright: 2013, Samuel Mannehed for Cendio AB
+ 2012, Joel Martin
+License: MPL-2.0
+
+Files: src/template/template_syntax.cc
+ src/template/template_syntax.h
 Copyright: 1984, 1989, 1990, 2000-2013, Free Software Foundation, Inc.
 License: GPL-3+
-
-Files: src/template/SConstruct
- src/template/Template.cc
-Copyright: 2002-2015, OpenNebula Project (OpenNebula.org), C12G Labs
-License: Apache-2.0
 
 Files: src/vm/vm_file_var_syntax.cc
  src/vm/vm_file_var_syntax.h
@@ -140,6 +184,11 @@ Files: src/vm/vm_file_var_syntax.cc
  src/vm/vm_var_syntax.h
 Copyright: 1984, 1989, 1990, 2000-2013, Free Software Foundation, Inc.
 License: GPL-3+
+
+Files: src/vmm_mad/exec/vmm_exec_vcenter.conf
+ src/vmm_mad/exec/vmm_exec_vmware.conf
+Copyright: 2010-2015, C12G Labs S.L
+License: Apache-2.0
 
 Files: src/vmm_mad/remotes/az/cancel
  src/vmm_mad/remotes/az/deploy
@@ -195,12 +244,9 @@ Files: src/vmm_mad/remotes/vmware/attach_disk
 Copyright: 2002-2015, OpenNebula Project (OpenNebula.org), C12G Labs
 License: Apache-2.0
 
-Files: src/xml/*
+Files: src/xml/expr_arith.cc
+ src/xml/expr_arith.h
+ src/xml/expr_bool.cc
+ src/xml/expr_bool.h
 Copyright: 1984, 1989, 1990, 2000-2013, Free Software Foundation, Inc.
 License: GPL-3+
-
-Files: src/xml/ObjectXML.cc
- src/xml/SConstruct
-Copyright: 2002-2015, OpenNebula Project (OpenNebula.org), C12G Labs
-License: Apache-2.0
-

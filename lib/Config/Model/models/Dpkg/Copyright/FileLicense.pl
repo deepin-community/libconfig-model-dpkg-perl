@@ -12,7 +12,9 @@ return [
     'element' => [
       'full_license',
       {
-        'description' => 'if left blank here, the file must include a stand-alone License section matching each license short name listed on the first line (see the Standalone License Section section). Otherwise, this field should either include the full text of the license(s) or include a pointer to the license file under /usr/share/common-licenses. This field should include all text needed in order to fulfill both Debian Policy requirement for including a copy of the software distribution license, and any license requirements to include warranty disclaimers or other notices with the binary package.
+        'description' => 'if left blank here, the file must include a stand-alone License section matching each license short name listed on the first line (see the Standalone License Section section).
+Otherwise, this field should either include the full text of the license(s) or include a pointer to the license file under /usr/share/common-licenses.
+This field should include all text needed in order to fulfill both Debian Policy requirement for including a copy of the software distribution license, and any license requirements to include warranty disclaimers or other notices with the binary package.
 ',
         'type' => 'leaf',
         'value_type' => 'string',
@@ -113,16 +115,20 @@ $lic->move($old,$_, check => \'no\') unless $text or $lic->defined($_);
 ',
             'msg' => 'Please use BSD-x-clause name, like BSD-3-clause'
           },
+          '(^|\\s)GFDL(\\s|$)' => {
+            'msg' => 'GFDL license should come with a version number'
+          },
           '(^|\\s)MIT(\\s|$)' => {
             'fix' => '# need to test if target exists before moving element
 my $lic = $self->grab(\'- - - License\');
 # no check to avoid unused license warning (which is not yet moved)
 my $text = $self->grab_value(steps => \'- full_license\', check => \'no\');
 # likewise because check occurs before actual move
-$lic->move($_,\'Expat\', check => \'no\') unless $text or $lic->defined(\'Expat\') ;
-$_ = \'Expat\';
+$lic->move(\'MIT\',\'Expat\', check => \'no\') unless $text or $lic->defined(\'Expat\') ;
+# short name may be a composed license like "MIT or CC0"
+s/MIT/Expat/;
 ',
-            'msg' => 'There are many versions of the MIT license. Please use Expat instead, when it matches. See L<Debian copyright format|https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/#license-specification> and L<wikipedia|https://en.wikipedia.org/wiki/MIT_License#Various_versions>for details.'
+            'msg' => 'value is "$_". There are many versions of the MIT license. Please use Expat instead, when it matches. See L<Debian copyright format|https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/#license-specification> and L<wikipedia|https://en.wikipedia.org/wiki/MIT_License#Various_versions>for details.'
           },
           'UNKNOWN' => {
             'msg' => 'Unknown license: please add correct value or remove the File entry.'
@@ -130,7 +136,7 @@ $_ = \'Expat\';
           'and/or' => {
             'msg' => 'licensecheck found an ambiguous license statement. Please:
 - check the source code to find the actual license association
-- override this value using "override-license" parameter in "debian/fill-copyright-blank.yml" file.
+- override this value using "override-license" parameter in "debian/fill.copyright.blanks.yml" file.
 See "Filling the blanks" section in Dpkg::Copyright::Scanner(3pm) man page for details '
           }
         },

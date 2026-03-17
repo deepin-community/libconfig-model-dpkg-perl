@@ -1,0 +1,13 @@
+libconfig-model-dpkg-perl (3.015) unstable; urgency=medium
+
+  The style used to write debian control files was changed to match
+  the `-ast` option of wrap-and-sort, which is the style used most
+  often (See #849498 message 27).
+
+  As a consequence, using cme to edit control files will lead to formatting
+  changes in the dependency lists of the control files.
+
+  Furthermore, to reduce the code complexity of cme, the Standards-Version
+  field was moved to the beginning of the Source field list.
+
+ -- Dominique Dumont <dod@debian.org>  Sat, 30 Aug 2025 17:27:29 +0200

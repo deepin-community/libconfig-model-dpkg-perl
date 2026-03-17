@@ -1,0 +1,15 @@
+=begin pod
+
+=NAME    Log
+=VERSION 0.3.1
+=AUTHOR  Patrick Spek <p.spek@tyil.nl>
+
+=head1 Removed
+
+Lots of text removed
+
+=head1 License
+
+This module is distributed under the terms of the LGPL-3.0-only.
+
+=end pod

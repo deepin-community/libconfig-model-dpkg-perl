@@ -2,11 +2,7 @@ Files: *
 Copyright: 2012-2015, Jonathan Worthington and others.
 License: Artistic-2.0
 
-Files: 3rdparty/*
-Copyright: 2005-2014, Mike Pall.
-License: UNKNOWN
-
-Files: 3rdparty/dynasm/COPYRIGHT
+Files: 3rdparty/dynasm/*
 Copyright: 2005-2014, Mike Pall.
 License: Expat
 
@@ -18,9 +14,10 @@ Files: 3rdparty/dyncall/*
 Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
 License: ISC
 
-Files: 3rdparty/dyncall/dyncall/dyncall.3
-Copyright: 2007-2014, Daniel Adler <dadler AT uni-goettingen DOT de>
-License: ISC
+Files: 3rdparty/dyncall/buildsys/cmake/Modules/UseLATEX.cmake
+Copyright: 2004, Sandia Corporation.
+License: UNKNOWN
+ Please fill license text from header of files
 
 Files: 3rdparty/dyncall/dyncall/dyncall_call_ppc64.S
  3rdparty/dyncall/dyncall/dyncall_call_ppc64.h
@@ -31,7 +28,7 @@ License: ISC
 
 Files: 3rdparty/dyncall/dyncall/dyncall_struct.c
  3rdparty/dyncall/dyncall/dyncall_struct.h
-Copyright: 2010, 2011, Olivier Chafik <olivier.chafik@centraliens.net>
+Copyright: 2007-2011, Olivier Chafik <olivier.chafik@gmail.com>
 License: ISC
 
 Files: 3rdparty/dyncall/dyncallback/dyncall_args_ppc64.c
@@ -44,17 +41,25 @@ Files: 3rdparty/dyncall/dyncallback/dyncall_args_ppc64.c
 Copyright: 2014, 2015, Masanori Mitsugi <mitsugi@linux.vnet.ibm.com>
 License: ISC
 
-Files: 3rdparty/dyncall/dyncallback/dyncallback.3
-Copyright: 2007-2014, Daniel Adler <dadler AT uni-goettingen DOT de>
-License: ISC
-
-Files: 3rdparty/dyncall/dynload/dynload.3
-Copyright: 2007-2014, Daniel Adler <dadler AT uni-goettingen DOT de>
+Files: 3rdparty/dyncall/dyncallback/dyncall_callback_x86_8a.s
+Copyright: 2013, Tassilo Philipp <tphilipp@potion-studios.com>
 License: ISC
 
 Files: 3rdparty/dyncall/dynload/dynload_darwin.c
  3rdparty/dyncall/dynload/dynload_syms_mach-o.c
 Copyright: 2007-2011, Olivier Chafik <olivier.chafik@gmail.com>
+License: ISC
+
+Files: 3rdparty/dyncall/portasm/*
+Copyright: 2011, Daniel Adler <dadler@uni-goettingen.de>.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: 3rdparty/dyncall/portasm/portasm-arm.S
+ 3rdparty/dyncall/portasm/portasm-ppc.S
+ 3rdparty/dyncall/portasm/portasm-x64-att.S
+ 3rdparty/dyncall/portasm/portasm-x86.S
+Copyright: 2007-2015, Daniel Adler <dadler@uni-goettingen.de>
 License: ISC
 
 Files: 3rdparty/dyncall/test/plain/test_structs.c
@@ -64,6 +69,7 @@ License: ISC
 Files: 3rdparty/libatomic_ops/*
 Copyright: 1989, 1991, 1994-2013, Free Software Foundation, Inc.
 License: UNKNOWN
+ Please fill license text from header of files
 
 Files: 3rdparty/libatomic_ops/compile
  3rdparty/libatomic_ops/depcomp
@@ -71,9 +77,26 @@ Files: 3rdparty/libatomic_ops/compile
 Copyright: 1996-2013, Free Software Foundation, Inc.
 License: GPL-2+
 
+Files: 3rdparty/libatomic_ops/config.guess
+ 3rdparty/libatomic_ops/config.sub
+Copyright: 1992-2013, Free Software Foundation, Inc.
+License: GPL-3
+
 Files: 3rdparty/libatomic_ops/configure
 Copyright: 1992-1996, 1998-2012, Free Software Foundation, Inc.
 License: FSFUL
+
+Files: 3rdparty/libatomic_ops/doc/*
+Copyright: no-info-found
+License: GPL
+
+Files: 3rdparty/libatomic_ops/doc/LICENSING.txt
+Copyright: no-info-found
+License: Expat
+
+Files: 3rdparty/libatomic_ops/install-sh
+Copyright: 1994, X Consortium
+License: Expat
 
 Files: 3rdparty/libatomic_ops/src/*
 Copyright: 2003-2011, Hewlett-Packard Development Company, L.P.
@@ -82,6 +105,7 @@ License: Expat
 Files: 3rdparty/libatomic_ops/src/Makefile.in
 Copyright: 1989, 1991, 1994-2013, Free Software Foundation, Inc.
 License: UNKNOWN
+ Please fill license text from header of files
 
 Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/armcc/*
 Copyright: 2007, NEC LE-IT:
@@ -89,6 +113,7 @@ Copyright: 2007, NEC LE-IT:
  1996-1999, Silicon Graphics.
  1991-1994, Xerox Corporation.
 License: UNKNOWN
+ Please fill license text from header of files
 
 Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/emul_cas.h
  3rdparty/libatomic_ops/src/atomic_ops/sysdeps/generic_pthread.h
@@ -102,6 +127,7 @@ Copyright: 1999-2003, Hewlett-Packard Company.
  1996-1999, Silicon Graphics.
  1991-1994, Xerox Corporation.
 License: UNKNOWN
+ Please fill license text from header of files
 
 Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/avr32.h
 Copyright: 2009, Bradley Smith <brad@brad-smith.co.uk>
@@ -114,56 +140,63 @@ Copyright: 2003-2011, Hewlett-Packard Development Company, L.P.
 License: Expat
 
 Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/generic-arithm.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/generic-arithm.template
  3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/generic-small.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/generic-small.template
  3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/generic.h
  3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/powerpc.h
 Copyright: 2003-2011, Hewlett-Packard Development Company, L.P.
  1996-1999, Silicon Graphics.
  1991-1994, Xerox Corporation.
 License: UNKNOWN
+ Please fill license text from header of files
 
 Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/mips.h
 Copyright: 2005, 2007, Thiemo Seufer <ths@networkno.de>
 License: UNKNOWN
+ Please fill license text from header of files
 
 Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/gcc/sh.h
 Copyright: 2009, Takashi YOSHII.
 License: UNKNOWN
+ Please fill license text from header of files
 
 Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/icc/*
 Copyright: 2003, Hewlett-Packard Company.
 License: Expat
 
 Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/loadstore/ordered_loads_only.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/loadstore/ordered_loads_only.template
  3rdparty/libatomic_ops/src/atomic_ops/sysdeps/loadstore/ordered_stores_only.h
+ 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/loadstore/ordered_stores_only.template
 Copyright: 2003, Hewlett-Packard Company.
 License: Expat
 
-Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/sunc/*
+Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/sunc/x86.h
 Copyright: 1999-2003, Hewlett-Packard Company.
  1996-1999, Silicon Graphics.
  1991-1994, Xerox Corporation.
 License: UNKNOWN
-
-Files: 3rdparty/libatomic_ops/src/atomic_ops/sysdeps/sunc/sparc.h
-Copyright: 2003-2011, Hewlett-Packard Development Company, L.P.
-License: Expat
+ Please fill license text from header of files
 
 Files: 3rdparty/libtommath/*
 Copyright: 2004, Sam Hocevar <sam@hocevar.net>
 License: WTFPL-2
 
 Files: 3rdparty/libtommath/bn_mp_n_root.c
-Copyright: *b <= a and (c+1)**b > a
+Copyright: b <= a and (c+1)**b > a
 License: UNKNOWN
+ Please fill license text from header of files
 
 Files: 3rdparty/libuv/*
 Copyright: Joyent, Inc. and other Node contributors.
 License: Expat
 
 Files: 3rdparty/libuv/Makefile.am
+ 3rdparty/libuv/Makefile.mingw
  3rdparty/libuv/autogen.sh
  3rdparty/libuv/checksparse.sh
+ 3rdparty/libuv/configure.ac
 Copyright: 2013, Ben Noordhuis <info@bnoordhuis.nl>
 License: ISC
 
@@ -184,16 +217,17 @@ Files: 3rdparty/libuv/include/tree.h
 Copyright: 2002, Niels Provos <provos@citi.umich.edu>
 License: BSD-2-clause
 
-Files: 3rdparty/libuv/m4/*
+Files: 3rdparty/libuv/m4/libuv-check-flags.m4
 Copyright: 2006-2008, xine project
- 2006-2008, Diego PettenÃ <flameeyes gmail com>
+ 2006-2008, Diego Pettena <flameeyes gmail com>
 License: GPL-3+
 
-Files: 3rdparty/libuv/samples/*
+Files: 3rdparty/libuv/samples/socks5-proxy/*
 Copyright: StrongLoop, Inc.
-License: BSD-3-clause and/or Expat
+License: BSD-3-clause or Expat
 
 Files: 3rdparty/libuv/samples/socks5-proxy/Makefile
+ 3rdparty/libuv/samples/socks5-proxy/build.gyp
  3rdparty/libuv/samples/socks5-proxy/client.c
  3rdparty/libuv/samples/socks5-proxy/defs.h
  3rdparty/libuv/samples/socks5-proxy/main.c
@@ -242,35 +276,43 @@ Files: 3rdparty/msinttypes/*
 Copyright: 2006-2013, Alexander Chemeris
 License: BSD-3-clause
 
-Files: 3rdparty/sha1/*
+Files: 3rdparty/sha1/sha1.h
 Copyright: no-info-found
 License: public-domain
 
 Files: 3rdparty/tinymt/*
-Copyright: 2011, Mutsuo Saito, Makoto Matsumoto
-License: UNKNOWN
+Copyright: 2011, 2013, Mutsuo Saito, Makoto Matsumoto
+License: BSD-3-clause
 
 Files: 3rdparty/uthash.h
 Copyright: 2003-2014, Troy D. Hanson http:troydhanson.github.com/uthash
 License: BSD~unspecified
 
-Files: build/*
+Files: Artistic2.txt
+Copyright: 2000-2006, The Perl Foundation.
+License: Artistic-2.0
+
+Files: build/mk-moar-pc.in
+ build/mk-moar-pc.pl
 Copyright: 2014, Daniel Dehennin <daniel.dehennin@baby-gnu.org>
 License: UNKNOWN
+ Please fill license text from header of files
 
-Files: docs/*
-Copyright: Copyright (C) 2012-2014,the MoarVM contributors. See the F<CREDITS> file for
+Files: docs/moar.pod
+Copyright: 2012-2014, the MoarVM contributors. See the F<CREDITS> file for
 License: UNKNOWN
+ Please fill license text from header of files
 
-Files: src/*
+Files: src/strings/unicode_db.c
 Copyright: 1991-2012, Unicode, Inc.
 License: UNKNOWN
+ Please fill license text from header of files
 
 Files: src/strings/utf8.c
 Copyright: 2008-2010, Bjoern Hoehrmann <bjoern@hoehrmann.de>
 License: Expat
 
-Files: tools/*
+Files: tools/ucd2c.p6
 Copyright: 1991-2012, Unicode, Inc.
 License: UNKNOWN
-
+ Please fill license text from header of files

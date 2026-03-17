@@ -1,0 +1,1597 @@
+Files: *
+Copyright: no-info-found
+License: public-domain
+
+Files: Makefile.in
+Copyright: 1994-2021, Free Software Foundation, Inc.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: aclocal.m4
+Copyright: 1996-2021, Free Software Foundation, Inc.
+License: FSFULLR
+
+Files: autogen.sh
+Copyright: 2006-2016, 2018, 2021, Karel Zak <kzak@redhat.com>
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: config/*
+Copyright: 1996-2021, Free Software Foundation, Inc.
+License: GPL-2+ with Autoconf-data exception
+
+Files: config/config.guess
+ config/config.sub
+Copyright: 1992-2024, Free Software Foundation, Inc.
+License: GPL-3+ with Autoconf-data exception
+
+Files: config/config.rpath
+Copyright: 1996-2021, Free Software Foundation, Inc.
+License: FSFULLR
+
+Files: config/install-sh
+Copyright: 1994, X Consortium
+License: X11
+
+Files: config/ltmain.sh
+Copyright: 1996-2019, 2021, 2022, Free Software Foundation, Inc.
+License: (Expat or GPL-2+) with Libtool exception
+
+Files: configure
+Copyright: 1992-1996, 1998-2017, 2020-2023, Free Software Foundation
+License: FSFUL
+
+Files: disk-utils/*
+Copyright: 2007-2023, Karel Zak <kzak@redhat.com>
+License: GPL-2+
+
+Files: disk-utils/addpart.8.adoc
+ disk-utils/delpart.8.adoc
+Copyright: 2007, Red Hat, Inc.
+ 2007, Karel Zak <kzak@redhat.com>
+License: GPL
+
+Files: disk-utils/blockdev.8.adoc
+Copyright: 2007, Karel Zak <kzak@redhat.com>
+ 1998, Andries E. Brouwer (aeb@cwi.nl)
+License: GPL
+
+Files: disk-utils/cfdisk.8.adoc
+Copyright: 2014, Karel Zak <kzak@redhat.com>
+ 1994, Kevin E. Martin (martin@cs.unc.edu)
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: disk-utils/cfdisk.c
+Copyright: 2014-2023, Karel Zak <kzak@redhat.com>
+ 1994, Kevin E. Martin (martin@cs.unc.edu)
+License: GPL-2+
+
+Files: disk-utils/cramfs.h
+Copyright: 2008, Roy Peled, the.roy.peled -at- gmail
+ 2004-2006, Juliane Holzt, kju -at- fqdn.org
+License: GPL-2+
+
+Files: disk-utils/cramfs_common.c
+Copyright: 2008, Roy Peled, the.roy.peled -at- gmail.com
+ 2004-2006, Juliane Holzt, kju -at- fqdn.org
+License: GPL-2+
+
+Files: disk-utils/fdformat.8.adoc
+Copyright: 1992, 1993, Rickard E. Faith (faith@cs.unc.edu)
+License: GPL
+
+Files: disk-utils/fdformat.c
+Copyright: 1992, 2000, Werner Almesberger
+License: GPL-2+
+
+Files: disk-utils/fdisk.8.adoc
+ disk-utils/mkfs.minix.8.adoc
+Copyright: 2013, Karel Zak <kzak@redhat.com>
+ 2012, Davidlohr Bueso <dave@gnu.org>
+ 1998, Andries E. Brouwer (aeb@cwi.nl)
+ 1992, 1993, Rickard E. Faith (faith@cs.unc.edu)
+License: GPL
+
+Files: disk-utils/fdisk.c
+Copyright: 2012, Davidlohr Bueso <dave@gnu.org>
+ 2007-2013, Karel Zak <kzak@redhat.com>
+ 1992, A. V. Le Blanc (LeBlanc@mcc.ac.uk)
+License: GPL-1+
+
+Files: disk-utils/fsck.8.adoc
+Copyright: 1993-1995, 2007, Theodore Ts'o.
+License: GPL
+
+Files: disk-utils/fsck.c
+Copyright: 2009-2014, Karel Zak <kzak@redhat.com>
+ 1993-2005, Theodore Ts'o.
+License: GPL-2+
+
+Files: disk-utils/fsck.cramfs.c
+ disk-utils/mkfs.cramfs.c
+Copyright: 1999-2002, Transmeta Corporation
+License: GPL-2+
+
+Files: disk-utils/fsck.minix.8.adoc
+Copyright: 1992-1994, Rickard E. Faith (faith@cs.unc.edu)
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: disk-utils/fsck.minix.c
+Copyright: 1991, 1992, Linus Torvalds. This file may be redistributed
+License: GPL-2+
+
+Files: disk-utils/isosize.c
+Copyright: 2023, Karel Zak <kzak@redhat.com>
+ 2000, Andries Brouwer
+License: GPL-2+
+
+Files: disk-utils/minix_programs.h
+Copyright: 2011, 2014, 2020, Sami Kerola <kerolasa@iki.fi>
+License: GPL-2+
+
+Files: disk-utils/mkfs.bfs.8.adoc
+Copyright: 1999, Andries E. Brouwer (aeb@cwi.nl)
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: disk-utils/mkfs.bfs.c
+Copyright: 1999, Andries E. Brouwe
+License: GPL-2+
+
+Files: disk-utils/mkfs.c
+Copyright: Ron Sommeling, <sommel@sci.kun.nl>
+ Fred N. van Kempen, <waltje@uWalt.NL.Mugnet.ORG>
+ David Engel, <david@ods.com>
+License: GPL-2+
+
+Files: disk-utils/mkfs.minix.c
+Copyright: 1991, Linus Torvalds. This file may be redistributed as per
+License: GPL-2+
+
+Files: disk-utils/mkswap.8.adoc
+Copyright: 1998, Andries E. Brouwer (aeb@cwi.nl)
+License: GPL
+
+Files: disk-utils/mkswap.c
+Copyright: 2007-2014, Karel Zak <kzak@redhat.com>
+ 1999, Jakub Jelinek <jj@ultra.linux.cz>
+ 1991, Linus Torvalds
+License: GPL-2+
+
+Files: disk-utils/partx.8.adoc
+Copyright: 2010, Davidlohr Bueso <dave@gnu.org>
+ 2007, Red Hat, Inc.
+ 2007, Karel Zak <kzak@redhat.com>
+License: GPL
+
+Files: disk-utils/partx.c
+Copyright: 2010-2012, Davidlohr Bueso <dave@gnu.org>
+License: GPL-2+
+
+Files: disk-utils/raw.c
+Copyright: 1999, 2000, Red Hat Software
+License: GPL-2
+
+Files: disk-utils/resizepart.8.adoc
+Copyright: 2012, Vivek Goyal <vgoyal@redhat.com>
+ 2012, Red Hat, Inc.
+License: GPL
+
+Files: disk-utils/sfdisk.8.adoc
+Copyright: 2006-2016, 2018, 2021, Karel Zak <kzak@redhat.com>
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: disk-utils/sfdisk.c
+Copyright: 2014, Karel Zak <kzak@redhat.com>
+ 1995, Andries E. Brouwer (aeb@cwi.nl)
+License: GPL-1+
+
+Files: disk-utils/swaplabel.8.adoc
+Copyright: 2010, Jason Borden <jborden@bluehost.com>
+License: GPL
+
+Files: disk-utils/swaplabel.c
+Copyright: 2010, Karel Zak <kzak@redhat.com>
+ 2010, Jason Borden <jborden@bluehost.com>
+License: GPL-2+
+
+Files: include/audit-arch.h
+Copyright: 2023, Thomas Weißschuh <thomas@t-8ch.de>
+License: LGPL-2.1
+
+Files: include/c_strtod.h
+ include/encode.h
+ include/mbsedit.h
+ include/strv.h
+Copyright: no-info-found
+License: LGPL-2.1
+
+Files: include/caputils.h
+Copyright: no-info-found
+License: GPL-2+
+
+Files: include/cctype.h
+Copyright: 2000-2003, 2006, 2008-2023, Free Software Foundation, Inc.
+License: LGPL-2.1+
+
+Files: include/color-names.h
+ include/procfs.h
+ include/sysfs.h
+Copyright: 2010-2015, 2018, 2021, Karel Zak <kzak@redhat.com>
+License: public-domain
+
+Files: include/colors.h
+ include/debug.h
+ include/debugobj.h
+Copyright: 2012-2014, Karel Zak <kzak@redhat.com>
+ 2012, 2014, Ondrej Oprala <ooprala@redhat.com>
+License: LGPL-2.1
+
+Files: include/column-list-table.h
+Copyright: 2002-2018, 2021-2023, Red Hat, Inc.
+License: GPL-2+
+
+Files: include/cpuset.h
+Copyright: no-info-found
+License: LGPL-2.1+
+
+Files: include/crc64.h
+Copyright: no-info-found
+License: Expat
+
+Files: include/ismounted.h
+ include/pager.h
+ include/shells.h
+Copyright: no-info-found
+License: GPL-2
+
+Files: include/list.h
+Copyright: 2008, Karel Zak <kzak@redhat.com>
+ 1999-2008, Theodore Ts'o <tytso@athena.mit.edu>
+License: LGPL
+
+Files: include/logindefs.h
+Copyright: 2003-2005, Thorsten Kukuk <kukuk@suse.com>
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: include/match.h
+Copyright: 2008-2014, 2016-2018, 2021, 2023, Karel Zak <kzak@redhat.com>
+License: LGPL
+
+Files: include/mbsalign.h
+Copyright: 2010-2013, Karel Zak <kzak@redhat.com>
+ 2009, 2010, Free Software Foundation, Inc.
+License: LGPL-2.1+
+
+Files: include/plymouth-ctrl.h
+Copyright: 2016, Werner Fink <werner@suse.de>
+ 2016, SUSE Linux GmbH
+License: GPL-2+
+
+Files: include/randutils.h
+Copyright: no-info-found
+License: BSD-3-clause
+
+Files: include/timeutils.h
+Copyright: 2014-2022, Karel Zak <kzak@redhat.com>
+ 2010, Lennart Poettering
+License: LGPL-2.1+
+
+Files: include/xalloc.h
+Copyright: 2010-2022, Karel Zak <kzak@redhat.com>
+ 2010, Davidlohr Bueso <dave@gnu.org>
+License: LGPL-2.1
+
+Files: include/xxhash.h
+Copyright: 2012-2020, Yann Collet
+License: BSD-2-clause
+
+Files: lib/c_strtod.c
+ lib/canonicalize.c
+ lib/match.c
+Copyright: 2008-2014, 2016-2018, 2021, 2023, Karel Zak <kzak@redhat.com>
+License: LGPL
+
+Files: lib/caputils.c
+ lib/exec_shell.c
+Copyright: no-info-found
+License: GPL-2+
+
+Files: lib/color-names.c
+ lib/langinfo.c
+ lib/mangle.c
+ lib/path.c
+ lib/procfs.c
+ lib/sysfs.c
+Copyright: 2010-2015, 2018, 2021, Karel Zak <kzak@redhat.com>
+License: public-domain
+
+Files: lib/colors.c
+Copyright: 2012-2014, Karel Zak <kzak@redhat.com>
+ 2012, 2014, Ondrej Oprala <ooprala@redhat.com>
+License: LGPL-2.1
+
+Files: lib/cpuset.c
+ lib/mbsedit.c
+Copyright: 2010, 2017, Karel Zak <kzak@redhat.com>
+License: LGPL-2.1
+
+Files: lib/crc32.c
+ lib/crc32c.c
+Copyright: 1986, Gary S. Brown. You may use this program, or
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: lib/crc64.c
+Copyright: 2016, Lammert Bies
+License: Expat
+
+Files: lib/encode.c
+Copyright: 2020, Pali Rohár <pali.rohar@gmail.com>
+ 2009, Karel Zak <kzak@redhat.com>
+ 2008, Kay Sievers <kay.sievers@vrfy.org>
+License: LGPL
+
+Files: lib/fileutils.c
+Copyright: 2012-2024, Karel Zak <kzak@redhat.com>
+ 2012, Sami Kerola <kerolasa@iki.fi>
+License: public-domain
+
+Files: lib/ismounted.c
+Copyright: 1995-2000, 2008, Theodore Ts'o.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: lib/logindefs.c
+Copyright: 2003-2005, Thorsten Kukuk <kukuk@suse.com>
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: lib/mbsalign.c
+Copyright: 2000-2003, 2006, 2008-2023, Free Software Foundation, Inc.
+License: LGPL-2.1+
+
+Files: lib/pager.c
+ lib/shells.c
+Copyright: no-info-found
+License: GPL-2
+
+Files: lib/plymouth-ctrl.c
+Copyright: 2016, Werner Fink <werner@suse.de>
+ 2016, SUSE Linux GmbH
+License: GPL-2+
+
+Files: lib/randutils.c
+Copyright: no-info-found
+License: BSD-3-clause
+
+Files: lib/strutils.c
+Copyright: 2010, Karel Zak <kzak@redhat.com>
+ 2010, Davidlohr Bueso <dave@gnu.org>
+License: public-domain
+
+Files: lib/strv.c
+ lib/timeutils.c
+Copyright: 2014-2022, Karel Zak <kzak@redhat.com>
+ 2010, Lennart Poettering
+License: LGPL-2.1+
+
+Files: lib/terminal-colors.d.5.adoc
+Copyright: 2014, Red Hat, Inc.
+ 2014, Ondrej Oprala <ooprala@redhat.com>
+ 2014, Karel Zak <kzak@redhat.com>
+License: GPL
+
+Files: lib/xxhash.c
+Copyright: 2012-2020, Yann Collet
+License: BSD-2-clause
+
+Files: libblkid/*
+Copyright: no-info-found
+License: LGPL-2.1+
+
+Files: libblkid/docs/*
+Copyright: 1994-2021, Free Software Foundation, Inc.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: libblkid/libblkid.3
+Copyright: no-info-found
+License: LGPL-2
+
+Files: libblkid/libblkid.3.adoc
+Copyright: 2001, Andreas Dilger (adilger@turbolinux.com)
+License: LGPL-2
+
+Files: libblkid/samples/*
+Copyright: 2008-2014, 2016-2018, 2021, 2023, Karel Zak <kzak@redhat.com>
+License: LGPL
+
+Files: libblkid/src/*
+Copyright: 2008-2014, 2016-2018, 2021, 2023, Karel Zak <kzak@redhat.com>
+License: LGPL
+
+Files: libblkid/src/blkid.h.in
+Copyright: 2008, Karel Zak <kzak@redhat.com>
+ 2003, Theodore Ts'o <tytso@athena.mit.edu>
+ 2001, Andreas Dilger <adilger@sun.com>
+License: LGPL-2.1+
+
+Files: libblkid/src/blkidP.h
+ libblkid/src/cache.c
+ libblkid/src/dev.c
+ libblkid/src/devno.c
+ libblkid/src/save.c
+ libblkid/src/tag.c
+Copyright: 2001, Andreas Dilger <adilger@sun.com>
+ 2000, 2001, 2003, Theodore Ts'o <tytso@athena.mit.edu>
+License: LGPL
+
+Files: libblkid/src/devname.c
+Copyright: Andries Brouwer
+ 2001, Andreas Dilger <adilger@sun.com>
+ 1999-2003, Theodore Ts'o <tytso@athena.mit.edu>
+License: LGPL
+
+Files: libblkid/src/encode.c
+Copyright: 2008, 2009, Karel Zak <kzak@redhat.com>
+ 2004-2008, Kay Sievers <kay.sievers@vrfy.org>
+License: LGPL
+
+Files: libblkid/src/getsize.c
+Copyright: 2010, Karel Zak <kzak@redhat.com>
+ 1995, Theodore Ts'o.
+License: LGPL
+
+Files: libblkid/src/libblkid.sym
+Copyright: 2006-2016, 2018, 2021, Karel Zak <kzak@redhat.com>
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: libblkid/src/partitions/atari.c
+Copyright: 2018, Vaclav Dolezal <vdolezal@redhat.com>
+License: LGPL
+
+Files: libblkid/src/read.c
+Copyright: 2001, Andreas Dilger <adilger@sun.com>
+ 2001, 2003, Theodore Y. Ts'o
+License: LGPL
+
+Files: libblkid/src/resolve.c
+Copyright: 2001, Andreas Dilger <adilger@sun.com>
+ 2001, 2003, Theodore Ts'o.
+License: LGPL
+
+Files: libblkid/src/superblocks/apfs.c
+Copyright: 2018, Harry Mallon <hjmallon@gmail.com>
+License: LGPL
+
+Files: libblkid/src/superblocks/bcache.c
+Copyright: 2013, Rolf Fokkens <rolf@fokkens.nl>
+License: LGPL
+
+Files: libblkid/src/superblocks/befs.c
+Copyright: 2010, Jeroen Oortwijn <oortwijn@gmail.com>
+License: LGPL
+
+Files: libblkid/src/superblocks/bfs.c
+ libblkid/src/superblocks/vdo.c
+Copyright: 2009, 2017, Red Hat, Inc.
+License: LGPL
+
+Files: libblkid/src/superblocks/bluestore.c
+Copyright: 2018, Kenneth Van Alstyne <kvanals@kvanals.org>
+License: LGPL
+
+Files: libblkid/src/superblocks/cramfs.c
+ libblkid/src/superblocks/iso9660.c
+ libblkid/src/superblocks/jfs.c
+ libblkid/src/superblocks/swap.c
+ libblkid/src/superblocks/vfat.c
+Copyright: 2008, Karel Zak <kzak@redhat.com>
+ 2004, Kay Sievers <kay.sievers@vrfy.org>
+ 2001, Andreas Dilger <adilger@sun.com>
+ 1999, Andries Brouwer
+ 1999, 2000, 2003, Theodore Ts'o <tytso@athena.mit.edu>
+License: LGPL
+
+Files: libblkid/src/superblocks/cs_fvault2.c
+Copyright: 2022, Milan Broz <gmazyland@gmail.com>
+License: LGPL
+
+Files: libblkid/src/superblocks/drbd.c
+Copyright: 2009, Bastian Friedrich <bastian.friedrich@collax.com>
+License: LGPL
+
+Files: libblkid/src/superblocks/drbdmanage.c
+ libblkid/src/superblocks/drbdproxy_datalog.c
+Copyright: 2011, 2015, Philipp Marek <philipp.marek@linbit.com>
+License: LGPL
+
+Files: libblkid/src/superblocks/erofs.c
+Copyright: 2020, Gao Xiang
+License: LGPL
+
+Files: libblkid/src/superblocks/exfat.c
+Copyright: 2010, Andrew Nayenko <resver@gmail.com>
+License: LGPL
+
+Files: libblkid/src/superblocks/exfs.c
+Copyright: 2017, Hewlett Packard Enterprise Development LP
+ 2013, Eric Sandeen <sandeen@redhat.com>
+ 2008, Karel Zak <kzak@redhat.com>
+ 2004, Kay Sievers <kay.sievers@vrfy.org>
+ 2001, Andreas Dilger <adilger@sun.com>
+ 1999, Andries Brouwer
+ 1999, 2000, 2003, Theodore Ts'o <tytso@athena.mit.edu>
+License: LGPL
+
+Files: libblkid/src/superblocks/ext.c
+ libblkid/src/superblocks/ocfs.c
+ libblkid/src/superblocks/reiserfs.c
+ libblkid/src/superblocks/romfs.c
+Copyright: 2008, Karel Zak <kzak@redhat.com>
+ 1999, 2001, Andries Brouwer
+ 1999, 2000, 2003, Theodore Ts'o <tytso@athena.mit.edu>
+License: LGPL
+
+Files: libblkid/src/superblocks/f2fs.c
+Copyright: 2013, Alejandro Martinez Ruiz <alex@nowcomputing.com>
+License: LGPL
+
+Files: libblkid/src/superblocks/hfs.c
+ libblkid/src/superblocks/ntfs.c
+ libblkid/src/superblocks/nvidia_raid.c
+ libblkid/src/superblocks/silicon_raid.c
+Copyright: 2008, 2009, Karel Zak <kzak@redhat.com>
+ 2004-2008, Kay Sievers <kay.sievers@vrfy.org>
+License: LGPL
+
+Files: libblkid/src/superblocks/luks.c
+Copyright: 2018-2024, Milan Broz <gmazyland@gmail.com>
+ 2008, Karel Zak <kzak@redhat.com>
+License: LGPL
+
+Files: libblkid/src/superblocks/lvm.c
+Copyright: 2012, Milan Broz <gmazyland@gmail.com>
+ 2008, Karel Zak <kzak@redhat.com>
+ 2004, Kay Sievers <kay.sievers@vrfy.org>
+ 2001, Andreas Dilger <adilger@sun.com>
+ 1999, Andries Brouwer
+ 1999, 2000, 2003, Theodore Ts'o <tytso@athena.mit.edu>
+License: LGPL
+
+Files: libblkid/src/superblocks/minix.c
+Copyright: 2008-2013, Karel Zak <kzak@redhat.com>
+ 2004, Kay Sievers <kay.sievers@vrfy.org>
+ 2001, Andreas Dilger <adilger@sun.com>
+ 1999, Andries Brouwer
+ 1999, 2000, 2003, Theodore Ts'o <tytso@athena.mit.edu>
+License: LGPL
+
+Files: libblkid/src/superblocks/mpool.c
+Copyright: 2016, Micron Technology, Inc.
+License: LGPL
+
+Files: libblkid/src/superblocks/nilfs.c
+Copyright: 2010, Jiro SEKIBA <jir@unicus.jp>
+License: LGPL
+
+Files: libblkid/src/superblocks/stratis.c
+Copyright: 2018, Tony Asleson <tasleson@redhat.com>
+License: LGPL
+
+Files: libblkid/src/superblocks/ubi.c
+Copyright: 2017, RafaÅ MiÅecki <rafal@milecki.pl>
+License: LGPL
+
+Files: libblkid/src/superblocks/ubifs.c
+Copyright: 2009, Corentin Chary <corentincj@iksaif.net>
+License: LGPL
+
+Files: libblkid/src/superblocks/udf.c
+Copyright: 2014-2017, Pali Rohár <pali.rohar@gmail.com>
+ 2008, Karel Zak <kzak@redhat.com>
+ 2004, Kay Sievers <kay.sievers@vrfy.org>
+ 2001, Andreas Dilger <adilger@sun.com>
+ 1999, Andries Brouwer
+ 1999, 2000, 2003, Theodore Ts'o <tytso@athena.mit.edu>
+License: LGPL
+
+Files: libblkid/src/superblocks/vmfs.c
+Copyright: 2009, Mike Hommey <mh@glandium.org>
+License: LGPL
+
+Files: libblkid/src/superblocks/xfs.c
+Copyright: 2013, Eric Sandeen <sandeen@redhat.com>
+ 2008, Karel Zak <kzak@redhat.com>
+ 2004, Kay Sievers <kay.sievers@vrfy.org>
+ 2001, Andreas Dilger <adilger@sun.com>
+ 1999, Andries Brouwer
+ 1999, 2000, 2003, Theodore Ts'o <tytso@athena.mit.edu>
+License: LGPL
+
+Files: libblkid/src/superblocks/zfs.c
+Copyright: 2001, 2009, 2010, Andreas Dilger <adilger@sun.com>
+License: LGPL
+
+Files: libblkid/src/superblocks/zonefs.c
+Copyright: 2020, Western Digital Corporation or its affiliates.
+License: LGPL
+
+Files: libblkid/src/topology/topology.c
+Copyright: 2009, 2017, Red Hat, Inc.
+License: LGPL
+
+Files: libblkid/src/version.c
+Copyright: 2004, Theodore Ts'o.
+License: LGPL
+
+Files: libfdisk/*
+Copyright: no-info-found
+License: LGPL-2.1+
+
+Files: libfdisk/docs/*
+Copyright: 1994-2021, Free Software Foundation, Inc.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: libfdisk/samples/*
+Copyright: 2008-2014, 2016-2018, 2021, 2023, Karel Zak <kzak@redhat.com>
+License: LGPL
+
+Files: libfdisk/src/*
+Copyright: 2006-2016, 2018, 2021, Karel Zak <kzak@redhat.com>
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: libfdisk/src/fdiskP.h
+ libfdisk/src/iter.c
+ libfdisk/src/test.c
+Copyright: 2008-2014, 2016-2018, 2021, 2023, Karel Zak <kzak@redhat.com>
+License: LGPL
+
+Files: libfdisk/src/gpt.c
+Copyright: 2012, Davidlohr Bueso <dave@gnu.org>
+ 2007, Karel Zak <kzak@redhat.com>
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: libfdisk/src/libfdisk.h.in
+Copyright: 2008-2023, Karel Zak <kzak@redhat.com>
+License: LGPL-2.1+
+
+Files: libfdisk/src/sgi.c
+Copyright: 2012, Davidlohr Bueso <dave@gnu.org>
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: liblastlog2/*
+Copyright: 2023, 2024, Thorsten Kukuk <kukuk@suse.com>
+License: BSD-2-clause
+
+Files: liblastlog2/src/tests/tst_dlopen.c
+Copyright: 2003, Nalin Dahyabhai <nalin@redhat.com>
+License: GPL-2+
+
+Files: libmount/*
+Copyright: no-info-found
+License: LGPL-2.1+
+
+Files: libmount/docs/*
+Copyright: 1994-2021, Free Software Foundation, Inc.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: libmount/mount.pc.in
+Copyright: 2008-2023, Karel Zak <kzak@redhat.com>
+License: LGPL-2.1+
+
+Files: libmount/python/*
+Copyright: 2013, Red Hat, Inc.
+License: LGPL-3+
+
+Files: libmount/samples/*
+Copyright: 2008-2014, 2016-2018, 2021, 2023, Karel Zak <kzak@redhat.com>
+License: LGPL
+
+Files: libmount/src/*
+Copyright: 2008-2023, Karel Zak <kzak@redhat.com>
+License: LGPL-2.1+
+
+Files: libmount/src/btrfs.c
+Copyright: 2016, Stanislav Brabec <sbrabec@suse.cz>
+ 2016, David Sterba <dsterba@suse.cz>
+License: LGPL-2.1+
+
+Files: libmount/src/hook_idmap.c
+Copyright: 2022, Karel Zak <kzak@redhat.com>
+ 2022, Christian Brauner (Microsoft) <brauner@kernel.org>
+License: LGPL-2.1+
+
+Files: libmount/src/hook_veritydev.c
+Copyright: 2022, Karel Zak <kzak@redhat.com>
+ 2019, Microsoft Corporation
+License: LGPL-2.1+
+
+Files: libsmartcols/*
+Copyright: no-info-found
+License: LGPL-2.1+
+
+Files: libsmartcols/docs/*
+Copyright: 1994-2021, Free Software Foundation, Inc.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: libsmartcols/samples/*
+Copyright: 2008-2014, 2016-2018, 2021, 2023, Karel Zak <kzak@redhat.com>
+License: LGPL
+
+Files: libsmartcols/samples/continuous-json.c
+Copyright: 2023, Thomas Weißschuh <thomas@t-8ch.de>
+ 2016, Karel Zak <kzak@redhat.com>
+License: LGPL-2.1
+
+Files: libsmartcols/scols-filter.5.adoc
+Copyright: 2015, 2023, Karel Zak <kzak@redhat.com>
+License: GPL
+
+Files: libsmartcols/src/*
+Copyright: 2014, Ondrej Oprala <ooprala@redhat.com>
+ 2009-2014, Karel Zak <kzak@redhat.com>
+License: LGPL
+
+Files: libsmartcols/src/filter-parser.c
+ libsmartcols/src/filter-parser.h
+Copyright: 1984, 1989, 1990, 2000-2015, 2018-2021, Free Software Foundation
+License: GPL-3+ with Bison-2.2 exception
+
+Files: libsmartcols/src/filter.c
+ libsmartcols/src/init.c
+Copyright: 2008-2014, 2016-2018, 2021, 2023, Karel Zak <kzak@redhat.com>
+License: LGPL
+
+Files: libsmartcols/src/grouping.c
+ libsmartcols/src/libsmartcols.sym
+ libsmartcols/src/version.c
+Copyright: 2006-2016, 2018, 2021, Karel Zak <kzak@redhat.com>
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: libsmartcols/src/print.c
+Copyright: 2016, Igor Gnatenko <i.gnatenko.brain@gmail.com>
+ 2010-2014, Karel Zak <kzak@redhat.com>
+License: LGPL
+
+Files: libsmartcols/src/symbols.c
+Copyright: 2016, Igor Gnatenko <i.gnatenko.brain@gmail.com>
+ 2014, Ondrej Oprala <ooprala@redhat.com>
+License: LGPL
+
+Files: libsmartcols/src/table.c
+Copyright: 2016, Igor Gnatenko <i.gnatenko.brain@gmail.com>
+ 2014, Ondrej Oprala <ooprala@redhat.com>
+ 2010-2014, Karel Zak <kzak@redhat.com>
+License: LGPL
+
+Files: libuuid/*
+Copyright: no-info-found
+License: BSD-3-clause
+
+Files: login-utils/*
+Copyright: 2012, Cody Maloney <cmaloney@theoreticalchaos.com>
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: login-utils/chfn.1.adoc
+ login-utils/chsh.1.adoc
+Copyright: 1994, salvatore valente <svalente@athena.mit.edu>
+License: GPL
+
+Files: login-utils/chfn.c
+ login-utils/chsh.c
+Copyright: 2012, Cody Maloney <cmaloney@theoreticalchaos.com>
+ 1994, salvatore valente <svalente@athena.mit.edu>
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: login-utils/last.1.adoc
+Copyright: 1998-2004, Miquel van Smoorenburg.
+License: GPL-2+
+
+Files: login-utils/last.c
+Copyright: 2013, Ondrej Oprala <ooprala@redhat.com>
+ 1991-2004, Miquel van Smoorenburg.
+License: GPL-2+
+
+Files: login-utils/login.1.adoc
+Copyright: 1992, 1993, Rickard E. Faith (faith@cs.unc.edu)
+License: GPL
+
+Files: login-utils/login.c
+ login-utils/nologin.c
+Copyright: 2006-2016, 2018, 2021, Karel Zak <kzak@redhat.com>
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: login-utils/lslogins.1.adoc
+Copyright: 2014, Ondrej Oprala (ondrej.oprala@gmail.com)
+License: GPL
+
+Files: login-utils/lslogins.c
+Copyright: 2013-2023, Karel Zak <kzak@redhat.com>
+ 2013-2015, Ondrej Oprala <ooprala@redhat.com>
+License: GPL-2+
+
+Files: login-utils/newgrp.1.adoc
+Copyright: no-info-found
+License: public-domain
+
+Files: login-utils/setpwnam.c
+Copyright: 1994, Salvatore Valente <svalente@mit.edu>
+License: LGPL-2+
+
+Files: login-utils/setpwnam.h
+Copyright: 1994, Salvatore Valente <svalente@mit.edu>
+ 1994, Martin Schulze <joey@infodrom.north.de>
+License: LGPL-2+
+
+Files: login-utils/su-common.c
+Copyright: 2016, 2017, Karel Zak <kzak@redhat.com>
+ 2012, SUSE Linux Products GmbH, Nuernberg
+ 1992-2006, Free Software Foundation, Inc.
+License: GPL-2+
+
+Files: login-utils/sulogin-consoles.c
+Copyright: 2012, Werner Fink <werner@suse.de>
+ 2012, Karel Zak <kzak@redhat.com>
+ 2011, SuSE LINUX Products GmbH
+License: GPL-2+
+
+Files: login-utils/sulogin-consoles.h
+Copyright: 2012, Werner Fink <werner@suse.de>
+ 2011, SuSE LINUX Products GmbH
+License: GPL-2+
+
+Files: login-utils/sulogin.8.adoc
+Copyright: 2012, Karel Zak <kzak@redhat.com>
+ 1998-2006, Miquel van Smoorenburg.
+License: GPL-2+
+
+Files: login-utils/sulogin.c
+Copyright: 2012, Werner Fink <werner@suse.de>
+ 2012, Karel Zak <kzak@redhat.com>
+ 1998-2003, Miquel van Smoorenburg.
+License: GPL-2+
+
+Files: login-utils/utmpdump.1.adoc
+Copyright: 2010, Michael Krapp
+License: GPL-2+
+
+Files: login-utils/utmpdump.c
+Copyright: 2012, Karel Zak <kzak@redhat.com>
+ 1998, Danek Duvall <duvall@alumni.princeton.edu>
+ 1991-2000, Miquel van Smoorenburg <miquels@cistron.nl>
+License: GPL-2+
+
+Files: login-utils/vipw.8.adoc
+Copyright: 1980, 1983, 1985, 1987-1994, The Regents of the University of California.
+License: BSD-4-Clause-UC
+
+Files: login-utils/vipw.c
+Copyright: 1980, 1987, 1990, Regents of the University of California.
+License: BSD-4-Clause-UC
+
+Files: m4/*
+Copyright: 1996-2021, Free Software Foundation, Inc.
+License: FSFULLR
+
+Files: m4/ax_check_vscript.m4
+Copyright: 2014, Kevin Cernekee <cernekee@gmail.com>
+License: FSFAP
+
+Files: m4/ax_compare_version.m4
+Copyright: 2008, Tim Toolan <toolan@ele.uri.edu>
+License: FSFAP
+
+Files: m4/gettext.m4
+ m4/intlmacosx.m4
+ m4/po.m4
+ m4/progtest.m4
+Copyright: 1995-2013, Free Software Foundation, Inc.
+License: FSFULLR or GPL or LGPL
+
+Files: m4/libtool.m4
+Copyright: 1996-2001, 2003-2019, 2021, 2022, Free Software
+License: (FSFULLR or GPL-2) with Libtool exception
+
+Files: m4/ltoptions.m4
+ m4/lt~obsolete.m4
+Copyright: 2004, 2005, 2007-2009, 2011-2019, 2021, 2022, Free
+License: FSFULLR
+
+Files: m4/ltsugar.m4
+Copyright: 2004, 2005, 2007, 2008, 2011-2019, 2021, 2022, Free Software
+License: FSFULLR
+
+Files: m4/ltversion.m4
+Copyright: 2004, 2011-2019, 2021, 2022, Free Software Foundation
+License: FSFULLR
+
+Files: m4/nls.m4
+Copyright: 1995-2003, 2005, 2006, 2008-2013, Free Software Foundation
+License: FSFULLR or GPL or LGPL
+
+Files: m4/pkg.m4
+Copyright: 2012-2015, Dan Nicholson <dbn.lists@gmail.com>
+ 2004, Scott James Remnant <scott@netsplit.com>.
+License: GPL-2+ with Autoconf-data exception
+
+Files: m4/year2038.m4
+Copyright: 1992-1996, 1998-2017, 2020-2023, Free Software
+License: GPL-3+
+
+Files: meson.build
+Copyright: no-info-found
+License: GPL-2
+
+Files: misc-utils/*
+Copyright: 2002-2018, 2021-2023, Red Hat, Inc.
+License: GPL-2+
+
+Files: misc-utils/blkid.8.adoc
+Copyright: 2000, Andreas Dilger (adilger@turbolinux.com)
+License: GPL
+
+Files: misc-utils/blkid.c
+Copyright: 2001, 2009, 2010, Andreas Dilger <adilger@sun.com>
+License: LGPL
+
+Files: misc-utils/cal.1.adoc
+ misc-utils/cal.c
+ misc-utils/kill.c
+ misc-utils/logger.1.adoc
+ misc-utils/logger.c
+ misc-utils/look.1.adoc
+ misc-utils/look.c
+ misc-utils/whereis.1.adoc
+ misc-utils/whereis.c
+Copyright: 1980, 1983, 1985, 1987-1994, The Regents of the University of California.
+License: BSD-4-Clause-UC
+
+Files: misc-utils/enosys.c
+ misc-utils/lsclocks.c
+ misc-utils/waitpid.c
+Copyright: 2022, 2023, Thomas Weißschuh <thomas@t-8ch.de>
+License: GPL-2+
+
+Files: misc-utils/fincore.1.adoc
+ misc-utils/lsfd.1.adoc
+Copyright: 2017, 2021, Red Hat, Inc.
+License: GPL
+
+Files: misc-utils/findfs.8.adoc
+ misc-utils/uuidd.8.adoc
+Copyright: 1993-1995, 2007, Theodore Ts'o.
+License: GPL
+
+Files: misc-utils/findfs.c
+ misc-utils/lsblk-devtree.c
+Copyright: 2006-2016, 2018, 2021, Karel Zak <kzak@redhat.com>
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: misc-utils/getopt.c
+Copyright: 1997-2014, Frodo Looijaard <frodo@frodo.looijaard.name>
+License: GPL-2+
+
+Files: misc-utils/hardlink.1.adoc
+Copyright: 2021, Karel Zak <kzak@redhat.com>
+ 2008-2012, Julian Andres Klode. See hardlink.c for license.
+License: Expat
+
+Files: misc-utils/hardlink.c
+Copyright: 2021, Karel Zak <kzak@redhat.com>
+ 2008-2014, Julian Andres Klode <jak@jak-linux.org>
+License: Expat
+
+Files: misc-utils/kill.1.adoc
+Copyright: 1994, Salvatore Valente (svalente@mit.edu)
+ 1992, Rickard E. Faith (faith@cs.unc.edu)
+License: GPL
+
+Files: misc-utils/lastlog2.8.adoc
+Copyright: 2023, Thorsten Kukuk (kukuk@suse.de)
+License: GPL
+
+Files: misc-utils/lastlog2.c
+Copyright: 2023, 2024, Thorsten Kukuk <kukuk@suse.com>
+License: BSD-2-clause
+
+Files: misc-utils/lsfd-pidfd.c
+ misc-utils/lsfd-pidfd.h
+Copyright: 2024, Xi Ruoyao <xry111@xry111.site>
+License: GPL-2+
+
+Files: misc-utils/lslocks.8.adoc
+Copyright: 2012, Davidlohr Bueso <dave@gnu.org>
+ 1994, Salvatore Valente (svalente@mit.edu)
+ 1992, Rickard E. Faith (faith@cs.unc.edu)
+License: GPL
+
+Files: misc-utils/lslocks.c
+Copyright: 2010-2012, Davidlohr Bueso <dave@gnu.org>
+License: GPL-2+
+
+Files: misc-utils/mcookie.c
+ misc-utils/rename.1.adoc
+Copyright: no-info-found
+License: public-domain
+
+Files: misc-utils/namei.c
+Copyright: 2007-2023, Karel Zak <kzak@redhat.com>
+License: GPL-2+
+
+Files: misc-utils/pipesz.c
+Copyright: 2022, Nathan Sharp
+License: GPL
+
+Files: misc-utils/test_uuidd.c
+Copyright: 2015, Karel Zak <kzak@redhat.com>
+ 2006, Hewlett-Packard Development Company, L.P.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: misc-utils/uuidd.c
+Copyright: 2007, Theodore Ts'o <tytso@athena.mit.edu>
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: misc-utils/uuidgen.1.adoc
+Copyright: 1999, Andreas Dilger (adilger@enel.ucalgary.ca)
+License: GPL
+
+Files: misc-utils/uuidgen.c
+Copyright: 1999, Andreas Dilger and Theodore Ts'o
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: misc-utils/uuidparse.1.adoc
+Copyright: 2017, Sami Kerola <kerolasa@iki.fi>
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: misc-utils/uuidparse.c
+Copyright: 2017, Sami Kerola <kerolasa@iki.fi>
+ 1998, 1999, Theodore Ts'o.
+License: BSD-3-clause
+
+Files: misc-utils/wipefs.8.adoc
+Copyright: 2009, Karel Zak.
+License: GPL
+
+Files: pam_lastlog2/*
+Copyright: 2023, 2024, Thorsten Kukuk <kukuk@suse.com>
+License: BSD-2-clause
+
+Files: schedutils/*
+Copyright: 2020, 2021, Qais Yousef <qyousef@layalina.io>
+ 2020, 2021, Arm Ltd
+License: GPL-2
+
+Files: schedutils/chrt.1.adoc
+ schedutils/taskset.c
+Copyright: 2010, 2015, Karel Zak <kzak@redhat.com>
+ 2004, Robert Love
+License: GPL-2
+
+Files: schedutils/chrt.c
+ schedutils/taskset.1.adoc
+Copyright: 2004, Robert Love
+License: GPL-2
+
+Files: schedutils/ionice.c
+Copyright: 2005, Jens Axboe <jens@axboe.dk>
+License: GPL-2
+
+Files: schedutils/sched_attr.h
+Copyright: 2020, 2021, Qais Yousef <qyousef@layalina.io>
+ 2020, 2021, Arm Ltd
+ 2004, Robert Love
+License: GPL-2
+
+Files: schedutils/taskset.1
+Copyright: 2004, Robert M. Love. This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: sys-utils/*
+Copyright: 2007-2023, Karel Zak <kzak@redhat.com>
+License: GPL-2+
+
+Files: sys-utils/blkdiscard.c
+ sys-utils/fstrim.c
+ sys-utils/mount.c
+ sys-utils/mountpoint.c
+ sys-utils/setarch.c
+ sys-utils/switch_root.c
+ sys-utils/umount.c
+Copyright: 2002-2018, 2021-2023, Red Hat, Inc.
+License: GPL-2+
+
+Files: sys-utils/blkpr.c
+Copyright: 2021, 2022, zhenwei pi <pizhenwei@bytedance.com>
+License: GPL-2+
+
+Files: sys-utils/blkzone.c
+Copyright: 2017, Karel Zak <kzak@redhat.com>
+ 2015, 2016, Seagate Technology PLC
+License: GPL-2+
+
+Files: sys-utils/chcpu.8
+ sys-utils/chcpu.8.adoc
+Copyright: 2011, IBM Corp.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: sys-utils/chcpu.c
+ sys-utils/chmem.c
+Copyright: 2011, 2016, IBM Corp.
+License: GPL-2+
+
+Files: sys-utils/ctrlaltdel.8.adoc
+ sys-utils/dmesg.1.adoc
+ sys-utils/ipcs.1.adoc
+Copyright: 1992, 1993, Rickard E. Faith (faith@cs.unc.edu)
+License: GPL
+
+Files: sys-utils/ctrlaltdel.c
+Copyright: 1992, Peter Orbaek <poe@daimi.aau.dk>
+ 1992, 1993, Rickard E. Faith <faith@cs.unc.edu>
+License: GPL-2+
+
+Files: sys-utils/dmesg.c
+Copyright: 2011-2023, Karel Zak <kzak@redhat.com>
+ 1993, Theodore Ts'o <tytso@athena.mit.edu>
+License: GPL-2+
+
+Files: sys-utils/eject.1.adoc
+Copyright: 2012, Karel Zak <kzak@redhat.com>.
+ 1994-2005, Jeff Tranter (tranter@pobox.com)
+License: GPL-2+
+
+Files: sys-utils/eject.c
+Copyright: Michal Luscon <mluscon@redhat.com>
+ 2012, Karel Zak <kzak@redhat.com>
+ 1994-2005, Jeff Tranter (tranter@pobox.com)
+License: GPL-2+
+
+Files: sys-utils/fallocate.c
+Copyright: 2008, 2009, Red Hat, Inc.
+ 2003-2005, Silicon Graphics, Inc.
+License: GPL
+
+Files: sys-utils/flock.1
+Copyright: 2003-2006, H. Peter Anvin. This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: sys-utils/flock.1.adoc
+ sys-utils/flock.c
+Copyright: 2003-2006, H. Peter Anvin
+License: Expat
+
+Files: sys-utils/fsfreeze.c
+Copyright: 2010, Hajime Taira <htaira@redhat.com>
+License: GPL-1+
+
+Files: sys-utils/fstab.5.adoc
+ sys-utils/renice.1.adoc
+ sys-utils/renice.c
+Copyright: 1980, 1983, 1985, 1987-1994, The Regents of the University of California.
+License: BSD-4-Clause-UC
+
+Files: sys-utils/hwclock-parse-date.c
+Copyright: 1984, 1989, 1990, 2000-2015, 2018-2021, Free Software Foundation
+License: GPL-3+ with Bison-2.2 exception
+
+Files: sys-utils/hwclock-parse-date.y
+Copyright: 1999, 2000, 2002-2017, Free Software Foundation, Inc.
+License: GPL-3+
+
+Files: sys-utils/hwclock.c
+Copyright: 2007-2023, Karel Zak <kzak@redhat.com>
+ 1992, Charles Hedrick, hedrick@cs.rutgers.edu
+License: GPL-2+
+
+Files: sys-utils/ipcmk.1.adoc
+Copyright: 2008, Hayden A. James (hayden.james@gmail.com)
+License: GPL
+
+Files: sys-utils/ipcmk.c
+Copyright: 2008, Karel Zak <kzak@redhat.com>
+ 2008, Hayden A. James (hayden.james@gmail.com)
+License: GPL-2+
+
+Files: sys-utils/ipcrm.1.adoc
+Copyright: 2002, Andre C. Mazzone (linuxdev@karagee.com)
+License: GPL
+
+Files: sys-utils/ipcrm.c
+Copyright: 1993, rishna balasubramanian
+License: GPL-2+
+
+Files: sys-utils/ipcs.c
+Copyright: 2006-2023, Karel Zak <kzak@redhat.com>
+ 1995, ike Jagdis <jaggy@purplet.demon.co.uk>
+License: GPL-2+
+
+Files: sys-utils/ipcutils.c
+ sys-utils/ipcutils.h
+Copyright: 2012-2023, Karel Zak <kzak@redhat.com>
+ 2012, Sami Kerola <kerolasa@iki.fi>
+License: GPL-2+
+
+Files: sys-utils/irq-common.c
+ sys-utils/irqtop.c
+ sys-utils/lsirq.c
+Copyright: 2020, Karel Zak <kzak@redhat.com>
+ 2019, zhenwei pi <pizhenwei@bytedance.com>
+License: LGPL-2.1+
+
+Files: sys-utils/irq-common.h
+Copyright: 2012-2023, Karel Zak <kzak@redhat.com>
+ 2012, Sami Kerola <kerolasa@iki.fi>
+License: LGPL-2.1+
+
+Files: sys-utils/ldattach.8.adoc
+Copyright: 2008, Tilman Schmidt (tilman@imap.cc)
+License: GPL-2+
+
+Files: sys-utils/lscpu-arm.c
+Copyright: 2018, Riku Voipio <riku.voipio@iki.fi>
+License: GPL-2+
+
+Files: sys-utils/lscpu-dmi.c
+Copyright: 2020, FUJITSU LIMITED.
+License: GPL-2
+
+Files: sys-utils/lscpu-topology.c
+ sys-utils/lscpu-virt.c
+ sys-utils/lscpu.c
+Copyright: 2008-2023, Karel Zak <kzak@redhat.com>
+ 2008, Cai Qian <qcai@redhat.com>
+License: GPL-2+
+
+Files: sys-utils/lscpu.h
+ sys-utils/lsipc.c
+Copyright: 2013-2023, Karel Zak <kzak@redhat.com>
+ 2013-2015, Ondrej Oprala <ooprala@redhat.com>
+License: GPL-2+
+
+Files: sys-utils/lsmem.c
+Copyright: 2016, Karel Zak <kzak@redhat.com>
+ 2016, IBM Corp.
+License: GPL-2+
+
+Files: sys-utils/lsns.8.adoc
+Copyright: 2015, 2023, Karel Zak <kzak@redhat.com>
+License: GPL
+
+Files: sys-utils/mount.8.adoc
+Copyright: 2006-2012, Karel Zak <kzak@redhat.com>
+ 1996-2004, Andries Brouwer
+ 1980, 1989, 1991, The Regents of the University of California
+License: GPL-2+
+
+Files: sys-utils/nsenter.c
+Copyright: 2012-2023, Eric Biederman <ebiederm@xmission.com>
+License: GPL-2
+
+Files: sys-utils/pivot_root.c
+Copyright: 1992, 2000, Werner Almesberger
+License: GPL-2+
+
+Files: sys-utils/prlimit.1.adoc
+Copyright: 2011, Davidlohr Bueso <dave@gnu.org>
+License: GPL
+
+Files: sys-utils/prlimit.c
+Copyright: 2010-2012, Davidlohr Bueso <dave@gnu.org>
+License: GPL-2+
+
+Files: sys-utils/readprofile.c
+Copyright: 1994, 1996, Alessandro Rubini (rubini@ipvvis.unipv.it)
+License: GPL-2+
+
+Files: sys-utils/rfkill.c
+Copyright: 2017, Sami Kerola <kerolasa@iki.fi>
+ 2017, Karel Zak <kzak@redhat.com>
+ 2009, Tim Gardner <tim.gardner@canonical.com>
+ 2009, Marcel Holtmann <marcel@holtmann.org>
+ 2009, Johannes Berg <johannes@sipsolutions.net>
+License: ISC
+
+Files: sys-utils/rtcwake.c
+Copyright: 2007-2023, Karel Zak <kzak@redhat.com>
+ 2007, Bernhard Walle <bwalle@suse.de>
+License: GPL-2+
+
+Files: sys-utils/setpgid.1.adoc
+ sys-utils/setpgid.c
+ sys-utils/setsid.c
+Copyright: no-info-found
+License: public-domain
+
+Files: sys-utils/setpriv-landlock.c
+ sys-utils/setpriv-landlock.h
+Copyright: 2022, 2023, Thomas Weißschuh <thomas@t-8ch.de>
+License: GPL-2+
+
+Files: sys-utils/setpriv.c
+Copyright: 2012, Andy Lutomirski <luto@amacapital.net>
+License: GPL-2+
+
+Files: sys-utils/tunelp.c
+Copyright: 1992-1997, Michael K. Johnson, johnsonm@redhat.com
+License: GPL-2+
+
+Files: sys-utils/umount.8.adoc
+Copyright: 1996, Andries Brouwer
+ 1980, 1989, 1991, The Regents of the University of California
+License: GPL-2+
+
+Files: sys-utils/unshare.c
+Copyright: 2009, Mikhail Gusarov <dottedmag@dottedmag.net>
+License: GPL-2+
+
+Files: sys-utils/wdctl.c
+Copyright: 2012, Lennart Poettering
+ 2012, Karel Zak <kzak@redhat.com>
+License: GPL-2+
+
+Files: sys-utils/zramctl.c
+Copyright: 2014, Timofey Titovets <Nefelim4ag@gmail.com>
+ 2014, Karel Zak <kzak@redhat.com>
+License: GPL
+
+Files: term-utils/*
+Copyright: 1980, 1983, 1985, 1987-1994, The Regents of the University of California.
+License: BSD-4-Clause-UC
+
+Files: term-utils/mesg.c
+Copyright: UNIX System Laboratories, Inc.
+ 1987, 1993, The Regents of the University of California.
+License: BSD-4-Clause-UC
+
+Files: term-utils/script.1.adoc
+Copyright: 1980, 1987, 1990, Regents of the University of California.
+License: BSD-4-Clause-UC
+
+Files: term-utils/script.c
+Copyright: 2013-2019, Karel Zak <kzak@redhat.com>
+ 1980, Regents of the University of California.
+License: BSD-4-Clause-UC
+
+Files: term-utils/scriptlive.1
+ term-utils/scriptlive.c
+Copyright: 2007-2023, Karel Zak <kzak@redhat.com>
+License: GPL-2+
+
+Files: term-utils/scriptlive.1.adoc
+Copyright: 2019, Karel Zak
+License: GPL-2+
+
+Files: term-utils/scriptreplay.1
+ term-utils/scriptreplay.c
+Copyright: 2008-2019, Karel Zak <kzak@redhat.com>
+ 2008, James Youngman <jay@gnu.org>
+License: GPL-2+
+
+Files: term-utils/scriptreplay.1.adoc
+Copyright: 2008-2019, Karel Zak
+ 2008, James Youngman
+License: GPL-2+
+
+Files: term-utils/setterm.1.adoc
+Copyright: 2000, Colin Watson (cjw44@cam.ac.uk)
+ 1992, Rickard E. Faith (faith@cs.unc.edu)
+ 1990, Gordon Irlam (gordoni@cs.ua.oz.au)
+License: GPL
+
+Files: term-utils/setterm.c
+Copyright: that
+ 1990, Gordon Irlam (gordoni@cs.ua.oz.au). Conditions of use
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: tests/*
+Copyright: no-info-found
+License: GPL-2+
+
+Files: tests/functions.sh
+ tests/run.sh
+Copyright: 2007-2023, Karel Zak <kzak@redhat.com>
+License: GPL-2+
+
+Files: tests/helpers/*
+Copyright: no-info-found
+License: GPL
+
+Files: tests/helpers/test_byteswap.c
+Copyright: 2008, Karel Zak <kzak@redhat.com>
+ 2000, Theodore Ts'o.
+License: GPL-2
+
+Files: tests/helpers/test_mbsencode.c
+Copyright: 2018, Vaclav Dolezal <vdolezal@redhat.com>
+License: GPL-2
+
+Files: tests/helpers/test_md5.c
+Copyright: 2008, Karel Zak <kzak@redhat.com>
+License: GPL-2
+
+Files: tests/helpers/test_pathnames.c
+ tests/helpers/test_sysinfo.c
+Copyright: 2007-2023, Karel Zak <kzak@redhat.com>
+License: GPL-2+
+
+Files: tests/helpers/test_sha1.c
+ tests/helpers/test_uuid_namespace.c
+Copyright: 2017, Philip Prindeville <philipp@redfish-solutions.com>
+License: GPL-2
+
+Files: tests/helpers/test_sigreceive.c
+ tests/helpers/test_tiocsti.c
+Copyright: no-info-found
+License: GPL-2
+
+Files: tests/helpers/test_strerror.c
+Copyright: 2019, Patrick Steinhardt <ps@pks.im
+License: GPL-2
+
+Files: tests/ts/bitops/*
+Copyright: 2007-2023, Karel Zak <kzak@redhat.com>
+License: GPL-2+
+
+Files: tests/ts/blkdiscard/*
+Copyright: 2014, Federico Simoncelli <fsimonce@redhat.com>
+License: GPL-2+
+
+Files: tests/ts/blkid/*
+Copyright: 2007-2023, Karel Zak <kzak@redhat.com>
+License: GPL-2+
+
+Files: tests/ts/blkid/topology
+Copyright: 2022, 2023, Thomas Weißschuh <thomas@t-8ch.de>
+License: GPL-2+
+
+Files: tests/ts/build-sys/*
+Copyright: 2006-2016, 2018, 2021, Karel Zak <kzak@redhat.com>
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: tests/ts/cal/column
+Copyright: 2023, Thomas Weißschuh <thomas@t-8ch.de>
+ 2007-2018, Karel Zak <kzak@redhat.com>
+License: GPL-2+
+
+Files: tests/ts/cal/month
+ tests/ts/cal/vertical
+ tests/ts/cal/weekarg
+ tests/ts/cal/weeknum
+ tests/ts/cal/year
+Copyright: 2007-2023, Karel Zak <kzak@redhat.com>
+License: GPL-2+
+
+Files: tests/ts/chfn/*
+Copyright: 2019, Radka Skvarilova <rskvaril@redhat.com>
+License: GPL-2+
+
+Files: tests/ts/col/*
+Copyright: 2011, 2014, 2020, Sami Kerola <kerolasa@iki.fi>
+License: GPL-2+
+
+Files: tests/ts/col/multibyte
+Copyright: 2007-2023, Karel Zak <kzak@redhat.com>
+License: GPL-2+
+
+Files: tests/ts/colrm/*
+Copyright: 2011, 2014, 2020, Sami Kerola <kerolasa@iki.fi>
+License: GPL-2+
+
+Files: tests/ts/column/*
+Copyright: 2011, 2014, 2020, Sami Kerola <kerolasa@iki.fi>
+License: GPL-2+
+
+Files: tests/ts/cramfs/*
+Copyright: 2007-2023, Karel Zak <kzak@redhat.com>
+License: GPL-2+
+
+Files: tests/ts/exch/*
+Copyright: 2023, Masatake YAMATO <yamato@redhat.com>
+License: GPL-2+
+
+Files: tests/ts/fdisk/bsd
+ tests/ts/fdisk/gpt
+Copyright: 2007-2023, Karel Zak <kzak@redhat.com>
+License: GPL-2+
+
+Files: tests/ts/fsck/*
+Copyright: 2007-2023, Karel Zak <kzak@redhat.com>
+License: GPL-2+
+
+Files: text-utils/*
+Copyright: 1980, 1983, 1985, 1987-1994, The Regents of the University of California.
+License: BSD-4-Clause-UC
+
+Files: text-utils/colcrt.c
+Copyright: 2016, Sami Kerola <kerolasa@iki.fi>
+ 2016, Karel Zak <kzak@redhat.com>
+ 1980, 1993, The Regents of the University of California.
+License: BSD-4-Clause-UC
+
+Files: text-utils/colrm.c
+Copyright: 1980, 1987, 1990, Regents of the University of California.
+License: BSD-4-Clause-UC
+
+Files: text-utils/column.c
+Copyright: 2017, Karel Zak <kzak@redhat.com>
+ 1989, 1993, 1994, The Regents of the University of California.
+License: BSD-4-Clause-UC
+
+Files: text-utils/line.1.adoc
+ text-utils/line.c
+Copyright: no-info-found
+License: public-domain
+
+Files: text-utils/more.1.adoc
+Copyright: 1988, Mark Nudleman
+ 1988, 1990, The Regents of the University of California.
+License: BSD-4-Clause-UC
+
+Files: text-utils/pg.1.adoc
+Copyright: 2001, Gunnar Ritter
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: text-utils/pg.c
+Copyright: 2000, 2001, Gunnar Ritter.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: tools/*
+Copyright: 2006-2016, 2018, 2021, Karel Zak <kzak@redhat.com>
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: tools/asciidoctor-includetracker.rb
+ tools/asciidoctor-unicodeconverter.rb
+Copyright: 2023, Thomas Weißschuh <thomas@t-8ch.de>
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: tools/checkconfig.sh
+Copyright: 2008, Karel Zak <kzak@redhat.com>
+ 2007, Matthias Koenig <mkoenig@suse.de>
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: tools/checkincludes.pl
+Copyright: abandoned, 2000, Niels Kristian Bech Jensen <nkbj@image.dk>.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: tools/git-tp-sync
+ tools/git-tp-sync-man
+Copyright: 2007-2023, Karel Zak <kzak@redhat.com>
+License: GPL-2+
+
+Files: tools/git-version-gen
+Copyright: 2011-2021, Karel Zak <kzak@redhat.com>
+ 2007-2011, Free Software Foundation, Inc.
+License: GPL-3+

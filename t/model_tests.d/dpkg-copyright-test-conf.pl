@@ -185,6 +185,8 @@ in ‘/usr/share/common-licenses/GPL-1’.",
         name => 'libpadre-plugin-perltidy-perl',
         log4perl_load_warnings => [[ User => ( warn => qr/deprecated/) x 4  ]],
         check => {
+            # Artistic is not replaced by Artistic-1.0 because this
+            # replacement is done only during update (so far).
             'Files:"*" License short_name' => "Artistic or GPL-1+" ,
             'Files:"*" License-Alias' => { qw/check no value Perl/}, # deprecated but not yet removed
         },
@@ -286,13 +288,13 @@ in ‘/usr/share/common-licenses/GPL-1’.",
         name => 'moarvm-from-scratch',
         update => { in => path('t/scanner/examples/moarvm.in'), quiet => 1 },
         check => {
-            'License:ISC text' => qr/Please fill/,
+            'License:ISC text' => qr/The ISC License/,
             'License:BSD-2-clause text' => qr/Please fill/,
             'License:"Artistic-2.0" text' => [
                 qr/The Artistic License 2.0/,
                 {mode => 'custom', value => undef},
             ],
-            'Files:"3rdparty/libuv/samples/*" License short_name' => "BSD-3-clause and/or Expat",
+            'Files:"3rdparty/libuv/samples/socks5-proxy/*" License short_name' => "BSD-3-clause or Expat",
         },
         wr_check => {
             qq!Files:"3rdparty/dyncall/*" License full_license! => undef,
@@ -307,6 +309,17 @@ in ‘/usr/share/common-licenses/GPL-1’.",
             'debian/copyright' => qr/\n\nLicense: BSD-2-clause\n\n/,
         },
     },
+
+    {
+        # upgrade old moarvm copyright with recent output
+        name => 'moarvm-upgrade',
+        update => { in => path('t/scanner/examples/moarvm-upgrade.in'), quiet => 1 },
+        check => {
+            # check that old copyright entry of dir was cleaned up.
+            'Files:"*" Copyright' => "2012-2015, Jonathan Worthington and others.\n2012-2015, Jonathan Worthington"
+        },
+    },
+
 
     { # Debian bug  #797321
         name => 'warn-MIT',
@@ -366,8 +379,9 @@ in ‘/usr/share/common-licenses/GPL-1’.",
         update => { in => path('t/scanner/examples/libtk-fontdialog.in') , quiet => 1 },
         check => {
             'Files:"*" Copyright' => qr/Slaven/,
-            # check that Perl license is replaced by Artistic or GPL-1+
-            'Files:"*" License short_name' => 'Artistic or GPL-1+',
+            # check that Perl license is replaced by Artistic-1.0 or GPL-1+
+            # Artistic is replaced by Artistic-1.0 thanks to the update
+            'Files:"*" License short_name' => 'Artistic-1.0 or GPL-1+',
         },
     },
 

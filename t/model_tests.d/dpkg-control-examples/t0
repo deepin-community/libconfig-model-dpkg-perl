@@ -4,6 +4,14 @@ Priority: extra
 Build-Depends: debhelper (>= 7)
 X-Comment: required by
  Debian #810023
+# to test order of accepted parameters
+# see https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1111291
+X-t1: foo
+X-t3: foo
+X-t2: foo
+X-t4: foo
+Description: foo synopsis
+ not so long foo description
 Build-Depends-Indep: libcpan-meta-perl (>= 2.101550), libdist-zilla-perl (>= 3),
  libfile-homedir-perl (>= 0.81), libmoose-autobox-perl (>= 0.09),
  libmoose-perl (>= 0.65), libpath-class-perl, libmodule-build-perl (>= 0.360000) | perl (>= 5.8.8),
@@ -20,6 +28,7 @@ Depends: ${misc:Depends}, ${perl:Depends}, libcpan-meta-perl (>= 2.101550),
  libdist-zilla-perl (>= 3), libfile-homedir-perl (>= 0.81),
  libmoose-autobox-perl (>= 0.09), libmoose-perl (>= 0.65), libpath-class-perl,
  perl (>= 5.10.1)
+Conflicts: libuv0.10-dev
 Description: Collection of CJM's plugins for Dist::Zilla
  Collection of Dist::Zilla plugins. This package features the 
  following Perl modules:

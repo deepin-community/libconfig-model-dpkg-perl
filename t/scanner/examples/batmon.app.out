@@ -2,7 +2,16 @@ Files: *
 Copyright: 2005-2013, GNUstep Application Project
 License: GPL-2+
 
+Files: batmon.pcproj/*
+Copyright: 2005-2013
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: batmonInfo.plist
+Copyright: Description = "Released under GPL";
+License: UNKNOWN
+ Please fill license text from header of files
+
 Files: main.m
 Copyright: 2005, Free Software Foundation
 License: GPL-2+
-

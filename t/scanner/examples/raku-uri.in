@@ -1,0 +1,37 @@
+./ChangeLog	UNKNOWN	*No copyright*
+./LICENSE	UNKNOWN	2000-2006 The Perl Foundation.
+./META6.json	Artistic-2.0	*No copyright*
+./README.md	UNKNOWN	2017 Ronald Schmidt. / 2015 Raku Community Authors
+./appveyor.yml	UNKNOWN	*No copyright*
+./debian/changelog	UNKNOWN	*No copyright*
+./debian/control	UNKNOWN	*No copyright*
+./debian/copyright	Artistic-2.0	Perl 6 community
+./debian/fill.copyright.blanks.yml	Artistic-2.0	*No copyright*
+./debian/gbp.conf	UNKNOWN	*No copyright*
+./debian/rules	UNKNOWN	*No copyright*
+./debian/watch	UNKNOWN	*No copyright*
+./lib/URI.rakumod	UNKNOWN	2017 Ronald Schmidt.
+./t/01.t	UNKNOWN	*No copyright*
+./t/authority.t	UNKNOWN	*No copyright*
+./t/directory.t	UNKNOWN	*No copyright*
+./t/escape.t	UNKNOWN	*No copyright*
+./t/expected.txt	UNKNOWN	*No copyright*
+./t/issue-43.t	UNKNOWN	*No copyright*
+./t/mutate.t	UNKNOWN	*No copyright*
+./t/november-urlencoded.t	UNKNOWN	*No copyright*
+./t/path.t	UNKNOWN	*No copyright*
+./t/query.t	UNKNOWN	*No copyright*
+./t/rel2abs.t	UNKNOWN	*No copyright*
+./t/require.t	UNKNOWN	*No copyright*
+./t/rfc-3986-examples.t	UNKNOWN	*No copyright*
+./t/utf8-c8.t	UNKNOWN	*No copyright*
+./.github/workflows/test.yml	UNKNOWN	*No copyright*
+./debian/source/format	UNKNOWN	*No copyright*
+./lib/IETF/RFC_Grammar.rakumod	UNKNOWN	*No copyright*
+./lib/URI/DefaultPort.rakumod	UNKNOWN	*No copyright*
+./lib/URI/Escape.rakumod	UNKNOWN	*No copyright*
+./lib/URI/Path.rakumod	UNKNOWN	*No copyright*
+./lib/URI/Query.rakumod	UNKNOWN	*No copyright*
+./t/lib/TestURIRequire.pm	UNKNOWN	*No copyright*
+./lib/IETF/RFC_Grammar/IPv6.rakumod	UNKNOWN	*No copyright*
+./lib/IETF/RFC_Grammar/URI.rakumod	UNKNOWN	*No copyright*

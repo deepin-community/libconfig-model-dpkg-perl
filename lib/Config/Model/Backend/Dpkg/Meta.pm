@@ -16,11 +16,9 @@ use Carp;
 use Config::Model::Exception;
 use Log::Log4perl qw(get_logger :levels);
 use IO::File;
-use YAML::XS qw/LoadFile DumpFile/;
+use YAML::PP qw/LoadFile DumpFile/;
 use Path::Tiny;
 use List::Util qw/reduce/;
-
-$YAML::XS::LoadBlessed = 0;
 
 my $logger = get_logger("Backend.Dpkg.Meta");
 my $user_logger = get_logger('User');
@@ -147,7 +145,7 @@ This file handles the move from legacy config files (C<~/.dpkg-meta.yml> and
 C<~/.local/share/.dpkg-meta.yml>) to C<$ENV{XDG_CONFIG_HOME}/config-model/dpkg-meta.yml>
 or C<~/.config/config-model/dpkg-meta.yml>.
 
-This module uses L<YAML::XS>.
+This module uses L<YAML::PP>.
 
 =head1 AUTHOR
 

@@ -1,0 +1,136 @@
+Files: *
+Copyright: 2012-2015, Jonathan Worthington and others.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: 3rdparty/cmp/*
+Copyright: 2014, 2017, Charles Gunyon
+License: Expat
+
+Files: 3rdparty/dynasm/*
+Copyright: 2005-2015, Mike Pall.
+License: Expat
+
+Files: 3rdparty/dynasm/minilua.c
+Copyright: 1994-2012, Lua.org, PUC-Rio.
+License: Expat
+
+Files: 3rdparty/freebsd/*
+Copyright: 2005-2014, Rich Felker, et al.
+License: Expat
+
+Files: 3rdparty/msinttypes/*
+Copyright: 2006-2013, Alexander Chemeris
+License: BSD-3-clause
+
+Files: 3rdparty/ryu/*
+Copyright: no-info-found
+License: Apache-2.0 or BSL-1.0
+
+Files: 3rdparty/ryu/LICENSE-Apache2
+Copyright: no-info-found
+License: Apache-2.0
+
+Files: 3rdparty/ryu/LICENSE-Boost
+Copyright: no-info-found
+License: BSL-1.0
+
+Files: 3rdparty/ryu/ryu/*
+Copyright: 2018, 2019, Ulf Adams
+License: Apache-2.0 or BSL-1.0
+
+Files: 3rdparty/ryu/src/*
+Copyright: 2018, Ulf Adams
+License: Apache-2.0
+
+Files: 3rdparty/ryu/third_party/double-conversion/*
+Copyright: 2006-2012, the V8 project authors.
+License: BSD-3-clause
+
+Files: 3rdparty/ryu/third_party/gtest/*
+Copyright: 2005, 2006, 2008, Google Inc.
+License: BSD-3-clause
+
+Files: 3rdparty/ryu/third_party/jaffer/*
+Copyright: Aubrey Jaffer and Heng Yuan.
+ 2014, Aubrey Jaffer
+License: Apache-2.0
+
+Files: 3rdparty/ryu/third_party/jaffer/java/*
+Copyright: 2016, Heng Yuan
+License: Apache-2.0
+
+Files: 3rdparty/ryu/third_party/mersenne/*
+Copyright: protection under copyright law or other applicable laws.
+License: GFDL
+
+Files: 3rdparty/ryu/third_party/mersenne/random.h
+Copyright: 2018, Ulf Adams
+License: Apache-2.0
+
+Files: 3rdparty/ryu/third_party/mersenne_java/java/*
+Copyright: 1997-2002, Makoto Matsumoto and Takuji Nishimura
+License: Apache-2.0
+
+Files: 3rdparty/sha1/sha1.h
+Copyright: no-info-found
+License: public-domain
+
+Files: 3rdparty/tinymt/*
+Copyright: 2011, 2013, Mutsuo Saito, Makoto Matsumoto
+License: BSD-3-clause
+
+Files: Artistic2.txt
+Copyright: 2000-2006, The Perl Foundation.
+License: Artistic-2.0
+
+Files: docs/moar.pod
+Copyright: 2012-2014, the MoarVM contributors. See the F<CREDITS> file for
+License: Artistic-2.0
+
+Files: src/core/coerce.c
+Copyright: 2017, James Edward Anhalt III - https://github.com/jeaiii/itoa
+License: Expat
+
+Files: src/core/str_hash_table.c
+Copyright: restriction.
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: src/platform/memmem32.c
+Copyright: 2018, Samantha McVey <samantham@posteo.net>
+ 2005-2014, Rich Felker, et al.
+License: Expat
+
+Files: src/strings/siphash/csiphash.h
+Copyright: 2018, Samantha McVey <samantham@posteo.net>
+ 2013, Marek Majkowski <marek@popcount.org>
+License: Expat
+
+Files: src/strings/unicode_db.c
+Copyright: 2020, Unicode, Inc.
+License: Unicode-DFS-2016
+
+Files: src/strings/utf8.c
+Copyright: 2008-2010, Bjoern Hoehrmann <bjoern@hoehrmann.de>
+License: Expat
+
+Files: src/strings/utf8_c8.c
+Copyright: 2012, not_gerd
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: tools/parse_coverage_report.raku
+Copyright: 2016
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: tools/update-changelog.raku
+Copyright: ommit, ategory, subject (o)rigin, (a)uthor, (q)uit this menu and go back";
+License: UNKNOWN
+ Please fill license text from header of files
+
+Files: tools/update-submodules.pl
+Copyright: 2009-2019, The Perl Foundation
+License: UNKNOWN
+ Please fill license text from header of files

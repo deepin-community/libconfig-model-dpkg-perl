@@ -39,6 +39,12 @@ return [
         'description' => 'This field is provided for bookkeeping and is not used by "cme update dpkg-copyright"',
         'type' => 'leaf',
         'value_type' => 'string'
+      },
+      'forwarded-comment',
+      {
+        'description' => 'This field is copied verbatim in the target copyright entry.',
+        'type' => 'leaf',
+        'value_type' => 'string'
       }
     ],
     'name' => 'Dpkg::Copyright::FillBlanks::Pattern'

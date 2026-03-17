@@ -14,8 +14,10 @@ use Path::Tiny;
 use Data::Dumper;
 
 use Config::Model::DumpAsData;
-use Dpkg::Copyright::Scanner qw/scan_files __squash_tree_of_copyright_ids __pack_files __pack_copyright
-                                __create_tree_leaf_from_paths __from_copyright_structure/;
+use Dpkg::Copyright::Scanner qw/scan_files/;
+use Dpkg::Copyright::Grant::ByDir;
+use Dpkg::Copyright::Grant::Plain;
+
 use Scalar::Util qw/weaken/;
 use Storable qw/dclone/;
 
@@ -29,248 +31,95 @@ sub split_path ($self,$path) {
     return ( sort ( ref $path ? @$path : split ( /[\s\n]+/ , $path ) ) );
 }
 
-sub normalize_path ($self,$path) {
-    my @paths = $self->split_path($path);
-    return $self->get_joined_path(\@paths);
-}
-
-my $dumper = Config::Model::DumpAsData->new;
-
-sub _say ($self,$msg) {
-    say $msg unless $self->{quiet};
+sub _say ($self,@msg) {
+    say @msg unless $self->{quiet};
     return;
 }
 
-sub _get_old_data ($old_split_files, $old_split_dirs, $path) {
-    my $data = delete $old_split_files->{$path};
-
-    # retrieve data for directories above if the path has no data.
-    # This enables to merge information attached to directory by the
-    # user to the files. This information may override some unknown
-    # entries. Anyway, this duplicated information is coaslesced later
-    # on. In other words, this may seem back and forth work, but it's
-    # not because manually entered information at directory level is
-    # merged into the file data.
-    if (not $data) {
-        foreach my $dir (reverse sort keys $old_split_dirs->%*) {
-            my $re = $dir;
-            $re =~ s/\*$//;
-            if ($path =~ /^$re/) {
-                $data = $old_split_dirs->{$dir}; # do not delete
-                last;
-            }
-        }
-    }
-    return defined $data ? dclone($data) : {};
-}
-
-# $args{in} can contains the output of licensecheck (for tests)
-sub update ($self, %args) {
-
+sub _split_previous_data ($self) {
     my $files_obj = $self->grab("Files");
-    $self->{quiet} = $args{quiet} // 0;
 
-    # explode existing path data to track deleted paths
-    my %old_split_files;
-    my %old_split_dirs;
-    my %debian_paths;
+    my $old_split_files = Dpkg::Copyright::Grant::ByDir->new(current_dir =>  path('.'));
+
+    my $debian_paths = {};
     foreach my $paths_str ($files_obj->fetch_all_indexes) {
         my $node = $files_obj->fetch_with_id($paths_str) ;
+        my $dumper = Config::Model::DumpAsData->new;
         my $data = $dumper->dump_as_data( node => $node );
 
-        # normalise existing copyright data (mandatory parameter, no need to test)
-        $data->{Copyright} = __pack_copyright($data->{Copyright});
+        my $grant = Dpkg::Copyright::Grant::Plain->new(
+            copyright => $data->{Copyright},
+            license => $data->{License}{short_name},
+            license_text => $data->{License}{full_license} // '', # may be empty
+            comment => $data->{Comment} // '', # may be empty
+        );
 
-        if ($paths_str =~ m!^debian/!) {
-            $debian_paths{$paths_str} = $data;
-        }
-        else {
-            foreach my $path ($self->split_path($paths_str)) {
-                $old_split_files{$path} = $data ;
-                $old_split_dirs{$path} = $data if $path =~ /\*$/;
+        foreach my $path ($self->split_path($paths_str)) {
+            if ($path =~ /\*$/) {
+                # a bit of a hack since main_grant should be derived
+                # from the content of the directory
+                $old_split_files->get_dir($path)->set_main_grant($grant);
+            }
+            else {
+                $old_split_files->add_grant($path, $grant);
             }
         }
     }
 
-    my ($files, $copyrights_by_id) = scan_files( %args );
+    return $old_split_files;
+}
 
-    # explode new data and merge with existing entries
-    my %new_split_files;
-    my @new_copyrights_by_id = (undef);# id 0 is reserved for entries without info
-    my %data_keys;
-    foreach my $path ( sort keys $files->%* ) {
-        my $id = $files->{$path};
-        next if $id == 0 and not defined $copyrights_by_id->[$id];
-        my ($c, $l) = __from_copyright_structure($copyrights_by_id->[$id]);
+sub _set_license_data_for_a_path ($self, $new_data, $paths, $lic_usage_count ) {
+    my $l = $new_data->{License}{short_name};
 
-        my $new_data = _get_old_data(\%old_split_files, \%old_split_dirs, $path);
-        my $old_cop = $new_data->{Copyright};
-        my $old_lic = $new_data->{License}{short_name};
-        # $self->_say( "load '$path' with '$c' ('$l') old '$old_cop' ('$old_lic')");
-        # clobber old data
-        $new_data->{Copyright} = $c if ($c !~ /no-info-found|UNKNOWN/ or not $old_cop);
-        $new_data->{License}{short_name} = $l if ($l ne 'UNKNOWN' or not $old_lic);
+    # if full_license is not provided in datum, check global license(s)
+    my $ok = 0;
+    my @sub_licenses = split m![,\s]+ (?:and/or|or|and) [,\s]+!x,$l;
+    my $lic_count = 0;
+    my @empty_licenses = grep {
+        my $text = $self->grab_value(steps => qq!License:"$_" text!, check =>'no') ;
+        $ok++ if $text;
+        $lic_count += $lic_usage_count->{$_} // 0 ;
+        not $text; # to get list of empty licenses
+    } @sub_licenses;
 
-        # when all fails
-        $new_data->{Copyright} ||= 'UNKNOWN';
-        $new_data->{License}{short_name} ||= 'UNKNOWN';
-
-        # skip when no info is found in original data
-        my $d_key;
-        if ( $new_data->{Copyright} =~ /no-info-found|unknown/xi
-            and $new_data->{License}{short_name} =~ /unknown/i) {
-            $new_copyrights_by_id[0] //= $new_data;
-            $d_key = 0;
+    my $full_license = $new_data->{License}{full_license};
+    if ($ok eq scalar @sub_licenses) {
+        $self->_say("Removing dummy license text from license $l for path ",$paths);
+        delete $new_data->{License}{full_license};
+    }
+    elsif (not $full_license or $full_license =~ /Please fill license/) {
+        my $filler = "Please fill license $l from header of $paths";
+        if ($lic_count > 1 ) {
+            for my $lic (@empty_licenses) {
+                $self->_say("Adding dummy global license text for license $lic for path ",$paths);
+                $self->load(qq!License:"$lic" text="$filler"!)
+            };
         }
         else {
-            # create an inventory of different file copyright and license data
-            # this works like $copyrights_by_id but takes into account data coming
-            # from old copyright file like comments
-            my $data_dumper = Data::Dumper->new([$new_data])->Sortkeys(1)->Indent(0);
-            my $datum_dump = $data_dumper->Dump;
-            $d_key = $data_keys{$datum_dump};
-
-            if (not defined $d_key) {
-                push @new_copyrights_by_id,$new_data;
-                # id 0 is reseved for missing info and is treated
-                # differently. It must not be used since entries
-                # without info are skipped. Hence @new_copyrights_by_id was
-                # initialised with ('');
-                $d_key = $data_keys{$datum_dump} = $#new_copyrights_by_id ;
-           }
-        }
-        # explode path in subpaths and store id pointing to copyright data in there
-        __create_tree_leaf_from_paths(\%new_split_files, $path, $d_key);
-    }
-
-    # at this point:
-    # * $copyrights_by_id is not longer used, its data and merged data are in @new_copyrights_by_id
-    # * @new_copyrights_by_id contains a list of copyright/license data
-    # * %new_split_files contains a tree matching a directory tree where each leaf
-    #   is an integer index referencing
-    #   an entry in @new_copyrights_by_id to get the correct  copyright/license data
-    # * %old_split_files contains paths no longer present. Useful to trace deleted files
-
-    my $current_dir = $args{from_dir} || path('.');
-
-    my %preserved_path;
-    # warn about old files (data may be redundant or obsolete though)
-    foreach my $old_path (sort keys %old_split_files) {
-        # prepare to be able to put back data matching an existing dir
-        if ($old_path eq '*' or ($old_path =~ m!(.*)/\*$! and $current_dir->child($1)->is_dir )) {
-            $preserved_path{$old_path} = delete $old_split_files{$old_path};
-            $self->_say( "Note: preserving '$old_path'" );
-        }
-        else {
-            $self->_say( "Note: '$old_path' was removed (or excluded) from new upstream source" );
+            $self->_say("Adding dummy license text for license $l for path ",$paths);
+            $new_data->{License}{full_license} = $filler;
         }
     }
+    return;
+}
 
-    $self->_prune_old_dirs(\%new_split_files, \%old_split_files) ;
-
-
-    # implode files entries with same data index
-    __squash_tree_of_copyright_ids(\%new_split_files, \@new_copyrights_by_id) ;
-
-    # pack files by copyright id
-    my @packed = __pack_files(\%new_split_files);
-
-    # delete existing data in config tree. A more subtle solution to track which entry is
-    # deleted or altered (when individual files are removed, renamed) is too complex. The track
-    # would require to follow split files,
-    $files_obj->clear;
-
-    # count license useage to decide whether to add a global license
+sub load_new_data_in_config_tree ($self, $data) {
+    # count license usage to decide whether to add a global license
     # or a single entry. Skip unknown or public-domain licenses
     my %lic_usage_count;
     map { $lic_usage_count{$_}++ if $_ and not /unknown|public/i}
-        map {split /\s+or\s+/, $new_copyrights_by_id[$_->[0]]->{License}{short_name} // ''; }
-        @packed ;
+        map {split /\s+or\s+/, $_->{License}{short_name} // ''; }
+        $data->@* ;
 
     # load new data in config tree
-    foreach my $pack_data (@packed) {
-        my ($id, @paths) = $pack_data->@*;
-
-        next if $id == 0; # skip entries without info
-
-        my $datum = dclone($new_copyrights_by_id[$id]);
-
-        # ditch old data when copyright data directory is found in source files
-        if ($paths[0] =~ /[*.]$/) {
-            if (@paths > 1) {
-                die "Internal error: can't have dir path with file path: @paths";
-            }
-            my $p = $paths[0];
-            $p =~ s/\.$/*/;
-            my $old_data = delete $preserved_path{$p};
-
-            my $using_old_data = 0;
-            if ($old_data and $old_data->{Copyright} and $old_data->{License}{short_name}) {
-                if ($datum->{Copyright} =~ /unknown|no-info-found/xi) {
-                    $self->_say( "keeping copyright dir data for $p");
-                    $datum->{Copyright} = $old_data->{Copyright};
-                    $using_old_data = 1;
-                }
-                if ($datum->{License}{short_name} =~ /unknown|no-info-found/xi) {
-                    $self->_say( "keeping license dir data for $p");
-                    $datum->{License}{short_name} = $old_data->{License}{short_name};
-                    $datum->{License}{full_license} = $old_data->{License}{full_license};
-                    $using_old_data = 1;
-                }
-                $self->_say( "old dir data for $p overridden by new data") unless $using_old_data;
-            }
-
-            if ($paths[0] =~ /\.$/) {
-                if ($using_old_data) {
-                    # fix path ending with '.' that contain merged info from old copyright file
-                    $paths[0] = $p;
-                } else {
-                    # skip writing data because it duplicates information
-                    # found in directory above above (as shown the path ending
-                    # with '/.')
-                    # $self->_say( "skipping redundant path ".$paths[0] );
-                    next;
-                }
-            }
-        };
-
-        my $path_str = $self->normalize_path(\@paths);
-        my $l = $datum->{License}{short_name};
-
-        my $norm_path_str = $self->normalize_path(\@paths);
-
-        # if full_license is not provided in datum, check global license(s)
-        if (not $datum->{License}{full_license}) {
-            my $ok = 0;
-            my @sub_licenses = split m![,\s]+ (?:and/or|or|and) [,\s]+!x,$l;
-            my $lic_count = 0;
-            my @empty_licenses = grep {
-                my $text = $self->grab_value(steps => qq!License:"$_" text!, check =>'no') ;
-                $ok++ if $text;
-                $lic_count += $lic_usage_count{$_} // 0 ;
-                not $text; # to get list of empty licenses
-            } @sub_licenses;
-
-            if ($ok ne @sub_licenses) {
-                my $filler = "Please fill license $l from header of @paths";
-                if ($lic_count > 1 ) {
-                    $self->_say( "Adding dummy global license text for license $l for path @paths");
-                    for my $lic (@empty_licenses) {
-                        $self->load(qq!License:"$lic" text="$filler"!)
-                    };
-
-                }
-                else {
-                    $self->_say( "Adding dummy license text for license $l for path @paths");
-                    $datum->{License}{full_license} = $filler;
-                }
-            }
-
-        }
+    foreach my $datum ($data->@*) {
+        my $paths = delete $datum->{Files};
+        $self->_set_license_data_for_a_path ( $datum, $paths, \%lic_usage_count );
 
         eval {
-            $files_obj
-                ->fetch_with_id($path_str)
+            $self->grab("Files")
+                ->fetch_with_id($paths)
                 ->load_data( data => $datum, check =>'yes' );
             1;
         } or do {
@@ -282,34 +131,44 @@ sub update ($self, %args) {
                 ."for instructions. Last but not least, please file a bug against libconfig-model-dpkg-perl.\n";
         };
     }
+    return;
+}
 
-    # delete global license without text
-    my $global_lic_obj = $self->fetch_element('License');
-    foreach my $l ($global_lic_obj->fetch_all_indexes) {
-        $global_lic_obj->delete($l)
-            unless $global_lic_obj->fetch_with_id($l)->fetch_element_value('text');
+sub prune_empty_licenses ($self) {
+    my $lic_obj = $self->fetch_element('License');
+    foreach my $l ($lic_obj->fetch_all_indexes) {
+        $lic_obj->delete($l)
+            unless $lic_obj->fetch_with_id($l)->fetch_element_value('text');
     }
+    return;
+}
 
-    # put back preserved data
-    foreach my $old_path (sort keys %preserved_path) {
-        $self->_say( "Note: preserving entry '$old_path'");
-        $files_obj->fetch_with_id($old_path)->load_data( $preserved_path{$old_path} );
-    }
+# $args{in} can contains the output of licensecheck (for tests)
+sub update ($self, %args) {
 
-    # put back debian data if file or dir is still present
-    foreach my $deb_path (sort keys %debian_paths) {
-        my $target = $deb_path =~ m!(.*)/\*$! ? $1 : $deb_path;
-        if ($current_dir->child($target)->exists) {
-            $files_obj->fetch_with_id($deb_path)->load_data( $debian_paths{$deb_path} );
-        }
-        else {
-            $self->_say("Note: dropping obsolete entry $deb_path");
-        }
-    }
+    $self->{quiet} = $args{quiet} // 0;
+
+    my $old_grants_by_dir = $self->_split_previous_data;
+
+    my $new_grants_by_dir = scan_files( %args, get_grants => 1 );
+
+    $new_grants_by_dir->merge_old_dir($old_grants_by_dir);
+
+    my $current_dir = $args{from_dir} || path('.');
+
+    # delete existing data in config tree. A more subtle solution to track which entry is
+    # deleted or altered (when individual files are removed, renamed) is too complex.
+    $self->grab("Files")->clear;
+
+    my @data = $new_grants_by_dir->debian_full_data;
+    $self->load_new_data_in_config_tree(\@data);
+
+    # delete license without text
+    $self->prune_empty_licenses;
 
     $self->_apply_fix_scan_copyright_file($current_dir) ;
 
-    # normalized again after all the modifications
+    # normalize again after all the modifications
     $self->load("Files:.sort");
 
     $self->fetch_element("License")-> prune_unused_licenses;
@@ -348,25 +207,6 @@ sub _apply_fix_scan_copyright_file ($self, $current_dir) {
                 );
             }
         }
-    }
-    return;
-}
-
-sub _prune_old_dirs ($self, $h, $old_dirs, $path = [] ) {
-
-    # recurse in the data structure
-    foreach my $name (sort keys %$h) {
-        my $item = $h->{$name};
-        if (ref($item)) {
-            $self->_prune_old_dirs($item, $old_dirs, [ $path->@*, $name ]);
-        }
-    }
-
-    # delete current directory entry
-    my $dir_path = join('/', $path->@*,'.');
-    if ($old_dirs->{$dir_path}) {
-        $self->_say( "Removing old entry $dir_path" );
-        delete $old_dirs->{$dir_path};
     }
     return;
 }
@@ -466,9 +306,9 @@ If the extracted copyright contains:
  Copyright: 2014-2015, Adam Kennedy <adamk@cpan.org> "foobar
  License: Artistic or GPL-1+
 
-You may add this line in C<debian/fix.copyright> file:
+You may add this line in C<debian/fix.scanned.copyright> file:
 
- ! Files:'*' Copyright=~s/\s*".*//
+ ! Files:"*" Copyright=~s/\s*".*//
 
 This way, the copyright information will be updated from the file
 content but the extra C<"foobar> will always be removed during

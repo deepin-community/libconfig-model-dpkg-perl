@@ -1,0 +1,12 @@
+# Format: YAML -*- yaml -*-
+---
+doc: |
+  This script updates control's Standards-Version and commit the change.
+  Before using this script, you must make sure that your package complies with new Debian policy.
+  For details, see https://www.debian.org/doc/debian-policy/upgrading-checklist.html
+  example:
+    cme run update-standards-version
+app: dpkg-control
+load: source Standards-Version=.set_to_std_value()
+commit: |
+  control: declare compliance with Debian policy {{source Standards-Version}}

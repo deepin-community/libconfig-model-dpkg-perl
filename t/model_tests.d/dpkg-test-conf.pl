@@ -86,16 +86,20 @@ my @tests = (
             'package-scripts:t0 prerm' => qr/dummy prerm/,
             'package-scripts:t0/amd64 postrm' => qr/dummy postrm script for amd64/,
             'package-scripts:./amd64 preinst' => qr/dummy preinst script for amd64/,
-            'examples:t0 content:0' => 'examples/'
+            'examples:t0 content:0' => 'examples/',
+            'install:t0.docs content:0' => 'README.*',
+            'upstream-metadata FAQ' => 'http://www.netlib.org/lapack/faq.html',
+            'upstream-metadata Reference:0 Title' => "LAPACK Users' Guide",
+            'upstream-metadata Reference:0 Author' => qr/Sorensen/,
         },
         log4perl_load_warnings => [[
-            User =>  map {(warn => $_)} qr/source Standards-Version/, qr/compat/, (qr/debhelper/) x 2 , qr/Dual dependency/
+            User =>  map {(warn => $_)} qr/source Standards-Version/, qr/compat/, (qr/debhelper/) x 3 , qr/Dual dependency/
         ]],
     },
 
     {   name => 't1',
         log4perl_load_warnings => [[
-            User => map {(warn => $_)} qr/standard/, qr/compat/, (qr/debhelper/) x 2 , qr/canonical/, qr/invalid/
+            User => map {(warn => $_)} qr/standard/, qr/compat/, (qr/debhelper/) x 3 , qr/canonical/, qr/invalid/
         ]],
         apply_fix => 1 ,
         load => qq!patches:fix-spelling Description="more spelling details"!
@@ -150,6 +154,9 @@ my @tests = (
             # copyright from files or existing debian/copyright are now normalised
             'copyright Files:pan/general/sorted-vector.h Copyright' => '2002, Martin Holzherr (holzherr@infobrain.com).',
 
+            # comment is now propagated from fill.copyright.blanks
+            'copyright Files:"pan/gui/*" Comment' => 'some comment about gui',
+
             # no space after comma because data comes from fix.scanned.copyright
             'copyright Files:pan/general/map-vector.h Copyright' => "2001,Andrei Alexandrescu",
             'copyright Files:pan/general/map-vector.h License short_name' => 'MIT',
@@ -178,9 +185,8 @@ my @tests = (
             'copyright Files:pan/general/sorted-vector.h Copyright'
             => '2002, Martin Holzherr (holzherr@infobrain.com).',
             'copyright Files:pan/general/sorted-vector.h License short_name' => 'public-domain',
-            # entry "uulib/fptools.c\n uulib/fptools.h"is packed by update
-            qq'copyright Files:"*" Copyright' => '1994-2001, Frank Pilhofer.',
-            'copyright Files:pan/gui/xface.c Copyright' => qr/^James/,
+            'copyright Files:"*" Copyright' => '2002-2007, Charles Kerr <charles@rebelbase.com>',
+            'copyright Files:pan/gui/xface.c Copyright' => qr/James/,
         },
         wr_check => {
             "copyright License:GPL-2 text" => {value => undef, mode => 'custom'},
@@ -204,13 +210,13 @@ my @tests = (
             'copyright Files:pan/general/sorted-vector.h Copyright'
             => '2002, Martin Holzherr (holzherr@infobrain.com).',
             'copyright Files:pan/general/sorted-vector.h License short_name' => 'public-domain',
-            qq'copyright Files:"*" Copyright' => '1994-2001, Frank Pilhofer.',
+            'copyright Files:"*" Copyright' => '2002-2007, Charles Kerr <charles@rebelbase.com>',
         },
         has_key => {
             'copyright Files' => ['*'],
         },
         has_not_key => {
-            'copyright Files' => ['pan/data/*','uulib/*'],
+            'copyright Files' => ['pan/data/*'],
         },
         wr_check => {
             "copyright License:GPL-2 text" => {value => undef, mode => 'custom'},
@@ -254,9 +260,8 @@ my @tests = (
             quiet => 1,
             # fill.copyright.blanks tests #863052. Unfortunately, the
             # only symptom is a warning showing up during upgrade,
-            # hence this update_warnings which works only from
-            # Config::Model::Tester 2.061 (ignored otherwise)
-            update_warnings => []
+            # hence this log4perl_update_warnings
+            log4perl_update_warnings => []
         },
         file_contents_like => {
             'debian/copyright' => [
@@ -266,7 +271,7 @@ my @tests = (
         file_check_sub => tweak(qw/rules log/),
         # check that some entries were fixed by update
         check => {
-            'copyright Files:"share/vendor/*" Copyright' => '2010-2012, VMware, Inc.',
+            'copyright Files:"share/vendor/ruby/gems/rbvmomi/*" Copyright' => '2010-2012, VMware, Inc.',
             'copyright Files:"src/sunstone/public/css/novnc-custom.css" Copyright' => qr/Mannehed/,
             'copyright Files:"src/cloud/ec2/lib/net_ssh_replacement.rb" Copyright' => qr/Jamis/,
             'copyright Files:"share/pkgs/openSUSE/systemd/onedsetup" Copyright' => '2015, Marcel Mézigue',
@@ -378,7 +383,20 @@ my @tests = (
                 [User => warn => qr/dummy-tag/],
             ],
         },
-    }
+    },
+
+    {
+        name => 'raku-uri',
+        update => { in => path('t/scanner/examples/raku-uri.in') , quiet => 1 },
+        has_not_key => [
+            # README was wrong and is updated according to
+            # fill.copyright.blanks.yml which makes its license
+            # identical to main license, and its' copyright is
+            # "contained" in main copyright. So README.md is removed
+            # from the list of files.
+            'copyright Files' => 'README.md',
+        ],
+    },
 );
 
 my $cache_file = path('t/model_tests.d/dependency-cache.txt');

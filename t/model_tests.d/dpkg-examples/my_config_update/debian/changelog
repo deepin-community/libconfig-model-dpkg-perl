@@ -1,13 +1,5 @@
 libconfig-model-approx-perl (1.004-1) UNRELEASED; urgency=low
 
-  TODO:
-  - d/control:
-    + we need Module::Build: 0.38 --> add to Build-Depends: 
-      "libmodule-build-perl (>= 0.380000) | perl (>= 5.13.11)
-      (or check with dod what's _really_ needed, 0.38 is what his META.* says :))
-    + we now need Config::Model: 1.245 --> bump version in B-D-I and Depends of
-      libconfig-model-perl to >= 1.245
-
   [ Fabrizio Regalli ]
   * New upstream release.
   * Switch d/compat to 8.
